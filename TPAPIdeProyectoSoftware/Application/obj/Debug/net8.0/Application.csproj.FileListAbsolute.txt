@@ -1,0 +1,16 @@
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\bin\Debug\net8.0\Application.deps.json
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\bin\Debug\net8.0\Application.dll
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\bin\Debug\net8.0\Application.pdb
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\bin\Debug\net8.0\Domain.dll
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\bin\Debug\net8.0\Domain.pdb
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.sourcelink.json
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.dll
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\Application.pdb
+C:\Proyectos\TPAPIProyecto\API\TPAPIdeProyectoSoftware\Application\obj\Debug\net8.0\ref\Application.dll

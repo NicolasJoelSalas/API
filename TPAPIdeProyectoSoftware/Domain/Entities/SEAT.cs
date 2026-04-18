@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.Entities
+{
+    public class SEAT
+    {
+        public Guid Id { get; set; }
+        public int SectorId { get; set; }
+        public string Rowldentifier { get; set; }
+        public int SeatNumber { get; set; }
+        public string Status { get; set; }
+        public int Version { get; set; }
+
+        public SECTOR SECTOR { get; set; }
+        public RESERVATION? RESERVATION { get; set; }
+    }
+}
