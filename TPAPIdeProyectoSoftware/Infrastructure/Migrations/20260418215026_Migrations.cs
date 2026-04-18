@@ -95,7 +95,7 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SectorId = table.Column<int>(type: "int", nullable: false),
-                    Rowldentifier = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RowIdentifier = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SeatNumber = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Version = table.Column<int>(type: "int", nullable: false)
@@ -155,7 +155,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "SEAT",
-                columns: new[] { "Id", "Rowldentifier", "SeatNumber", "SectorId", "Status", "Version" },
+                columns: new[] { "Id", "RowIdentifier", "SeatNumber", "SectorId", "Status", "Version" },
                 values: new object[,]
                 {
                     { new Guid("11111111-1111-1111-1111-000000000001"), "Sector 1", 1, 1, "Available", 1 },

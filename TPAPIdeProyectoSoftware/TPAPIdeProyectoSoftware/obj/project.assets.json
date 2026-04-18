@@ -1595,7 +1595,6 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
-          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.26",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.26",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.26"
@@ -4449,30 +4448,29 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.26",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\naguc\\.nuget\\packages\\": {},
+    "C:\\Users\\nicos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
       "projectName": "TPAPIdeProyectoSoftware",
-      "projectPath": "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
-      "packagesPath": "C:\\Users\\naguc\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\obj\\",
+      "projectPath": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
+      "packagesPath": "C:\\Users\\nicos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\naguc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nicos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4481,7 +4479,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4489,11 +4486,8 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\Application\\Application.csproj": {
-              "projectPath": "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\Application\\Application.csproj"
-            },
-            "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Proyectos\\TPAPIProyecto\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

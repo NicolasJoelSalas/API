@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260418205040_Migrations")]
+    [Migration("20260418215026_Migrations")]
     partial class Migrations
     {
         /// <inheritdoc />
@@ -136,7 +136,7 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Rowldentifier")
+                    b.Property<string>("RowIdentifier")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -164,7 +164,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000001"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 1,
                             SectorId = 1,
                             Status = "Available",
@@ -173,7 +173,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000002"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 2,
                             SectorId = 1,
                             Status = "Available",
@@ -182,7 +182,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000003"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 3,
                             SectorId = 1,
                             Status = "Available",
@@ -191,7 +191,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000004"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 4,
                             SectorId = 1,
                             Status = "Available",
@@ -200,7 +200,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000005"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 5,
                             SectorId = 1,
                             Status = "Available",
@@ -209,7 +209,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000006"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 6,
                             SectorId = 1,
                             Status = "Available",
@@ -218,7 +218,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000007"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 7,
                             SectorId = 1,
                             Status = "Available",
@@ -227,7 +227,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000008"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 8,
                             SectorId = 1,
                             Status = "Available",
@@ -236,7 +236,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000009"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 9,
                             SectorId = 1,
                             Status = "Available",
@@ -245,7 +245,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000010"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 10,
                             SectorId = 1,
                             Status = "Available",
@@ -254,7 +254,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000011"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 11,
                             SectorId = 1,
                             Status = "Available",
@@ -263,7 +263,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000012"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 12,
                             SectorId = 1,
                             Status = "Available",
@@ -272,7 +272,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000013"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 13,
                             SectorId = 1,
                             Status = "Available",
@@ -281,7 +281,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000014"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 14,
                             SectorId = 1,
                             Status = "Available",
@@ -290,7 +290,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000015"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 15,
                             SectorId = 1,
                             Status = "Available",
@@ -299,7 +299,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000016"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 16,
                             SectorId = 1,
                             Status = "Available",
@@ -308,7 +308,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000017"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 17,
                             SectorId = 1,
                             Status = "Available",
@@ -317,7 +317,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000018"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 18,
                             SectorId = 1,
                             Status = "Available",
@@ -326,7 +326,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000019"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 19,
                             SectorId = 1,
                             Status = "Available",
@@ -335,7 +335,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000020"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 20,
                             SectorId = 1,
                             Status = "Available",
@@ -344,7 +344,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000021"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 21,
                             SectorId = 1,
                             Status = "Available",
@@ -353,7 +353,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000022"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 22,
                             SectorId = 1,
                             Status = "Available",
@@ -362,7 +362,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000023"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 23,
                             SectorId = 1,
                             Status = "Available",
@@ -371,7 +371,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000024"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 24,
                             SectorId = 1,
                             Status = "Available",
@@ -380,7 +380,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000025"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 25,
                             SectorId = 1,
                             Status = "Available",
@@ -389,7 +389,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000026"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 26,
                             SectorId = 1,
                             Status = "Available",
@@ -398,7 +398,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000027"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 27,
                             SectorId = 1,
                             Status = "Available",
@@ -407,7 +407,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000028"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 28,
                             SectorId = 1,
                             Status = "Available",
@@ -416,7 +416,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000029"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 29,
                             SectorId = 1,
                             Status = "Available",
@@ -425,7 +425,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000030"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 30,
                             SectorId = 1,
                             Status = "Available",
@@ -434,7 +434,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000031"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 31,
                             SectorId = 1,
                             Status = "Available",
@@ -443,7 +443,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000032"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 32,
                             SectorId = 1,
                             Status = "Available",
@@ -452,7 +452,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000033"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 33,
                             SectorId = 1,
                             Status = "Available",
@@ -461,7 +461,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000034"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 34,
                             SectorId = 1,
                             Status = "Available",
@@ -470,7 +470,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000035"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 35,
                             SectorId = 1,
                             Status = "Available",
@@ -479,7 +479,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000036"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 36,
                             SectorId = 1,
                             Status = "Available",
@@ -488,7 +488,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000037"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 37,
                             SectorId = 1,
                             Status = "Available",
@@ -497,7 +497,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000038"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 38,
                             SectorId = 1,
                             Status = "Available",
@@ -506,7 +506,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000039"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 39,
                             SectorId = 1,
                             Status = "Available",
@@ -515,7 +515,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000040"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 40,
                             SectorId = 1,
                             Status = "Available",
@@ -524,7 +524,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000041"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 41,
                             SectorId = 1,
                             Status = "Available",
@@ -533,7 +533,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000042"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 42,
                             SectorId = 1,
                             Status = "Available",
@@ -542,7 +542,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000043"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 43,
                             SectorId = 1,
                             Status = "Available",
@@ -551,7 +551,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000044"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 44,
                             SectorId = 1,
                             Status = "Available",
@@ -560,7 +560,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000045"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 45,
                             SectorId = 1,
                             Status = "Available",
@@ -569,7 +569,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000046"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 46,
                             SectorId = 1,
                             Status = "Available",
@@ -578,7 +578,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000047"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 47,
                             SectorId = 1,
                             Status = "Available",
@@ -587,7 +587,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000048"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 48,
                             SectorId = 1,
                             Status = "Available",
@@ -596,7 +596,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000049"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 49,
                             SectorId = 1,
                             Status = "Available",
@@ -605,7 +605,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-000000000050"),
-                            Rowldentifier = "Sector 1",
+                            RowIdentifier = "Sector 1",
                             SeatNumber = 50,
                             SectorId = 1,
                             Status = "Available",
@@ -614,7 +614,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000001"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 1,
                             SectorId = 2,
                             Status = "Available",
@@ -623,7 +623,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000002"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 2,
                             SectorId = 2,
                             Status = "Available",
@@ -632,7 +632,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000003"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 3,
                             SectorId = 2,
                             Status = "Available",
@@ -641,7 +641,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000004"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 4,
                             SectorId = 2,
                             Status = "Available",
@@ -650,7 +650,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000005"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 5,
                             SectorId = 2,
                             Status = "Available",
@@ -659,7 +659,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000006"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 6,
                             SectorId = 2,
                             Status = "Available",
@@ -668,7 +668,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000007"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 7,
                             SectorId = 2,
                             Status = "Available",
@@ -677,7 +677,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000008"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 8,
                             SectorId = 2,
                             Status = "Available",
@@ -686,7 +686,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000009"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 9,
                             SectorId = 2,
                             Status = "Available",
@@ -695,7 +695,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000010"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 10,
                             SectorId = 2,
                             Status = "Available",
@@ -704,7 +704,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000011"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 11,
                             SectorId = 2,
                             Status = "Available",
@@ -713,7 +713,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000012"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 12,
                             SectorId = 2,
                             Status = "Available",
@@ -722,7 +722,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000013"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 13,
                             SectorId = 2,
                             Status = "Available",
@@ -731,7 +731,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000014"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 14,
                             SectorId = 2,
                             Status = "Available",
@@ -740,7 +740,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000015"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 15,
                             SectorId = 2,
                             Status = "Available",
@@ -749,7 +749,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000016"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 16,
                             SectorId = 2,
                             Status = "Available",
@@ -758,7 +758,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000017"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 17,
                             SectorId = 2,
                             Status = "Available",
@@ -767,7 +767,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000018"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 18,
                             SectorId = 2,
                             Status = "Available",
@@ -776,7 +776,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000019"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 19,
                             SectorId = 2,
                             Status = "Available",
@@ -785,7 +785,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000020"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 20,
                             SectorId = 2,
                             Status = "Available",
@@ -794,7 +794,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000021"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 21,
                             SectorId = 2,
                             Status = "Available",
@@ -803,7 +803,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000022"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 22,
                             SectorId = 2,
                             Status = "Available",
@@ -812,7 +812,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000023"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 23,
                             SectorId = 2,
                             Status = "Available",
@@ -821,7 +821,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000024"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 24,
                             SectorId = 2,
                             Status = "Available",
@@ -830,7 +830,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000025"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 25,
                             SectorId = 2,
                             Status = "Available",
@@ -839,7 +839,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000026"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 26,
                             SectorId = 2,
                             Status = "Available",
@@ -848,7 +848,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000027"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 27,
                             SectorId = 2,
                             Status = "Available",
@@ -857,7 +857,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000028"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 28,
                             SectorId = 2,
                             Status = "Available",
@@ -866,7 +866,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000029"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 29,
                             SectorId = 2,
                             Status = "Available",
@@ -875,7 +875,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000030"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 30,
                             SectorId = 2,
                             Status = "Available",
@@ -884,7 +884,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000031"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 31,
                             SectorId = 2,
                             Status = "Available",
@@ -893,7 +893,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000032"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 32,
                             SectorId = 2,
                             Status = "Available",
@@ -902,7 +902,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000033"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 33,
                             SectorId = 2,
                             Status = "Available",
@@ -911,7 +911,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000034"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 34,
                             SectorId = 2,
                             Status = "Available",
@@ -920,7 +920,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000035"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 35,
                             SectorId = 2,
                             Status = "Available",
@@ -929,7 +929,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000036"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 36,
                             SectorId = 2,
                             Status = "Available",
@@ -938,7 +938,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000037"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 37,
                             SectorId = 2,
                             Status = "Available",
@@ -947,7 +947,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000038"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 38,
                             SectorId = 2,
                             Status = "Available",
@@ -956,7 +956,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000039"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 39,
                             SectorId = 2,
                             Status = "Available",
@@ -965,7 +965,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000040"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 40,
                             SectorId = 2,
                             Status = "Available",
@@ -974,7 +974,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000041"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 41,
                             SectorId = 2,
                             Status = "Available",
@@ -983,7 +983,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000042"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 42,
                             SectorId = 2,
                             Status = "Available",
@@ -992,7 +992,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000043"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 43,
                             SectorId = 2,
                             Status = "Available",
@@ -1001,7 +1001,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000044"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 44,
                             SectorId = 2,
                             Status = "Available",
@@ -1010,7 +1010,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000045"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 45,
                             SectorId = 2,
                             Status = "Available",
@@ -1019,7 +1019,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000046"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 46,
                             SectorId = 2,
                             Status = "Available",
@@ -1028,7 +1028,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000047"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 47,
                             SectorId = 2,
                             Status = "Available",
@@ -1037,7 +1037,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000048"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 48,
                             SectorId = 2,
                             Status = "Available",
@@ -1046,7 +1046,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000049"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 49,
                             SectorId = 2,
                             Status = "Available",
@@ -1055,7 +1055,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-000000000050"),
-                            Rowldentifier = "Sector 2",
+                            RowIdentifier = "Sector 2",
                             SeatNumber = 50,
                             SectorId = 2,
                             Status = "Available",

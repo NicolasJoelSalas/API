@@ -27,6 +27,11 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<EVENT>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(t => t.Id).ValueGeneratedOnAdd();
+            });
             modelBuilder.Entity<USER>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -118,7 +123,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = Guid.Parse($"11111111-1111-1111-1111-{i.ToString("D12")}"),
                     SectorId = 1,
-                    Rowldentifier = "Sector 1",
+                    RowIdentifier = "Sector 1",
                     SeatNumber = i,
                     Status = SeatStatus.Available,
                     Version = 1
@@ -132,7 +137,7 @@ namespace Infrastructure.Persistence
                 {
                     Id = Guid.Parse($"22222222-2222-2222-2222-{i.ToString("D12")}"),
                     SectorId = 2,
-                    Rowldentifier = "Sector 2",
+                    RowIdentifier = "Sector 2",
                     SeatNumber = i,
                     Status = SeatStatus.Available,
                     Version = 1
