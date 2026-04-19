@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="DTOs\" />
     <Folder Include="UseCases\AUDIT_LOG\Commands\" />
     <Folder Include="UseCases\AUDIT_LOG\Handlers\" />
     <Folder Include="UseCases\AUDIT_LOG\Queries\" />
@@ -28,9 +26,10 @@
     <Folder Include="UseCases\SECTOR\Commands\" />
     <Folder Include="UseCases\SECTOR\Handlers\" />
     <Folder Include="UseCases\SECTOR\Queries\" />
-    <Folder Include="UseCases\USER\Commands\" />
-    <Folder Include="UseCases\USER\Handlers\" />
-    <Folder Include="UseCases\USER\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.26" />
   </ItemGroup>
 
 </Project>
