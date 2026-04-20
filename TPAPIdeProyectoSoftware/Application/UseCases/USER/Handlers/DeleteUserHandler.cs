@@ -1,26 +1,32 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Queries.User;
 
 namespace Application.UseCases.USER.Handlers
 {
     public class DeleteUserHandler : IDeleteUserHandler
     {
         private readonly IDeleteUserCommand _command;
+        private readonly IGetByIdUserQuery _query;
 
-        public DeleteUserHandler(IDeleteUserCommand command)
+        public DeleteUserHandler(
+            IDeleteUserCommand command,
+            IGetByIdUserQuery query)
         {
             _command = command;
+            _query = query;
         }
-        public async Task Handle(IdUserRequestDto dto)
+
+        public async Task<string> Handle(int id)
         {
-            throw new NotImplementedException();
+            var user = await _query.GetById(id);
+
+            if (user == null)
+                return "Usuario no encontrado";
+
+            await _command.ExecuteDeleteUser(id);
+
+            return "Usuario eliminado correctamente";
         }
     }
 }

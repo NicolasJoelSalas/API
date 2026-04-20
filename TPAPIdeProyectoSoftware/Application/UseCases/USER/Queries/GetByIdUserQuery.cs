@@ -18,14 +18,11 @@ namespace Application.UseCases.USER.Queries
 
         public async Task<UserResponseDto> GetById(int id)
         {
-            return await _repository.Query()
-                .Where(x => x.Id == id)
-                .Select(x => new UserResponseDto
+            return await _repository.Query().Where(x => x.Id == id).Select(x => new UserResponseDto
                 {
                     Name = x.Name,
                     Email = x.Email
-                })
-                .FirstOrDefaultAsync();
+                }).FirstOrDefaultAsync();
         }
     }
 }

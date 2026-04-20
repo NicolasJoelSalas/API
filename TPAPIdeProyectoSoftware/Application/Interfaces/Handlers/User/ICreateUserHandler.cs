@@ -10,6 +10,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface ICreateUserHandler
     {
-        Task Handle(UserRequestDto dto);
+        Task<string> Handle(UserRequestDto dto);
     }
 }

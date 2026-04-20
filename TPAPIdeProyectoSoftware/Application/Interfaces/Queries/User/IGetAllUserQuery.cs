@@ -10,6 +10,6 @@ namespace Application.Interfaces.Queries.User
 {
     public interface IGetAllUserQuery
     {
-        Task<List<UserResponseDto>> GetAll();
+        Task <List<UserResponseDto>> GetAll();
     }
 }

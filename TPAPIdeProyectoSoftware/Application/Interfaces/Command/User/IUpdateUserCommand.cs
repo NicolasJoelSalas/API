@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.User;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Application.Interfaces.Command.User
 {
     public interface IUpdateUserCommand
     {
-        Task ExecuteUpdateUser(IdUserRequestDto user);
+        Task ExecuteUpdateUser(USER user);
     }
 }

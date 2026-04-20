@@ -1,6 +1,7 @@
 ﻿using Application.DTOs.User;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,20 @@ namespace Application.UseCases.USER.Handlers
 {
     public class GetByIdUserHandler : IGetByIdUserHandler
     {
-        private readonly IGetByIdUserHandler _query;
+        private readonly IGetByIdUserQuery _query;
 
-        public GetByIdUserHandler(IGetByIdUserHandler query)
+        public GetByIdUserHandler(IGetByIdUserQuery query)
         {
             _query = query;
         }
-        public async Task<List<UserResponseDto>> Getbyid(int id)
+        public async Task<(UserResponseDto users, string message)> Handle(int id)
         {
-            return await _query.Getbyid(id);
+            var user = await _query.GetById(id);
+
+            if (user == null)
+                return (new UserResponseDto(), "No hay usuarios registrados");
+
+            return (user, "OK");
         }
     }
 }

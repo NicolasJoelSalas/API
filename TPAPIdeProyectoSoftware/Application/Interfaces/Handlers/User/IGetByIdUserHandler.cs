@@ -10,7 +10,7 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IGetByIdUserHandler
     {
-        Task<List<UserResponseDto>> Getbyid(int id);
+        Task<(UserResponseDto users, string message)> Handle(int id);
 
     }
 }

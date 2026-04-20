@@ -1,10 +1,9 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.Interfaces.Command.User;
 using Application.Interfaces.Repositories;
 using Domain.Entities;
 using System.Threading.Tasks;
 
-namespace Application.UseCases.USER.Commands
+namespace Application
 {
     public class UpdateUserCommand : IUpdateUserCommand
     {
@@ -15,9 +14,9 @@ namespace Application.UseCases.USER.Commands
             _repository = repository;
         }
 
-        public async Task ExecuteUpdateUser(IdUserRequestDto dto)
+        public async Task ExecuteUpdateUser(USER user)
         {
-            
+            await _repository.UpdateAsync(user);
         }
     }
 }

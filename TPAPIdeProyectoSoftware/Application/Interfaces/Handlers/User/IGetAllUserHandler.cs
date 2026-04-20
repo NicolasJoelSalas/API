@@ -10,6 +10,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IGetAllUserHandler
     {
-        Task<List<UserResponseDto>> GetAll();
+        Task<(List<UserResponseDto> users, string message)> Handle();
     }
 }

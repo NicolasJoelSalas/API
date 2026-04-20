@@ -15,5 +15,7 @@ namespace Application.Interfaces.Repositories
         Task UpdateAsync(USER user);
 
         Task DeleteAsync(int id);
+
+        Task<bool> EmailExistsAsync(string email);
     }
 }

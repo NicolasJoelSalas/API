@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Exceptions
+namespace Application.Interfaces.Queries.User
 {
-    internal class Class1
+    public interface IEmailExistsUserquery
     {
+        Task<bool> Handle(string email);
     }
 }

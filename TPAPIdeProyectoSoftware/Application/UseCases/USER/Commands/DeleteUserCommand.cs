@@ -1,11 +1,5 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.Interfaces.Command.User;
 using Application.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.UseCases.USER.Commands
 {
@@ -17,11 +11,10 @@ namespace Application.UseCases.USER.Commands
         {
             _repository = repository;
         }
-        public async Task ExecuteDeleteUser(IdUserRequestDto user)
-        {
-            var userold = await _repository.GetByIdAsync(user.Id);
-            await _repository.DeleteAsync(user.Id);
 
+        public async Task ExecuteDeleteUser(int id)
+        {
+            await _repository.DeleteAsync(id);
         }
     }
 }

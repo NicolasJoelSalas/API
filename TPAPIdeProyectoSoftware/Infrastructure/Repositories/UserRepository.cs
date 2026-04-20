@@ -25,7 +25,6 @@ namespace Infrastructure.Repositories
             await _context.USER.AddAsync(user);
             await _context.SaveChangesAsync();
         }
-
         public async Task<USER> GetByIdAsync(int id)
         {
             return await _context.USER.FindAsync(id);
@@ -36,16 +35,19 @@ namespace Infrastructure.Repositories
             _context.USER.Update(user);
             await _context.SaveChangesAsync();
         }
+        public async Task<bool> EmailExistsAsync(string email)
+        {
+            return await _context.USER
+                .AsNoTracking()
+                .AnyAsync(u => u.Email == email);
+        }
 
         public async Task DeleteAsync(int id)
         {
             var user = await _context.USER.FindAsync(id);
 
-            if (user != null)
-            {
-                _context.USER.Remove(user);
-                await _context.SaveChangesAsync();
-            }
+            _context.USER.Remove(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

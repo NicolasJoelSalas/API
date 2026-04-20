@@ -17,7 +17,6 @@ namespace Application.UseCases.USER.Commands
 
         public async Task ExecuteCreateUser(Domain.Entities.USER user)
         {
-            Console.WriteLine("Command ejecutado");
             await _repository.AddAsync(user);
         }
 

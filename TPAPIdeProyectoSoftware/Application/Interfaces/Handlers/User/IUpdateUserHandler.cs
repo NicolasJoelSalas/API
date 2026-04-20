@@ -9,6 +9,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IUpdateUserHandler
     {
-        Task Handle(IdUserRequestDto dto);
+        Task<string> Handle(int id, UserRequestDto dto);
     }
 }

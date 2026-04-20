@@ -10,6 +10,6 @@ namespace Application.Interfaces.Queries.User
 {
     public interface IGetByIdUserQuery
     {
-        Task<UserResponseDto> GetById(int id);
+        Task <UserResponseDto> GetById(int id);
     }
 }

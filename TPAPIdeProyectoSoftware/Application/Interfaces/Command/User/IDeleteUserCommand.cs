@@ -9,6 +9,6 @@ namespace Application.Interfaces.Command.User
 {
     public interface IDeleteUserCommand
     {
-        Task ExecuteDeleteUser(IdUserRequestDto user);
+        Task ExecuteDeleteUser(int id);
     }
 }

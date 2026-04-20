@@ -9,7 +9,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IDeleteUserHandler
     {
-        Task Handle(IdUserRequestDto dto);
-
+        Task<string> Handle(int id);
     }
 }

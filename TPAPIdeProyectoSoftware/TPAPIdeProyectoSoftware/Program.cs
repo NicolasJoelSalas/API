@@ -1,9 +1,11 @@
 using Application;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Handlers;
+using Application.UseCases.USER.Queries;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -29,10 +31,19 @@ builder.Services.AddScoped<ICreateUserCommand, CreateUserCommand>();
 builder.Services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
 builder.Services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
 
+// Querys
+
+builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
+builder.Services.AddScoped<IGetByIdUserQuery, GetByIdUserQuery>();
+builder.Services.AddScoped<IEmailExistsUserquery, EmailExistsUserQuery>();
+
 // Handlers
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
 builder.Services.AddScoped<IUpdateUserHandler, UpdateUserHandler>();
 builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();
+builder.Services.AddScoped<IGetByIdUserHandler, GetByIdUserHandler>();
+builder.Services.AddScoped<IGetAllUserHandler, GetAllUserHandler>();
+
 
 
 var app = builder.Build();

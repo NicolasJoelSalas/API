@@ -1,25 +1,46 @@
 ﻿using Application.DTOs.User;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Queries.User;
+using Domain.Entities;
 
 namespace Application.UseCases.USER.Handlers
 {
     public class UpdateUserHandler : IUpdateUserHandler
     {
         private readonly IUpdateUserCommand _command;
+        private readonly IGetByIdUserQuery _query;
 
-        public UpdateUserHandler(IUpdateUserCommand command)
+        public UpdateUserHandler(
+            IUpdateUserCommand command,
+            IGetByIdUserQuery query)
         {
             _command = command;
+            _query = query;
         }
-        public Task Handle(IdUserRequestDto dto)
+
+        public async Task<string> Handle(int id, UserRequestDto dto)
         {
-            throw new NotImplementedException();
+            var userDto = await _query.GetById(id);
+
+            if (userDto == null)
+                return "Usuario no encontrado";
+
+            var user = new Domain.Entities.USER
+            {
+                Id = id,
+                Name = userDto.Name,
+                Email = userDto.Email,
+                PasswordHash = userDto.PasswordHash
+            };
+
+            user.Name = dto.Name;
+            user.Email = dto.Email;
+            user.PasswordHash = dto.PasswordHash;
+
+            await _command.ExecuteUpdateUser(user);
+
+            return "Usuario actualizado correctamente";
         }
     }
 }

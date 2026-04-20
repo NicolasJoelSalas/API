@@ -18,9 +18,14 @@ namespace Application.UseCases.USER.Handlers
         {
             _query = query;
         }
-        public async Task<List<UserResponseDto>> GetAll()
+        public async Task<(List<UserResponseDto> users, string message)> Handle()
         {
-            return await _query.GetAll();
+            var users = await _query.GetAll();
+
+            if (users == null || users.Count == 0)
+                return (new List<UserResponseDto>(), "No hay usuarios registrados");
+
+            return (users, "OK");
         }
     }
 }
