@@ -11,21 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\AUDIT_LOG\Commands\" />
-    <Folder Include="UseCases\AUDIT_LOG\Handlers\" />
-    <Folder Include="UseCases\AUDIT_LOG\Queries\" />
     <Folder Include="UseCases\EVENT\Commands\" />
     <Folder Include="UseCases\EVENT\Handlers\" />
     <Folder Include="UseCases\EVENT\Queries\" />
-    <Folder Include="UseCases\RESERVATION\Commands\" />
-    <Folder Include="UseCases\RESERVATION\Handlers\" />
-    <Folder Include="UseCases\RESERVATION\Queries\" />
-    <Folder Include="UseCases\SEAT\Commands\" />
-    <Folder Include="UseCases\SEAT\Handlers\" />
-    <Folder Include="UseCases\SEAT\Queries\" />
-    <Folder Include="UseCases\SECTOR\Commands\" />
-    <Folder Include="UseCases\SECTOR\Handlers\" />
-    <Folder Include="UseCases\SECTOR\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

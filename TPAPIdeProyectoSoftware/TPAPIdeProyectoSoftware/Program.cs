@@ -1,14 +1,21 @@
 using Application;
+using Application.Interfaces.Command;
 using Application.Interfaces.Command.User;
+using Application.Interfaces.Handler;
+using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries;
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
+using Application.UseCases;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Handlers;
 using Application.UseCases.USER.Queries;
+using Domain.Entities;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,25 +32,101 @@ builder.Services.AddDbContext<AppDbContext>
 
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAudit_LogRepository, Audit_LogRepository>();
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 
 // Commands
+
+    //User
 builder.Services.AddScoped<ICreateUserCommand, CreateUserCommand>();
 builder.Services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
 builder.Services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
 
+    //Audit_Log
+builder.Services.AddScoped<ICreateAudit_LogCommand, CreateAudit_LogCommand>();
+builder.Services.AddScoped<IUpdateAudit_LogCommand, UpdateAudit_LogCommand>();
+builder.Services.AddScoped<IDeleteAudit_LogCommand, DeleteAudit_LogCommand>();
+
+    //Reservation
+builder.Services.AddScoped<ICreateReservationCommand, CreateReservationCommand>();
+builder.Services.AddScoped<IUpdateReservationCommand, UpdateReservationCommand>();
+builder.Services.AddScoped<IDeleteReservationCommand, DeleteReservationCommand>();
+
+    //Seat
+builder.Services.AddScoped<ICreateSeatCommand, CreateSeatCommand>();
+builder.Services.AddScoped<IUpdateSeatCommand, UpdateSeatCommand>();
+builder.Services.AddScoped<IDeleteSeatCommand, DeleteSeatCommand>();
+
+    //Sector
+builder.Services.AddScoped<ICreateSectorCommand, CreateSectorCommand>();
+builder.Services.AddScoped<IUpdateSectorCommand, UpdateSectorCommand>();
+builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
+
+
 // Querys
 
+    //User
 builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
 builder.Services.AddScoped<IGetByIdUserQuery, GetByIdUserQuery>();
 builder.Services.AddScoped<IEmailExistsUserquery, EmailExistsUserQuery>();
 
+    //Audit_Log
+
+builder.Services.AddScoped<IGetAllAudit_LogQuery, GetAllAudit_LogQuery>();
+builder.Services.AddScoped<IGetByIdAudit_LogQuery, GetByIdAudit_LogQuery>();
+
+    //Reservation
+
+builder.Services.AddScoped<IGetAllReservationQuery, GetAllReservationQuery>();
+builder.Services.AddScoped<IGetByIdReservationQuery, GetByIdReservationQuery>();
+
+    // Seat
+builder.Services.AddScoped<IGetAllSeatQuery, GetAllSeatQuery>();
+builder.Services.AddScoped<IGetByIdSeatQuery, GetByIdSeatQuery>();
+
+    // Sector
+builder.Services.AddScoped<IGetAllSectorQuery, GetAllSectorQuery>();
+builder.Services.AddScoped<IGetByIdSectorQuery, GetByIdSectorQuery>();
+
+
 // Handlers
+
+    //User
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
 builder.Services.AddScoped<IUpdateUserHandler, UpdateUserHandler>();
 builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();
 builder.Services.AddScoped<IGetByIdUserHandler, GetByIdUserHandler>();
 builder.Services.AddScoped<IGetAllUserHandler, GetAllUserHandler>();
 
+    //Audit_Log
+builder.Services.AddScoped<ICreateAudit_LogHandler, CreateAudit_LogHandler>();
+builder.Services.AddScoped<IUpdateAudit_LogHandler, UpdateAudit_LogHandler>();
+builder.Services.AddScoped<IDeleteAudit_LogHandler, DeleteAudit_LogHandler>();
+builder.Services.AddScoped<IGetByIdAudit_LogHandler, GetByIdAudit_LogHandler>();
+builder.Services.AddScoped<IGetAllAudit_LogHandler, GetAllAudit_LogHandler>();
+
+    //Reservation
+builder.Services.AddScoped<ICreateReservationHandler, CreateReservationHandler>();
+builder.Services.AddScoped<IUpdateReservationHandler, UpdateReservationHandler>();
+builder.Services.AddScoped<IDeleteReservationHandler, DeleteReservationHandler>();
+builder.Services.AddScoped<IGetByIdReservationHandler, GetByIdReservationHandler>();
+builder.Services.AddScoped<IGetAllReservationHandler, GetAllReservationHandler>();
+
+    //Seat
+builder.Services.AddScoped<ICreateSeatHandler, CreateSeatHandler>();
+builder.Services.AddScoped<IUpdateSeatHandler, UpdateSeatHandler>();
+builder.Services.AddScoped<IDeleteSeatHandler, DeleteSeatHandler>();
+builder.Services.AddScoped<IGetByIdSeatHandler, GetByIdSeatHandler>();
+builder.Services.AddScoped<IGetAllSeatHandler, GetAllSeatHandler>();
+
+    //Sector
+builder.Services.AddScoped<ICreateSectorHandler, CreateSectorHandler>();
+builder.Services.AddScoped<IUpdateSectorHandler, UpdateSectorHandler>();
+builder.Services.AddScoped<IDeleteSectorHandler, DeleteSectorHandler>();
+builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
+builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
 
 
 var app = builder.Build();
