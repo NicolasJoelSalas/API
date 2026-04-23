@@ -1,13 +1,22 @@
 using Application;
 using Application.Interfaces.Command;
+using Application.Interfaces.Command.Event;
 using Application.Interfaces.Command.User;
+using Application.Interfaces.Commands.Event;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
+using Application.Interfaces.Handlers.Event;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
+using Application.Interfaces.Queries.Audit_Log;
+using Application.Interfaces.Queries.Event;
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases;
+using Application.UseCases.AUDIT_LOG.Queries;
+using Application.UseCases.EVENT.Commands;
+using Application.UseCases.EVENT.Handlers;
+using Application.UseCases.EVENT.Queries;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Handlers;
 using Application.UseCases.USER.Queries;
@@ -36,10 +45,20 @@ builder.Services.AddScoped<IAudit_LogRepository, Audit_LogRepository>();
 builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
 builder.Services.AddScoped<ISeatRepository, SeatRepository>();
 builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+
+
 
 // Commands
 
-    //User
+//Event
+
+builder.Services.AddScoped<ICreateEventCommand, CreateEventCommand>();
+builder.Services.AddScoped<IUpdateEventCommand, UpdateEventCommand>();
+builder.Services.AddScoped<IDeleteEventCommand, DeleteEventCommand>();
+
+
+//User
 builder.Services.AddScoped<ICreateUserCommand, CreateUserCommand>();
 builder.Services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
 builder.Services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
@@ -67,7 +86,13 @@ builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
 
 // Querys
 
-    //User
+// Event 
+builder.Services.AddScoped<IGetAllEventQuery, GetAllEventQuery>();
+builder.Services.AddScoped<IGetAllByIdEventQuery, GetByIdEventQuery>();
+builder.Services.AddScoped<INameExistsEventQuery, NameExistsEventQuery>();
+
+
+//User
 builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
 builder.Services.AddScoped<IGetByIdUserQuery, GetByIdUserQuery>();
 builder.Services.AddScoped<IEmailExistsUserquery, EmailExistsUserQuery>();
@@ -76,6 +101,7 @@ builder.Services.AddScoped<IEmailExistsUserquery, EmailExistsUserQuery>();
 
 builder.Services.AddScoped<IGetAllAudit_LogQuery, GetAllAudit_LogQuery>();
 builder.Services.AddScoped<IGetByIdAudit_LogQuery, GetByIdAudit_LogQuery>();
+builder.Services.AddScoped<IGetIdUserQueryValidation, GetIdUserQueryValidation>();
 
     //Reservation
 
@@ -93,7 +119,14 @@ builder.Services.AddScoped<IGetByIdSectorQuery, GetByIdSectorQuery>();
 
 // Handlers
 
-    //User
+// Event 
+builder.Services.AddScoped<ICreateEventHandler, CreateEventHandler>();
+builder.Services.AddScoped<IUpdateEventHandler, UpdateEventHandler>();
+builder.Services.AddScoped<IDeleteEventHandler, DeleteEventHandler>();
+builder.Services.AddScoped<IGetByIdEventHandler, GetEventByIdHandler>();
+builder.Services.AddScoped<IGetAllEventHandler, GetAllEventHandler>();
+
+//User
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
 builder.Services.AddScoped<IUpdateUserHandler, UpdateUserHandler>();
 builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();

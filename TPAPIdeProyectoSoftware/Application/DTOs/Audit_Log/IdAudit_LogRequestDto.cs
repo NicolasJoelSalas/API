@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.User
+namespace Application.DTOs
 {
     public class IdAudit_LogRequestDto
     {
         public Guid Id { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public string Action { get; set; }
         public string EntityType { get; set; }
 

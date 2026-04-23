@@ -71,7 +71,7 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     Action = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EntityType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EntityId = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -85,8 +85,7 @@ namespace Infrastructure.Migrations
                         name: "FK_AUDIT_LOG_USER_UserId",
                         column: x => x.UserId,
                         principalTable: "USER",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

@@ -1,4 +1,5 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries.User;

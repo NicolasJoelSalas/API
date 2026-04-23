@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.User
+namespace Application.DTOs
 {
     public class Audit_LogRequestDto
     {
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public string Action { get; set; }
         public string EntityType { get; set; }
 

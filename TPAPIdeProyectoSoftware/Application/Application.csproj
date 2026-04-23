@@ -11,12 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\EVENT\Commands\" />
-    <Folder Include="UseCases\EVENT\Handlers\" />
-    <Folder Include="UseCases\EVENT\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.26" />
   </ItemGroup>
 

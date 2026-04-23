@@ -3,60 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\audit_log\\handlers\\updateaudit_loghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\audit_log\\handlers\\updateaudit_loghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\audit_log\\handlers\\createaudit_loghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\audit_log\\handlers\\createaudit_loghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\reservation\\reservationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\reservation\\reservationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\interfaces\\queries\\user\\igetbyiduserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\user\\igetbyiduserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\reservation\\idreservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\reservation\\idreservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\audit_log\\idaudit_logrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\audit_log\\idaudit_logrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\reservation\\reservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\reservation\\reservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\audit_log\\audit_logresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\audit_log\\audit_logresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\dtos\\audit_log\\audit_logrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\audit_log\\audit_logrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\domain\\enums\\seatstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\seatstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\domain\\enums\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\updatesectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\updatesectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\getallsectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\getallsectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\deletesectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\deletesectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\createsectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\createsectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\onedrive\\documentos\\programacion\\c#\\api proyecto de software\\api\\tpapideproyectosoftware\\application\\usecases\\audit_log\\queries\\getallaudit_logquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\audit_log\\queries\\getallaudit_logquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,8 +42,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateAudit_LogHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Handlers\\UpdateAudit_LogHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\AUDIT_LOG\\Handlers\\UpdateAudit_LogHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Handlers\\UpdateAudit_LogHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\AUDIT_LOG\\Handlers\\UpdateAudit_LogHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T01:01:46.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T01:01:03.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGetByIdUserQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetByIdUserQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\User\\IGetByIdUserQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetByIdUserQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Queries\\User\\IGetByIdUserQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T00:52:27.504Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -86,184 +101,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeleteReservationHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CreateAudit_LogHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Handlers\\CreateAudit_LogHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\AUDIT_LOG\\Handlers\\CreateAudit_LogHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Handlers\\CreateAudit_LogHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\AUDIT_LOG\\Handlers\\CreateAudit_LogHandler.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwA0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:35:22.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IdReservationRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\IdReservationRequestDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\IdReservationRequestDto.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\IdReservationRequestDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Reservation\\IdReservationRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:25:34.242Z",
+              "WhenOpened": "2026-04-23T00:50:20.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ReservationRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ReservationRequestDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\ReservationRequestDto.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ReservationRequestDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Reservation\\ReservationRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Title": "IdAudit_LogRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\IdAudit_LogRequestDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Audit_Log\\IdAudit_LogRequestDto.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\IdAudit_LogRequestDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Audit_Log\\IdAudit_LogRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:25:22.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateReservationHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowBMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:21:35.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReservationResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ReservationResponseDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\ReservationResponseDto.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ReservationResponseDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Reservation\\ReservationResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:25:54.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:32:14.578Z",
+              "WhenOpened": "2026-04-23T00:50:10.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CreateReservationCommand.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
+              "Title": "Audit_LogResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\Audit_LogResponseDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Audit_Log\\Audit_LogResponseDto.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\Audit_LogResponseDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Audit_Log\\Audit_LogResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:36:48.499Z",
+              "WhenOpened": "2026-04-23T00:50:08.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReservationStatus.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Domain\\Enums\\ReservationStatus.cs",
-              "RelativeDocumentMoniker": "Domain\\Enums\\ReservationStatus.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Domain\\Enums\\ReservationStatus.cs",
-              "RelativeToolTip": "Domain\\Enums\\ReservationStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Audit_LogRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\Audit_LogRequestDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Audit_Log\\Audit_LogRequestDto.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Audit_Log\\Audit_LogRequestDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Audit_Log\\Audit_LogRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:29:16Z",
+              "WhenOpened": "2026-04-23T00:50:06.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "SeatStatus.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Domain\\Enums\\SeatStatus.cs",
-              "RelativeDocumentMoniker": "Domain\\Enums\\SeatStatus.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Domain\\Enums\\SeatStatus.cs",
-              "RelativeToolTip": "Domain\\Enums\\SeatStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Title": "GetAllAudit_LogQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Queries\\GetAllAudit_LogQuery.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\AUDIT_LOG\\Queries\\GetAllAudit_LogQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\AUDIT_LOG\\Queries\\GetAllAudit_LogQuery.cs",
+              "RelativeToolTip": "Application\\UseCases\\AUDIT_LOG\\Queries\\GetAllAudit_LogQuery.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:29:55.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UpdateSectorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\UpdateSectorHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\UpdateSectorHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\UpdateSectorHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\UpdateSectorHandler.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:16:38.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GetAllSectorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetAllSectorHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\GetAllSectorHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetAllSectorHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\GetAllSectorHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:16:33.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DeleteSectorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\DeleteSectorHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\DeleteSectorHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\DeleteSectorHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\DeleteSectorHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:16:30.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateSectorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\CreateSectorHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\CreateSectorHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\CreateSectorHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\CreateSectorHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:16:29.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SectorController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "ToolTip": "C:\\Users\\nicos\\OneDrive\\Documentos\\Programacion\\C#\\API Proyecto de software\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T03:15:56.562Z",
+              "WhenOpened": "2026-04-23T00:49:39.627Z",
               "EditorCaption": ""
             }
           ]

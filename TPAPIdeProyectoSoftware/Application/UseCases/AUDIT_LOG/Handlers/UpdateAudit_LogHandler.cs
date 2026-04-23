@@ -1,22 +1,24 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Command;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries.Audit_Log;
 using Application.Interfaces.Queries.User;
 using Domain.Entities;
 
-namespace Application.UseCases.USER.Handlers
+namespace Application.UseCases
 {
     public class UpdateAudit_LogHandler : IUpdateAudit_LogHandler
     {
         private readonly IUpdateAudit_LogCommand _command;
         private readonly IGetByIdAudit_LogQuery _query;
-        private readonly IGetByIdUserQuery _queryUser;
+        private readonly IGetIdUserQueryValidation _queryUser;
 
         public UpdateAudit_LogHandler(
             IUpdateAudit_LogCommand command,
             IGetByIdAudit_LogQuery query,
-            IGetByIdUserQuery queryUser)
+            IGetIdUserQueryValidation queryUser)
         {
             _command = command;
             _query = query;
@@ -50,7 +52,7 @@ namespace Application.UseCases.USER.Handlers
             if (string.IsNullOrWhiteSpace(dto.EntityId))
                 return "El id de entidad es obligatoria";
 
-            var auditLog = new AUDIT_LOG
+            var auditLog = new Domain.Entities.AUDIT_LOG
             {
                 Id = id, 
                 UserId = dto.UserId,

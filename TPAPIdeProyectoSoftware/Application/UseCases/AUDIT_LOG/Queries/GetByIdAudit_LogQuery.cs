@@ -1,4 +1,5 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;

@@ -1,4 +1,5 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
 using Application.UseCases.USER.Handlers;
 using Microsoft.AspNetCore.Mvc;

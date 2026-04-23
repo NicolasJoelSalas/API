@@ -1,16 +1,19 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Command;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries.Audit_Log;
 using Application.Interfaces.Queries.User;
+using Application.UseCases.AUDIT_LOG.Queries;
 using Domain.Entities;
 
 public class CreateAudit_LogHandler : ICreateAudit_LogHandler
 {
     private readonly ICreateAudit_LogCommand _command;
-    private readonly IGetByIdUserQuery _queryUser;
+    private readonly IGetIdUserQueryValidation _queryUser;
 
-    public CreateAudit_LogHandler(ICreateAudit_LogCommand command, IGetByIdUserQuery queryUser)
+    public CreateAudit_LogHandler(ICreateAudit_LogCommand command, IGetIdUserQueryValidation queryUser)
     {
         _command = command;
         _queryUser = queryUser;
@@ -23,6 +26,7 @@ public class CreateAudit_LogHandler : ICreateAudit_LogHandler
           
         if (dto.UserId <= 0)
             return "El Id del usuario es obligatorio";
+
 
         var user = await _queryUser.GetById(dto.UserId);
 
