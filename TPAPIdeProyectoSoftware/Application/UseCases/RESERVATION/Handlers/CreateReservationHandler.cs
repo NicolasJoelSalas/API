@@ -10,13 +10,13 @@ public class CreateReservationHandler : ICreateReservationHandler
 {
     private readonly ICreateReservationCommand _command;
     private readonly IGetByIdUserQuery _queryUser;
-    //private readonly IGetByIdSeatQuery _querySeat;
+    private readonly IGetByIdSeatQuery _querySeat;
 
-    public CreateReservationHandler(ICreateReservationCommand command, IGetByIdUserQuery queryUser)//, IGetByIdSeatQuery _querySeat)
+    public CreateReservationHandler(ICreateReservationCommand command, IGetByIdUserQuery queryUser, IGetByIdSeatQuery _querySeat)
     {
         _command = command;
         _queryUser = queryUser;
-        // _querySeat = querySeat;
+        _querySeat = _querySeat;
     }
 
     public async Task<string> Handle(ReservationRequestDto dto)
@@ -32,17 +32,13 @@ public class CreateReservationHandler : ICreateReservationHandler
         if (user == null)
             return "Usuario no existe";
 
-        //if (string.IsNullOrWhiteSpace(dto.Action))
-        //    return "La accion es obligatorio";
+        var seat = await _querySeat.GetById(dto.SeatId);
 
-        //if (string.IsNullOrWhiteSpace(dto.EntityType))
-        //    return "El tipo de identidad es obligatoria";
+        if (seat == null)
+            return "Seat no existe";
 
-        //if (string.IsNullOrWhiteSpace(dto.EntityId))
-        //    return "El id de identidad es obligatoria";
-
-        //if (string.IsNullOrWhiteSpace(dto.Details))
-            //return "Los detalles son obligatorio";
+        if (dto.ExpiresAt <= DateTime.UtcNow)
+            return "La fecha de expiración debe ser futura";
 
         var Reservation = new RESERVATION
         {

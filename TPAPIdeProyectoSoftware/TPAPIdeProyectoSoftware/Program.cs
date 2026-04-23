@@ -88,7 +88,7 @@ builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
 
 // Event 
 builder.Services.AddScoped<IGetAllEventQuery, GetAllEventQuery>();
-builder.Services.AddScoped<IGetAllByIdEventQuery, GetByIdEventQuery>();
+builder.Services.AddScoped<IGetByIdEventQuery, GetByIdEventQuery>();
 builder.Services.AddScoped<INameExistsEventQuery, NameExistsEventQuery>();
 
 

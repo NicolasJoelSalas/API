@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces.Queries.Event
 {
-    public interface IGetAllByIdEventQuery
+    public interface IGetByIdEventQuery
     {
         Task<EventResponseDto> GetById(int id);
     }

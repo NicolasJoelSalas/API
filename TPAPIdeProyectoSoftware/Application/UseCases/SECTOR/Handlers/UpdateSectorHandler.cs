@@ -5,6 +5,7 @@ using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
+using Application.Interfaces.Queries.Event;
 using Application.Interfaces.Queries.User;
 using Application.UseCases.USER.Queries;
 using Domain.Entities;
@@ -14,60 +15,48 @@ namespace Application.UseCases
     public class UpdateSectorHandler : IUpdateSectorHandler
     {
         private readonly IUpdateSectorCommand _command;
-        private readonly IGetByIdSectorQuery _query;
-        //private readonly IGetByIdSectorQuery _querySector;
+        private readonly IGetByIdEventQuery _queryEvent;
 
         public UpdateSectorHandler(
             IUpdateSectorCommand command,
-            IGetByIdSectorQuery query)
-            //IGetByIdSectorQuery _querySector)
+            IGetByIdEventQuery _queryEvent)
+            
         {
             _command = command;
-            _query = query;
-            //_querySector = _querySector;
+            _queryEvent = _queryEvent;
         }
 
         public async Task<string> Handle(int id, SectorRequestDto dto)
         {
-            //var existing = await _query.GetById(id);
+            if (dto == null)
+                return "Datos inválidos";
 
-            //if (dto == null)
-            //    return "Datos inválidos";
+            var eventt = await _queryEvent.GetById(dto.EventId);
 
-            //if (existing == null)
-            //    return "Audit_Log no encontrado";
+            if (eventt == null)
+                return "Event no existe";
 
-            //if (dto.UserId <= 0)
-            //    return "El Id del usuario es obligatorio";
+            if (string.IsNullOrWhiteSpace(dto.Name))
+                return "El name es obligatorio";
 
-            //var user = await _queryUser.GetById(dto.UserId);
+            if (dto.Price < 0)
+                return "El price es obligatorio";
 
-            //if (user == null)
-            //    return "Usuario no existe";
+            if (dto.Capacity < 0)
+                return "La capacity es obligatoria";
 
-            //if (string.IsNullOrWhiteSpace(dto.Action))
-            //    return "La acción es obligatoria";
+            var sector = new SECTOR
+            {
+                EventId = dto.EventId,
+                Name = dto.Name,
+                Price = dto.Price,
+                Capacity = dto.Capacity
+            };
 
-            //if (string.IsNullOrWhiteSpace(dto.EntityType))
-            //    return "El tipo de entidad es obligatoria";
+            await _command.ExecuteUpdateSector(sector);
 
-            //if (string.IsNullOrWhiteSpace(dto.EntityId))
-            //    return "El id de entidad es obligatoria";
+            return "OK";
 
-            //var auditLog = new AUDIT_LOG
-            //{
-            //    Id = id, 
-            //    UserId = dto.UserId,
-            //    Action = dto.Action,
-            //    EntityType = dto.EntityType,
-            //    EntityId = dto.EntityId,
-            //    Details = dto.Details,
-            //    CreatedAt = existing.CreatedAt 
-            //};
-
-            //await _command.ExecuteUpdateAudit_Log(auditLog);
-
-            return "Audit_Log actualizado correctamente";
         }
     }
 }

@@ -4,6 +4,7 @@ using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries.User;
 using Domain.Entities;
+using Domain.Enums;
 
 namespace Application.UseCases
 {
@@ -12,58 +13,53 @@ namespace Application.UseCases
         private readonly IUpdateReservationCommand _command;
         private readonly IGetByIdReservationQuery _query;
         private readonly IGetByIdUserQuery _queryUser;
+        private readonly IGetByIdSeatQuery _querySeat;
 
         public UpdateReservationHandler(
             IUpdateReservationCommand command,
             IGetByIdReservationQuery query,
-            IGetByIdUserQuery queryUser)
+            IGetByIdUserQuery queryUser,
+            IGetByIdSeatQuery _querySeat)
         {
             _command = command;
             _query = query;
             _queryUser = queryUser;
+            _querySeat = _querySeat;
         }
 
         public async Task<string> Handle(Guid id, ReservationRequestDto dto)
         {
-            //var existing = await _query.GetById(id);
+            if (dto == null)
+                return "Datos inválidos";
 
-            //if (dto == null)
-            //    return "Datos inválidos";
+            if (dto.UserId <= 0)
+                return "El Id del usuario es obligatorio";
 
-            //if (existing == null)
-            //    return "Audit_Log no encontrado";
+            var user = await _queryUser.GetById(dto.UserId);
 
-            //if (dto.UserId <= 0)
-            //    return "El Id del usuario es obligatorio";
+            if (user == null)
+                return "Usuario no existe";
 
-            //var user = await _queryUser.GetById(dto.UserId);
+            var seat = await _querySeat.GetById(dto.SeatId);
 
-            //if (user == null)
-            //    return "Usuario no existe";
+            if (seat == null)
+                return "Seat no existe";
 
-            //if (string.IsNullOrWhiteSpace(dto.Action))
-            //    return "La acción es obligatoria";
+            if (dto.ExpiresAt <= DateTime.UtcNow)
+                return "La fecha de expiración debe ser futura";
 
-            //if (string.IsNullOrWhiteSpace(dto.EntityType))
-            //    return "El tipo de entidad es obligatoria";
+            var Reservation = new RESERVATION
+            {
+                UserId = dto.UserId,
+                SeatId = dto.SeatId,
+                Status = ReservationStatus.Pending,
+                ReservedAt = DateTime.UtcNow,
+                ExpiresAt = dto.ExpiresAt
+            };
 
-            //if (string.IsNullOrWhiteSpace(dto.EntityId))
-            //    return "El id de entidad es obligatoria";
+            await _command.ExecuteUpdateReservation(Reservation);
 
-            //var auditLog = new AUDIT_LOG
-            //{
-            //    Id = id, 
-            //    UserId = dto.UserId,
-            //    Action = dto.Action,
-            //    EntityType = dto.EntityType,
-            //    EntityId = dto.EntityId,
-            //    Details = dto.Details,
-            //    CreatedAt = existing.CreatedAt 
-            //};
-
-            //await _command.ExecuteUpdateAudit_Log(auditLog);
-
-            return "Audit_Log actualizado correctamente";
+            return "Update actualizado correctamente";
         }
     }
 }

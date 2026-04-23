@@ -4,55 +4,50 @@ using Application.Interfaces.Command;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Queries.Event;
 using Application.Interfaces.Queries.User;
 using Domain.Entities;
 
 public class CreateSectorHandler : ICreateSectorHandler
 {
     private readonly ICreateSectorCommand _command;
-    //private readonly IGetByIdSectorQuery _querySector;
+    private readonly IGetByIdEventQuery _queryEvent;
 
-    public CreateSectorHandler(ICreateSectorCommand command)//, IGetByIdSectorQuery _querySector)
+    public CreateSectorHandler(ICreateSectorCommand command, IGetByIdEventQuery _queryEvent)
     {
         _command = command;
-       // _querySeat = querySeat;
+        _queryEvent = _queryEvent;
+       
     }
 
     public async Task<string> Handle(SectorRequestDto dto)
     {
-        //if (dto == null)
-        //    return "Datos inválidos";
-          
-        //if (dto.UserId <= 0)
-        //    return "El Id del usuario es obligatorio";
+        if (dto == null)
+            return "Datos inválidos";
 
-        //var user = await _queryUser.GetById(dto.UserId);
+        var eventt = await _queryEvent.GetById(dto.EventId);
 
-        //if (user == null)
-        //    return "Usuario no existe";
+        if (eventt == null)
+            return "Event no existe";
 
-        //if (string.IsNullOrWhiteSpace(dto.Action))
-        //    return "La accion es obligatorio";
+        if (string.IsNullOrWhiteSpace(dto.Name))
+            return "El name es obligatorio";
 
-        //if (string.IsNullOrWhiteSpace(dto.EntityType))
-        //    return "El tipo de identidad es obligatoria";
+        if (dto.Price < 0)
+            return "El price es obligatorio";
 
-        //if (string.IsNullOrWhiteSpace(dto.EntityId))
-        //    return "El id de identidad es obligatoria";
+        if (dto.Capacity < 0)
+            return "La capacity es obligatoria";
 
-        //if (string.IsNullOrWhiteSpace(dto.Details))
-            //return "Los detalles son obligatorio";
+        var sector = new SECTOR
+        {
+            EventId = dto.EventId,
+            Name = dto.Name,
+            Price = dto.Price,
+            Capacity = dto.Capacity
+        };
 
-        //var seat = new SEAT
-        //{
-        //    UserId = dto.UserId,
-        //    SeatId = dto.SeatId,
-        //    Status = dto.Status,
-        //    ReservedAt = dto.ReservedAt=DateTime.UtcNow,
-        //    ExpiresAt = dto.ExpiresAt,
-        //};
-
-        //await _command.ExecuteCreateSeat(seat);
+        await _command.ExecuteCreateSector(sector);
 
         return "OK";
     }

@@ -23,27 +23,30 @@ public class CreateAudit_LogHandler : ICreateAudit_LogHandler
     {
         if (dto == null)
             return "Datos inválidos";
-          
-        if (dto.UserId <= 0)
-            return "El Id del usuario es obligatorio";
 
+        // 🔹 Validar usuario SOLO si viene informado
+        if (dto.UserId.HasValue)
+        {
+            if (dto.UserId <= 0)
+                return "El Id del usuario es inválido";
 
-        var user = await _queryUser.GetById(dto.UserId);
+            var user = await _queryUser.GetById(dto.UserId.Value);
 
-        if (user == null)
-            return "Usuario no existe";
+            if (user == null)
+                return "El usuario no existe";
+        }
 
         if (string.IsNullOrWhiteSpace(dto.Action))
-            return "La accion es obligatorio";
+            return "La acción es obligatoria";
 
         if (string.IsNullOrWhiteSpace(dto.EntityType))
-            return "El tipo de identidad es obligatoria";
+            return "El tipo de entidad es obligatorio";
 
         if (string.IsNullOrWhiteSpace(dto.EntityId))
-            return "El id de identidad es obligatoria";
+            return "El id de la entidad es obligatorio";
 
         if (string.IsNullOrWhiteSpace(dto.Details))
-            return "Los detalles son obligatorio";
+            return "Los detalles son obligatorios";
 
         var Audit_Log = new AUDIT_LOG
         {

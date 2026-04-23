@@ -13,9 +13,9 @@ namespace Application.UseCases.EVENT.Queries
 {
     public class GetEventByIdHandler : IGetByIdEventHandler
     {
-        private readonly IGetAllByIdEventQuery _getEventByIdQuery;
+        private readonly IGetByIdEventQuery _getEventByIdQuery;
 
-        public GetEventByIdHandler(IGetAllByIdEventQuery getEventByIdQuery)
+        public GetEventByIdHandler(IGetByIdEventQuery getEventByIdQuery)
         {
             _getEventByIdQuery = getEventByIdQuery;
         }

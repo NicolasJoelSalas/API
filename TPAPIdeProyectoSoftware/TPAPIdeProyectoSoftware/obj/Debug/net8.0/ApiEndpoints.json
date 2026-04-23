@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Application.DTOs.User.Audit_LogRequestDto",
+        "Type": "Application.DTOs.Audit_LogRequestDto",
         "IsRequired": true
       }
     ],
@@ -72,7 +72,7 @@
       },
       {
         "Name": "dto",
-        "Type": "Application.DTOs.User.Audit_LogRequestDto",
+        "Type": "Application.DTOs.Audit_LogRequestDto",
         "IsRequired": true
       }
     ],

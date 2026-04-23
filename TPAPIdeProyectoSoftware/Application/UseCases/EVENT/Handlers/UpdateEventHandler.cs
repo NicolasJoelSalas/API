@@ -14,9 +14,9 @@ namespace Application.UseCases.EVENT.Commands
     public class UpdateEventHandler : IUpdateEventHandler
     {
         private readonly IUpdateEventCommand _updateEventCommand;
-        private readonly IGetAllByIdEventQuery _getAllByIdEventQuery;
+        private readonly IGetByIdEventQuery _getAllByIdEventQuery;
 
-        public UpdateEventHandler(IUpdateEventCommand updateEventCommand, IGetAllByIdEventQuery getAllByIdEventQuery)
+        public UpdateEventHandler(IUpdateEventCommand updateEventCommand, IGetByIdEventQuery getAllByIdEventQuery)
         {
             _updateEventCommand = updateEventCommand;
             _getAllByIdEventQuery = getAllByIdEventQuery;

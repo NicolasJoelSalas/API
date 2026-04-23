@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.UseCases.EVENT.Queries
 {
-    public class GetByIdEventQuery : IGetAllByIdEventQuery
+    public class GetByIdEventQuery : IGetByIdEventQuery
     {
         private readonly IEventRepository _eventRepository;
 

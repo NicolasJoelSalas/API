@@ -763,7 +763,8 @@
         "properties": {
           "userId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "action": {
             "type": "string",
@@ -820,6 +821,10 @@
           "seatId": {
             "type": "string",
             "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
           },
           "reservedAt": {
             "type": "string",

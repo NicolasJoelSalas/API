@@ -12,9 +12,9 @@ namespace Application.UseCases.EVENT.Commands
     public class DeleteEventHandler : IDeleteEventHandler
     {
         private readonly IDeleteEventCommand _command;
-        private readonly IGetAllByIdEventQuery _getByIdEventQuery;
+        private readonly IGetByIdEventQuery _getByIdEventQuery;
 
-        public DeleteEventHandler(IDeleteEventCommand command, IGetAllByIdEventQuery getByIdEventQuery)
+        public DeleteEventHandler(IDeleteEventCommand command, IGetByIdEventQuery getByIdEventQuery)
         {
             _command = command;
             _getByIdEventQuery = getByIdEventQuery;
