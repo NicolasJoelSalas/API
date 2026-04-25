@@ -30,8 +30,10 @@ namespace Application.UseCases
                 return "Datos inválidos";
             if (string.IsNullOrWhiteSpace(dto.Name))
                 return "El nombre es obligatorio";
-            if (dto.EventDate == null || dto.EventDate <= default(DateTime))
+            if (dto.EventDate == null)
                 return "La fecha del evento es obligatoria";
+            if (dto.EventDate < DateTime.UtcNow)
+                return "La fecha del evento es invalida. Ingrese una fecha posterior al dia de hoy";
             if (string.IsNullOrWhiteSpace(dto.Venue))
                 return "La ubicación del evento es obligatoria";
 

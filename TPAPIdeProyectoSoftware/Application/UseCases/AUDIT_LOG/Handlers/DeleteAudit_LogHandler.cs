@@ -23,11 +23,11 @@ namespace Application.UseCases.USER.Handlers
             var user = await _query.GetById(id);
 
             if (user == null)
-                return "Audit_Log no encontrado";
+                return "Registro de auditoria no encontrado";
 
             await _command.ExecuteDeleteAudit_Log(id);
 
-            return "Audit_Log eliminado correctamente";
+            return "Registro de auditoria eliminado correctamente";
         }
     }
 }

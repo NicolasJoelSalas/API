@@ -23,7 +23,7 @@ namespace Application.UseCases
             var Reservation = await _query.GetAll();
 
             if (Reservation == null || Reservation.Count == 0)
-                return (new List<ReservationResponseDto>(), "No hay Reservation registrados");
+                return (new List<ReservationResponseDto>(), "No hay reservaciones registrados");
 
             return (Reservation, "OK");
         }

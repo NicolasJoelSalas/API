@@ -1,4 +1,5 @@
-﻿using Application.DTOs.User;
+﻿
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
 using Application.UseCases;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             _getByIdSeatHandler = getByIdSeatHandler;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SeatRequestDto dto)
+        public async Task<IActionResult> Create([FromBody] IdSeatRequestDto dto)
         {
             var message = await _createHandler.Handle(dto);
 

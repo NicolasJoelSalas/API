@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.User
 {
-    public class IdReservationRequestDto
+    public class UpdateReservationRequestDto
     {
-        public Guid Id { get; set; }
         public int UserId { get; set; }
         public Guid SeatId { get; set; }
-        public DateTime ReservedAt { get; set; }
-        public DateTime ExpiresAt { get; set; }
+        public string Status { get; set; }
+        
 
     }
 }

@@ -24,7 +24,7 @@ namespace Application.UseCases.USER.Handlers
             var Audit_Logs = await _query.GetAll();
 
             if (Audit_Logs == null || Audit_Logs.Count == 0)
-                return (new List<Audit_LogResponseDto>(), "No hay Audit_Log registrados");
+                return (new List<Audit_LogResponseDto>(), "No hay registros de auditorias");
 
             return (Audit_Logs, "OK");
         }

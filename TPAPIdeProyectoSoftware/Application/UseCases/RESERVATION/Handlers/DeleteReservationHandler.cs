@@ -23,11 +23,11 @@ namespace Application.UseCases
             var user = await _query.GetById(id);
 
             if (user == null)
-                return "Reservation no encontrado";
+                return "Reservacion no encontrada";
 
             await _command.ExecuteDeleteReservation(id);
 
-            return "Reservation eliminado correctamente";
+            return "Reservacion eliminada correctamente";
         }
     }
 }

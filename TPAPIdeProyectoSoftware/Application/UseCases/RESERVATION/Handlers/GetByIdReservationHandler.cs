@@ -24,7 +24,7 @@ namespace Application.UseCases
             var reservation = await _query.GetById(id);
 
             if (reservation == null)
-                return (new ReservationResponseDto(), "No hay Reservation registrados");
+                return (new ReservationResponseDto(), "No hay Reservaciones registrados");
 
             return (reservation, "OK");
         }

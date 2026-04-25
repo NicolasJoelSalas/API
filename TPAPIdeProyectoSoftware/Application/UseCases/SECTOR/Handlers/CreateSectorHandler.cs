@@ -13,10 +13,10 @@ public class CreateSectorHandler : ICreateSectorHandler
     private readonly ICreateSectorCommand _command;
     private readonly IGetByIdEventQuery _queryEvent;
 
-    public CreateSectorHandler(ICreateSectorCommand command, IGetByIdEventQuery _queryEvent)
+    public CreateSectorHandler(ICreateSectorCommand command, IGetByIdEventQuery queryEvent)
     {
         _command = command;
-        _queryEvent = _queryEvent;
+        _queryEvent = queryEvent;
        
     }
 
@@ -28,16 +28,16 @@ public class CreateSectorHandler : ICreateSectorHandler
         var eventt = await _queryEvent.GetById(dto.EventId);
 
         if (eventt == null)
-            return "Event no existe";
+            return "El Evento no existe";
 
         if (string.IsNullOrWhiteSpace(dto.Name))
-            return "El name es obligatorio";
+            return "El nombre del sector es obligatorio";
 
-        if (dto.Price < 0)
-            return "El price es obligatorio";
+        if (dto.Price.CompareTo(0) <= 0)
+            return "Ingrese un precio mayor a 0";
 
-        if (dto.Capacity < 0)
-            return "La capacity es obligatoria";
+        if (dto.Capacity <= 0)
+            return "Ingrese una capacidad mayor a 0";
 
         var sector = new SECTOR
         {

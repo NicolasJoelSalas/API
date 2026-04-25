@@ -29,6 +29,10 @@ namespace Application.UseCases.EVENT.Commands
 
             if (existingEvent == null)
                 return "Evento no encontrado";
+            if (dto.EventDate == null)
+                return "La fecha del evento es obligatoria";
+            if (dto.EventDate < DateTime.UtcNow)
+                return "La fecha del evento es invalida. Ingrese una fecha posterior al dia de hoy";
 
             var updatedEvent = new Domain.Entities.EVENT
             {

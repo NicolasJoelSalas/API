@@ -5,22 +5,29 @@ using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries.User;
 using Domain.Entities;
 using Domain.Enums;
+using System.Linq.Expressions;
 
 public class CreateReservationHandler : ICreateReservationHandler
 {
     private readonly ICreateReservationCommand _command;
     private readonly IGetByIdUserQuery _queryUser;
     private readonly IGetByIdSeatQuery _querySeat;
+    private readonly IGetAllReservationQuery _getAllReservationQuery;
 
-    public CreateReservationHandler(ICreateReservationCommand command, IGetByIdUserQuery queryUser, IGetByIdSeatQuery _querySeat)
+    public CreateReservationHandler(ICreateReservationCommand command, IGetByIdUserQuery queryUser, IGetByIdSeatQuery querySeat, IGetAllReservationQuery getAllReservationQuery)
     {
         _command = command;
         _queryUser = queryUser;
-        _querySeat = _querySeat;
+        _querySeat = querySeat;
+        _getAllReservationQuery = getAllReservationQuery;
     }
 
     public async Task<string> Handle(ReservationRequestDto dto)
     {
+        
+        
+        
+        
         if (dto == null)
             return "Datos inválidos";
           
@@ -30,15 +37,19 @@ public class CreateReservationHandler : ICreateReservationHandler
         var user = await _queryUser.GetById(dto.UserId);
 
         if (user == null)
-            return "Usuario no existe";
+            return "El Usuario no existe";
 
         var seat = await _querySeat.GetById(dto.SeatId);
 
         if (seat == null)
-            return "Seat no existe";
+            return "El asiento no existe";
 
-        if (dto.ExpiresAt <= DateTime.UtcNow)
-            return "La fecha de expiración debe ser futura";
+        var listaDeReservaciones = await _getAllReservationQuery.GetAll();
+        foreach (var elemento in listaDeReservaciones)
+        {
+            if (elemento.SeatId == dto.SeatId)
+                return "El asiento ya se encuentra reservado";
+        }
 
         var Reservation = new RESERVATION
         {
@@ -46,7 +57,7 @@ public class CreateReservationHandler : ICreateReservationHandler
             SeatId = dto.SeatId,
             Status = ReservationStatus.Pending, 
             ReservedAt = DateTime.UtcNow,
-            ExpiresAt = dto.ExpiresAt
+            ExpiresAt = DateTime.UtcNow.AddMinutes(5),
         };
 
         await _command.ExecuteCreateReservation(Reservation);

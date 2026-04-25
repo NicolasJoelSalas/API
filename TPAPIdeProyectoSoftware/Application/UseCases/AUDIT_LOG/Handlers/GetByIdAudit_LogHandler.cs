@@ -24,7 +24,7 @@ namespace Application.UseCases.USER.Handlers
             var user = await _query.GetById(id);
 
             if (user == null)
-                return (new Audit_LogResponseDto(), "No hay Audit_Log registrados");
+                return (new Audit_LogResponseDto(), "No hay registros de auditorias");
 
             return (user, "OK");
         }

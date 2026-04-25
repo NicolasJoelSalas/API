@@ -9,6 +9,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IUpdateReservationHandler
     {
-        Task<string> Handle(Guid id, ReservationRequestDto dto);
+        Task<string> Handle(Guid id, UpdateReservationRequestDto dto);
     }
 }

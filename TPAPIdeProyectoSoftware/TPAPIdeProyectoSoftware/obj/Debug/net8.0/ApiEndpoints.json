@@ -230,7 +230,7 @@
       },
       {
         "Name": "dto",
-        "Type": "Application.DTOs.User.ReservationRequestDto",
+        "Type": "Application.DTOs.User.UpdateReservationRequestDto",
         "IsRequired": true
       }
     ],
@@ -246,7 +246,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Application.DTOs.User.SeatRequestDto",
+        "Type": "Application.DTOs.User.IdSeatRequestDto",
         "IsRequired": true
       }
     ],

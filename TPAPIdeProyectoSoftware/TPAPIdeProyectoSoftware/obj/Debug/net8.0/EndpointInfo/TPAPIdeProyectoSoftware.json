@@ -358,17 +358,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/UpdateReservationRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/UpdateReservationRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/UpdateReservationRequestDto"
               }
             }
           }
@@ -389,17 +389,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SeatRequestDto"
+                "$ref": "#/components/schemas/IdSeatRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SeatRequestDto"
+                "$ref": "#/components/schemas/IdSeatRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SeatRequestDto"
+                "$ref": "#/components/schemas/IdSeatRequestDto"
               }
             }
           }
@@ -781,10 +781,6 @@
           "details": {
             "type": "string",
             "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -811,6 +807,28 @@
         },
         "additionalProperties": false
       },
+      "IdSeatRequestDto": {
+        "type": "object",
+        "properties": {
+          "sectorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "seatNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "ReservationRequestDto": {
         "type": "object",
         "properties": {
@@ -821,18 +839,6 @@
           "seatId": {
             "type": "string",
             "format": "uuid"
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
-          "reservedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "expiresAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -881,6 +887,24 @@
           "capacity": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateReservationRequestDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

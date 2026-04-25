@@ -27,7 +27,7 @@ namespace Application.UseCases
             var Sector = await _query.GetAll();
 
             if (Sector == null || Sector.Count == 0)
-                return (new List<SectorResponseDto>(), "No hay Sector registrados");
+                return (new List<SectorResponseDto>(), "No hay un sector sin el id indicado");
 
             return (Sector, "OK");
         }

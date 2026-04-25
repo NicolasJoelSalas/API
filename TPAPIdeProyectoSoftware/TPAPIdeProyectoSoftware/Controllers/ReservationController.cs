@@ -77,7 +77,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] ReservationRequestDto dto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateReservationRequestDto dto)
         {
             var message = await _updateHandler.Handle(id, dto);
 

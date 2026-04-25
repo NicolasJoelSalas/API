@@ -10,6 +10,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface ICreateSeatHandler
     {
-        Task<string> Handle(SeatRequestDto dto);
+        Task<string> Handle(IdSeatRequestDto dto);
     }
 }

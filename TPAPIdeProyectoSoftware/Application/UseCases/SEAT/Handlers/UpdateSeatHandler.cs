@@ -1,4 +1,5 @@
-﻿using Application.DTOs.User;
+﻿
+using Application.DTOs.User;
 using Application.Interfaces.Command;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
@@ -6,6 +7,7 @@ using Application.Interfaces.Queries;
 using Application.Interfaces.Queries.User;
 using Application.UseCases.USER.Queries;
 using Domain.Entities;
+using System.Net.NetworkInformation;
 
 namespace Application.UseCases
 {
@@ -17,17 +19,18 @@ namespace Application.UseCases
 
         public UpdateSeatHandler(
             IUpdateSeatCommand command,
-            IGetByIdSeatQuery query, IGetByIdSectorQuery _querySector)
+            IGetByIdSeatQuery query, IGetByIdSectorQuery querySector)
         {
             _command = command;
             _query = query;
-            _querySector = _querySector;
+            _querySector = querySector;
         }
 
         public async Task<string> Handle(Guid id, SeatRequestDto dto)
         {
-            if (dto == null)
-                return "Datos inválidos";
+            var Seatdto = await _query.GetById(id);
+            if (Seatdto == null)
+                return "Asiento no encontrado";
 
             if (dto.SectorId <= 0)
                 return "El Id del sector es obligatorio";
@@ -35,13 +38,13 @@ namespace Application.UseCases
             var sector = await _querySector.GetById(dto.SectorId);
 
             if (sector == null)
-                return "Sector no existe";
+                return "El Sector no existe";
 
             if (string.IsNullOrWhiteSpace(dto.RowIdentifier))
-                return "El RowIdentifier es obligatorio";
+                return "El Identificador de la fila es obligatorio";
 
             if (dto.SeatNumber <= 0 || dto.SeatNumber == null)
-                return "La version es obligatorio";
+                return "El numero de asiento es obligatorio";
 
             if (string.IsNullOrWhiteSpace(dto.Status))
                 return "El status es obligatorio";
@@ -51,6 +54,7 @@ namespace Application.UseCases
 
             var seat = new SEAT
             {
+                Id = id,
                 SectorId = dto.SectorId,
                 RowIdentifier = dto.RowIdentifier,
                 SeatNumber = dto.SeatNumber,
@@ -60,7 +64,7 @@ namespace Application.UseCases
 
             await _command.ExecuteUpdateSeat(seat);
 
-            return "Audit_Log actualizado correctamente";
+            return "Asiento actualizado correctamente";
         }
     }
 }

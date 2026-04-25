@@ -33,7 +33,7 @@ namespace Application.UseCases
                 return "Datos inválidos";
 
             if (existing == null)
-                return "Audit_Log no encontrado";
+                return "Registro de auditoria no encontrado";
 
             if (dto.UserId <= 0)
                 return "El Id del usuario es obligatorio";
@@ -65,7 +65,7 @@ namespace Application.UseCases
 
             await _command.ExecuteUpdateAudit_Log(auditLog);
 
-            return "Audit_Log actualizado correctamente";
+            return "Registro de auditoria actualizado correctamente";
         }
     }
 }

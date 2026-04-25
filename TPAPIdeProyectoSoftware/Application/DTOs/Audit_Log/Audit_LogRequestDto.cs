@@ -14,6 +14,6 @@ namespace Application.DTOs
 
         public string EntityId { get; set; }
         public string Details { get; set; }
-        public DateTime CreatedAt { get; set; }
+        
     }
 }
