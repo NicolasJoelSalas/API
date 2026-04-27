@@ -26,6 +26,7 @@ namespace Application.UseCases
                 .OrderBy(x => x.Id)
                 .Select(x => new SectorResponseDto
                 {
+                    Id = x.Id,
                     EventId = x.EventId,
                     Name = x.Name,
                     Price = x.Price,

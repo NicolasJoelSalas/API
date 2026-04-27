@@ -8,6 +8,7 @@ namespace Application.DTOs.User
 {
     public class ReservationResponseDto
     {
+        public Guid Id { get; set; }
         public int UserId { get; set; }
         public Guid SeatId { get; set; }
         public string Status { get; set; }

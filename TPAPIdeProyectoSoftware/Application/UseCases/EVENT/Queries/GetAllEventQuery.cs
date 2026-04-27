@@ -26,6 +26,7 @@ namespace Application.UseCases.EVENT.Queries
                 .OrderBy(x => x.Name)
                 .Select(x => new EventResponseDto
                 {
+                    Id = x.Id,
                     Name = x.Name,
                     EventDate = x.EventDate,
                     Venue = x.Venue,

@@ -1,0 +1,70 @@
+﻿@page "/events"
+@rendermode InteractiveServer
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager Nav
+
+<h3 class="mb-4 text-center">🎟️ Eventos Disponibles</h3>
+
+@if (lisevents == null)
+{
+    <p class="text-center">Cargando eventos...</p>
+}
+else if (!lisevents.Any())
+{
+    <p class="text-center">No hay eventos disponibles</p>
+}
+else
+{
+    <div class="event-list">
+
+        @foreach (var item in lisevents)
+        {
+            <div class="event-card">
+
+                <div class="event-title">
+                    @item.Name
+                </div>
+
+                <button class="btn btn-primary btn-sm mt-2"
+                        @onclick="() => GoToSectors(item.Id)">
+                    Ver sectores
+                </button>
+
+            </div>
+        }
+
+    </div>
+}
+
+@code {
+
+    private List<EventDto>? lisevents;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            lisevents = await http.GetFromJsonAsync<List<EventDto>>("api/Event")
+                      ?? new List<EventDto>();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error cargando eventos: {ex.Message}");
+            lisevents = new List<EventDto>();
+        }
+    }
+
+    private void GoToSectors(int id)
+    {
+        Console.WriteLine($"CLICK EVENTO ID: {id}");
+        Nav.NavigateTo($"/event/{id}/sectors");
+    }
+
+    public class EventDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+}

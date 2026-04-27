@@ -1,104 +1,106 @@
-﻿@page "/seats"
-@inject HttpClient Http
+﻿@page "/sector/{SectorId:int}/seats"
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager Nav
 
-<h3>Butacas por sector de cada evento</h3>
+<h3 class="text-center">Butacas</h3>
 
-<select class="form-select" @onchange="OnEventChange" value="@selectedEventId">
-    <option value="">Seleccione un evento</option>
-
-    @foreach (var item in events)
-    {
-        <option value="@item.Id">@item.Name</option>
-    }
-</select>
-
-@if (selectedEventId != null)
+@if (seats == null)
 {
-    <br />
-    <br />
-
-    <select class="form-select" @onchange="OnSectorChange" value="@selectedSectorId">
-        <option value="">Seleccione un sector</option>
-
-        @foreach (var item in sectors)
-        {
-            <option value="@item.Id">@item.Name</option>
-        }
-    </select>
+    <p class="text-center">Cargando butacas...</p>
 }
-
-@if (seats.Any())
+else if (!seats.Any())
 {
-    <div class="grid mt-4">
-        @foreach (var seat in seats)
+    <p class="text-center">No hay butacas para este sector</p>
+}
+else
+{
+    <div class="cinema-room @pos">
+
+        <div class="screen">ESCENARIO</div>
+
+        @foreach (var row in seats.GroupBy(s => s.RowIdentifier))
         {
-            <div class="seat @(seat.Status == "Reserved" ? "reserved" : "free")">
-                @seat.RowIdentifier-@seat.SeatNumber
+            <div class="seat-row">
+
+                <div class="row-label">@row.Key</div>
+
+                <div class="seat-group">
+
+                    @foreach (var seat in row)
+                    {
+                        <div class="seat @GetSeatClass(seat)"
+                             @onclick="() => SelectSeat(seat)">
+                            @seat.SeatNumber
+                        </div>
+                    }
+
+                </div>
+
+                <div class="row-label">@row.Key</div>
+
             </div>
         }
+
     </div>
-}
-else if (selectedSectorId != null)
-{
-    <p class="mt-3">No hay asientos para este sector.</p>
 }
 
 @code {
 
-    private List<EventDto> events = new();
-    private List<SectorDto> sectors = new();
-    private List<SeatDto> seats = new();
+    [Parameter]
+    public int SectorId { get; set; }
 
-    private int? selectedEventId;
-    private int? selectedSectorId;
+    private List<SeatDto>? seats;
+    private Guid? selectedSeatId;
 
-    protected override async Task OnInitializedAsync()
+    private string pos = "center"; // 👈 IMPORTANTE
+
+    protected override async Task OnParametersSetAsync()
     {
-        events = await Http.GetFromJsonAsync<List<EventDto>>(
-            "https://localhost:7175/api/Event"
-        ) ?? new();
+        GetPositionFromUrl(); // 👈 LEER POSICIÓN
+        await LoadSeats();
     }
 
-    private async Task OnEventChange(ChangeEventArgs e)
+    private void GetPositionFromUrl()
     {
-        seats.Clear();
-        sectors.Clear();
-        selectedSectorId = null;
+        var uri = Nav.ToAbsoluteUri(Nav.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
 
-        if (int.TryParse(e.Value?.ToString(), out var eventId))
+        pos = query["pos"] ?? "center";
+    }
+
+    private async Task LoadSeats()
+    {
+        try
         {
-            selectedEventId = eventId;
+            var http = HttpClientFactory.CreateClient("Api");
 
-            sectors = await Http.GetFromJsonAsync<List<SectorDto>>(
-                $"https://localhost:7193/api/Event/{eventId}/sectors"
+            seats = await http.GetFromJsonAsync<List<SeatDto>>(
+                $"api/Event/sector/{SectorId}/seats"
             ) ?? new();
+        }
+        catch
+        {
+            seats = new();
         }
     }
 
-    private async Task OnSectorChange(ChangeEventArgs e)
+    private void SelectSeat(SeatDto seat)
     {
-        seats.Clear();
+        if (seat.Status == "Reserved")
+            return;
 
-        if (int.TryParse(e.Value?.ToString(), out var sectorId))
-        {
-            selectedSectorId = sectorId;
-
-            seats = await Http.GetFromJsonAsync<List<SeatDto>>(
-                $"https://localhost:7193/api/Event/sector/{sectorId}/seats"
-            ) ?? new();
-        }
+        selectedSeatId = seat.Id;
     }
 
-    public class EventDto
+    private string GetSeatClass(SeatDto seat)
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+        if (seat.Status == "Reserved")
+            return "reserved";
 
-    public class SectorDto
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        if (selectedSeatId == seat.Id)
+            return "free selected";
+
+        return "free";
     }
 
     public class SeatDto

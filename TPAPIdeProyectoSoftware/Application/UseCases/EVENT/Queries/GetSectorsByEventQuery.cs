@@ -25,7 +25,9 @@ namespace Application.UseCases.EVENT.Queries
                 .Select(x => new SectorResponseDto
                 {
                     Id = x.Id,
-                    Name = x.Name
+                    Name = x.Name,
+                    Price = x.Price,
+                    
                 })
                 .ToListAsync();
         }
