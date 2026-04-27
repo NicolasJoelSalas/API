@@ -106,6 +106,22 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
+    "Method": "GetSectorsByEvent",
+    "RelativePath": "api/Event/{eventId}/sectors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetEventById",
     "RelativePath": "api/Event/{id}",
     "HttpMethod": "GET",
@@ -152,6 +168,22 @@
       {
         "Name": "request",
         "Type": "Application.DTOs.Event.EventResquestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
+    "Method": "GetSeatsBySector",
+    "RelativePath": "api/Event/sector/{sectorId}/seats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectorId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

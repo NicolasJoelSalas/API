@@ -52,7 +52,7 @@ namespace Application.UseCases
             if (dto.Version <= 0 || dto.Version == null)
                 return "La version es obligatorio";
 
-            var seat = new SEAT
+            var seat = new Domain.Entities.SEAT
             {
                 Id = id,
                 SectorId = dto.SectorId,

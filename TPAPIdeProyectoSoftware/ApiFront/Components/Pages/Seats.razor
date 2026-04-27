@@ -1,0 +1,111 @@
+﻿@page "/seats"
+@inject HttpClient Http
+
+<h3>Butacas por sector de cada evento</h3>
+
+<select class="form-select" @onchange="OnEventChange" value="@selectedEventId">
+    <option value="">Seleccione un evento</option>
+
+    @foreach (var item in events)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>
+
+@if (selectedEventId != null)
+{
+    <br />
+    <br />
+
+    <select class="form-select" @onchange="OnSectorChange" value="@selectedSectorId">
+        <option value="">Seleccione un sector</option>
+
+        @foreach (var item in sectors)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+}
+
+@if (seats.Any())
+{
+    <div class="grid mt-4">
+        @foreach (var seat in seats)
+        {
+            <div class="seat @(seat.Status == "Reserved" ? "reserved" : "free")">
+                @seat.RowIdentifier-@seat.SeatNumber
+            </div>
+        }
+    </div>
+}
+else if (selectedSectorId != null)
+{
+    <p class="mt-3">No hay asientos para este sector.</p>
+}
+
+@code {
+
+    private List<EventDto> events = new();
+    private List<SectorDto> sectors = new();
+    private List<SeatDto> seats = new();
+
+    private int? selectedEventId;
+    private int? selectedSectorId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        events = await Http.GetFromJsonAsync<List<EventDto>>(
+            "https://localhost:7175/api/Event"
+        ) ?? new();
+    }
+
+    private async Task OnEventChange(ChangeEventArgs e)
+    {
+        seats.Clear();
+        sectors.Clear();
+        selectedSectorId = null;
+
+        if (int.TryParse(e.Value?.ToString(), out var eventId))
+        {
+            selectedEventId = eventId;
+
+            sectors = await Http.GetFromJsonAsync<List<SectorDto>>(
+                $"https://localhost:7193/api/Event/{eventId}/sectors"
+            ) ?? new();
+        }
+    }
+
+    private async Task OnSectorChange(ChangeEventArgs e)
+    {
+        seats.Clear();
+
+        if (int.TryParse(e.Value?.ToString(), out var sectorId))
+        {
+            selectedSectorId = sectorId;
+
+            seats = await Http.GetFromJsonAsync<List<SeatDto>>(
+                $"https://localhost:7193/api/Event/sector/{sectorId}/seats"
+            ) ?? new();
+        }
+    }
+
+    public class EventDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class SectorDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class SeatDto
+    {
+        public Guid Id { get; set; }
+        public string RowIdentifier { get; set; }
+        public int SeatNumber { get; set; }
+        public string Status { get; set; }
+    }
+}

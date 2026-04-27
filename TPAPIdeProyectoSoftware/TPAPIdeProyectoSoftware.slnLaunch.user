@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ApiFront\\ApiFront.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

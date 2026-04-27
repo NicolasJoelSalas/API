@@ -57,7 +57,7 @@ namespace Application.UseCases
                 return "Ingrese una capacidad mayor a 0";
 
 
-            var updatedsector = new SECTOR
+            var updatedsector = new Domain.Entities.SECTOR
             {
                 Id = id,
                 EventId = dto.EventId,

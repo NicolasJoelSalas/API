@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ApiFront/ApiFront.csproj" Id="d6db6736-ceec-4b8a-8e32-4cc0214591e0" />
   <Project Path="Application/Application.csproj" />
   <Project Path="Domain/Domain.csproj" />
   <Project Path="Infrastructure/Infrastructure.csproj" />

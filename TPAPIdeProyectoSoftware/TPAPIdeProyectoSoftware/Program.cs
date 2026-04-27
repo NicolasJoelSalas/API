@@ -1,4 +1,5 @@
 using Application;
+using Application.Interfaces;
 using Application.Interfaces.Command;
 using Application.Interfaces.Command.Event;
 using Application.Interfaces.Command.User;
@@ -6,10 +7,12 @@ using Application.Interfaces.Commands.Event;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
 using Application.Interfaces.Queries.Audit_Log;
 using Application.Interfaces.Queries.Event;
+using Application.Interfaces.Queries.Sector;
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases;
@@ -17,6 +20,8 @@ using Application.UseCases.AUDIT_LOG.Queries;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
+using Application.UseCases.SECTOR.Handlers;
+using Application.UseCases.SECTOR.Queries;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Handlers;
 using Application.UseCases.USER.Queries;
@@ -90,6 +95,9 @@ builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
 builder.Services.AddScoped<IGetAllEventQuery, GetAllEventQuery>();
 builder.Services.AddScoped<IGetByIdEventQuery, GetByIdEventQuery>();
 builder.Services.AddScoped<INameExistsEventQuery, NameExistsEventQuery>();
+builder.Services.AddScoped<IGetSectorsByEventQuery, GetSectorsByEventQuery>();
+
+
 
 
 //User
@@ -111,11 +119,12 @@ builder.Services.AddScoped<IGetByIdReservationQuery, GetByIdReservationQuery>();
     // Seat
 builder.Services.AddScoped<IGetAllSeatQuery, GetAllSeatQuery>();
 builder.Services.AddScoped<IGetByIdSeatQuery, GetByIdSeatQuery>();
+builder.Services.AddScoped<IGetEntitySeatQuery, GetEntitySeatQuery>();
 
-    // Sector
+// Sector
 builder.Services.AddScoped<IGetAllSectorQuery, GetAllSectorQuery>();
 builder.Services.AddScoped<IGetByIdSectorQuery, GetByIdSectorQuery>();
-
+builder.Services.AddScoped<IGetSeatsBySectorQuery, GetSeatsBySectorQuery>();
 
 // Handlers
 
@@ -125,6 +134,7 @@ builder.Services.AddScoped<IUpdateEventHandler, UpdateEventHandler>();
 builder.Services.AddScoped<IDeleteEventHandler, DeleteEventHandler>();
 builder.Services.AddScoped<IGetByIdEventHandler, GetEventByIdHandler>();
 builder.Services.AddScoped<IGetAllEventHandler, GetAllEventHandler>();
+builder.Services.AddScoped<IGetSectorsByEventHandler, GetSectorsByEventHandler>();
 
 //User
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
@@ -160,6 +170,7 @@ builder.Services.AddScoped<IUpdateSectorHandler, UpdateSectorHandler>();
 builder.Services.AddScoped<IDeleteSectorHandler, DeleteSectorHandler>();
 builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
 builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
+builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
 
 var app = builder.Build();
