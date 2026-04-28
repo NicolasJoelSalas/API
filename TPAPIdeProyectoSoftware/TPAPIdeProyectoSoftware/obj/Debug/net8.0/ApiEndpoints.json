@@ -504,5 +504,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.DTOs.User.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

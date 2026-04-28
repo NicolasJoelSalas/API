@@ -1,0 +1,157 @@
+﻿/* =========================
+   SEATS PAGE
+   Seats.razor.css
+========================= */
+
+/* CONTENEDOR GENERAL */
+.cinema-room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+    animation: fadeUp .4s ease;
+}
+
+/* ESCENARIO */
+.screen {
+    width: 85%;
+    max-width: 820px;
+    height: 48px;
+    margin-bottom: 35px;
+    border-radius: 14px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(90deg, #ff3b3b, #ff0066);
+    box-shadow: 0 14px 35px rgba(255,0,102,.28);
+}
+
+/* FILAS */
+.seat-row {
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+/* LETRAS LATERALES */
+.row-label {
+    width: 35px;
+    text-align: center;
+    color: #9a9a9a;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+/* GRUPO DE ASIENTOS */
+.seat-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(42px, 42px));
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* BUTACA BASE */
+.seat {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,.25);
+}
+
+/* LIBRE */
+.free {
+    background: linear-gradient(145deg, #2ecc71, #1d8e4a);
+}
+
+    .free:hover {
+        transform: scale(1.12);
+        box-shadow: 0 10px 18px rgba(46,204,113,.35);
+    }
+
+/* RESERVADA */
+.reserved {
+    background: linear-gradient(145deg, #e74c3c, #9f1e26);
+    cursor: not-allowed;
+    opacity: .75;
+}
+
+/* SELECCIONADA */
+.selected {
+    background: linear-gradient(145deg, #0d6efd, #084298) !important;
+    transform: scale(1.12);
+    box-shadow: 0 0 0 4px rgba(13,110,253,.22), 0 12px 20px rgba(13,110,253,.25);
+}
+
+/* POSICIONES OPCIONALES */
+.left .seat-group {
+    justify-content: start;
+}
+
+.center .seat-group {
+    justify-content: center;
+}
+
+.right .seat-group {
+    justify-content: end;
+}
+
+/* TITULO */
+h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff3b3b, #ff0066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .seat {
+        width: 36px;
+        height: 36px;
+        font-size: 10px;
+    }
+
+    .seat-group {
+        grid-template-columns: repeat(auto-fit, minmax(36px, 36px));
+        gap: 7px;
+    }
+
+    .screen {
+        height: 42px;
+        line-height: 42px;
+        font-size: 14px;
+    }
+
+    .seat-row {
+        gap: 8px;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

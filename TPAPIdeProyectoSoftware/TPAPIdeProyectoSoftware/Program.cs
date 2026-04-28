@@ -142,6 +142,8 @@ builder.Services.AddScoped<IUpdateUserHandler, UpdateUserHandler>();
 builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();
 builder.Services.AddScoped<IGetByIdUserHandler, GetByIdUserHandler>();
 builder.Services.AddScoped<IGetAllUserHandler, GetAllUserHandler>();
+builder.Services.AddScoped<ILoginUserHandler, LoginUserHandler>();
+
 
     //Audit_Log
 builder.Services.AddScoped<ICreateAudit_LogHandler, CreateAudit_LogHandler>();

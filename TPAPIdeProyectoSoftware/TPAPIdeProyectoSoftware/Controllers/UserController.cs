@@ -1,5 +1,6 @@
 using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPAPIdeProyectoSoftware.Controllers
@@ -13,19 +14,22 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IUpdateUserHandler _updateHandler;
         private readonly IGetAllUserHandler _getAllUserHandler;
         private readonly IGetByIdUserHandler _getByIdUserHandler;
+        private readonly ILoginUserHandler _loginUserHandler;
 
         public UserController(
             IDeleteUserHandler deleteHandler,
             ICreateUserHandler createHandler,
             IUpdateUserHandler updateHandler,
             IGetByIdUserHandler getByIdUserHandler,
-            IGetAllUserHandler getAllUserHandler)
+            IGetAllUserHandler getAllUserHandler,
+            ILoginUserHandler loginUserHandler  )
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
             _updateHandler = updateHandler;
             _getAllUserHandler = getAllUserHandler;
             _getByIdUserHandler = getByIdUserHandler;
+            _loginUserHandler = loginUserHandler;
         }
 
         [HttpPost]
@@ -84,6 +88,22 @@ namespace TPAPIdeProyectoSoftware.Controllers
                 return NotFound(new { message });
 
             return Ok(new { message });
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] Application.DTOs.User.LoginRequest dto)
+        {
+            var result = await _loginUserHandler.Handle(dto);
+
+            if (!result.Success)
+                return Unauthorized(new { message = result.Message });
+
+            return Ok(new
+            {
+                message = result.Message,
+                userId = result.UserId,
+                username = result.Username
+            });
         }
     }
 }
