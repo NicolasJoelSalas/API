@@ -1,4 +1,6 @@
 ﻿@page "/sector/{SectorId:int}/seats"
+@rendermode InteractiveServer
+
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Nav
 
@@ -28,10 +30,10 @@ else
 
                     @foreach (var seat in row)
                     {
-                        <div class="seat @GetSeatClass(seat)"
-                             @onclick="() => SelectSeat(seat)">
+                        <button class="seat @GetSeatClass(seat)"
+                                @onclick="() => SelectSeat(seat)">
                             @seat.SeatNumber
-                        </div>
+                        </button>
                     }
 
                 </div>
@@ -86,10 +88,9 @@ else
 
     private void SelectSeat(SeatDto seat)
     {
-        if (seat.Status == "Reserved")
-            return;
+        Console.WriteLine("CLICK");
 
-        selectedSeatId = seat.Id;
+        Nav.NavigateTo($"/reservation/{seat.Id}");
     }
 
     private string GetSeatClass(SeatDto seat)

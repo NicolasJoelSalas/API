@@ -1,0 +1,42 @@
+﻿@page "/reservation/{SeatId:guid}"
+@rendermode InteractiveServer
+
+@inject IHttpClientFactory HttpClientFactory
+
+<h3>Reservar Butaca</h3>
+
+<p>Butaca seleccionada: @SeatId</p>
+
+<button class="btn btn-success" @onclick="CreateReservation">
+    Confirmar Reserva
+</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
+
+@code {
+    [Parameter]
+    public Guid SeatId { get; set; }
+
+    private string message = "";
+
+    private async Task CreateReservation()
+    {
+        var http = HttpClientFactory.CreateClient("Api");
+
+        var dto = new
+        {
+            UserId = 1, // usuario logueado
+            SeatId = SeatId
+        };
+
+        var response = await http.PostAsJsonAsync("api/Reservation", dto);
+
+        if (response.IsSuccessStatusCode)
+            message = "Reserva realizada correctamente";
+        else
+            message = "Error al reservar";
+    }
+}

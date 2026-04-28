@@ -13,21 +13,35 @@ public class CreateReservationHandler : ICreateReservationHandler
     private readonly IUpdateSeatCommand _commandseat;
     private readonly IGetByIdUserQuery _queryUser;
     private readonly IGetEntitySeatQuery _EntitySeatQuery;
-
+    private readonly ICreateAudit_LogCommand _auditLogCommand;
     public CreateReservationHandler(
         ICreateReservationCommand command,
         IGetByIdUserQuery queryUser,
         IUpdateSeatCommand commandseat,
-        IGetEntitySeatQuery EntitySeatQuery)
+        IGetEntitySeatQuery EntitySeatQuery,
+        ICreateAudit_LogCommand auditLogCommand)
     {
         _command = command;
         _queryUser = queryUser;
         _commandseat = commandseat;
         _EntitySeatQuery = EntitySeatQuery;
+        _auditLogCommand = auditLogCommand;
     }
 
     public async Task<string> Handle(ReservationRequestDto dto)
     {
+        var auditLog_IntentoDeReserva = new AUDIT_LOG
+        {
+            UserId = dto.UserId,
+            Action = "Intento de reserva",
+            EntityType = "Seat",
+            EntityId = dto.SeatId.ToString(),
+            Details = $"UsuarioId: {dto.UserId}, AsientoId: {dto.SeatId}",
+            CreatedAt = DateTime.UtcNow,
+        };
+
+        await _auditLogCommand.ExecuteCreateAudit_Log(auditLog_IntentoDeReserva);
+
         if (dto == null)
             return "Datos inválidos";
 
@@ -45,8 +59,9 @@ public class CreateReservationHandler : ICreateReservationHandler
         // Validación rápida (opcional)
         if (seat.Status == SeatStatus.Reserved)
             return "El asiento ya está reservado";
+        if (seat.Status == SeatStatus.Sold)
+            return "El asiento ya está vendido";
 
-       
 
         //Crear la reserva SOLO si el update fue exitoso
         var reservation = new RESERVATION
@@ -62,6 +77,19 @@ public class CreateReservationHandler : ICreateReservationHandler
         await _commandseat.ExecuteUpdateSeat(seat);
 
         await _command.ExecuteCreateReservation(reservation);
+
+        var auditLog_ReservaExitosa = new AUDIT_LOG
+        {
+            UserId = dto.UserId,
+            Action = "Reserva exitosa",
+            EntityType = "Reservation",
+            EntityId = dto.SeatId.ToString(),
+            Details = $"UsuarioId: {dto.UserId}, AsientoId: {dto.SeatId}, ReservaId: {reservation.Id}",
+            CreatedAt = DateTime.UtcNow,
+        };
+
+        await _auditLogCommand.ExecuteCreateAudit_Log(auditLog_ReservaExitosa);
+
 
         return "OK";
     }
