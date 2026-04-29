@@ -33,7 +33,7 @@
     private async Task CreateReservation()
     {
         var http = HttpClientFactory.CreateClient("Api");
-
+        
         var dto = new
         {
             UserId = Session.UserId, // usuario logueado

@@ -38,7 +38,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var message = await _createHandler.Handle(dto);
 
             if (message != "OK")
-                return BadRequest(new { message });
+                return StatusCode(409,new { message });
 
             return StatusCode(201, new
             {

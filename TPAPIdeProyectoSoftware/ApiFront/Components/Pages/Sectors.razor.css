@@ -17,10 +17,12 @@ main {
     animation: fadeUp .45s ease;
 }
 
+
 /* ESCENARIO */
 .stage {
-    width: 70%;
-    max-width: 820px;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 35px auto;
     padding: 14px;
     margin-bottom: 35px;
     border-radius: 14px;
@@ -36,10 +38,11 @@ main {
 .theater-map {
     width: 100%;
     max-width: 1050px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 220px));
+    justify-content: center;
     gap: 22px;
-    perspective: 900px;
 }
 
 /* CARD SECTOR */
