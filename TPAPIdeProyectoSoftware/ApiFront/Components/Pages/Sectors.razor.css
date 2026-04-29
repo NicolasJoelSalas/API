@@ -1,4 +1,9 @@
-﻿/* =========================
+﻿.page,
+main {
+    background: transparent;
+}
+
+/* =========================
    SECTORS PAGE
    Sectors.razor.css
 ========================= */

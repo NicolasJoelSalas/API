@@ -23,7 +23,7 @@ main {
 
 /* SIDEBAR (si la usás) */
 .sidebar {
-    background: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background: transparent;
 }
 
 /* ❌ IMPORTANTE: eliminar top-row sticky si ya usás navbar fijo */
@@ -50,3 +50,4 @@ main {
         right: 0.75rem;
         top: 0.5rem;
     }
+

@@ -1,24 +1,28 @@
-﻿@inherits LayoutComponentBase
+﻿@using ApiFront.Services
+@inherits LayoutComponentBase
+@inject UserSession Session
 
 <div class="top-navbar">
-    <div class="brand">🎟️ TicketApp</div>
+    <NavLink href="/home" Match="NavLinkMatch.All" class="brand">
+        🎟️ TicketApp
+    </NavLink>
 
     <div class="nav-links">
-        <NavLink href="/" Match="NavLinkMatch.All" class="nav-btn">
+        <NavLink href="/home" Match="NavLinkMatch.All" class="nav-btn">
             Home
         </NavLink>
 
-        <NavLink href="/reservas" class="nav-btn">
+        @* <NavLink href="/reservas" class="nav-btn">
             Mis reservas
-        </NavLink>
+        </NavLink> *@
 
         <NavLink href="/events" class="nav-btn">
             Eventos
         </NavLink>
 
-        <NavLink href="/login" class="nav-btn">
+        @* <NavLink href="/login" class="nav-btn">
             Login
-        </NavLink>
+        </NavLink> *@
 
     </div>
 </div>

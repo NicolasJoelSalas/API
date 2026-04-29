@@ -2,7 +2,7 @@
 @rendermode InteractiveServer
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Nav
-
+@inject IJSRuntime JS
 <h3 class="text-center">Sectores</h3>
 
 <div class="stage">ESCENARIO</div>
@@ -29,6 +29,9 @@ else
         }
 
     </div>
+    <button class="nav-btn" @onclick="GoBack">
+        ← Volver
+    </button>
 }
 
 @code {
@@ -37,7 +40,10 @@ else
     public int EventId { get; set; }
 
     private List<SectorDto>? sectors;
-
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
     protected override async Task OnParametersSetAsync()
     {
         await LoadSectors();

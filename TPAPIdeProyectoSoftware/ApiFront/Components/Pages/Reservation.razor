@@ -1,14 +1,16 @@
 ﻿@using ApiFront.Services
 @page "/reservation/{SeatId:guid}"
 @rendermode InteractiveServer
-
+@inject IJSRuntime JS
 @inject IHttpClientFactory HttpClientFactory
 @inject UserSession Session
 
 <h3>Reservar Butaca</h3>
 
 <p>Butaca seleccionada: @SeatId</p>
-
+<button class="nav-btn" @onclick="GoBack">
+    ← Volver
+</button>
 <button class="btn btn-success" @onclick="CreateReservation">
     Confirmar Reserva
 </button>
@@ -19,6 +21,10 @@
 }
 
 @code {
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
     [Parameter]
     public Guid SeatId { get; set; }
 
