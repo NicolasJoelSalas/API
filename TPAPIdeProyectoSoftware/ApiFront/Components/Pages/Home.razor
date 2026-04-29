@@ -1,8 +1,10 @@
 ﻿@page "/"
+@using ApiFront.Services
 @rendermode InteractiveServer
 
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Nav
+@inject UserSession Session
 
 
 <PageTitle>Home</PageTitle>
@@ -68,6 +70,9 @@
             {
                 var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
 
+                Session.UserId = result.UserId;
+                Session.Username = result.Username;
+
                 isLogged = true;
                 errorMessage = null;
 
@@ -76,6 +81,7 @@
             else
             {
                 var msg = await response.Content.ReadFromJsonAsync<ErrorResponse>();
+
                 errorMessage = msg?.Message ?? "Error al iniciar sesión";
             }
         }
@@ -87,8 +93,8 @@
 
     public class LoginRequest
     {
-        public string Name { get; set; }
-        public string PasswordHash { get; set; }
+        public string Name { get; set; } = "";
+        public string PasswordHash { get; set; } = "";
     }
 
     public class LoginResponse

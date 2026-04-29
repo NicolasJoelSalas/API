@@ -1,7 +1,9 @@
-﻿@page "/reservation/{SeatId:guid}"
+﻿@using ApiFront.Services
+@page "/reservation/{SeatId:guid}"
 @rendermode InteractiveServer
 
 @inject IHttpClientFactory HttpClientFactory
+@inject UserSession Session
 
 <h3>Reservar Butaca</h3>
 
@@ -28,7 +30,7 @@
 
         var dto = new
         {
-            UserId = 1, // usuario logueado
+            UserId = Session.UserId, // usuario logueado
             SeatId = SeatId
         };
 

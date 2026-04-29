@@ -1,8 +1,10 @@
 ﻿@page "/events"
+@using ApiFront.Services
 @rendermode InteractiveServer
 
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Nav
+@inject UserSession Session
 
 <h3 class="mb-4 text-center">🎟️ Eventos Disponibles</h3>
 

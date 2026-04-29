@@ -26,6 +26,7 @@ namespace Application.UseCases.USER.Queries
                 .OrderBy(x => x.Name)
                 .Select(x => new UserResponseDto
                 {
+                    Id = x.Id,
                     Name = x.Name,
                     Email = x.Email,
                     PasswordHash = x.PasswordHash,
