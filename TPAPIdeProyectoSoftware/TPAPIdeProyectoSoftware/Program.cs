@@ -143,7 +143,7 @@ builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();
 builder.Services.AddScoped<IGetByIdUserHandler, GetByIdUserHandler>();
 builder.Services.AddScoped<IGetAllUserHandler, GetAllUserHandler>();
 builder.Services.AddScoped<ILoginUserHandler, LoginUserHandler>();
-
+builder.Services.AddScoped<IGetAllUserLoginQuery, GetAllUserLoginQuery>();
 
     //Audit_Log
 builder.Services.AddScoped<ICreateAudit_LogHandler, CreateAudit_LogHandler>();

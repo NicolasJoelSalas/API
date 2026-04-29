@@ -2,17 +2,19 @@
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.UseCases.USER.Queries
 {
-    public class GetAllUserQuery : IGetAllUserQuery
+    public class GetAllUserLoginQuery : IGetAllUserLoginQuery
     {
         private readonly IUserRepository _repository;
 
-        public GetAllUserQuery(IUserRepository repository)
+        public GetAllUserLoginQuery(IUserRepository repository)
         {
             _repository = repository;
         }
@@ -26,6 +28,7 @@ namespace Application.UseCases.USER.Queries
                 {
                     Name = x.Name,
                     Email = x.Email,
+                    PasswordHash = x.PasswordHash,
                 }).ToListAsync();
         }
     }
