@@ -113,8 +113,8 @@
 h3 {
     text-align: center;
     font-size: 32px;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0; /* 👈 sin margen arriba */
+    padding-top: 10px; /* 👈 espacio controlado */
     font-weight: 800;
     background: linear-gradient(90deg, #ff3b3b, #ff0066);
     -webkit-background-clip: text;
@@ -156,3 +156,39 @@ h3 {
         transform: translateY(0);
     }
 }
+
+.contenedor {
+    display: flex;
+    align-items: center; /* opcional (centra vertical) */
+}
+
+.btnaa {
+    margin-left: auto; /* 🔥 esto lo manda a la derecha */
+
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ddd;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.2s;
+}
+    .btnaa:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .btnaa:hover {
+        background: rgba(255, 59, 59, 0.18);
+        border-color: rgba(255, 59, 59, 0.5);
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+    .btnaa.active {
+        background: linear-gradient(135deg, #ff3b3b, #ff0066);
+        border: none;
+        color: #fff;
+    }

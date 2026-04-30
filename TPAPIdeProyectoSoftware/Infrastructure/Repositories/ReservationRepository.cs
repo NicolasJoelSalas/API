@@ -45,5 +45,22 @@ namespace Infrastructure.Repositories
             _context.RESERVATION.Remove(reser);
             await _context.SaveChangesAsync();
         }
+        public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
+        {
+            return await _context.RESERVATION
+                .Where(r => seatIds.Contains(r.SeatId))
+                .Select(r => r.SeatId)
+                .ToListAsync();
+        }
+
+        public async Task AddRangeAsync(List<RESERVATION> reservations)
+        {
+            using var transaction = await _context.Database.BeginTransactionAsync();
+
+            await _context.RESERVATION.AddRangeAsync(reservations);
+            await _context.SaveChangesAsync();
+
+            await transaction.CommitAsync();
+        }
     }
 }

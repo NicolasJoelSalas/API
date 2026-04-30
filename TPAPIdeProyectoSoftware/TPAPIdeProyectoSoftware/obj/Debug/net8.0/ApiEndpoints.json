@@ -269,6 +269,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Reservation/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.DTOs.User.CreateMultipleReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Create",
     "RelativePath": "api/Seat",

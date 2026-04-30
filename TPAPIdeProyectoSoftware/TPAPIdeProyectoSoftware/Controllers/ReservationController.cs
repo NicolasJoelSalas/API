@@ -2,6 +2,7 @@
 using Application.Interfaces.Handlers.User;
 using Application.UseCases.USER.Handlers;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata;
 
 namespace TPAPIdeProyectoSoftware.Controllers
 {
@@ -9,6 +10,8 @@ namespace TPAPIdeProyectoSoftware.Controllers
     [Route("api/Reservation")]
     public class ReservationController : ControllerBase
     {
+        private readonly ICreateMultipleReservationHandler _createlishandler;
+
         private readonly ICreateReservationHandler _createHandler;
         private readonly IDeleteReservationHandler _deleteHandler;
         private readonly IUpdateReservationHandler _updateHandler;
@@ -20,13 +23,15 @@ namespace TPAPIdeProyectoSoftware.Controllers
             ICreateReservationHandler createHandler,
             IUpdateReservationHandler updateHandler,
             IGetByIdReservationHandler getByIdReservationHandler,
-            IGetAllReservationHandler getAllReservationHandler)
+            IGetAllReservationHandler getAllReservationHandler,
+            ICreateMultipleReservationHandler createlishandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
             _updateHandler = updateHandler;
             _getAllReservationHandler = getAllReservationHandler;
             _getByIdReservationHandler = getByIdReservationHandler;
+            _createlishandler = createlishandler;
         }
 
         [HttpPost]
@@ -87,6 +92,22 @@ namespace TPAPIdeProyectoSoftware.Controllers
             return Ok(new { message });
         }
 
-
+        [HttpPost("multiple")]
+        public async Task<IActionResult> CreateMultiple([FromBody] CreateMultipleReservationDto dto)
+        {
+            try
+            {
+                await _createlishandler.Handle(dto);
+                return Ok(new { message = "Reservas realizadas correctamente" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    error = ex.Message,
+                    inner = ex.InnerException?.Message
+                });
+            }
+        }
     }
 }

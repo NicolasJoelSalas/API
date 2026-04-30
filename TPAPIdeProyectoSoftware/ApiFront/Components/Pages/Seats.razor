@@ -1,9 +1,12 @@
 ﻿@page "/sector/{SectorId:int}/seats"
+@using ApiFront.Services
 @rendermode InteractiveServer
 
 @inject IHttpClientFactory HttpClientFactory
+@inject UserSession Session
 @inject NavigationManager Nav
 @inject IJSRuntime JS
+
 <h3 class="text-center">Butacas</h3>
 
 @if (seats == null)
@@ -44,29 +47,67 @@ else
         }
 
     </div>
+
+    <p><strong>Seleccionadas:</strong> @selectedSeatIds.Count</p>
+
+    <!-- BOTONES -->
     <button class="nav-btn" @onclick="GoBack">
         ← Volver
     </button>
+
+
+    <button class="btn btn-success"
+            @onclick="CreateReservation"
+            disabled="@isLoading">
+        @(isLoading ? "Reservando..." : "Confirmar Reserva")
+    </button>
+
+
+    <!-- MENSAJE -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p style="color:@(reservaConfirmada ? "lightgreen" : "salmon")">
+            @message
+        </p>
+
+    }
+
+    <!-- PAGO -->
+    @if (reservaConfirmada)
+    {
+        <button class="btnaa"
+                @onclick="GoToPagos">
+            Realizar Pago
+        </button>
+    }
 }
 
 @code {
+    private List<Guid> reservedSeats = new();
+    private bool reservaConfirmada = false;
+    private bool isLoading = false;
 
     [Parameter]
     public int SectorId { get; set; }
 
     private List<SeatDto>? seats;
-    private Guid? selectedSeatId;
+    private List<Guid> selectedSeatIds = new();
 
-    private string pos = "center"; // 👈 IMPORTANTE
+    private string pos = "center";
+    private string message = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        GetPositionFromUrl();
+        await LoadSeats();
+    }
+
     private async Task GoBack()
     {
         await JS.InvokeVoidAsync("history.back");
     }
-    protected override async Task OnParametersSetAsync()
-    {
-        GetPositionFromUrl(); // 👈 LEER POSICIÓN
-        await LoadSeats();
-    }
+
+  
 
     private void GetPositionFromUrl()
     {
@@ -94,9 +135,18 @@ else
 
     private void SelectSeat(SeatDto seat)
     {
-        Console.WriteLine("CLICK");
+        if (isLoading)
+            return;
 
-        Nav.NavigateTo($"/reservation/{seat.Id}");
+        reservaConfirmada = false; // 👈 importante UX
+
+        if (seat.Status == "Reserved")
+            return;
+
+        if (selectedSeatIds.Contains(seat.Id))
+            selectedSeatIds.Remove(seat.Id);
+        else
+            selectedSeatIds.Add(seat.Id);
     }
 
     private string GetSeatClass(SeatDto seat)
@@ -104,11 +154,72 @@ else
         if (seat.Status == "Reserved")
             return "reserved";
 
-        if (selectedSeatId == seat.Id)
+        if (selectedSeatIds.Contains(seat.Id))
             return "free selected";
 
         return "free";
     }
+
+    private async Task CreateReservation()
+    {
+        if (!selectedSeatIds.Any())
+        {
+            message = "Seleccioná al menos un asiento";
+            return;
+        }
+
+        isLoading = true;
+        message = "";
+        reservaConfirmada = false;
+
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            Console.WriteLine($"UserId: {Session.UserId}");
+            Console.WriteLine($"Seats: {string.Join(",", selectedSeatIds)}");
+
+            var dto = new
+            {
+                UserId = Session.UserId,
+                SeatIds = selectedSeatIds
+            };
+
+            var response = await http.PostAsJsonAsync("/api/Reservation/multiple", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Reservas realizadas correctamente";
+                reservaConfirmada = true;
+
+                reservedSeats = selectedSeatIds.ToList(); // más limpio
+                selectedSeatIds.Clear();
+
+                await LoadSeats();
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                message = error;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = ex.Message;
+        }
+        finally
+        {
+            isLoading = false; // 🔥 SIEMPRE se ejecuta
+        }
+    }
+
+    private void GoToPagos()
+    {
+        var seatsParam = string.Join(",", reservedSeats);
+        Nav.NavigateTo($"/pago?seats={seatsParam}&sectorId={SectorId}");
+    }
+
+
 
     public class SeatDto
     {

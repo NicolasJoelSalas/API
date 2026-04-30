@@ -1,0 +1,157 @@
+﻿@page "/pago"
+@inject NavigationManager Nav
+@inject IHttpClientFactory HttpClientFactory
+@inject IJSRuntime JS
+
+@rendermode InteractiveServer
+
+<h3 class="title">Finalizar compra</h3>
+
+<div class="payment-container">
+
+    <!-- FORMULARIO -->
+    <div class="payment-form">
+
+        <h4>Datos de pago</h4>
+
+        <div class="input-group">
+            <label>Nombre en la tarjeta</label>
+            <input type="text" placeholder="Juan Pérez" @bind="cardName" />
+        </div>
+
+        <div class="input-group">
+            <label>Número de tarjeta</label>
+            <input type="text" placeholder="1234 5678 9012 3456" @bind="cardNumber" />
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <label>Vencimiento</label>
+                <input type="text" placeholder="MM/AA" @bind="expiry" />
+            </div>
+
+            <div class="input-group">
+                <label>CVV</label>
+                <input type="password" placeholder="123" @bind="cvv" />
+            </div>
+        </div>
+
+        <button class="pay-btn" @onclick="SimulatePayment">
+            Pagar ahora
+        </button>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <p class="message">@message</p>
+        }
+
+        <button class="nav-btn" @onclick="GoBack">
+            ← Volver
+        </button>
+
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="payment-summary">
+
+        <h4>Resumen</h4>
+
+        @if (isLoadingSector)
+        {
+            <p>Cargando precios...</p>
+        }
+        else
+        {
+            <div class="summary-item">
+                <span>Entradas (@seatCount)</span>
+                <span>$@(seatCount * sectorPrice)</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <span>$@(seatCount * sectorPrice)</span>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+@code {
+    private List<string> seatIds = new();
+    private int seatCount = 0;
+    private int sectorId;
+    private decimal sectorPrice;
+
+    private string cardName = "";
+    private string cardNumber = "";
+    private string expiry = "";
+    private string cvv = "";
+    private string message = "";
+
+    private bool isLoadingSector = true;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var uri = Nav.ToAbsoluteUri(Nav.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+        var seatsParam = query["seats"];
+        var sectorParam = query["sectorId"];
+
+        if (!string.IsNullOrWhiteSpace(seatsParam))
+        {
+            seatIds = seatsParam.Split(',').ToList();
+            seatCount = seatIds.Count;
+        }
+
+        if (!string.IsNullOrWhiteSpace(sectorParam) && int.TryParse(sectorParam, out var id))
+        {
+            sectorId = id;
+            await LoadSectorPrice();
+        }
+    }
+
+    private async Task LoadSectorPrice()
+    {
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            var sector = await http.GetFromJsonAsync<SectorDto>($"api/sector/{sectorId}");
+
+            if (sector != null)
+            {
+                sectorPrice = sector.Price;
+            }
+        }
+        catch
+        {
+            sectorPrice = 0;
+        }
+        finally
+        {
+            isLoadingSector = false;
+            StateHasChanged(); // 🔥 clave para que refresque UI
+        }
+    }
+
+    private async Task SimulatePayment()
+    {
+        await Task.Delay(1200);
+
+
+        message = "✅ Pago aprobado (simulación)";
+    }
+
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+
+    public class SectorDto
+    {
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+    }
+}

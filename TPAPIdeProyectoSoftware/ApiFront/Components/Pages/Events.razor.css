@@ -1,6 +1,12 @@
-﻿namespace ApiFront.Components.Pages
-{
-    public class Events
-    {
-    }
+﻿.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--navbar-height); /* 👈 CLAVE */
 }
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+

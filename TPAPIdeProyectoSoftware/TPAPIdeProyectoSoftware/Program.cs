@@ -20,6 +20,8 @@ using Application.UseCases.AUDIT_LOG.Queries;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
+using Application.UseCases.RESERVATION.Handlers;
+using Application.UseCases.RESERVATION.Queries;
 using Application.UseCases.SECTOR.Handlers;
 using Application.UseCases.SECTOR.Queries;
 using Application.UseCases.USER.Commands;
@@ -53,7 +55,6 @@ builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 
 
-
 // Commands
 
 //Event
@@ -68,6 +69,7 @@ builder.Services.AddScoped<ICreateUserCommand, CreateUserCommand>();
 builder.Services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
 builder.Services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
 
+
     //Audit_Log
 builder.Services.AddScoped<ICreateAudit_LogCommand, CreateAudit_LogCommand>();
 builder.Services.AddScoped<IUpdateAudit_LogCommand, UpdateAudit_LogCommand>();
@@ -77,8 +79,9 @@ builder.Services.AddScoped<IDeleteAudit_LogCommand, DeleteAudit_LogCommand>();
 builder.Services.AddScoped<ICreateReservationCommand, CreateReservationCommand>();
 builder.Services.AddScoped<IUpdateReservationCommand, UpdateReservationCommand>();
 builder.Services.AddScoped<IDeleteReservationCommand, DeleteReservationCommand>();
+builder.Services.AddScoped<ICreateMultipleReservationCommand, CreateMultipleReservationCommand>();
 
-    //Seat
+//Seat
 builder.Services.AddScoped<ICreateSeatCommand, CreateSeatCommand>();
 builder.Services.AddScoped<IUpdateSeatCommand, UpdateSeatCommand>();
 builder.Services.AddScoped<IDeleteSeatCommand, DeleteSeatCommand>();
@@ -115,8 +118,10 @@ builder.Services.AddScoped<IGetIdUserQueryValidation, GetIdUserQueryValidation>(
 
 builder.Services.AddScoped<IGetAllReservationQuery, GetAllReservationQuery>();
 builder.Services.AddScoped<IGetByIdReservationQuery, GetByIdReservationQuery>();
+builder.Services.AddScoped<IGetReservedSeatIdsQuery, GetReservedSeatIdsQuery>();
 
-    // Seat
+
+// Seat
 builder.Services.AddScoped<IGetAllSeatQuery, GetAllSeatQuery>();
 builder.Services.AddScoped<IGetByIdSeatQuery, GetByIdSeatQuery>();
 builder.Services.AddScoped<IGetEntitySeatQuery, GetEntitySeatQuery>();
@@ -158,8 +163,9 @@ builder.Services.AddScoped<IUpdateReservationHandler, UpdateReservationHandler>(
 builder.Services.AddScoped<IDeleteReservationHandler, DeleteReservationHandler>();
 builder.Services.AddScoped<IGetByIdReservationHandler, GetByIdReservationHandler>();
 builder.Services.AddScoped<IGetAllReservationHandler, GetAllReservationHandler>();
+builder.Services.AddScoped<ICreateMultipleReservationHandler, CreateMultipleReservationHandler>();
 
-    //Seat
+//Seat
 builder.Services.AddScoped<ICreateSeatHandler, CreateSeatHandler>();
 builder.Services.AddScoped<IUpdateSeatHandler, UpdateSeatHandler>();
 builder.Services.AddScoped<IDeleteSeatHandler, DeleteSeatHandler>();

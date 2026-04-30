@@ -63,7 +63,7 @@ namespace Application.UseCases
                 return "Estado de reserva inválido";
             }
 
-            var Reservation = new RESERVATION
+            var Reservation = new Domain.Entities.RESERVATION
             {
                 Id = id,
                 UserId = dto.UserId,
