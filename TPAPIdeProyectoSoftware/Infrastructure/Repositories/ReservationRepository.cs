@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.Repositories;
 using Domain.Entities;
+using Domain.Enums;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -61,6 +62,16 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
 
             await transaction.CommitAsync();
+        }
+        public async Task UpdateStatusAsync(List<Guid> reservationIds, string status)
+        {
+            var rows = await _context.RESERVATION
+                .Where(r => reservationIds.Contains(r.Id))
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(r => r.Status, status)
+                );
+
+            Console.WriteLine($"ROWS UPDATED: {rows}");
         }
     }
 }

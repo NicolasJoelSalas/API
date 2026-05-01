@@ -1,4 +1,6 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs.Reservation;
+using Application.DTOs.User;
+using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.User;
 using Application.UseCases.USER.Handlers;
 using Microsoft.AspNetCore.Mvc;
@@ -17,14 +19,16 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IUpdateReservationHandler _updateHandler;
         private readonly IGetAllReservationHandler _getAllReservationHandler;
         private readonly IGetByIdReservationHandler _getByIdReservationHandler;
+        private readonly IConfirmPaymentHandler _confirmPaymentHandler;
 
         public ReservationController(
-            IDeleteReservationHandler deleteHandler,
-            ICreateReservationHandler createHandler,
-            IUpdateReservationHandler updateHandler,
-            IGetByIdReservationHandler getByIdReservationHandler,
-            IGetAllReservationHandler getAllReservationHandler,
-            ICreateMultipleReservationHandler createlishandler)
+        IDeleteReservationHandler deleteHandler,
+        ICreateReservationHandler createHandler,
+        IUpdateReservationHandler updateHandler,
+        IGetByIdReservationHandler getByIdReservationHandler,
+        IGetAllReservationHandler getAllReservationHandler,
+        ICreateMultipleReservationHandler createlishandler,
+        IConfirmPaymentHandler confirmPaymentHandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
@@ -32,6 +36,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             _getAllReservationHandler = getAllReservationHandler;
             _getByIdReservationHandler = getByIdReservationHandler;
             _createlishandler = createlishandler;
+            _confirmPaymentHandler = confirmPaymentHandler;
         }
 
         [HttpPost]
@@ -97,8 +102,9 @@ namespace TPAPIdeProyectoSoftware.Controllers
         {
             try
             {
-                await _createlishandler.Handle(dto);
-                return Ok(new { message = "Reservas realizadas correctamente" });
+                var reservationIds = await _createlishandler.Handle(dto);
+
+                return Ok(reservationIds); // 👈 CLAVE
             }
             catch (Exception ex)
             {
@@ -108,6 +114,17 @@ namespace TPAPIdeProyectoSoftware.Controllers
                     inner = ex.InnerException?.Message
                 });
             }
+        }
+
+        [HttpPost("confirm-payment")]
+        public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
+        {
+            if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())
+                return BadRequest(new { message = "No se enviaron reservas" });
+
+            var result = await _confirmPaymentHandler.Handle(dto.ReservationIds);
+
+            return Ok(new { message = result });
         }
     }
 }

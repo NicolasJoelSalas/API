@@ -35,7 +35,7 @@ namespace Application.UseCases.RESERVATION.Handlers
             _auditLogCommand = auditLogCommand;
         }
 
-        public async Task Handle(CreateMultipleReservationDto dto)
+        public async Task<List<Guid>> Handle(CreateMultipleReservationDto dto)
         {
             if (dto == null)
                 throw new Exception("Datos inválidos");
@@ -46,16 +46,16 @@ namespace Application.UseCases.RESERVATION.Handlers
             if (dto.SeatIds == null || !dto.SeatIds.Any())
                 throw new Exception("No se enviaron butacas");
 
-            // 👤 Validar usuario
+            // Validar usuario
             var user = await _queryUser.GetById(dto.UserId);
             if (user == null)
                 throw new Exception("El Usuario no existe");
 
-            // 🪵 AUDIT LOG: intento global
+            // AUDIT LOG: intento global
             var auditLogIntento = new Domain.Entities.AUDIT_LOG
             {
                 UserId = dto.UserId,
-                Action = "Intento de reserva múltiple",
+                Action = "Intento de reserva",
                 EntityType = "Reservation",
                 EntityId = string.Join(",", dto.SeatIds),
                 Details = $"UsuarioId: {dto.UserId}, Seats: {string.Join(",", dto.SeatIds)}",
@@ -64,7 +64,7 @@ namespace Application.UseCases.RESERVATION.Handlers
 
             await _auditLogCommand.ExecuteCreateAudit_Log(auditLogIntento);
 
-            // 🔍 Filtrar butacas ya reservadas
+            // Filtrar butacas ya reservadas
             var reservedSeatIds = await _getReservedSeatsQuery.Execute(dto.SeatIds);
 
             var availableSeatIds = dto.SeatIds
@@ -78,7 +78,7 @@ namespace Application.UseCases.RESERVATION.Handlers
 
             foreach (var seatId in availableSeatIds)
             {
-                // 🎯 Obtener asiento
+                // Obtener asiento
                 var seat = await _EntitySeatQuery.GetById(seatId);
 
                 if (seat == null)
@@ -87,11 +87,11 @@ namespace Application.UseCases.RESERVATION.Handlers
                 if (seat.Status == SeatStatus.Reserved || seat.Status == SeatStatus.Sold)
                     continue;
 
-                // 🔒 Marcar asiento
+                // Marcar asiento
                 seat.Status = SeatStatus.Reserved;
                 await _commandseat.ExecuteUpdateSeat(seat);
 
-                // 🧱 Crear reserva
+                // Crear reserva
                 var reservation = new Domain.Entities.RESERVATION
                 {
                     UserId = dto.UserId,
@@ -104,10 +104,8 @@ namespace Application.UseCases.RESERVATION.Handlers
                 reservations.Add(reservation);
             }
 
-            // 💾 Guardar reservas
             await _createCommand.Execute(reservations);
 
-            // 🪵 AUDIT LOG por cada reserva
             foreach (var reservation in reservations)
             {
                 var auditLog = new Domain.Entities.AUDIT_LOG
@@ -123,13 +121,7 @@ namespace Application.UseCases.RESERVATION.Handlers
                 await _auditLogCommand.ExecuteCreateAudit_Log(auditLog);
             }
 
-            // ⚠️ aviso de butacas ya ocupadas
-            if (reservedSeatIds.Any())
-            {
-                throw new Exception(
-                    $"Algunas butacas ya estaban reservadas: {string.Join(", ", reservedSeatIds)}"
-                );
-            }
+            return reservations.Select(r => r.Id).ToList();
         }
     }
 }

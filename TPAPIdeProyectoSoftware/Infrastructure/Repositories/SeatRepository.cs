@@ -45,5 +45,15 @@ namespace Infrastructure.Repositories
             _context.SEAT.Remove(seat);
             await _context.SaveChangesAsync();
         }
+        public async Task MarkAsSoldByReservationIds(List<Guid> reservationIds)
+        {
+            await _context.SEAT
+                .Where(s => _context.RESERVATION
+                    .Where(r => reservationIds.Contains(r.Id))
+                    .Select(r => r.SeatId)
+                    .Contains(s.Id))
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(x => x.Status, "Sold"));
+        }
     }
 }

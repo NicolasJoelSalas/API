@@ -3,6 +3,7 @@ using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface ICreateMultipleReservationHandler
     {
-        Task Handle(CreateMultipleReservationDto dto);
+       Task<List<Guid>> Handle(CreateMultipleReservationDto dto);
     }
 }

@@ -16,28 +16,28 @@
 
         <div class="input-group">
             <label>Nombre en la tarjeta</label>
-            <input type="text" placeholder="Juan Pérez" @bind="cardName" />
+            <input type="text" @bind="cardName" />
         </div>
 
         <div class="input-group">
             <label>Número de tarjeta</label>
-            <input type="text" placeholder="1234 5678 9012 3456" @bind="cardNumber" />
+            <input type="text" @bind="cardNumber" />
         </div>
 
         <div class="row">
             <div class="input-group">
                 <label>Vencimiento</label>
-                <input type="text" placeholder="MM/AA" @bind="expiry" />
+                <input type="text" @bind="expiry" />
             </div>
 
             <div class="input-group">
                 <label>CVV</label>
-                <input type="password" placeholder="123" @bind="cvv" />
+                <input type="password" @bind="cvv" />
             </div>
         </div>
 
-        <button class="pay-btn" @onclick="SimulatePayment">
-            Pagar ahora
+        <button class="pay-btn" @onclick="SimulatePayment" disabled="@isProcessing">
+            @(isProcessing ? "Procesando..." : "Pagar ahora")
         </button>
 
         @if (!string.IsNullOrEmpty(message))
@@ -82,29 +82,33 @@
     private int seatCount = 0;
     private int sectorId;
     private decimal sectorPrice;
+    private List<Guid> reservationIds = new();
 
     private string cardName = "";
     private string cardNumber = "";
     private string expiry = "";
     private string cvv = "";
     private string message = "";
-
     private bool isLoadingSector = true;
+    private bool isProcessing = false;
 
     protected override async Task OnParametersSetAsync()
     {
         var uri = Nav.ToAbsoluteUri(Nav.Uri);
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
 
-        var seatsParam = query["seats"];
+        var reservationsParam = query["reservations"];
         var sectorParam = query["sectorId"];
 
-        if (!string.IsNullOrWhiteSpace(seatsParam))
+        if (!string.IsNullOrWhiteSpace(reservationsParam))
         {
-            seatIds = seatsParam.Split(',').ToList();
-            seatCount = seatIds.Count;
-        }
+            reservationIds = reservationsParam
+                .Split(',')
+                .Select(Guid.Parse)
+                .ToList();
 
+            seatCount = reservationIds.Count; 
+        }
         if (!string.IsNullOrWhiteSpace(sectorParam) && int.TryParse(sectorParam, out var id))
         {
             sectorId = id;
@@ -121,9 +125,7 @@
             var sector = await http.GetFromJsonAsync<SectorDto>($"api/sector/{sectorId}");
 
             if (sector != null)
-            {
                 sectorPrice = sector.Price;
-            }
         }
         catch
         {
@@ -132,16 +134,57 @@
         finally
         {
             isLoadingSector = false;
-            StateHasChanged(); // 🔥 clave para que refresque UI
         }
     }
 
     private async Task SimulatePayment()
     {
-        await Task.Delay(1200);
+        if (!reservationIds.Any())
+        {
+            message = "❌ No hay reservas para pagar";
+            return;
+        }
 
 
-        message = "✅ Pago aprobado (simulación)";
+        isProcessing = true;
+        message = "";
+
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            var dto = new ConfirmPaymentDto
+            {
+                ReservationIds = reservationIds
+            };
+
+            var response = await http.PostAsJsonAsync("api/Reservation/confirm-payment", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "✅ Pago confirmado correctamente";
+
+                // opcional: limpiar estado o redirigir
+                reservationIds.Clear();
+                seatCount = 0;
+
+                // opcional PRO:
+                // Nav.NavigateTo("/success");
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                message = $"❌ {error}";
+            }
+        }
+        catch
+        {
+            message = "❌ Error de conexión con el servidor";
+        }
+        finally
+        {
+            isProcessing = false;
+        }
     }
 
     private async Task GoBack()
@@ -153,5 +196,10 @@
     {
         public int Id { get; set; }
         public decimal Price { get; set; }
+    }
+
+    public class ConfirmPaymentDto
+    {
+        public List<Guid> ReservationIds { get; set; } = new();
     }
 }

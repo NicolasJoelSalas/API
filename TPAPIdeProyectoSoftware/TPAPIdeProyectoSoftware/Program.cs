@@ -2,11 +2,14 @@ using Application;
 using Application.Interfaces;
 using Application.Interfaces.Command;
 using Application.Interfaces.Command.Event;
+using Application.Interfaces.Command.Reservation;
+using Application.Interfaces.Command.Seat;
 using Application.Interfaces.Command.User;
 using Application.Interfaces.Commands.Event;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
@@ -22,8 +25,10 @@ using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
 using Application.UseCases.RESERVATION.Handlers;
 using Application.UseCases.RESERVATION.Queries;
+using Application.UseCases.SEAT.Commands;
 using Application.UseCases.SECTOR.Handlers;
 using Application.UseCases.SECTOR.Queries;
+using Application.UseCases.User.Handlers;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Handlers;
 using Application.UseCases.USER.Queries;
@@ -80,11 +85,15 @@ builder.Services.AddScoped<ICreateReservationCommand, CreateReservationCommand>(
 builder.Services.AddScoped<IUpdateReservationCommand, UpdateReservationCommand>();
 builder.Services.AddScoped<IDeleteReservationCommand, DeleteReservationCommand>();
 builder.Services.AddScoped<ICreateMultipleReservationCommand, CreateMultipleReservationCommand>();
+builder.Services.AddScoped<IUpdateReservationsStatusCommand, UpdateReservationsStatusCommand>();
+
 
 //Seat
 builder.Services.AddScoped<ICreateSeatCommand, CreateSeatCommand>();
 builder.Services.AddScoped<IUpdateSeatCommand, UpdateSeatCommand>();
 builder.Services.AddScoped<IDeleteSeatCommand, DeleteSeatCommand>();
+builder.Services.AddScoped<IMarkSeatsAsSoldCommand, MarkSeatsAsSoldCommand>();
+
 
     //Sector
 builder.Services.AddScoped<ICreateSectorCommand, CreateSectorCommand>();
@@ -164,6 +173,7 @@ builder.Services.AddScoped<IDeleteReservationHandler, DeleteReservationHandler>(
 builder.Services.AddScoped<IGetByIdReservationHandler, GetByIdReservationHandler>();
 builder.Services.AddScoped<IGetAllReservationHandler, GetAllReservationHandler>();
 builder.Services.AddScoped<ICreateMultipleReservationHandler, CreateMultipleReservationHandler>();
+builder.Services.AddScoped<IConfirmPaymentHandler, ConfirmPaymentHandler>();
 
 //Seat
 builder.Services.AddScoped<ICreateSeatHandler, CreateSeatHandler>();
