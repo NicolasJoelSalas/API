@@ -1,4 +1,4 @@
-﻿namespace ApiFront.Services
+﻿namespace ApiFront
 {
     public class UserSession
     {

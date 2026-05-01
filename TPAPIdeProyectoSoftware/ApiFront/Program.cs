@@ -1,5 +1,5 @@
 using ApiFront.Components;
-using ApiFront.Services;
+using ApiFront;
 
 var builder = WebApplication.CreateBuilder(args);
 
