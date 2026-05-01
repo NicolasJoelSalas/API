@@ -1,6 +1,6 @@
 🎟️ Sistema de Venta de Tickets de Eventos
 
-Este repositorio contiene una aplicación web orientada a la gestión y venta de tickets para eventos. La solución está compuesta por un backend desarrollado en .NET utilizando Entity Framework Core para el acceso a datos y un frontend (ApiFront) que permite la interacción con los usuarios.
+Este repositorio contiene una aplicación web orientada a la gestión y venta de tickets para eventos. La solución está compuesta por un backend desarrollado en .NET utilizando Entity Framework Core para el acceso a datos y una interfaz que permite la interacción con los usuarios.
 
 Para poder ejecutar correctamente el proyecto en un entorno local, es necesario realizar una serie de configuraciones iniciales. En primer lugar, se debe verificar el string de conexión a la base de datos, el cual se encuentra en el archivo TPAPIdeProyectoSoftware/appsettings.Development.json. Es fundamental que el valor del servidor esté correctamente definido; en caso de ejecutar la aplicación de manera local, se debe utilizar localhost como servidor. 
 
