@@ -1,4 +1,5 @@
 ﻿@page "/pago"
+@using System.ComponentModel.DataAnnotations
 @inject NavigationManager Nav
 @inject IHttpClientFactory HttpClientFactory
 @inject IJSRuntime JS
@@ -14,31 +15,40 @@
 
         <h4>Datos de pago</h4>
 
-        <div class="input-group">
-            <label>Nombre en la tarjeta</label>
-            <input type="text" @bind="cardName" />
-        </div>
+        <EditForm Model="paymentModel" OnValidSubmit="SimulatePayment">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-        <div class="input-group">
-            <label>Número de tarjeta</label>
-            <input type="text" @bind="cardNumber" />
-        </div>
-
-        <div class="row">
             <div class="input-group">
-                <label>Vencimiento</label>
-                <input type="text" @bind="expiry" />
+                <label>Nombre en la tarjeta</label>
+                <input type="text" @bind="paymentModel.CardName" />
+                <ValidationMessage For="@(() => paymentModel.CardName)" />
             </div>
 
             <div class="input-group">
-                <label>CVV</label>
-                <input type="password" @bind="cvv" />
+                <label>Número de tarjeta</label>
+                <input type="text" @bind="paymentModel.CardNumber" />
+                <ValidationMessage For="@(() => paymentModel.CardNumber)" />
             </div>
-        </div>
 
-        <button class="pay-btn" @onclick="SimulatePayment" disabled="@isProcessing">
-            @(isProcessing ? "Procesando..." : "Pagar ahora")
-        </button>
+            <div class="row">
+                <div class="input-group">
+                    <label>Vencimiento (MM/YY)</label>
+                    <input type="text" placeholder="08/28" @bind="paymentModel.Expiry" />
+                    <ValidationMessage For="@(() => paymentModel.Expiry)" />
+                </div>
+
+                <div class="input-group">
+                    <label>CVV</label>
+                    <input type="password" @bind="paymentModel.CVV" />
+                    <ValidationMessage For="@(() => paymentModel.CVV)" />
+                </div>
+            </div>
+
+            <button class="pay-btn" type="submit" disabled="@isProcessing">
+                @(isProcessing ? "Procesando..." : "Pagar ahora")
+            </button>
+        </EditForm>
 
         @if (!string.IsNullOrEmpty(message))
         {
@@ -78,19 +88,16 @@
 </div>
 
 @code {
-    private List<string> seatIds = new();
+    private List<Guid> reservationIds = new();
     private int seatCount = 0;
     private int sectorId;
     private decimal sectorPrice;
-    private List<Guid> reservationIds = new();
 
-    private string cardName = "";
-    private string cardNumber = "";
-    private string expiry = "";
-    private string cvv = "";
     private string message = "";
     private bool isLoadingSector = true;
     private bool isProcessing = false;
+
+    private PaymentModel paymentModel = new();
 
     protected override async Task OnParametersSetAsync()
     {
@@ -107,8 +114,9 @@
                 .Select(Guid.Parse)
                 .ToList();
 
-            seatCount = reservationIds.Count; 
+            seatCount = reservationIds.Count;
         }
+
         if (!string.IsNullOrWhiteSpace(sectorParam) && int.TryParse(sectorParam, out var id))
         {
             sectorId = id;
@@ -121,7 +129,6 @@
         try
         {
             var http = HttpClientFactory.CreateClient("Api");
-
             var sector = await http.GetFromJsonAsync<SectorDto>($"api/sector/{sectorId}");
 
             if (sector != null)
@@ -145,7 +152,6 @@
             return;
         }
 
-
         isProcessing = true;
         message = "";
 
@@ -163,13 +169,8 @@
             if (response.IsSuccessStatusCode)
             {
                 message = "✅ Pago confirmado correctamente";
-
-                // opcional: limpiar estado o redirigir
                 reservationIds.Clear();
                 seatCount = 0;
-
-                // opcional PRO:
-                // Nav.NavigateTo("/success");
             }
             else
             {
@@ -190,6 +191,25 @@
     private async Task GoBack()
     {
         await JS.InvokeVoidAsync("history.back");
+    }
+
+    public class PaymentModel
+    {
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [MinLength(3, ErrorMessage = "Nombre demasiado corto")]
+        public string CardName { get; set; } = "";
+
+        [Required(ErrorMessage = "El número de tarjeta es obligatorio")]
+        [RegularExpression(@"^\d{16}$", ErrorMessage = "Debe tener 16 dígitos")]
+        public string CardNumber { get; set; } = "";
+
+        [Required(ErrorMessage = "La fecha es obligatoria")]
+        [RegularExpression(@"^(0[1-9]|1[0-2])\/\d{2}$", ErrorMessage = "Formato inválido (MM/YY)")]
+        public string Expiry { get; set; } = "";
+
+        [Required(ErrorMessage = "El CVV es obligatorio")]
+        [RegularExpression(@"^\d{3,4}$", ErrorMessage = "CVV inválido")]
+        public string CVV { get; set; } = "";
     }
 
     public class SectorDto
