@@ -104,11 +104,11 @@ namespace TPAPIdeProyectoSoftware.Controllers
             {
                 var reservationIds = await _createlishandler.Handle(dto);
 
-                return Ok(reservationIds); // 👈 CLAVE
+                return StatusCode(201, reservationIds); // 👈 CLAVE
             }
             catch (Exception ex)
             {
-                return BadRequest(new
+                return StatusCode(409, new
                 {
                     error = ex.Message,
                     inner = ex.InnerException?.Message
@@ -124,7 +124,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
 
             var result = await _confirmPaymentHandler.Handle(dto.ReservationIds);
 
-            return Ok(new { message = result });
+            return StatusCode(204, new { message = result });
         }
     }
 }
