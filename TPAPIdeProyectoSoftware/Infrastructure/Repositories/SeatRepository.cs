@@ -55,5 +55,12 @@ namespace Infrastructure.Repositories
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(x => x.Status, "Sold"));
         }
+        public async Task MarkAsAvailableAsync(Guid seatId)
+        {
+            await _context.SEAT
+                .Where(s => s.Id == seatId)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(x => x.Status, "Available"));
+        }
     }
 }

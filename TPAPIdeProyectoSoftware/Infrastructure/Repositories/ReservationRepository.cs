@@ -49,7 +49,12 @@ namespace Infrastructure.Repositories
         public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
         {
             return await _context.RESERVATION
-                .Where(r => seatIds.Contains(r.SeatId))
+                .Where(r => seatIds.Contains(r.SeatId) &&
+                (
+                r.Status == ReservationStatus.Pending.ToString() ||
+                r.Status == ReservationStatus.Paid.ToString()
+                )
+            )
                 .Select(r => r.SeatId)
                 .ToListAsync();
         }
@@ -71,6 +76,16 @@ namespace Infrastructure.Repositories
                     .SetProperty(r => r.Status, status)
                 );
 
+            Console.WriteLine($"ROWS UPDATED: {rows}");
+        }
+        public async Task UpdateStatusExpiredAsync(Domain.Entities.RESERVATION reservation, string status)
+        {
+            var now = DateTime.UtcNow;
+            var rows = await _context.RESERVATION
+                .Where(r => r.ExpiresAt <= now && r.Status == ReservationStatus.Pending.ToString())
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(r => r.Status, ReservationStatus.Expired.ToString())
+                );
             Console.WriteLine($"ROWS UPDATED: {rows}");
         }
     }

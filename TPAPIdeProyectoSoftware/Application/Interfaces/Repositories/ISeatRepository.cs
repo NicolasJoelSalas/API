@@ -19,5 +19,6 @@ namespace Application.Interfaces.Repositories
         Task DeleteAsync(Guid id);
 
         Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
+        Task MarkAsAvailableAsync(Guid seatId);
     }
 }

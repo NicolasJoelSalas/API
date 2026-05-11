@@ -1,18 +1,20 @@
 ﻿using Application.DTOs.User;
-using Application.Interfaces.Queries.User;
+using Application.Interfaces.Queries.Reservation;
 using Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.UseCases.USER.Queries
+namespace Application.UseCases.RESERVATION.Queries
 {
-    public class GetAllReservationQuery : IGetAllReservationQuery
+    public class GetAllByIdDeleteQuery : IGetAllByIdDeleteQuery
     {
         private readonly IReservationRepository _repository;
 
-        public GetAllReservationQuery(IReservationRepository repository)
+        public GetAllByIdDeleteQuery(IReservationRepository repository)
         {
             _repository = repository;
         }
@@ -24,7 +26,7 @@ namespace Application.UseCases.USER.Queries
                 .OrderBy(x => x.Id)
                 .Select(x => new ReservationResponseDto
                 {
-
+                    Id = x.Id,
                     UserId = x.UserId,
                     SeatId = x.SeatId,
                     Status = x.Status,

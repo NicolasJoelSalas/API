@@ -15,6 +15,7 @@ using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
 using Application.Interfaces.Queries.Audit_Log;
 using Application.Interfaces.Queries.Event;
+using Application.Interfaces.Queries.Reservation;
 using Application.Interfaces.Queries.Sector;
 using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
@@ -23,6 +24,7 @@ using Application.UseCases.AUDIT_LOG.Queries;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
+using Application.UseCases.RESERVATION.Commands;
 using Application.UseCases.RESERVATION.Handlers;
 using Application.UseCases.RESERVATION.Queries;
 using Application.UseCases.SEAT.Commands;
@@ -36,11 +38,13 @@ using Domain.Entities;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -86,6 +90,7 @@ builder.Services.AddScoped<IUpdateReservationCommand, UpdateReservationCommand>(
 builder.Services.AddScoped<IDeleteReservationCommand, DeleteReservationCommand>();
 builder.Services.AddScoped<ICreateMultipleReservationCommand, CreateMultipleReservationCommand>();
 builder.Services.AddScoped<IUpdateReservationsStatusCommand, UpdateReservationsStatusCommand>();
+builder.Services.AddScoped<IUpdateReservationStatusExpiredCommand, UpdateReservationStatusExpiredCommand>();
 
 
 //Seat
@@ -93,9 +98,10 @@ builder.Services.AddScoped<ICreateSeatCommand, CreateSeatCommand>();
 builder.Services.AddScoped<IUpdateSeatCommand, UpdateSeatCommand>();
 builder.Services.AddScoped<IDeleteSeatCommand, DeleteSeatCommand>();
 builder.Services.AddScoped<IMarkSeatsAsSoldCommand, MarkSeatsAsSoldCommand>();
+builder.Services.AddScoped<IMarkSeatsAsAvailableCommand, MarkSeatsAsAvailableCommand>();
 
 
-    //Sector
+//Sector
 builder.Services.AddScoped<ICreateSectorCommand, CreateSectorCommand>();
 builder.Services.AddScoped<IUpdateSectorCommand, UpdateSectorCommand>();
 builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
@@ -128,6 +134,7 @@ builder.Services.AddScoped<IGetIdUserQueryValidation, GetIdUserQueryValidation>(
 builder.Services.AddScoped<IGetAllReservationQuery, GetAllReservationQuery>();
 builder.Services.AddScoped<IGetByIdReservationQuery, GetByIdReservationQuery>();
 builder.Services.AddScoped<IGetReservedSeatIdsQuery, GetReservedSeatIdsQuery>();
+builder.Services.AddScoped<IGetAllByIdDeleteQuery, GetAllByIdDeleteQuery>();
 
 
 // Seat
@@ -182,6 +189,7 @@ builder.Services.AddScoped<IDeleteSeatHandler, DeleteSeatHandler>();
 builder.Services.AddScoped<IGetByIdSeatHandler, GetByIdSeatHandler>();
 builder.Services.AddScoped<IGetAllSeatHandler, GetAllSeatHandler>();
 
+
     //Sector
 builder.Services.AddScoped<ICreateSectorHandler, CreateSectorHandler>();
 builder.Services.AddScoped<IUpdateSectorHandler, UpdateSectorHandler>();
@@ -190,6 +198,7 @@ builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
 builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
 builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
+builder.Services.AddHostedService<WorkerReservationExpired>();
 
 var app = builder.Build();
 

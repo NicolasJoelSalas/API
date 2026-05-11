@@ -23,5 +23,6 @@ namespace Application.Interfaces.Repositories
         Task AddRangeAsync(List<RESERVATION> reservations);
 
         Task UpdateStatusAsync(List<Guid> reservationIds, string status);
+        Task UpdateStatusExpiredAsync(Domain.Entities.RESERVATION reservation, string status);
     }
 }
