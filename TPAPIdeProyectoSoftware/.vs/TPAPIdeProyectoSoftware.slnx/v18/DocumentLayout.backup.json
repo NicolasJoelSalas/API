@@ -1,205 +1,221 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\",
+  "WorkspaceRootPath": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getallreservationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getallreservationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\queries\\reservation\\igetallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\reservation\\igetallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\getallreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\getallreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\deletereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\deletereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createmultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createmultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\createmultiplereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\createmultiplereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\queries\\user\\igetreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\user\\igetreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\seat\\commands\\markseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\commands\\markseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\command\\seat\\imarkseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\seat\\imarkseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createmultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createmultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\updatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\updatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\command\\reservation\\iupdatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\reservation\\iupdatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\command\\seat\\imarkseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\seat\\imarkseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\seat\\commands\\markseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\commands\\markseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\updatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\updatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\command\\reservation\\iupdatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\reservation\\iupdatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\audit_logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\seat\\queries\\getentityseatquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\queries\\getentityseatquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\queries\\seat\\igetentityseatquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\seat\\igetentityseatquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\seat\\commands\\updateseatcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\commands\\updateseatcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getallreservationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getallreservationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\queries\\reservation\\igetallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\reservation\\igetallbyiddeletequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\deletereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\getallreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\getallreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\queries\\getreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\queries\\getreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\deletereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\deletereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\createmultiplereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\createmultiplereservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\queries\\user\\igetreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\queries\\user\\igetreservedseatidsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\seat\\commands\\markseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\commands\\markseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\command\\seat\\imarkseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\seat\\imarkseatsasavailablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\updatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\updatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\command\\reservation\\iupdatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\reservation\\iupdatereservationstatusexpiredcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\command\\seat\\imarkseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\seat\\imarkseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\seat\\commands\\markseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\commands\\markseatsassoldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\updatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\updatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\command\\reservation\\iupdatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\command\\reservation\\iupdatereservationsstatuscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\audit_logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\audit_logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\seat\\handlers\\updateseathandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\seat\\handlers\\updateseathandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\seat\\handlers\\updateseathandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\updateeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\updateeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\updateeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\geteventbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\geteventbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\geteventbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getalleventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getalleventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\getalleventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\deleteeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\deleteeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\deleteeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\createeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\createeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\createeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\dtos\\reservation\\confirmpaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\dtos\\reservation\\confirmpaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\reservation\\confirmpaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\handlers\\user\\icreatemultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\handlers\\user\\icreatemultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\handlers\\user\\icreatemultiplereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\handlers\\reservation\\iconfirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\handlers\\reservation\\iconfirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\handlers\\reservation\\iconfirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -210,657 +226,668 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetAllByIdDeleteQuery.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAuwAwAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:28:32.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GetAllReservationQuery.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwCEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:12:45.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAkwH4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAQwHUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-30T15:11:57.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:35:43.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WorkerReservationExpired.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwEsAAACGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T15:05:23.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IGetAllByIdDeleteQuery.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:30:17.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\AppDbContext.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeToolTip": "Infrastructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAwwJcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T22:08:48.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeleteReservationHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T22:19:52.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "ReservationRepository.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ReservationRepository.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\ReservationRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwDoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwEIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-30T15:25:32.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetReservedSeatIdsQuery.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T21:38:23.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetAllReservationHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:12:24.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IReservationRepository.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAIAzwBYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:26:48.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DeleteReservationCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwA8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T22:22:10.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateMultipleReservationHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAawGoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:13:38.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CreateMultipleReservationCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T17:00:19.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SeatRepository.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SeatRepository.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\SeatRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwD4AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T01:24:43.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MarkSeatsAsAvailableCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T17:47:33.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IGetReservedSeatIdsQuery.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T21:38:56.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ISeatRepository.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAArwBUAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T01:24:28.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IMarkSeatsAsAvailableCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T17:39:31.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 0,
               "Title": "Seats.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ViewState": "AgIAANMAAAAAAAAAAAAqwPQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAgwMwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-30T15:09:59.049Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Seats.razor.css",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor.css",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor.css",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor.css",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor.css",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAcwOIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-05-01T01:13:06.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
-              "RelativeDocumentMoniker": "ApiFront\\Program.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
-              "RelativeToolTip": "ApiFront\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:52:37.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-01T17:14:00.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UpdateReservationStatusExpiredCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T17:26:39.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "IUpdateReservationStatusExpiredCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T17:34:14.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "IMarkSeatsAsSoldCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T01:22:53.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MarkSeatsAsSoldCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T01:23:26.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ConfirmPaymentHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:34:47.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UpdateReservationsStatusCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:24:52.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IUpdateReservationsStatusCommand.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:22:02.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "ApiFront\\appsettings.Development.json",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
-              "RelativeToolTip": "ApiFront\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-01T16:23:43.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Component.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Component.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Component.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Component.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Component.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-01T17:49:33.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Pago.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Pago.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Pago.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-30T15:09:42.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 3,
               "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Login.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Login.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAAC0AAAAAAAAAAIBJwCMAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAACMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-05-01T15:52:28.624Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetEntitySeatQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
+              "RelativeToolTip": "Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:57:39.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-01T17:14:00.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateMultipleReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAgwI0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:13:38.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:43:37.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UpdateSeatCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:51:59.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SeatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SeatRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\SeatRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T01:24:43.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IGetEntitySeatQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:57:24.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAApwEEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:08:48.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WorkerReservationExpired.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowEAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T15:05:23.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IGetAllByIdDeleteQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:30:17.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:35:43.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetAllReservationQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwCEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:12:45.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GetAllByIdDeleteQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwAwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:28:32.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DeleteReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:19:52.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GetReservedSeatIdsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T21:38:23.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GetAllReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:12:24.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIAzwBYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:26:48.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DeleteReservationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAgwA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:22:10.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CreateMultipleReservationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T17:00:19.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MarkSeatsAsAvailableCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T17:47:33.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IGetReservedSeatIdsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T21:38:56.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ISeatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAArwBUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T01:24:28.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IMarkSeatsAsAvailableCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T17:39:31.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Seats.razor.css",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor.css",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor.css",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor.css",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor.css",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAcwOIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-01T01:13:06.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
+              "RelativeDocumentMoniker": "ApiFront\\Program.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
+              "RelativeToolTip": "ApiFront\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T15:52:37.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UpdateReservationStatusExpiredCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T17:26:39.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IUpdateReservationStatusExpiredCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T17:34:14.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IMarkSeatsAsSoldCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T01:22:53.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MarkSeatsAsSoldCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T01:23:26.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ConfirmPaymentHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:34:47.14Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "Audit_LogController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAUwE8AAAAZAAAAAAAAAA==",
+              "Title": "UpdateReservationsStatusCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T00:30:20.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:24:52.057Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UpdateSeatHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAOAAAAAAAAAA==",
+              "DocumentIndex": 35,
+              "Title": "IUpdateReservationsStatusCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T01:20:49.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "UpdateEventHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:56.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "GetSectorsByEventHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:55.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:22:02.732Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "GetEventByIdHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ApiFront\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
+              "RelativeToolTip": "ApiFront\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-01T16:23:43.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Component.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Component.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Component.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Component.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Component.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T17:49:33.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Pago.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Pago.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Pago.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T15:09:42.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Audit_LogController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAUwE8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:54.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T00:30:20.876Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "GetAllEventHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UpdateSeatHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:53.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T01:20:49.389Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "DeleteEventHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
+              "Title": "UpdateEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:51.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T15:54:56.734Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "CreateEventHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
+              "Title": "GetSectorsByEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:54:45.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-01T15:52:22.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Events.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Events.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Events.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-01T15:52:16.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-01T15:52:10.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T15:54:55.593Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "UserSession.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Services\\UserSession.cs",
-              "RelativeDocumentMoniker": "ApiFront\\Services\\UserSession.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Services\\UserSession.cs",
-              "RelativeToolTip": "ApiFront\\Services\\UserSession.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "GetEventByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:50:48.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T15:54:54.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "ConfirmPaymentDto.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 44,
+              "Title": "GetAllEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:52:04.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T15:54:53.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DeleteEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T15:54:51.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CreateEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T15:54:45.913Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 48,
-              "Title": "ICreateMultipleReservationHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T17:01:33.529Z",
-              "EditorCaption": ""
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T15:52:22.979Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 49,
+              "Title": "Events.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Events.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Events.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T15:52:16.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T15:52:10.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Services\\UserSession.cs",
+              "RelativeDocumentMoniker": "ApiFront\\Services\\UserSession.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Services\\UserSession.cs",
+              "RelativeToolTip": "ApiFront\\Services\\UserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T15:50:48.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ConfirmPaymentDto.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:52:04.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ICreateMultipleReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Handlers\\User\\ICreateMultipleReservationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T17:01:33.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
               "Title": "IConfirmPaymentHandler.cs",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
               "RelativeToolTip": "Application\\Interfaces\\Handlers\\Reservation\\IConfirmPaymentHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:34:15.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:34:15.357Z"
             }
           ]
         }

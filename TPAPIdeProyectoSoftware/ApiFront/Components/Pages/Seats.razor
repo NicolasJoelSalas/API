@@ -216,6 +216,7 @@ else
             else
             {
                 message = await response.Content.ReadAsStringAsync();
+                await LoadSeats();
             }
         }
         catch (Exception ex)

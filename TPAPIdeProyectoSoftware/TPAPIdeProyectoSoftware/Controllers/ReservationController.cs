@@ -4,6 +4,7 @@ using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.User;
 using Application.UseCases.USER.Handlers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 
 namespace TPAPIdeProyectoSoftware.Controllers
@@ -104,14 +105,21 @@ namespace TPAPIdeProyectoSoftware.Controllers
             {
                 var reservationIds = await _createlishandler.Handle(dto);
 
-                return StatusCode(201, reservationIds); // 👈 CLAVE
+                return StatusCode(201, reservationIds);
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                return Conflict(new
+                {
+                    error = "La butaca ya fue reservada por otro usuario.",
+                    detail = ex.Message
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(409, new
+                return BadRequest(new
                 {
-                    error = ex.Message,
-                    inner = ex.InnerException?.Message
+                    error = ex.Message
                 });
             }
         }
