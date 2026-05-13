@@ -3,6 +3,8 @@
 @inject NavigationManager Nav
 @inject IHttpClientFactory HttpClientFactory
 @inject IJSRuntime JS
+@using System.Timers
+@implements IDisposable
 
 @rendermode InteractiveServer
 
@@ -45,7 +47,7 @@
                 </div>
             </div>
 
-            <button class="pay-btn" type="submit" disabled="@isProcessing">
+            <button class="pay-btn" type="submit" disabled="@isProcessing || isExpired">
                 @(isProcessing ? "Procesando..." : "Pagar ahora")
             </button>
         </EditForm>
@@ -65,7 +67,18 @@
     <div class="payment-summary">
 
         <h4>Resumen</h4>
-
+        @if (!isExpired)
+        {
+            <div class="countdown">
+                ⏳ Tiempo restante: <strong>@timeLeft</strong>
+            </div>
+        }
+        else
+        {
+            <div class="expired">
+                ❌ La reserva expiró
+            </div>
+        }
         @if (isLoadingSector)
         {
             <p>Cargando precios...</p>
@@ -98,6 +111,10 @@
     private bool isProcessing = false;
 
     private PaymentModel paymentModel = new();
+    private DateTime expiresAt;
+    private string timeLeft = "00:00";
+    private Timer? timer;
+    private bool isExpired = false;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -122,8 +139,10 @@
             sectorId = id;
             await LoadSectorPrice();
         }
+        await LoadReservationExpiration();
+        StartCountdown();
     }
-
+    
     private async Task LoadSectorPrice()
     {
         try
@@ -143,9 +162,66 @@
             isLoadingSector = false;
         }
     }
+    
+    private async Task LoadReservationExpiration()
+    {
+        try
+        {
+            if (!reservationIds.Any())
+                return;
+
+            var http = HttpClientFactory.CreateClient("Api");
+
+            var reservation = await http.GetFromJsonAsync<ReservationResponseDto>(
+                $"api/reservation/{reservationIds.First()}"
+            );
+
+            if (reservation != null)
+            {
+                expiresAt = reservation.ExpiresAt;
+            }
+        }
+        catch
+        {
+            message = "❌ Error al obtener la reserva";
+        }
+    }
+
+    private void StartCountdown()
+    {
+        timer = new Timer(1000);
+
+        timer.Elapsed += async (_, _) =>
+        {
+            var remaining = expiresAt - DateTime.UtcNow;
+
+            if (remaining <= TimeSpan.Zero)
+            {
+                isExpired = true;
+                timeLeft = "00:00";
+
+                timer?.Stop();
+
+                await InvokeAsync(StateHasChanged);
+
+                return;
+            }
+
+            timeLeft = remaining.ToString(@"mm\:ss");
+
+            await InvokeAsync(StateHasChanged);
+        };
+
+        timer.Start();
+    }
 
     private async Task SimulatePayment()
     {
+        if (isExpired)
+        {
+            message = "❌ La reserva expiró";
+            return;
+        }
         if (!reservationIds.Any())
         {
             message = "❌ No hay reservas para pagar";
@@ -221,5 +297,17 @@
     public class ConfirmPaymentDto
     {
         public List<Guid> ReservationIds { get; set; } = new();
+    }
+
+    public class ReservationResponseDto
+    {
+        public Guid Id { get; set; }
+        public DateTime ReservedAt { get; set; }
+        public DateTime ExpiresAt { get; set; }
+    }
+    public void Dispose()
+    {
+        timer?.Stop();
+        timer?.Dispose();
     }
 }

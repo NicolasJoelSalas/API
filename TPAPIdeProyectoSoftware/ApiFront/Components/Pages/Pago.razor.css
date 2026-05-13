@@ -149,3 +149,22 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
+.countdown {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+    text-align: center;
+}
+
+.expired {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    text-align: center;
+}
