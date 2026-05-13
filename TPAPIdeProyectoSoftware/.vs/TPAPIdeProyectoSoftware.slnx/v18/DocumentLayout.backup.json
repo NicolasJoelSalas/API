@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\pago.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\pago.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\getbyidreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -207,10 +211,6 @@
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -234,24 +234,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Pago.razor.css",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor.css",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Pago.razor.css",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor.css",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Pago.razor.css",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAiwKkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-05-13T00:45:17.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GetByIdReservationHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetByIdReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\GetByIdReservationHandler.cs",
@@ -259,12 +246,11 @@
               "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\GetByIdReservationHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T00:19:01.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T00:19:01.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Seats.razor",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor",
@@ -272,12 +258,11 @@
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor",
               "ViewState": "AgIAALwAAAAAAAAAAAAgwMwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-30T15:09:59.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:09:59.049Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
@@ -285,8 +270,7 @@
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-01T17:14:00.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T17:14:00.706Z"
             },
             {
               "$type": "Document",
@@ -296,14 +280,14 @@
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Pago.razor",
               "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Pago.razor",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAAADcBAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAiwEYBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-30T15:09:42.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ConfirmPaymentDto.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
@@ -311,12 +295,11 @@
               "RelativeToolTip": "Application\\DTOs\\Reservation\\ConfirmPaymentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:52:04.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:52:04.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ReservationController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
@@ -324,12 +307,11 @@
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAtwBUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:11:57.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:11:57.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GetAllReservationHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
@@ -337,12 +319,35 @@
               "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\GetAllReservationHandler.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:12:24.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-11T00:12:24.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T15:52:22.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pago.razor.css",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor.css",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Pago.razor.css",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Pago.razor.css",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Pago.razor.css",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAiwNEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-13T00:45:17.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "GetEntitySeatQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Queries\\GetEntitySeatQuery.cs",
@@ -354,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Login.razor",
@@ -366,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ReservationRepository.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ReservationRepository.cs",
@@ -378,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CreateMultipleReservationHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateMultipleReservationHandler.cs",
@@ -390,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CreateReservationHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
@@ -402,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "UpdateSeatCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\UpdateSeatCommand.cs",
@@ -414,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SeatRepository.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SeatRepository.cs",
@@ -426,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "IGetEntitySeatQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\Seat\\IGetEntitySeatQuery.cs",
@@ -438,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\AppDbContext.cs",
@@ -450,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "WorkerReservationExpired.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
@@ -462,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "IGetAllByIdDeleteQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\Reservation\\IGetAllByIdDeleteQuery.cs",
@@ -474,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
@@ -486,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "GetAllReservationQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllReservationQuery.cs",
@@ -498,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "GetAllByIdDeleteQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetAllByIdDeleteQuery.cs",
@@ -510,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "DeleteReservationHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\DeleteReservationHandler.cs",
@@ -522,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "GetReservedSeatIdsQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Queries\\GetReservedSeatIdsQuery.cs",
@@ -534,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "IReservationRepository.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
@@ -546,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "DeleteReservationCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\DeleteReservationCommand.cs",
@@ -558,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "CreateMultipleReservationCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateMultipleReservationCommand.cs",
@@ -570,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "MarkSeatsAsAvailableCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsAvailableCommand.cs",
@@ -582,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "IGetReservedSeatIdsQuery.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Queries\\User\\IGetReservedSeatIdsQuery.cs",
@@ -594,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "ISeatRepository.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
@@ -606,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "IMarkSeatsAsAvailableCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsAvailableCommand.cs",
@@ -618,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Seats.razor.css",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor.css",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor.css",
@@ -630,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
               "RelativeDocumentMoniker": "ApiFront\\Program.cs",
@@ -642,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "UpdateReservationStatusExpiredCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationStatusExpiredCommand.cs",
@@ -654,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "IUpdateReservationStatusExpiredCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationStatusExpiredCommand.cs",
@@ -666,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "IMarkSeatsAsSoldCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Seat\\IMarkSeatsAsSoldCommand.cs",
@@ -678,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "MarkSeatsAsSoldCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Commands\\MarkSeatsAsSoldCommand.cs",
@@ -690,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "ConfirmPaymentHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
@@ -702,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "UpdateReservationsStatusCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\UpdateReservationsStatusCommand.cs",
@@ -714,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "IUpdateReservationsStatusCommand.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Command\\Reservation\\IUpdateReservationsStatusCommand.cs",
@@ -726,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ApiFront\\appsettings.Development.json",
@@ -738,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Component.razor",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Component.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Component.razor",
@@ -750,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Audit_LogController.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
@@ -762,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "UpdateSeatHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SEAT\\Handlers\\UpdateSeatHandler.cs",
@@ -774,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "UpdateEventHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\UpdateEventHandler.cs",
@@ -786,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "GetSectorsByEventHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
@@ -798,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "GetEventByIdHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetEventByIdHandler.cs",
@@ -810,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "GetAllEventHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetAllEventHandler.cs",
@@ -822,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "DeleteEventHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\DeleteEventHandler.cs",
@@ -834,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "CreateEventHandler.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\CreateEventHandler.cs",
@@ -843,18 +848,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T15:54:45.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-01T15:52:22.979Z"
             },
             {
               "$type": "Document",
@@ -882,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "UserSession.cs",
               "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Services\\UserSession.cs",
               "RelativeDocumentMoniker": "ApiFront\\Services\\UserSession.cs",

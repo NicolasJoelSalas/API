@@ -97,6 +97,24 @@
         }
 
     </div>
+    @if (showExpiredModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Reserva expirada</h3>
+
+                <p>
+                    El tiempo para completar el pago finalizó.
+                </p>
+
+                <button class="modal-btn" @onclick="GoToSectors">
+                    Aceptar
+                </button>
+
+            </div>
+        </div>
+    }
 
 </div>
 
@@ -115,6 +133,7 @@
     private string timeLeft = "00:00";
     private Timer? timer;
     private bool isExpired = false;
+    private bool showExpiredModal = false;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -198,6 +217,7 @@
             if (remaining <= TimeSpan.Zero)
             {
                 isExpired = true;
+                showExpiredModal = true;
                 timeLeft = "00:00";
 
                 timer?.Stop();
@@ -268,7 +288,10 @@
     {
         await JS.InvokeVoidAsync("history.back");
     }
-
+    private void GoToSectors()
+    {
+        Nav.NavigateTo("/home");
+    }
     public class PaymentModel
     {
         [Required(ErrorMessage = "El nombre es obligatorio")]
