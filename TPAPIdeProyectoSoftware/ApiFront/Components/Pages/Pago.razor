@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <button class="pay-btn" type="submit" disabled="@isProcessing || isExpired">
+            <button class="pay-btn" type="submit" disabled="@isProcessing">
                 @(isProcessing ? "Procesando..." : "Pagar ahora")
             </button>
         </EditForm>
@@ -115,6 +115,24 @@
             </div>
         </div>
     }
+    @if (showPaymentModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Reserva pagada</h3>
+
+                <p>
+                    El pago se realizó correctamente.
+                </p>
+
+                <button class="modal-btn" @onclick="GoToSectors">
+                    Aceptar
+                </button>
+
+            </div>
+        </div>
+    }
 
 </div>
 
@@ -134,6 +152,7 @@
     private Timer? timer;
     private bool isExpired = false;
     private bool showExpiredModal = false;
+    private bool showPaymentModal = false;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -264,9 +283,12 @@
 
             if (response.IsSuccessStatusCode)
             {
-                message = "✅ Pago confirmado correctamente";
+                timer?.Stop(); // detener contador
+
                 reservationIds.Clear();
                 seatCount = 0;
+
+                showPaymentModal = true;
             }
             else
             {
