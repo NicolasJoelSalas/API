@@ -1,0 +1,152 @@
+﻿@page "/reservas"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager Nav
+@inject UserSession Session
+
+<h3 class="mb-4 text-center">📋 Reservas</h3>
+
+@if (listReservations == null)
+{
+    <p class="text-center">Cargando reservas...</p>
+}
+else if (!listReservations.Any())
+{
+    <p class="text-center">No hay reservas</p>
+}
+else
+{
+    <div class="event-list">
+
+        @foreach (var item in listReservations)
+        {
+            <div class="event-card">
+
+                <div class="event-title">
+                    Reserva #@item.Id.ToString()[..8]
+                </div>
+
+                <p>
+                    Usuario: @item.UserId
+                </p>
+
+                <p>
+                    Estado:
+                    <b>@item.Status</b>
+                </p>
+
+                <p>
+                    Asiento:
+                    @item.SeatId.ToString()
+                </p>
+
+                <p>
+                    Reservado:
+                    @item.ReservedAt.ToString("dd/MM/yyyy HH:mm")
+                </p>
+
+                <p>
+                    Expira:
+                    @item.ExpiresAt.ToString("dd/MM/yyyy HH:mm")
+                </p>
+
+                
+                @if (item.Status?.ToLower() == "pending")
+                {
+                    <button class="btn btn-success btn-sm mt-2"
+                            @onclick="() => GoToPayment(item)">
+                        Pagar
+                    </button>
+                }
+            </div>
+        }
+
+    </div>
+
+    <button class="nav-btn" @onclick="GoBack">
+        ← Volver
+    </button>
+}
+
+@code {
+
+    private List<ReservationDto>? listReservations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            var reservas = await http
+                .GetFromJsonAsync<List<ReservationDto>>
+                ("api/Reservation")
+                ?? new();
+
+            // Mostrar solo reservas del usuario actual
+            listReservations = reservas
+                .Where(r => r.UserId == Session.UserId)
+                .ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            listReservations = new();
+        }
+    }
+
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+
+    private void GoToDetails(Guid id)
+    {
+        Nav.NavigateTo($"/reservation/{id}");
+    }
+    private async Task GoToPayment(ReservationDto item)
+    {
+        try
+        {
+            var http = HttpClientFactory.CreateClient("Api");
+
+            // Obtener datos del asiento
+            var seat = await http.GetFromJsonAsync<SeatDto>(
+                $"api/seat/{item.SeatId}"
+            );
+
+            if (seat == null)
+                return;
+
+            Nav.NavigateTo(
+                $"/pago?reservations={item.Id}&sectorId={seat.SectorId}"
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    public class ReservationDto
+    {
+        public Guid Id { get; set; }
+
+        public int UserId { get; set; }
+
+        public Guid SeatId { get; set; }
+
+        public string Status { get; set; }
+
+        public DateTime ReservedAt { get; set; }
+
+        public DateTime ExpiresAt { get; set; }
+    }
+    public class SeatDto
+    {
+        public Guid Id { get; set; }
+
+        public int SectorId { get; set; }
+    }
+
+}

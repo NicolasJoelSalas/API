@@ -24,7 +24,7 @@ namespace Application.UseCases.USER.Queries
                 .OrderBy(x => x.Id)
                 .Select(x => new ReservationResponseDto
                 {
-
+                    Id = x.Id,
                     UserId = x.UserId,
                     SeatId = x.SeatId,
                     Status = x.Status,
