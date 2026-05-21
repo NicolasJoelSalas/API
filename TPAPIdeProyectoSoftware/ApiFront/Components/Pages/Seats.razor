@@ -34,7 +34,9 @@ else
                     @foreach (var seat in row)
                     {
                         <button class="seat @GetSeatClass(seat)"
-                                @onclick="() => SelectSeat(seat)">
+                                @onclick="() => SelectSeat(seat)"
+                                title="@GetSeatStatus(seat)">
+
                             @seat.SeatNumber
                         </button>
                     }
@@ -85,29 +87,30 @@ else
 
 <div class="legend">
 
-            <div class="legend-item">
-                <span class="legend-box free"></span>
-                <span>Disponible</span>
-            </div>
+    <div class="legend-item">
+        <span class="legend-box free">✓</span>
+        <span>Disponible</span>
+    </div>
 
-            <div class="legend-item">
-                <span class="legend-box selected"></span>
-                <span>Seleccionado</span>
-            </div>
+    <div class="legend-item">
+        <span class="legend-box selected">●</span>
+        <span>Seleccionado</span>
+    </div>
 
-            <div class="legend-item">
-                <span class="legend-box reserved"></span>
-                <span>Reservado (pendiente de pago)</span>
-            </div>
+    <div class="legend-item">
+        <span class="legend-box reserved">⏳</span>
+        <span>Reservado (pendiente de pago)</span>
+    </div>
 
-            <div class="legend-item">
-                <span class="legend-box sold"></span>
-                <span>Vendido</span>
-            </div>
+    <div class="legend-item">
+        <span class="legend-box sold">✖</span>
+        <span>Vendido</span>
+    </div>
+
 </div>
 
 @code {
-    private List<Guid> reservationIds = new(); // ✔ CORRECTO (esto es lo importante)
+    private List<Guid> reservationIds = new(); 
 
     private bool reservaConfirmada = false;
     private bool isLoading = false;
@@ -156,7 +159,7 @@ else
         reservaConfirmada = false;
 
         if (seat.Status == "Reserved" || seat.Status == "Sold")
-            return; // 🚫 no se puede seleccionar
+            return;
 
         if (selectedSeatIds.Contains(seat.Id))
             selectedSeatIds.Remove(seat.Id);
@@ -235,7 +238,19 @@ else
 
         Nav.NavigateTo($"/pago?reservations={param}&sectorId={SectorId}");
     }
+    private string GetSeatStatus(SeatDto seat)
+    {
+        if (seat.Status == "Sold")
+            return "Vendido ✖";
 
+        if (seat.Status == "Reserved")
+            return "Reservado ⏳";
+
+        if (selectedSeatIds.Contains(seat.Id))
+            return "Seleccionado ●";
+
+        return "Disponible ✓";
+    }
     public class SeatDto
     {
         public Guid Id { get; set; }
