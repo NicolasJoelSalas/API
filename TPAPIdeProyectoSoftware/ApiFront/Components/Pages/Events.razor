@@ -74,10 +74,10 @@ else
 @code {
     public static class ApiRoutes
     {
-        public const string Events = "api/Event";
+        public const string Events = "api/events";
 
         public static string EventSectors(int id)
-            => $"/event/{id}/sectors";
+            => $"/events/{id}/sectors";
     }
 
     private int currentPage = 1;

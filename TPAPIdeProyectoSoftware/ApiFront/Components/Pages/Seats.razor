@@ -1,4 +1,4 @@
-﻿@page "/sector/{SectorId:int}/seats"
+﻿@page "/sectors/{SectorId:int}/seats"
 @using ApiFront
 @rendermode InteractiveServer
 
@@ -148,7 +148,7 @@ else
         var http = HttpClientFactory.CreateClient("Api");
 
         seats = await http.GetFromJsonAsync<List<SeatDto>>(
-            $"api/Event/sector/{SectorId}/seats"
+            $"/events/sectors/{SectorId}/seats"
         ) ?? new();
     }
 

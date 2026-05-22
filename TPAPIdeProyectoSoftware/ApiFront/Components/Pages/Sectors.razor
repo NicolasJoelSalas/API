@@ -1,4 +1,4 @@
-﻿@page "/event/{EventId:int}/sectors"
+﻿@page "/events/{EventId:int}/sectors"
 @rendermode InteractiveServer
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Nav
@@ -56,7 +56,7 @@ else
             var http = HttpClientFactory.CreateClient("Api");
 
             sectors = await http.GetFromJsonAsync<List<SectorDto>>(
-                $"api/Event/{EventId}/sectors"
+                $"/events/{EventId}/sectors"
             ) ?? new();
         }
         catch (Exception ex)
@@ -71,7 +71,7 @@ else
                  : name.ToLower().Contains("der") ? "right"
                  : "center";
 
-        Nav.NavigateTo($"/sector/{sectorId}/seats?pos={pos}");
+        Nav.NavigateTo($"/sectors/{sectorId}/seats?pos={pos}");
     }
     public class SectorDto
     {

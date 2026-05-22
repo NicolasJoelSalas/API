@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/Audit_Logs")]
+    [Route("api/audit_logs")]
     public class Audit_LogController : ControllerBase
     {
         private readonly ICreateAudit_LogHandler _createHandler;
