@@ -8,18 +8,15 @@ namespace Application.UseCases.EVENT.Commands
         public string Name { get; }
         public DateTime EventDate { get; }
         public string Venue { get; }
-        public string Status { get; }
 
         public CreateEventCommand(
             string name,
             DateTime eventDate,
-            string venue,
-            string status)
+            string venue)
         {
             Name = name;
             EventDate = eventDate;
             Venue = venue;
-            Status = status;
         }
     }
 }

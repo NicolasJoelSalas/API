@@ -1,24 +1,26 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 using Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Application.UseCases.USER.Commands
 {
-    public class CreateSeatCommand : ICreateSeatCommand
+    public class CreateSeatCommand 
     {
-        private readonly ISeatRepository _repository;
+        public int SectorId { get; }
+        public string RowIdentifier { get; }
+        public int SeatNumber { get; }
+        public int Version { get; }
 
-        public CreateSeatCommand(ISeatRepository repository)
+        public CreateSeatCommand(
+            int sectorId,
+            string rowIdentifier,
+            int seatNumber,
+            int version)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteCreateSeat(Domain.Entities.SEAT seat)
-        {
-            await _repository.AddAsync(seat);
+            SectorId = sectorId;
+            RowIdentifier = rowIdentifier;
+            SeatNumber = seatNumber;
+            Version = version;
         }
 
     }

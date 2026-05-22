@@ -1,33 +1,35 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+﻿using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Commands;
+using Application.UseCases.USER.Commands;
 
 namespace Application.UseCases
 {
     public class DeleteReservationHandler : IDeleteReservationHandler
     {
-        private readonly IDeleteReservationCommand _command;
-        private readonly IGetByIdReservationQuery _query;
+        private readonly IReservationRepository _reservationRepository;
 
-        public DeleteReservationHandler(
-            IDeleteReservationCommand command,
-            IGetByIdReservationQuery query)
+        public DeleteReservationHandler(IReservationRepository reservationRepository)
         {
-            _command = command;
-            _query = query;
+            _reservationRepository = reservationRepository;
         }
 
-        public async Task<string> Handle(Guid id)
+        public async Task<string> Handle(DeleteReservationCommand command)
         {
-            var user = await _query.GetById(id);
+            if (command == null)
+                return "Comando inválido";
 
-            if (user == null)
-                return "Reservacion no encontrada";
+            if (command.Id == null)
+                return "Id inválido";
 
-            await _command.ExecuteDeleteReservation(id);
+            var reservationEntity = await _reservationRepository.GetByIdAsync(command.Id);
 
-            return "Reservacion eliminada correctamente";
+            if (reservationEntity == null)
+                return "Reserva no encontrada";
+
+            await _reservationRepository.DeleteAsync(reservationEntity);
+
+            return "Reserva eliminada correctamente";
         }
     }
 }

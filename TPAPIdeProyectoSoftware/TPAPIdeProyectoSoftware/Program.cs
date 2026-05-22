@@ -1,34 +1,19 @@
-using Application;
-using Application.Interfaces;
+
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Handlers.Reservation;
-using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases;
 using Application.UseCases.Audit_Log.Handlers;
-using Application.UseCases.AUDIT_LOG.Queries;
-using Application.UseCases.EVENT.Commands;
+using Application.UseCases.Event.Handlers;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
-using Application.UseCases.RESERVATION.Commands;
-using Application.UseCases.RESERVATION.Handlers;
-using Application.UseCases.RESERVATION.Queries;
-using Application.UseCases.SEAT.Commands;
-using Application.UseCases.SECTOR.Handlers;
-using Application.UseCases.SECTOR.Queries;
-using Application.UseCases.User.Handlers;
-using Application.UseCases.USER.Commands;
+using Application.UseCases.Reservation.Handlers;
 using Application.UseCases.USER.Handlers;
-using Application.UseCases.USER.Queries;
-using Domain.Entities;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,7 +46,7 @@ builder.Services.AddScoped<IUpdateEventHandler, UpdateEventHandler>();
 builder.Services.AddScoped<IDeleteEventHandler, DeleteEventHandler>();
 builder.Services.AddScoped<IGetByIdEventHandler, GetEventByIdHandler>();
 builder.Services.AddScoped<IGetAllEventHandler, GetAllEventHandler>();
-builder.Services.AddScoped<IGetSectorsByEventHandler, GetSectorsByEventHandler>();
+//builder.Services.AddScoped<IGetSectorsByEventHandler, GetSectorsByEventHandler>();
 
 //User
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
@@ -84,8 +69,8 @@ builder.Services.AddScoped<IUpdateReservationHandler, UpdateReservationHandler>(
 builder.Services.AddScoped<IDeleteReservationHandler, DeleteReservationHandler>();
 builder.Services.AddScoped<IGetByIdReservationHandler, GetByIdReservationHandler>();
 builder.Services.AddScoped<IGetAllReservationHandler, GetAllReservationHandler>();
-builder.Services.AddScoped<ICreateMultipleReservationHandler, CreateMultipleReservationHandler>();
-builder.Services.AddScoped<IConfirmPaymentHandler, ConfirmPaymentHandler>();
+//builder.Services.AddScoped<ICreateMultipleReservationHandler, CreateMultipleReservationHandler>();
+//builder.Services.AddScoped<IConfirmPaymentHandler, ConfirmPaymentHandler>();
 
 //Seat
 builder.Services.AddScoped<ICreateSeatHandler, CreateSeatHandler>();
@@ -101,9 +86,9 @@ builder.Services.AddScoped<IUpdateSectorHandler, UpdateSectorHandler>();
 builder.Services.AddScoped<IDeleteSectorHandler, DeleteSectorHandler>();
 builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
 builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
-builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
+//builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
-builder.Services.AddHostedService<WorkerReservationExpired>();
+//builder.Services.AddHostedService<WorkerReservationExpired>();
 
 var app = builder.Build();
 

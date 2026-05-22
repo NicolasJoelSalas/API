@@ -15,7 +15,7 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<AUDIT_LOG>> GetAllAsync()
+        public async Task<List<AUDIT_LOG?>> GetAllAsync()
         {
             return await _context.AUDIT_LOG
                 .AsNoTracking()

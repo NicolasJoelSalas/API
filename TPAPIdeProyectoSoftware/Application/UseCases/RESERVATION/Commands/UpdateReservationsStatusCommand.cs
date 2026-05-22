@@ -1,21 +1,19 @@
-﻿using Application.Interfaces.Command.Reservation;
-using Application.Interfaces.Repositories;
-using Domain.Enums;
+﻿using Application.Interfaces.Repositories;
 
-public class UpdateReservationsStatusCommand : IUpdateReservationsStatusCommand
+public class UpdateReservationsStatusCommand /*: IUpdateReservationsStatusCommand*/
 {
-    private readonly IReservationRepository _repository;
+    //private readonly IReservationRepository _repository;
 
-    public UpdateReservationsStatusCommand(IReservationRepository repository)
-    {
-        _repository = repository;
-    }
+    //public UpdateReservationsStatusCommand(IReservationRepository repository)
+    //{
+    //    _repository = repository;
+    //}
 
-    public async Task Execute(List<Guid> reservationIds, string status)
-    {
-        if (reservationIds == null || !reservationIds.Any())
-            return;
+    //public async Task Execute(List<Guid> reservationIds, string status)
+    //{
+    //    if (reservationIds == null || !reservationIds.Any())
+    //        return;
 
-        await _repository.UpdateStatusAsync(reservationIds, status);
-    }
+    //    await _repository.UpdateStatusAsync(reservationIds, status);
+    //}
 }

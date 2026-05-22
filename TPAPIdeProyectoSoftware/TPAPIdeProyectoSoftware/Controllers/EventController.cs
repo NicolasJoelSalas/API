@@ -1,9 +1,8 @@
 ﻿using Application.DTOs.Event;
 using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Handlers.Sector;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Queries;
-using Application.UseCases.SECTOR.Queries;
+using Application.UseCases.USER.Commands;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPAPIdeProyectoSoftware.Controllers
@@ -17,8 +16,8 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IUpdateEventHandler _updateEventHandler;
         private readonly IGetAllEventHandler _getAllEventHandler;
         private readonly IGetByIdEventHandler _getByIdEventHandler;
-        private readonly IGetSectorsByEventHandler _getSectorsByEventHandler;
-        private readonly IGetSeatsBySectorHandler _getSeatsBySectorHandler;
+        //private readonly IGetSectorsByEventHandler _getSectorsByEventHandler;
+        //private readonly IGetSeatsBySectorHandler _getSeatsBySectorHandler;
 
         public EventController(
             ICreateEventHandler createEventHandler,
@@ -41,8 +40,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var command = new CreateEventCommand(
                 request.Name,
                 request.EventDate,
-                request.Venue,
-                request.Status
+                request.Venue
             );
 
             var message = await _createEventHandler.Handle(command);
@@ -96,7 +94,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventResquestDto request)
+        public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpdateResquestDto request)
         {
             var command = new UpdateEventCommand(
                 id,

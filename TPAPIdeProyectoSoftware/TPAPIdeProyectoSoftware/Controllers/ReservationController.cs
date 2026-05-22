@@ -2,84 +2,94 @@
 using Application.DTOs.User;
 using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.User;
-using Application.UseCases.USER.Handlers;
+using Application.UseCases;
+using Application.UseCases.RESERVATION.Commands;
+using Application.UseCases.RESERVATION.Queries;
+using Application.UseCases.USER.Commands;
+using Application.UseCases.USER.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/Reservation")]
+    [Route("api/reservations")]
     public class ReservationController : ControllerBase
     {
-        private readonly ICreateMultipleReservationHandler _createlishandler;
-
         private readonly ICreateReservationHandler _createHandler;
         private readonly IDeleteReservationHandler _deleteHandler;
-        private readonly IUpdateReservationHandler _updateHandler;
-        private readonly IGetAllReservationHandler _getAllReservationHandler;
-        private readonly IGetByIdReservationHandler _getByIdReservationHandler;
+        private readonly IGetAllReservationHandler _getAllHandler;
+        private readonly IGetByIdReservationHandler _getByIdHandler;
+        private readonly ICreateMultipleReservationHandler _createMultipleHandler;
         private readonly IConfirmPaymentHandler _confirmPaymentHandler;
 
         public ReservationController(
-        IDeleteReservationHandler deleteHandler,
-        ICreateReservationHandler createHandler,
-        IUpdateReservationHandler updateHandler,
-        IGetByIdReservationHandler getByIdReservationHandler,
-        IGetAllReservationHandler getAllReservationHandler,
-        ICreateMultipleReservationHandler createlishandler,
-        IConfirmPaymentHandler confirmPaymentHandler)
+            ICreateReservationHandler createHandler,
+            IDeleteReservationHandler deleteHandler,
+            IGetAllReservationHandler getAllHandler,
+            IGetByIdReservationHandler getByIdHandler,
+            ICreateMultipleReservationHandler createMultipleHandler,
+            IConfirmPaymentHandler confirmPaymentHandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
-            _updateHandler = updateHandler;
-            _getAllReservationHandler = getAllReservationHandler;
-            _getByIdReservationHandler = getByIdReservationHandler;
-            _createlishandler = createlishandler;
+            _getAllHandler = getAllHandler;
+            _getByIdHandler = getByIdHandler;
+            _createMultipleHandler = createMultipleHandler;
             _confirmPaymentHandler = confirmPaymentHandler;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ReservationRequestDto dto)
+        public async Task<IActionResult> Create([FromBody] ReservationRequestDto request)
         {
-            var message = await _createHandler.Handle(dto);
+            var command = new CreateReservationCommand(
+                request.UserId,
+                request.SeatId
+            );
+
+            var message = await _createHandler.Handle(command);
 
             if (message != "OK")
                 return StatusCode(409, new { message });
 
             return StatusCode(201, new
             {
-                message = "Reservation creado correctamente"
+                message = "Reservation creada correctamente"
             });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var (users, message) = await _getByIdReservationHandler.Handle(id);
+            var query = new GetByIdReservationQuery(id);
+
+            var (reservation, message) = await _getByIdHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return NotFound(new { message });
 
-            return Ok(users);
+            return Ok(reservation);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var (users, message) = await _getAllReservationHandler.Handle();
+            var query = new GetAllReservationQuery();
+
+            var (reservations, message) = await _getAllHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return NotFound(new { message });
 
-            return Ok(users);
+            return Ok(reservations);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var message = await _deleteHandler.Handle(id);
+            var command = new DeleteReservationCommand(id);
+
+            var message = await _deleteHandler.Handle(command);
 
             if (message == "Reservation no encontrado")
                 return NotFound(new { message });
@@ -87,52 +97,45 @@ namespace TPAPIdeProyectoSoftware.Controllers
             return Ok(new { message });
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateReservationRequestDto dto)
-        {
-            var message = await _updateHandler.Handle(id, dto);
+        //[HttpPost("multiple")]
+        //public async Task<IActionResult> CreateMultiple([FromBody] CreateMultipleReservationDto dto)
+        //{
+        //    try
+        //    {
+        //        var command = new CreateMultipleReservationCommand(dto);
 
-            if (message == "Reservation no encontrado")
-                return NotFound(new { message });
+        //        var result = await _createMultipleHandler.Handle(command);
 
-            return Ok(new { message });
-        }
+        //        return StatusCode(201, result);
+        //    }
+        //    catch (DbUpdateConcurrencyException ex)
+        //    {
+        //        return Conflict(new
+        //        {
+        //            error = "La butaca ya fue reservada por otro usuario.",
+        //            detail = ex.Message
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(new
+        //        {
+        //            error = ex.Message
+        //        });
+        //    }
+        //}
 
-        [HttpPost("multiple")]
-        public async Task<IActionResult> CreateMultiple([FromBody] CreateMultipleReservationDto dto)
-        {
-            try
-            {
-                var reservationIds = await _createlishandler.Handle(dto);
+        //[HttpPost("confirm-payment")]
+        //public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
+        //{
+        //    if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())
+        //        return BadRequest(new { message = "No se enviaron reservas" });
 
-                return StatusCode(201, reservationIds);
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return Conflict(new
-                {
-                    error = "La butaca ya fue reservada por otro usuario.",
-                    detail = ex.Message
-                });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new
-                {
-                    error = ex.Message
-                });
-            }
-        }
+        //    var command = new ConfirmPaymentCommand(dto.ReservationIds);
 
-        [HttpPost("confirm-payment")]
-        public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
-        {
-            if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())
-                return BadRequest(new { message = "No se enviaron reservas" });
+        //    var result = await _confirmPaymentHandler.Handle(command);
 
-            var result = await _confirmPaymentHandler.Handle(dto.ReservationIds);
-
-            return StatusCode(204, new { message = result });
-        }
+        //    return NoContent();
+        //}
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Enums
 {
-    public enum ReservationStatus
+    public enum EventStatus
     {
-        Pending,
-        Paid,
-        Expired
+        Active,
+        Cancelled,
+        Finished
     }
 }

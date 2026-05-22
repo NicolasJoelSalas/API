@@ -1,13 +1,7 @@
 ﻿using Application.Interfaces.Repositories;
 using Domain.Entities;
-using Domain.Enums;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -19,74 +13,37 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-        public IQueryable<RESERVATION> Query()
-        {
-            return _context.RESERVATION.AsNoTracking().AsQueryable();
-        }
-        public async Task AddAsync(RESERVATION reser)
-        {
-            await _context.RESERVATION.AddAsync(reser);
-            await _context.SaveChangesAsync();
-        }
-        public async Task<RESERVATION> GetByIdAsync(Guid id)
-        {
-            return await _context.RESERVATION.FindAsync(id);
-        }
 
-        public async Task UpdateAsync(RESERVATION reser)
-        {
-            _context.RESERVATION.Update(reser);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(Guid id)
-        {
-            var reser = await _context.RESERVATION.FindAsync(id);
-
-            _context.RESERVATION.Remove(reser);
-            await _context.SaveChangesAsync();
-        }
-        public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
+        public async Task<List<RESERVATION>> GetAllAsync()
         {
             return await _context.RESERVATION
-                .Where(r => seatIds.Contains(r.SeatId) &&
-                (
-                r.Status == ReservationStatus.Pending.ToString() ||
-                r.Status == ReservationStatus.Paid.ToString()
-                )
-            )
-                .Select(r => r.SeatId)
+                .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task AddRangeAsync(List<RESERVATION> reservations)
+        public async Task<RESERVATION?> GetByIdAsync(Guid id)
         {
-            using var transaction = await _context.Database.BeginTransactionAsync();
+            return await _context.RESERVATION
+                .AsNoTracking()
+                .FirstOrDefaultAsync(r => r.Id == id);
+        }
 
-            await _context.RESERVATION.AddRangeAsync(reservations);
+        public async Task AddAsync(RESERVATION reservation)
+        {
+            await _context.RESERVATION.AddAsync(reservation);
             await _context.SaveChangesAsync();
-
-            await transaction.CommitAsync();
         }
-        public async Task UpdateStatusAsync(List<Guid> reservationIds, string status)
-        {
-            var rows = await _context.RESERVATION
-                .Where(r => reservationIds.Contains(r.Id))
-                .ExecuteUpdateAsync(s => s
-                    .SetProperty(r => r.Status, status)
-                );
 
-            Console.WriteLine($"ROWS UPDATED: {rows}");
-        }
-        public async Task UpdateStatusExpiredAsync(Domain.Entities.RESERVATION reservation, string status)
+        public async Task UpdateAsync(RESERVATION reservation)
         {
-            var now = DateTime.UtcNow;
-            var rows = await _context.RESERVATION
-                .Where(r => r.ExpiresAt <= now && r.Status == ReservationStatus.Pending.ToString())
-                .ExecuteUpdateAsync(s => s
-                    .SetProperty(r => r.Status, ReservationStatus.Expired.ToString())
-                );
-            Console.WriteLine($"ROWS UPDATED: {rows}");
+            _context.RESERVATION.Update(reservation);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(RESERVATION reservation)
+        {
+            _context.RESERVATION.Remove(reservation);
+            await _context.SaveChangesAsync();
         }
     }
 }

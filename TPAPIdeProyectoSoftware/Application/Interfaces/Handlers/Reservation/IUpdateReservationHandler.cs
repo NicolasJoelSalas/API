@@ -1,14 +1,9 @@
 ﻿using Application.DTOs.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.Interfaces.Handlers.User
+namespace Application.Interfaces.Handlers
 {
     public interface IUpdateReservationHandler
     {
-        Task<string> Handle(Guid id, UpdateReservationRequestDto dto);
+        Task<string> Handle(UpdateReservationCommand command);
     }
 }

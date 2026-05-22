@@ -1,31 +1,38 @@
 ﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Queries;
+using Application.UseCases.USER.Queries;
 
 namespace Application.UseCases
 {
     public class GetAllReservationHandler : IGetAllReservationHandler
     {
-        private readonly IGetAllReservationQuery _query;
+        private readonly IReservationRepository _reservationRepository;
 
-        public GetAllReservationHandler(IGetAllReservationQuery query)
+        public GetAllReservationHandler(IReservationRepository reservationRepository)
         {
-            _query = query;
+            _reservationRepository = reservationRepository;
         }
-        public async Task<(List<ReservationResponseDto> Reservation, string message)> Handle()
+
+        public async Task<(List<ReservationResponseDto> Reservations, string message)> Handle(GetAllReservationQuery query)
         {
-            var Reservation = await _query.GetAll();
+            var reservations = await _reservationRepository.GetAllAsync();
 
-            if (Reservation == null || Reservation.Count == 0)
-                return (new List<ReservationResponseDto>(), "No hay reservaciones registrados");
+            if (reservations == null || !reservations.Any())
+                return (new List<ReservationResponseDto>(), "No hay reservas");
 
-            return (Reservation, "OK");
+            var reservationDtos = reservations.Select(reservationEntity => new ReservationResponseDto
+            {
+                Id = reservationEntity.Id,
+                UserId = reservationEntity.UserId,
+                SeatId = reservationEntity.SeatId,
+                Status = reservationEntity.Status,
+                ReservedAt = reservationEntity.ReservedAt,
+                ExpiresAt = reservationEntity.ExpiresAt
+            }).ToList();
+
+            return (reservationDtos, "OK");
         }
     }
 }

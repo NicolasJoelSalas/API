@@ -1,14 +1,10 @@
 ﻿using Application.DTOs.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.UseCases.USER.Commands;
 
 namespace Application.Interfaces.Handlers.User
 {
     public interface IDeleteSeatHandler
     {
-        Task<string> Handle(Guid id);
+        Task<string> Handle(DeleteSeatCommand command);
     }
 }

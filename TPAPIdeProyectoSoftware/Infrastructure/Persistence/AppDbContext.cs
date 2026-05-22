@@ -125,7 +125,7 @@ namespace Infrastructure.Persistence
                     SectorId = 1,
                     RowIdentifier = "Sector 1",
                     SeatNumber = i,
-                    Status = SeatStatus.Available,
+                    Status = SeatStatus.Available.ToString(),
                     Version = 1
                 });
             }
@@ -139,7 +139,7 @@ namespace Infrastructure.Persistence
                     SectorId = 2,
                     RowIdentifier = "Sector 2",
                     SeatNumber = i,
-                    Status = SeatStatus.Available,
+                    Status = SeatStatus.Available.ToString(),
                     Version = 1
                 });
             }

@@ -1,4 +1,7 @@
 ﻿using Application.DTOs.User;
+using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,44 +10,30 @@ using System.Threading.Tasks;
 
 namespace Application.UseCases.USER.Handlers
 {
-    public class LoginUserHandler /*: ILoginUserHandler*/
+    public class LoginUserHandler : ILoginUserHandler
     {
-        //private readonly IGetAllUserLoginQuery _getAllUserLoginQuery;
+        private readonly IUserRepository _userRepository;
 
-        //public LoginUserHandler(IGetAllUserLoginQuery getAllUserQuery)
-        //{
-        //    _getAllUserLoginQuery = getAllUserQuery;
-        //}
+        public LoginUserHandler(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
 
-        //public async Task<(bool Success, string Message, int? UserId, string? Username)> Handle(LoginRequest request)
-        //{
-        //    //var (users, message) = await _getAllUserHandler.Handle();
+        public async Task<(bool Success, string Message, int? UserId, string? Username)> Handle(GetAllUserLoginQuery query)
+        {
 
-        //    //if (message != "OK")
-        //    //    return (false, message, null, null);
+            var listaDeusuarios = await _userRepository.GetAllAsync();
+            foreach (var user in listaDeusuarios)
+            {
+                
+                if (user.Name == query.Name && user.PasswordHash == query.Password)
+                {
+                    return (true, "Login exitoso", user.Id, user.Name);
+                }
+            }
 
-        //    //var user = users.FirstOrDefault(u =>
-        //    //    u.Name == request.Name &&
-        //    //    u.PasswordHash == request.PasswordHash);
-
-
-
-        //    //if (user == null)
-        //    //    return (false, "Credenciales inválidas", null, null);
-
-        //    //return (true, "Login exitoso", user.Id, user.Name);
-            
-        //    var listaDeusuarios = await _getAllUserLoginQuery.GetAll();
-        //    foreach(var user in listaDeusuarios)
-        //    {
-        //        //return (false, user.PasswordHash, user.Id, user.Name);
-        //        if (user.Name == request.Name && user.PasswordHash == request.PasswordHash)
-        //        {
-        //            return (true, "Login exitoso", user.Id, user.Name);
-        //        }
-        //    }
-
-        //    return (false, "Credenciales inválidas", null, null);
+            return (false, "Credenciales inválidas", null, null);
         }
     }
 }
+

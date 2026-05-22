@@ -1,23 +1,31 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
-using System.Threading.Tasks;
+﻿using Application.Interfaces.Repositories;
 
 namespace Application
 {
-    public class UpdateReservationCommand : IUpdateReservationCommand
+    public class UpdateReservationCommand 
     {
-        private readonly IReservationRepository _repository;
+        public Guid Id { get; }
+        public int UserId { get; }
+        public Guid SeatId { get; }
+        public string Status { get; }
+        public DateTime ReservedAt { get; }
+        public DateTime ExpiresAt { get; }
 
-        public UpdateReservationCommand(IReservationRepository repository)
+        public UpdateReservationCommand(
+            Guid id,
+            int userId,
+            Guid seatId,
+            string status,
+            DateTime reservedAt,
+            DateTime expiresAt)
         {
-            _repository = repository;
+            Id = id;
+            UserId = userId;
+            SeatId = seatId;
+            Status = status;
+            ReservedAt = reservedAt;
+            ExpiresAt = expiresAt;
         }
 
-        public async Task ExecuteUpdateReservation(RESERVATION reser)
-        {
-            await _repository.UpdateAsync(reser);
-        }
     }
 }

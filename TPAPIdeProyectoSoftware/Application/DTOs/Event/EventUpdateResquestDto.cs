@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.Event
 {
-    public class EventResquestDto
+    public class EventUpdateResquestDto
     {
         public string Name { get; set; }
         public DateTime EventDate { get; set; }
         public string Venue { get; set; }
+        public string Status { get; set; }
     }
 }

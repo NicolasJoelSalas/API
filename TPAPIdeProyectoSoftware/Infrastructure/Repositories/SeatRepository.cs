@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -18,18 +13,25 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-        public IQueryable<SEAT> Query()
+
+        public async Task<List<SEAT>> GetAllAsync()
         {
-            return _context.SEAT.AsNoTracking().AsQueryable();
+            return await _context.SEAT
+                .AsNoTracking()
+                .ToListAsync();
         }
+
+        public async Task<SEAT?> GetByIdAsync(Guid id)
+        {
+            return await _context.SEAT
+                .AsNoTracking()
+                .FirstOrDefaultAsync(s => s.Id == id);
+        }
+
         public async Task AddAsync(SEAT seat)
         {
             await _context.SEAT.AddAsync(seat);
             await _context.SaveChangesAsync();
-        }
-        public async Task<SEAT> GetByIdAsync(Guid id)
-        {
-            return await _context.SEAT.FindAsync(id);
         }
 
         public async Task UpdateAsync(SEAT seat)
@@ -38,29 +40,10 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(SEAT seat)
         {
-            var seat = await _context.SEAT.FindAsync(id);
-
             _context.SEAT.Remove(seat);
             await _context.SaveChangesAsync();
-        }
-        public async Task MarkAsSoldByReservationIds(List<Guid> reservationIds)
-        {
-            await _context.SEAT
-                .Where(s => _context.RESERVATION
-                    .Where(r => reservationIds.Contains(r.Id))
-                    .Select(r => r.SeatId)
-                    .Contains(s.Id))
-                .ExecuteUpdateAsync(s => s
-                    .SetProperty(x => x.Status, "Sold"));
-        }
-        public async Task MarkAsAvailableAsync(Guid seatId)
-        {
-            await _context.SEAT
-                .Where(s => s.Id == seatId)
-                .ExecuteUpdateAsync(s => s
-                    .SetProperty(x => x.Status, "Available"));
         }
     }
 }

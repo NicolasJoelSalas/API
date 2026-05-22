@@ -118,7 +118,8 @@ namespace TPAPIdeProyectoSoftware.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var result = await _loginUserHandler.Handle(request);
+            var user = new GetAllUserLoginQuery (request.Name,request.PasswordHash);
+            var result = await _loginUserHandler.Handle(user);
 
             if (!result.Success)
                 return Unauthorized(new { message = result.Message });

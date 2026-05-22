@@ -13,7 +13,7 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-        public async Task<List<EVENT>> GetAllAsync()
+        public async Task<List<EVENT?>> GetAllAsync()
         {
             return await _context.EVENT
                 .AsNoTracking()
@@ -22,6 +22,7 @@ namespace Infrastructure.Repositories
         public async Task<EVENT?> GetByIdAsync(int id)
         {
             return await _context.EVENT.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+
         }
 
         public async Task<bool> NameExistsAsync(string name)

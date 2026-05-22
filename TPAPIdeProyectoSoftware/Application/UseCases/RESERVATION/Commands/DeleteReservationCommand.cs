@@ -1,21 +1,14 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 
 namespace Application.UseCases.USER.Commands
 {
-    public class DeleteReservationCommand : IDeleteReservationCommand
+    public class DeleteReservationCommand 
     {
-        private readonly IReservationRepository _repository;
+        public Guid Id { get; }
 
-        public DeleteReservationCommand(IReservationRepository repository)
+        public DeleteReservationCommand(Guid id)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteDeleteReservation(Guid id)
-        {
-            await _repository.DeleteAsync(id);
+            Id = id;
         }
     }
 }

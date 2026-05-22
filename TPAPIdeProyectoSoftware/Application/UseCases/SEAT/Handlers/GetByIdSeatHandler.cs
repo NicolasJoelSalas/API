@@ -1,7 +1,8 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,20 +14,36 @@ namespace Application.UseCases
 {
     public class GetByIdSeatHandler : IGetByIdSeatHandler
     {
-        private readonly IGetByIdSeatQuery _query;
+        private readonly ISeatRepository _seatRepository;
 
-        public GetByIdSeatHandler(IGetByIdSeatQuery query)
+        public GetByIdSeatHandler(ISeatRepository seatRepository)
         {
-            _query = query;
+            _seatRepository = seatRepository;
         }
-        public async Task<(SeatResponseDto Seat, string message)> Handle(Guid id)
+
+        public async Task<(SeatResponseDto? seat, string message)> Handle(GetByIdSeatQuery query)
         {
-            var seat = await _query.GetById(id);
+            if (query == null)
+                return (new SeatResponseDto(), "Query inválida");
 
-            if (seat == null)
-                return (new SeatResponseDto(), "No hay Reservation registrados");
+            if (query.Id == null)
+                return (null, "Id inválido");
 
-            return (seat, "OK");
+            var seatEntity = await _seatRepository.GetByIdAsync(query.Id);
+
+            if (seatEntity == null)
+                return (null, "Asiento no encontrado");
+
+            return (new SeatResponseDto
+            {
+                Id = seatEntity.Id,
+                SectorId = seatEntity.SectorId,
+                RowIdentifier = seatEntity.RowIdentifier,
+                SeatNumber = seatEntity.SeatNumber,
+                Status = seatEntity.Status,
+                Version = seatEntity.Version
+            }, "OK");
+               
         }
 
     }

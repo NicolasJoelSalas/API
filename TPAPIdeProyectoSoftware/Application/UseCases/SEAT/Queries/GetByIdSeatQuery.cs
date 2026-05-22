@@ -1,31 +1,15 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Queries.User;
-using Application.Interfaces.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+using System;
 
 namespace Application.UseCases.USER.Queries
 {
-    public class GetByIdSeatQuery : IGetByIdSeatQuery
+    public class GetByIdSeatQuery 
     {
-        private readonly ISeatRepository _repository;
+        public Guid Id { get; }
 
-        public GetByIdSeatQuery(ISeatRepository repository)
+        public GetByIdSeatQuery(Guid id)
         {
-            _repository = repository;
-        }
-
-        public async Task<SeatResponseDto> GetById(Guid id)
-        {
-            return await _repository.Query().Where(x => x.Id == id).Select(x => new SeatResponseDto
-            {
-                SectorId = x.SectorId,
-                RowIdentifier = x.RowIdentifier,
-                SeatNumber = x.SeatNumber,
-                Status = x.Status,
-                Version = x.Version
-            }).FirstOrDefaultAsync();
+            Id = id;
         }
     }
 }

@@ -1,15 +1,10 @@
 ﻿using Application.DTOs.User;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.UseCases.USER.Queries;
 
 namespace Application.Interfaces.Handlers.User
 {
     public interface IGetAllReservationHandler
     {
-        Task<(List<ReservationResponseDto> Reservation, string message)> Handle();
+        Task<(List<ReservationResponseDto> Reservations, string message)> Handle(GetAllReservationQuery query);
     }
 }

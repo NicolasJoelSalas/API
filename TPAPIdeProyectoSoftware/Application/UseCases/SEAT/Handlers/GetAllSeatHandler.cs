@@ -1,31 +1,38 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
 
 namespace Application.UseCases
 {
     public class GetAllSeatHandler : IGetAllSeatHandler
     {
-        private readonly IGetAllSeatQuery _query;
+        private readonly ISeatRepository _seatRepository;
 
-        public GetAllSeatHandler(IGetAllSeatQuery query)
+        public GetAllSeatHandler(ISeatRepository seatRepository)
         {
-            _query = query;
+            _seatRepository = seatRepository;
         }
-        public async Task<(List<SeatResponseDto> Seat, string message)> Handle()
+
+        public async Task<(List<SeatResponseDto> seats, string message)> Handle(GetAllSeatQuery query)
         {
-            var Seat = await _query.GetAll();
+            var seats = await _seatRepository.GetAllAsync();
 
-            if (Seat == null || Seat.Count == 0)
-                return (new List<SeatResponseDto>(), "No hay Seat registrados");
+            if (seats == null || seats.Count == 0)
+                return (new List<SeatResponseDto>(), "No hay asientos registrados");
 
-            return (Seat, "OK");
+            var response = seats.Select(seat => new SeatResponseDto
+            {
+                Id = seat.Id,
+                SectorId = seat.SectorId,
+                RowIdentifier = seat.RowIdentifier,
+                SeatNumber = seat.SeatNumber,
+                Status = seat.Status,
+                Version = seat.Version
+            }).ToList();
+
+            return (response, "OK");
         }
     }
 }

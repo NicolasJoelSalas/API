@@ -106,22 +106,6 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
-    "Method": "GetSectorsByEvent",
-    "RelativePath": "api/Event/{eventId}/sectors",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetEventById",
     "RelativePath": "api/Event/{id}",
     "HttpMethod": "GET",
@@ -167,23 +151,7 @@
       },
       {
         "Name": "request",
-        "Type": "Application.DTOs.Event.EventResquestDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
-    "Method": "GetSeatsBySector",
-    "RelativePath": "api/Event/sector/{sectorId}/seats",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "sectorId",
-        "Type": "System.Int32",
+        "Type": "Application.DTOs.Event.EventUpdateResquestDto",
         "IsRequired": true
       }
     ],
@@ -192,13 +160,13 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "Create",
-    "RelativePath": "api/Reservation",
+    "RelativePath": "api/reservations",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.User.ReservationRequestDto",
         "IsRequired": true
       }
@@ -208,7 +176,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "GetAll",
-    "RelativePath": "api/Reservation",
+    "RelativePath": "api/reservations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,7 +186,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "GetById",
-    "RelativePath": "api/Reservation/{id}",
+    "RelativePath": "api/reservations/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -234,7 +202,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "Delete",
-    "RelativePath": "api/Reservation/{id}",
+    "RelativePath": "api/reservations/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -242,59 +210,6 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
-    "Method": "Update",
-    "RelativePath": "api/Reservation/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "Application.DTOs.User.UpdateReservationRequestDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
-    "Method": "ConfirmPayment",
-    "RelativePath": "api/Reservation/confirm-payment",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Application.DTOs.Reservation.ConfirmPaymentDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
-    "Method": "CreateMultiple",
-    "RelativePath": "api/Reservation/multiple",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Application.DTOs.User.CreateMultipleReservationDto",
         "IsRequired": true
       }
     ],
@@ -303,14 +218,14 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Create",
-    "RelativePath": "api/Seat",
+    "RelativePath": "api/seats",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "Application.DTOs.User.IdSeatRequestDto",
+        "Name": "request",
+        "Type": "Application.DTOs.User.SeatCreateRequestDto",
         "IsRequired": true
       }
     ],
@@ -319,7 +234,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "GetAll",
-    "RelativePath": "api/Seat",
+    "RelativePath": "api/seats",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -329,7 +244,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "GetById",
-    "RelativePath": "api/Seat/{id}",
+    "RelativePath": "api/seats/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -345,7 +260,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Delete",
-    "RelativePath": "api/Seat/{id}",
+    "RelativePath": "api/seats/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -361,7 +276,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Update",
-    "RelativePath": "api/Seat/{id}",
+    "RelativePath": "api/seats/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -372,7 +287,7 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.User.SeatRequestDto",
         "IsRequired": true
       }
@@ -381,14 +296,14 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
-    "Method": "Create",
-    "RelativePath": "api/Sector",
+    "Method": "CreateSector",
+    "RelativePath": "api/sectors",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.SectorRequestDto",
         "IsRequired": true
       }
@@ -397,8 +312,8 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
-    "Method": "GetAll",
-    "RelativePath": "api/Sector",
+    "Method": "GetAllSectors",
+    "RelativePath": "api/sectors",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -407,8 +322,8 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
-    "Method": "GetById",
-    "RelativePath": "api/Sector/{id}",
+    "Method": "GetSectorById",
+    "RelativePath": "api/sectors/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -423,8 +338,8 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
-    "Method": "Delete",
-    "RelativePath": "api/Sector/{id}",
+    "Method": "DeleteSector",
+    "RelativePath": "api/sectors/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -439,8 +354,8 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
-    "Method": "Update",
-    "RelativePath": "api/Sector/{id}",
+    "Method": "UpdateSector",
+    "RelativePath": "api/sectors/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -451,7 +366,7 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.SectorRequestDto",
         "IsRequired": true
       }
@@ -460,14 +375,14 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
-    "Method": "Create",
+    "Method": "CreateUser",
     "RelativePath": "api/users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.User.UserRequestDto",
         "IsRequired": true
       }
@@ -476,7 +391,7 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
-    "Method": "GetAll",
+    "Method": "GetAllUsers",
     "RelativePath": "api/users",
     "HttpMethod": "GET",
     "IsController": true,
@@ -486,7 +401,7 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
-    "Method": "GetById",
+    "Method": "GetUserById",
     "RelativePath": "api/users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -502,7 +417,7 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
-    "Method": "Delete",
+    "Method": "DeleteUser",
     "RelativePath": "api/users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -518,7 +433,7 @@
   },
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
-    "Method": "Update",
+    "Method": "UpdateUser",
     "RelativePath": "api/users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -530,7 +445,7 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.User.UserRequestDto",
         "IsRequired": true
       }
@@ -546,7 +461,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "Application.DTOs.User.LoginRequest",
         "IsRequired": true
       }

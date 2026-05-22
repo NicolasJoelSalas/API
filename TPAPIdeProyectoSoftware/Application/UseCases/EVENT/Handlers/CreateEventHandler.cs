@@ -2,6 +2,7 @@
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
 using Domain.Entities;
+using Domain.Enums;
 
 namespace Application.UseCases.Event.Handlers
 {
@@ -28,9 +29,6 @@ namespace Application.UseCases.Event.Handlers
             if (string.IsNullOrWhiteSpace(command.Venue))
                 return "La ubicación es obligatoria";
 
-            if (string.IsNullOrWhiteSpace(command.Status))
-                return "El estado es obligatorio";
-
             var exists = await _eventRepository.NameExistsAsync(command.Name);
 
             if (exists)
@@ -41,7 +39,7 @@ namespace Application.UseCases.Event.Handlers
                 Name = command.Name,
                 EventDate = command.EventDate,
                 Venue = command.Venue,
-                Status = command.Status
+                Status = EventStatus.Active.ToString()
             };
 
             await _eventRepository.AddAsync(eventEntity);

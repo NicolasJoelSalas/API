@@ -1,23 +1,32 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 using Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Application
 {
-    public class UpdateSeatCommand : IUpdateSeatCommand
+    public class UpdateSeatCommand 
     {
-        private readonly ISeatRepository _repository;
+        public Guid Id { get; }
+        public int SectorId { get; }
+        public string RowIdentifier { get; }
+        public int SeatNumber { get; }
+        public string Status { get; }
+        public int Version { get; }
 
-        public UpdateSeatCommand(ISeatRepository repository)
+        public UpdateSeatCommand(
+            Guid id,
+            int sectorId,
+            string rowIdentifier,
+            int seatNumber,
+            string status,
+            int version)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteUpdateSeat(SEAT seat)
-        {
-            await _repository.UpdateAsync(seat);
+            Id = id;
+            SectorId = sectorId;
+            RowIdentifier = rowIdentifier;
+            SeatNumber = seatNumber;
+            Status = status;
+            Version = version;
         }
     }
 }

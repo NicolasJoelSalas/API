@@ -1,32 +1,43 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
+﻿using Application.DTOs.Event;
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Queries;
+using Application.UseCases.USER.Queries;
 
 namespace Application.UseCases
 {
     public class GetByIdReservationHandler : IGetByIdReservationHandler
     {
-        private readonly IGetByIdReservationQuery _query;
+        private readonly IReservationRepository _reservationRepository;
 
-        public GetByIdReservationHandler(IGetByIdReservationQuery query)
+        public GetByIdReservationHandler(IReservationRepository reservationRepository)
         {
-            _query = query;
+            _reservationRepository = reservationRepository;
         }
-        public async Task<(ReservationResponseDto Reservation, string message)> Handle(Guid id)
+
+        public async Task<(ReservationResponseDto Reservation, string message)> Handle(GetByIdReservationQuery query)
         {
-            var reservation = await _query.GetById(id);
+            if (query == null)
+                return (new ReservationResponseDto(), "Query inválida");
 
-            if (reservation == null)
-                return (new ReservationResponseDto(), "No hay Reservaciones registrados");
+            if (query.Id == null)
+                return (new ReservationResponseDto(), "Id inválido");
 
-            return (reservation, "OK");
+            var reservationEntity = await _reservationRepository.GetByIdAsync(query.Id);
+
+            if (reservationEntity == null)
+                return (new ReservationResponseDto(), "Reserva no encontrada");
+
+            return (new ReservationResponseDto
+            {
+                Id = reservationEntity.Id,
+                UserId = reservationEntity.UserId,
+                SeatId = reservationEntity.SeatId,
+                Status = reservationEntity.Status,
+                ReservedAt = reservationEntity.ReservedAt,
+                ExpiresAt = reservationEntity.ExpiresAt
+            }, "OK");
         }
 
     }

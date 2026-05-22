@@ -27,9 +27,13 @@ namespace Application.UseCases.USER.Handlers
                 return "El email es obligatorio";
 
             var existingUser = await _userRepository.GetByIdAsync(command.Id);
+            var exists = await _userRepository.EmailExistsAsync(command.Email);
 
             if (existingUser == null)
                 return "Usuario no encontrado";
+
+            if (exists && existingUser.Email != command.Email)
+                return "El email ya existe";
 
             existingUser.Name = command.Name;
             existingUser.Email = command.Email;

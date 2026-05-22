@@ -14,7 +14,7 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<USER>> GetAllAsync()
+        public async Task<List<USER?>> GetAllAsync()
         {
             return await _context.USER
                 .AsNoTracking()

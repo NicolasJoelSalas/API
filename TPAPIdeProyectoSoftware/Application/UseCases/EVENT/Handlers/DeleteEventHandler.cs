@@ -15,8 +15,6 @@ namespace Application.UseCases.EVENT.Handlers
 
         public async Task<string> Handle(DeleteEventCommand command)
         {
-            if (command == null)
-                return "Comando inválido";
 
             if (command.Id <= 0)
                 return "Id inválido";
@@ -29,6 +27,8 @@ namespace Application.UseCases.EVENT.Handlers
             await _eventRepository.DeleteAsync(eventEntity);
 
             return "Evento eliminado correctamente";
+
+
         }
     }
 }

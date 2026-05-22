@@ -1,70 +1,63 @@
 ﻿
-using Application.DTOs.User;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.User;
-using Application.UseCases.USER.Queries;
-using Domain.Entities;
-using System.Net.NetworkInformation;
+using Application.Interfaces.Repositories;
 
 namespace Application.UseCases
 {
     public class UpdateSeatHandler : IUpdateSeatHandler
     {
-        private readonly IUpdateSeatCommand _command;
-        private readonly IGetByIdSeatQuery _query;
-        private readonly IGetByIdSectorQuery _querySector;
+        private readonly ISectorRepository _sectorRepository;
+        private readonly ISeatRepository _seatRepository;
 
-        public UpdateSeatHandler(
-            IUpdateSeatCommand command,
-            IGetByIdSeatQuery query, IGetByIdSectorQuery querySector)
+        public UpdateSeatHandler(ISeatRepository seatRepository, ISectorRepository sectorRepository)
         {
-            _command = command;
-            _query = query;
-            _querySector = querySector;
+            _seatRepository = seatRepository;
+            _sectorRepository = sectorRepository;
         }
 
-        public async Task<string> Handle(Guid id, SeatRequestDto dto)
+        public async Task<string> Handle(UpdateSeatCommand command)
         {
-            var Seatdto = await _query.GetById(id);
-            if (Seatdto == null)
-                return "Asiento no encontrado";
+            if (command == null)
+                return "Comando inválido";
 
-            if (dto.SectorId <= 0)
+
+            if (command.SectorId <= 0)
                 return "El Id del sector es obligatorio";
 
-            var sector = await _querySector.GetById(dto.SectorId);
+            var existingSector = await _sectorRepository.GetByIdAsync(command.SectorId);
 
-            if (sector == null)
-                return "El Sector no existe";
+            if (existingSector == null)
+                return "Sector no encontrado";
 
-            if (string.IsNullOrWhiteSpace(dto.RowIdentifier))
-                return "El Identificador de la fila es obligatorio";
+            if (string.IsNullOrWhiteSpace(command.RowIdentifier))
+                return "El identificador de fila es obligatorio";
 
-            if (dto.SeatNumber <= 0 || dto.SeatNumber == null)
-                return "El numero de asiento es obligatorio";
+            if (command.SeatNumber <= 0)
+                return "El número de asiento es obligatorio";
 
-            if (string.IsNullOrWhiteSpace(dto.Status))
-                return "El status es obligatorio";
+            if (command.Status == null)
+                return "El estado es obligatorio";
 
-            if (dto.Version <= 0 || dto.Version == null)
-                return "La version es obligatorio";
+            if (command.Version <= 0)
+                return "El número de versión es obligatorio";
 
-            var seat = new Domain.Entities.SEAT
-            {
-                Id = id,
-                SectorId = dto.SectorId,
-                RowIdentifier = dto.RowIdentifier,
-                SeatNumber = dto.SeatNumber,
-                Status = dto.Status,
-                Version = dto.Version,
-            };
+            var existingseat = await _seatRepository.GetByIdAsync(command.Id);
 
-            await _command.ExecuteUpdateSeat(seat);
+            if (existingseat == null)
+                return "Asiento no encontrado";
+
+            existingseat.SectorId = command.SectorId;   
+            existingseat.RowIdentifier = command.RowIdentifier;
+            existingseat.SeatNumber = command.SeatNumber;
+            existingseat.Status = command.Status;
+            existingseat.Version = command.Version;
+
+            await _seatRepository.UpdateAsync(existingseat);
 
             return "Asiento actualizado correctamente";
+
+
         }
     }
+    
 }

@@ -1,10 +1,4 @@
 ﻿using Application.UseCases.EVENT.Commands;
-using Application.UseCases.USER.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Interfaces.Handlers.Event
 {

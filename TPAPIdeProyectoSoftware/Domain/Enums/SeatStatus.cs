@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Enums
 {
-    public static class SeatStatus
+    public enum SeatStatus
     {
-        public const string Available = "Available";
-        public const string Reserved = "Reserved";
-        public const string Sold = "Sold";
+        Available,
+        Reserved,
+        Sold
     }
 }

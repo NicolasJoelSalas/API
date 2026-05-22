@@ -1,31 +1,29 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+﻿using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Commands;
 
 namespace Application.UseCases
 {
     public class DeleteSeatHandler : IDeleteSeatHandler
     {
-        private readonly IDeleteSeatCommand _command;
-        private readonly IGetByIdSeatQuery _query;
+        private readonly ISeatRepository _seatRepository;
 
-        public DeleteSeatHandler(
-            IDeleteSeatCommand command,
-            IGetByIdSeatQuery query)
+        public DeleteSeatHandler(ISeatRepository seatRepository)
         {
-            _command = command;
-            _query = query;
+            _seatRepository = seatRepository;
         }
 
-        public async Task<string> Handle(Guid id)
+        public async Task<string> Handle(DeleteSeatCommand command)
         {
-            var user = await _query.GetById(id);
+            if (command == null || command.Id == Guid.Empty)
+                return "Id inválido";
 
-            if (user == null)
+            var seat = await _seatRepository.GetByIdAsync(command.Id);
+
+            if (seat == null)
                 return "Seat no encontrado";
 
-            await _command.ExecuteDeleteSeat(id);
+            await _seatRepository.DeleteAsync(seat);
 
             return "Seat eliminado correctamente";
         }

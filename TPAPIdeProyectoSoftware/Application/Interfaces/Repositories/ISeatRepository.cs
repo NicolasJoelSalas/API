@@ -1,24 +1,20 @@
 ﻿using Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Interfaces.Repositories
 {
     public interface ISeatRepository
     {
-        IQueryable<SEAT> Query();
+        Task<List<SEAT>> GetAllAsync();
         Task AddAsync(SEAT seat);
 
         Task<SEAT> GetByIdAsync(Guid id);
 
         Task UpdateAsync(SEAT seat);
 
-        Task DeleteAsync(Guid id);
+        Task DeleteAsync(SEAT seat);
 
-        Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
-        Task MarkAsAvailableAsync(Guid seatId);
+        //Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
+        //Task MarkAsAvailableAsync(Guid seatId);
     }
 }

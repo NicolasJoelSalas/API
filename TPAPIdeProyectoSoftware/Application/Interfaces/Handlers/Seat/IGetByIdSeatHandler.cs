@@ -1,16 +1,11 @@
 ﻿using Application.DTOs.User;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.UseCases.USER.Queries;
 
 namespace Application.Interfaces.Handlers.User
 {
     public interface IGetByIdSeatHandler
     {
-        Task<(SeatResponseDto Seat, string message)> Handle(Guid id);
+        Task<(SeatResponseDto? seat, string message)> Handle(GetByIdSeatQuery query);
 
     }
 }
