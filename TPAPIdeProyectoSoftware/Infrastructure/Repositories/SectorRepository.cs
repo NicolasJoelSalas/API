@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -18,18 +13,25 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-        public IQueryable<SECTOR> Query()
+
+        public async Task<List<SECTOR>> GetAllAsync()
         {
-            return _context.SECTOR.AsNoTracking().AsQueryable();
+            return await _context.SECTOR
+                .AsNoTracking()
+                .ToListAsync();
         }
+
+        public async Task<SECTOR?> GetByIdAsync(int id)
+        {
+            return await _context.SECTOR
+                .AsNoTracking()
+                .FirstOrDefaultAsync(s => s.Id == id);
+        }
+
         public async Task AddAsync(SECTOR sector)
         {
             await _context.SECTOR.AddAsync(sector);
             await _context.SaveChangesAsync();
-        }
-        public async Task<SECTOR> GetByIdAsync(int id)
-        {
-            return await _context.SECTOR.FindAsync(id);
         }
 
         public async Task UpdateAsync(SECTOR sector)
@@ -38,10 +40,8 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(SECTOR sector)
         {
-            var sector = await _context.SECTOR.FindAsync(id);
-
             _context.SECTOR.Remove(sector);
             await _context.SaveChangesAsync();
         }

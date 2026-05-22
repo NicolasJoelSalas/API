@@ -1,32 +1,39 @@
 ﻿using Application.DTOs.Event;
 using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Queries.Event;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Queries;
+
 
 namespace Application.UseCases.EVENT.Handlers
 {
     public class GetAllEventHandler : IGetAllEventHandler
     {
-        private readonly IGetAllEventQuery _getAllEventQuery;
+        private readonly IEventRepository _eventRepository;
 
-        public GetAllEventHandler(IGetAllEventQuery getAllEventQuery)
+        public GetAllEventHandler(IEventRepository eventRepository)
         {
-            _getAllEventQuery = getAllEventQuery;
+            _eventRepository = eventRepository;
         }
 
-        public async Task<(List<EventResponseDto> events, string message)> GetAllEventHandle()
+        public async Task<(List<EventResponseDto> Events, string message)> Handle(GetAllEventQuery query)
         {
-            var events = await _getAllEventQuery.GetAllEvent();
+            var events = await _eventRepository.GetAllAsync();
+
             if (events == null || !events.Any())
+                return (new List<EventResponseDto>(), "No hay eventos");
+
+            var eventDtos = events.Select(eventEntity => new EventResponseDto
             {
-                return (new List<EventResponseDto>(), "No hay eventos registrados.");
-            }
-            return (events, "OK");
+                Id = eventEntity.Id,
+                Name = eventEntity.Name,
+                EventDate = eventEntity.EventDate,
+                Venue = eventEntity.Venue,
+                Status = eventEntity.Status
+            }).ToList();
+
+            return (eventDtos, "OK");
         }
+
 
     }
 }

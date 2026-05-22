@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.DTOs.User;
+using Application.UseCases;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,6 @@ namespace Application.Interfaces.Handlers
 {
     public interface IGetAllSectorHandler
     {
-        Task<(List<SectorResponseDto> Sector, string message)> Handle();
+        Task<(List<SectorResponseDto> sectors, string message)> Handle(GetAllSectorQuery query);
     }
 }

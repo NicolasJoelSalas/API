@@ -1,71 +1,71 @@
 ﻿using Application.DTOs;
-using Application.DTOs.User;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.Audit_Log;
-using Application.Interfaces.Queries.User;
+using Application.Interfaces.Repositories;
 using Domain.Entities;
 
-namespace Application.UseCases
+namespace Application.UseCases.Audit_Log.Handlers
 {
     public class UpdateAudit_LogHandler : IUpdateAudit_LogHandler
     {
-        private readonly IUpdateAudit_LogCommand _command;
-        private readonly IGetByIdAudit_LogQuery _query;
-        private readonly IGetIdUserQueryValidation _queryUser;
+        private readonly IAudit_LogRepository _auditLogRepository;
+        private readonly IUserRepository _userRepository;
 
         public UpdateAudit_LogHandler(
-            IUpdateAudit_LogCommand command,
-            IGetByIdAudit_LogQuery query,
-            IGetIdUserQueryValidation queryUser)
+            IAudit_LogRepository auditLogRepository,
+            IUserRepository userRepository)
         {
-            _command = command;
-            _query = query;
-            _queryUser = queryUser;
+            _auditLogRepository = auditLogRepository;
+            _userRepository = userRepository;
         }
 
         public async Task<string> Handle(Guid id, Audit_LogRequestDto dto)
         {
-            var existing = await _query.GetById(id);
-
             if (dto == null)
                 return "Datos inválidos";
 
+            if (id == Guid.Empty)
+                return "Id inválido";
+
+            var existing = await _auditLogRepository.GetByIdAsync(id);
+
             if (existing == null)
-                return "Registro de auditoria no encontrado";
+                return "Registro de auditoría no encontrado";
 
-            if (dto.UserId <= 0)
-                return "El Id del usuario es obligatorio";
+            // Validar usuario solo si viene informado
+            if (dto.UserId.HasValue)
+            {
+                if (dto.UserId <= 0)
+                    return "El Id del usuario es inválido";
 
-            var user = await _queryUser.GetById(dto.UserId);
+                var user = await _userRepository.GetByIdAsync(dto.UserId.Value);
 
-            if (user == null)
-                return "Usuario no existe";
+                if (user == null)
+                    return "El usuario no existe";
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Action))
                 return "La acción es obligatoria";
 
             if (string.IsNullOrWhiteSpace(dto.EntityType))
-                return "El tipo de entidad es obligatoria";
+                return "El tipo de entidad es obligatorio";
 
             if (string.IsNullOrWhiteSpace(dto.EntityId))
-                return "El id de entidad es obligatoria";
+                return "El id de entidad es obligatorio";
 
-            var auditLog = new Domain.Entities.AUDIT_LOG
-            {
-                Id = id, 
-                UserId = dto.UserId,
-                Action = dto.Action,
-                EntityType = dto.EntityType,
-                EntityId = dto.EntityId,
-                Details = dto.Details,
-                CreatedAt = existing.CreatedAt 
-            };
+            if (string.IsNullOrWhiteSpace(dto.Details))
+                return "Los detalles son obligatorios";
 
-            await _command.ExecuteUpdateAudit_Log(auditLog);
+            // Modificar entidad existente
+            existing.UserId = dto.UserId;
+            existing.Action = dto.Action;
+            existing.EntityType = dto.EntityType;
+            existing.EntityId = dto.EntityId;
+            existing.Details = dto.Details;
 
-            return "Registro de auditoria actualizado correctamente";
+            // No tocar CreatedAt
+            await _auditLogRepository.UpdateAsync(existing);
+
+            return "Registro de auditoría actualizado correctamente";
         }
     }
 }

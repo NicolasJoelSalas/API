@@ -1,40 +1,47 @@
-﻿using Application.DTOs;
-using Application.DTOs.User;
+﻿using Application;
+using Application.DTOs;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
-using Application.Interfaces.Handlers.User;
 using Application.UseCases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/Sector")]
+    [Route("api/sectors")]
     public class SectorController : ControllerBase
     {
-        private readonly ICreateSectorHandler _createHandler;
-        private readonly IDeleteSectorHandler _deleteHandler;
-        private readonly IUpdateSectorHandler _updateHandler;
+        private readonly ICreateSectorHandler _createSectorHandler;
+        private readonly IDeleteSectorHandler _deleteSectorHandler;
+        private readonly IUpdateSectorHandler _updateSectorHandler;
         private readonly IGetAllSectorHandler _getAllSectorHandler;
         private readonly IGetByIdSectorHandler _getByIdSectorHandler;
 
         public SectorController(
-            IDeleteSectorHandler deleteHandler,
-            ICreateSectorHandler createHandler,
-            IUpdateSectorHandler updateHandler,
-            IGetByIdSectorHandler getByIdSectorHandler,
-            IGetAllSectorHandler getAllSectorHandler)
+            ICreateSectorHandler createSectorHandler,
+            IDeleteSectorHandler deleteSectorHandler,
+            IUpdateSectorHandler updateSectorHandler,
+            IGetAllSectorHandler getAllSectorHandler,
+            IGetByIdSectorHandler getByIdSectorHandler)
         {
-            _createHandler = createHandler;
-            _deleteHandler = deleteHandler;
-            _updateHandler = updateHandler;
+            _createSectorHandler = createSectorHandler;
+            _deleteSectorHandler = deleteSectorHandler;
+            _updateSectorHandler = updateSectorHandler;
             _getAllSectorHandler = getAllSectorHandler;
             _getByIdSectorHandler = getByIdSectorHandler;
         }
+
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SectorRequestDto dto)
+        public async Task<IActionResult> CreateSector([FromBody] SectorRequestDto request)
         {
-            var message = await _createHandler.Handle(dto);
+            var command = new CreateSectorCommand(
+                request.EventId,
+                request.Name,
+                request.Price,
+                request.Capacity
+            );
+
+            var message = await _createSectorHandler.Handle(command);
 
             if (message != "OK")
                 return BadRequest(new { message });
@@ -46,31 +53,37 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetSectorById(int id)
         {
-            var (sectors, message) = await _getByIdSectorHandler.Handle(id);
+            var query = new GetByIdSectorQuery(id);
+
+            var (sector, message) = await _getByIdSectorHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return NotFound(new { message });
 
-            return Ok(sectors);
+            return Ok(sector);
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllSectors()
         {
-            var (sectors, message) = await _getAllSectorHandler.Handle();
+            var query = new GetAllSectorQuery();
+
+            var (sectors, message) = await _getAllSectorHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return NotFound(new { message });
 
             return Ok(sectors);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteSector(int id)
         {
-            var message = await _deleteHandler.Handle(id);
+            var command = new DeleteSectorCommand(id);
+
+            var message = await _deleteSectorHandler.Handle(command);
 
             if (message == "Sector no encontrado")
                 return NotFound(new { message });
@@ -79,15 +92,25 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] SectorRequestDto dto)
+        public async Task<IActionResult> UpdateSector(int id, [FromBody] SectorRequestDto request)
         {
-            var message = await _updateHandler.Handle(id, dto);
+            var command = new UpdateSectorCommand(
+                id,
+                request.EventId,
+                request.Name,
+                request.Price,
+                request.Capacity  
+            );
+
+            var message = await _updateSectorHandler.Handle(command);
 
             if (message == "Sector no encontrado")
                 return NotFound(new { message });
 
+            if (message != "Sector actualizado correctamente")
+                return BadRequest(new { message });
+
             return Ok(new { message });
         }
-
     }
 }

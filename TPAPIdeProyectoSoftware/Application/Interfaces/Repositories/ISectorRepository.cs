@@ -9,13 +9,13 @@ namespace Application.Interfaces.Repositories
 {
     public interface ISectorRepository
     {
-        IQueryable<SECTOR> Query();
         Task AddAsync(SECTOR seat);
 
+        Task<List<SECTOR>> GetAllAsync();
         Task<SECTOR> GetByIdAsync(int id);
 
         Task UpdateAsync(SECTOR seat);
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(SECTOR sector);
     }
 }

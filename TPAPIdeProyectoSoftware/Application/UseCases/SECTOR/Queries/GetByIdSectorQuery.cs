@@ -1,32 +1,16 @@
 ﻿using Application.DTOs;
 using Application.DTOs.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.User;
-using Application.Interfaces.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;  
 
 namespace Application.UseCases
 {
-    public class GetByIdSectorQuery : IGetByIdSectorQuery
+    public class GetByIdSectorQuery 
     {
-        private readonly ISectorRepository _repository;
+        public int Id { get; }
 
-        public GetByIdSectorQuery(ISectorRepository repository)
+        public GetByIdSectorQuery(int id)
         {
-            _repository = repository;
-        }
-
-        public async Task<SectorResponseDto> GetById(int id)
-        {
-            return await _repository.Query().Where(x => x.Id == id).Select(x => new SectorResponseDto
-            {
-                EventId = x.EventId,
-                Name = x.Name,
-                Price = x.Price,
-                Capacity = x.Capacity,
-            }).FirstOrDefaultAsync();
+            Id = id;
         }
     }
 }

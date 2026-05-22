@@ -1,50 +1,48 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+﻿using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Commands;
 using Domain.Entities;
 
-public class CreateUserHandler : ICreateUserHandler
+namespace Application.UseCases.USER.Handlers
 {
-    private readonly ICreateUserCommand _command;
-    private readonly IEmailExistsUserquery _emailExistsquery;
-
-    public CreateUserHandler(
-        ICreateUserCommand command,
-        IEmailExistsUserquery emailExistsquery)
+    public class CreateUserHandler : ICreateUserHandler
     {
-        _command = command;
-        _emailExistsquery = emailExistsquery;
-    }
+        private readonly IUserRepository _userRepository;
 
-    public async Task<string> Handle(UserRequestDto dto)
-    {
-        if (dto == null)
-            return "Datos inválidos";
-
-        if (string.IsNullOrWhiteSpace(dto.Name))
-            return "El nombre es obligatorio";
-
-        if (string.IsNullOrWhiteSpace(dto.Email))
-            return "El email es obligatorio";
-
-        if (string.IsNullOrWhiteSpace(dto.PasswordHash))
-            return "La contraseña es obligatoria";
-
-        var exists = await _emailExistsquery.Handle(dto.Email);
-
-        if (exists)
-            return "El email ya está registrado, use otro";
-
-        var user = new USER
+        public CreateUserHandler(IUserRepository userRepository)
         {
-            Name = dto.Name,
-            Email = dto.Email,
-            PasswordHash = dto.PasswordHash
-        };
+            _userRepository = userRepository;
+        }
 
-        await _command.ExecuteCreateUser(user);
+        public async Task<string> Handle(CreateUserCommand command)
+        {
+            if (command == null)
+                return "Datos inválidos";
 
-        return "OK";
+            if (string.IsNullOrWhiteSpace(command.Name))
+                return "El nombre es obligatorio";
+
+            if (string.IsNullOrWhiteSpace(command.Email))
+                return "El email es obligatorio";
+
+            if (string.IsNullOrWhiteSpace(command.PasswordHash))
+                return "La contraseña es obligatoria";
+
+            var exists = await _userRepository.EmailExistsAsync(command.Email);
+
+            if (exists)
+                return "El email ya está registrado, use otro";
+
+            var user = new Domain.Entities.USER
+            {
+                Name = command.Name,
+                Email = command.Email,
+                PasswordHash = command.PasswordHash
+            };
+
+            await _userRepository.AddAsync(user);
+
+            return "OK";
+        }
     }
 }

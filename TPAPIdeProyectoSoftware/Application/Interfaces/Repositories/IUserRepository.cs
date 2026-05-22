@@ -7,14 +7,15 @@ namespace Application.Interfaces.Repositories
 {
     public interface IUserRepository
     {
-        IQueryable<USER> Query();
         Task AddAsync(USER user);
 
         Task<USER> GetByIdAsync(int id);
 
+        Task<List<USER>> GetAllAsync();
+
         Task UpdateAsync(USER user);
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(USER user);
 
         Task<bool> EmailExistsAsync(string email);
     }

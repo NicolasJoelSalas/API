@@ -10,6 +10,6 @@ namespace Application.Interfaces.Handlers
 {
     public interface IUpdateSectorHandler
     {
-        Task<string> Handle(int id, SectorRequestDto dto);
+        Task<string> Handle(UpdateSectorCommand command);
     }
 }

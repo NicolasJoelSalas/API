@@ -1,21 +1,14 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 
 namespace Application.UseCases
 {
-    public class DeleteSectorCommand : IDeleteSectorCommand
+    public class DeleteSectorCommand 
     {
-        private readonly ISectorRepository _repository;
+        public int Id { get; }
 
-        public DeleteSectorCommand(ISectorRepository repository)
+        public DeleteSectorCommand(int id)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteDeleteSector(int id)
-        {
-            await _repository.DeleteAsync(id);
+            Id = id;
         }
     }
 }

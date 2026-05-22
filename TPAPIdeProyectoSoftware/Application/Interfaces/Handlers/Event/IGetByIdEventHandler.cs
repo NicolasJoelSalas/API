@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Event;
 using Application.DTOs.User;
+using Application.UseCases.EVENT.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Application.Interfaces.Handlers.Event
 {
     public interface IGetByIdEventHandler
     {
-        Task<(EventResponseDto events, string message)> GetByIdEventHandle(int id);
+        Task<(EventResponseDto Event, string message)> Handle(GetByIdEventQuery query);
     }
 }

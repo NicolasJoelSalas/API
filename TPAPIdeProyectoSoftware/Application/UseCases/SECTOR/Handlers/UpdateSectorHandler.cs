@@ -1,82 +1,50 @@
-﻿using Application.DTOs;
-using Application.DTOs.User;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
+﻿
 using Application.Interfaces.Handlers;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.Event;
-using Application.Interfaces.Queries.User;
-using Application.UseCases.USER.Queries;
-using Domain.Entities;
-using Microsoft.Extensions.Logging;
-using System.Diagnostics;
-using System.Xml.Linq;
+using Application.Interfaces.Repositories;
+
 
 namespace Application.UseCases
 {
     public class UpdateSectorHandler : IUpdateSectorHandler
     {
-        private readonly IUpdateSectorCommand _command;
-        private readonly IGetByIdEventQuery _queryEvent;
-        private readonly IGetByIdSectorQuery _getByIdSectorQuery;
+        private readonly ISectorRepository _sectorRepository;
 
-        public UpdateSectorHandler(
-            IUpdateSectorCommand command,
-            IGetByIdEventQuery queryEvent, 
-            IGetByIdSectorQuery getByIdSectorQuery)
+        public UpdateSectorHandler(ISectorRepository sectorRepository)
         {
-            _command = command;
-            _queryEvent = queryEvent;
-            _getByIdSectorQuery = getByIdSectorQuery;
+            _sectorRepository = sectorRepository;
         }
 
-        public async Task<string> Handle(int id, SectorRequestDto dto)
+        public async Task<string> Handle(UpdateSectorCommand command)
         {
-            if (dto == null)
-                return "Datos inválidos";
-
-            var sector = await _getByIdSectorQuery.GetById(id);
-
-            if(sector == null)
-                return "El Sector no existe";
-            
-
-            var eventt = await _queryEvent.GetById(dto.EventId);
-
-            if (eventt == null)
-                return "El Evento no existe";
-
-            if (string.IsNullOrWhiteSpace(dto.Name))
-                return "El nombre del sector es obligatorio";
-
-            if (dto.Price.CompareTo(0) <= 0)
-                return "Ingrese un precio mayor a 0";
-
-            if (dto.Capacity <= 0)
-                return "Ingrese una capacidad mayor a 0";
+            if (command == null)
+                return "Comando inválido";
 
 
-            var updatedsector = new Domain.Entities.SECTOR
-            {
-                Id = id,
-                EventId = dto.EventId,
-                Name = dto.Name,
-                Price = dto.Price,
-                Capacity = dto.Capacity
-            };
+            if (command.EventId <= 0)
+                return "El Id del evento es obligatorio";
 
-            updatedsector.EventId = dto.EventId;
-            updatedsector.Name = dto.Name;
-            updatedsector.Price = dto.Price;
-            updatedsector.Capacity = dto.Capacity;
+            if (string.IsNullOrWhiteSpace(command.Name))
+                return "El nombre es obligatorio";
 
+            if (command.Price <= 0)
+                return "El precio es obligatorio";
 
+            if (command.Capacity <= 0)
+                return "La capacidad es obligatoria";
 
-            await _command.ExecuteUpdateSector(updatedsector);
+            var existingsector = await _sectorRepository.GetByIdAsync(command.Id);
 
-            return "OK";
+            if (existingsector == null)
+                return "Sector no encontrado";
 
+            existingsector.EventId = command.EventId;
+            existingsector.Name = command.Name;
+            existingsector.Price = command.Price;
+            existingsector.Capacity = command.Capacity;
+
+            await _sectorRepository.UpdateAsync(existingsector);
+
+            return "Sector actualizado correctamente";
         }
     }
 }

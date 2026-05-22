@@ -1,25 +1,13 @@
-﻿using Application.Interfaces.Commands.Event;
-using Application.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
 namespace Application.UseCases.EVENT.Commands
 {
-    public class DeleteEventCommand : IDeleteEventCommand
+    public class DeleteEventCommand 
     {
-        private readonly IEventRepository _eventRepository;
+        public int Id { get; }
 
-        public DeleteEventCommand(IEventRepository eventRepository)
+        public DeleteEventCommand(int id)
         {
-            _eventRepository = eventRepository;
-        }
-
-        public async Task ExecuteDeleteEvent(int id)
-        {
-            await _eventRepository.DeleteAsync(id);
+            Id = id;
         }
     }
 }

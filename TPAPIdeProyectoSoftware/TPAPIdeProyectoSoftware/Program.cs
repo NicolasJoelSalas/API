@@ -1,25 +1,14 @@
 using Application;
 using Application.Interfaces;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.Event;
-using Application.Interfaces.Command.Reservation;
-using Application.Interfaces.Command.Seat;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Commands.Event;
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
 using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.Audit_Log;
-using Application.Interfaces.Queries.Event;
-using Application.Interfaces.Queries.Reservation;
-using Application.Interfaces.Queries.Sector;
-using Application.Interfaces.Queries.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases;
+using Application.UseCases.Audit_Log.Handlers;
 using Application.UseCases.AUDIT_LOG.Queries;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Handlers;
@@ -64,89 +53,6 @@ builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 
 
-// Commands
-
-//Event
-
-builder.Services.AddScoped<ICreateEventCommand, CreateEventCommand>();
-builder.Services.AddScoped<IUpdateEventCommand, UpdateEventCommand>();
-builder.Services.AddScoped<IDeleteEventCommand, DeleteEventCommand>();
-
-
-//User
-builder.Services.AddScoped<ICreateUserCommand, CreateUserCommand>();
-builder.Services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
-builder.Services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
-
-
-    //Audit_Log
-builder.Services.AddScoped<ICreateAudit_LogCommand, CreateAudit_LogCommand>();
-builder.Services.AddScoped<IUpdateAudit_LogCommand, UpdateAudit_LogCommand>();
-builder.Services.AddScoped<IDeleteAudit_LogCommand, DeleteAudit_LogCommand>();
-
-    //Reservation
-builder.Services.AddScoped<ICreateReservationCommand, CreateReservationCommand>();
-builder.Services.AddScoped<IUpdateReservationCommand, UpdateReservationCommand>();
-builder.Services.AddScoped<IDeleteReservationCommand, DeleteReservationCommand>();
-builder.Services.AddScoped<ICreateMultipleReservationCommand, CreateMultipleReservationCommand>();
-builder.Services.AddScoped<IUpdateReservationsStatusCommand, UpdateReservationsStatusCommand>();
-builder.Services.AddScoped<IUpdateReservationStatusExpiredCommand, UpdateReservationStatusExpiredCommand>();
-
-
-//Seat
-builder.Services.AddScoped<ICreateSeatCommand, CreateSeatCommand>();
-builder.Services.AddScoped<IUpdateSeatCommand, UpdateSeatCommand>();
-builder.Services.AddScoped<IDeleteSeatCommand, DeleteSeatCommand>();
-builder.Services.AddScoped<IMarkSeatsAsSoldCommand, MarkSeatsAsSoldCommand>();
-builder.Services.AddScoped<IMarkSeatsAsAvailableCommand, MarkSeatsAsAvailableCommand>();
-
-
-//Sector
-builder.Services.AddScoped<ICreateSectorCommand, CreateSectorCommand>();
-builder.Services.AddScoped<IUpdateSectorCommand, UpdateSectorCommand>();
-builder.Services.AddScoped<IDeleteSectorCommand, DeleteSectorCommand>();
-
-
-// Querys
-
-// Event 
-builder.Services.AddScoped<IGetAllEventQuery, GetAllEventQuery>();
-builder.Services.AddScoped<IGetByIdEventQuery, GetByIdEventQuery>();
-builder.Services.AddScoped<INameExistsEventQuery, NameExistsEventQuery>();
-builder.Services.AddScoped<IGetSectorsByEventQuery, GetSectorsByEventQuery>();
-
-
-
-
-//User
-builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
-builder.Services.AddScoped<IGetByIdUserQuery, GetByIdUserQuery>();
-builder.Services.AddScoped<IEmailExistsUserquery, EmailExistsUserQuery>();
-
-    //Audit_Log
-
-builder.Services.AddScoped<IGetAllAudit_LogQuery, GetAllAudit_LogQuery>();
-builder.Services.AddScoped<IGetByIdAudit_LogQuery, GetByIdAudit_LogQuery>();
-builder.Services.AddScoped<IGetIdUserQueryValidation, GetIdUserQueryValidation>();
-
-    //Reservation
-
-builder.Services.AddScoped<IGetAllReservationQuery, GetAllReservationQuery>();
-builder.Services.AddScoped<IGetByIdReservationQuery, GetByIdReservationQuery>();
-builder.Services.AddScoped<IGetReservedSeatIdsQuery, GetReservedSeatIdsQuery>();
-builder.Services.AddScoped<IGetAllByIdDeleteQuery, GetAllByIdDeleteQuery>();
-
-
-// Seat
-builder.Services.AddScoped<IGetAllSeatQuery, GetAllSeatQuery>();
-builder.Services.AddScoped<IGetByIdSeatQuery, GetByIdSeatQuery>();
-builder.Services.AddScoped<IGetEntitySeatQuery, GetEntitySeatQuery>();
-
-// Sector
-builder.Services.AddScoped<IGetAllSectorQuery, GetAllSectorQuery>();
-builder.Services.AddScoped<IGetByIdSectorQuery, GetByIdSectorQuery>();
-builder.Services.AddScoped<IGetSeatsBySectorQuery, GetSeatsBySectorQuery>();
-
 // Handlers
 
 // Event 
@@ -164,9 +70,8 @@ builder.Services.AddScoped<IDeleteUserHandler, DeleteUserHandler>();
 builder.Services.AddScoped<IGetByIdUserHandler, GetByIdUserHandler>();
 builder.Services.AddScoped<IGetAllUserHandler, GetAllUserHandler>();
 builder.Services.AddScoped<ILoginUserHandler, LoginUserHandler>();
-builder.Services.AddScoped<IGetAllUserLoginQuery, GetAllUserLoginQuery>();
 
-    //Audit_Log
+//Audit_Log
 builder.Services.AddScoped<ICreateAudit_LogHandler, CreateAudit_LogHandler>();
 builder.Services.AddScoped<IUpdateAudit_LogHandler, UpdateAudit_LogHandler>();
 builder.Services.AddScoped<IDeleteAudit_LogHandler, DeleteAudit_LogHandler>();

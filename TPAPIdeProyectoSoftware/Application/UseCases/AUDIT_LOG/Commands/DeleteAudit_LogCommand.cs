@@ -1,21 +1,16 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using System;
 
 namespace Application.UseCases.USER.Commands
 {
-    public class DeleteAudit_LogCommand : IDeleteAudit_LogCommand
+    public class DeleteAudit_LogCommand
     {
-        private readonly IAudit_LogRepository _repository;
 
-        public DeleteAudit_LogCommand(IAudit_LogRepository repository)
+        public Guid Id { get; }
+
+        public DeleteAudit_LogCommand(Guid id)
         {
-            _repository = repository;
+            Id = id;
         }
 
-        public async Task ExecuteDeleteAudit_Log(Guid id)
-        {
-            await _repository.DeleteAsync(id);
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.User;
+using Application.UseCases.USER.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface IDeleteAudit_LogHandler
     {
-        Task<string> Handle(Guid id);
+        Task<string> Handle(DeleteAudit_LogCommand command);
     }
 }

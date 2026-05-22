@@ -1,35 +1,35 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Handlers;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.User;
+﻿using Application.Interfaces.Handlers;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Commands;
 
 namespace Application.UseCases
 {
     public class DeleteSectorHandler : IDeleteSectorHandler
     {
-        private readonly IDeleteSectorCommand _command;
-        private readonly IGetByIdSectorQuery _query;
+        private readonly ISectorRepository _sectorRepository;
 
-        public DeleteSectorHandler(
-            IDeleteSectorCommand command,
-            IGetByIdSectorQuery query)
+        public DeleteSectorHandler(ISectorRepository sectorRepository)
         {
-            _command = command;
-            _query = query;
+            _sectorRepository = sectorRepository;
         }
 
-        public async Task<string> Handle(int id)
+        public async Task<string> Handle(DeleteSectorCommand command)
         {
-            var user = await _query.GetById(id);
+            if (command == null)
+                return "Comando inválido";
 
-            if (user == null)
+            if (command.Id <= 0)
+                return "Id inválido";
+
+            var sector = await _sectorRepository.GetByIdAsync(command.Id);
+
+            if (sector == null)
                 return "Sector no encontrado";
 
-            await _command.ExecuteDeleteSector(id);
+            await _sectorRepository.DeleteAsync(sector);
 
             return "Sector eliminado correctamente";
+
         }
     }
 }

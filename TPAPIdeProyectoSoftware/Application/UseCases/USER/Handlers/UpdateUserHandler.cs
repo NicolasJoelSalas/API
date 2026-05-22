@@ -1,44 +1,41 @@
 ﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Commands;
 using Domain.Entities;
 
 namespace Application.UseCases.USER.Handlers
 {
     public class UpdateUserHandler : IUpdateUserHandler
     {
-        private readonly IUpdateUserCommand _command;
-        private readonly IGetByIdUserQuery _query;
+        private readonly IUserRepository _userRepository;
 
-        public UpdateUserHandler(
-            IUpdateUserCommand command,
-            IGetByIdUserQuery query)
+        public UpdateUserHandler(IUserRepository userRepository)
         {
-            _command = command;
-            _query = query;
+            _userRepository = userRepository;
         }
 
-        public async Task<string> Handle(int id, UserRequestDto dto)
+        public async Task<string> Handle(UpdateUserCommand command)
         {
-            var userDto = await _query.GetById(id);
+            if (command == null)
+                return "Comando inválido";
 
-            if (userDto == null)
+            if (string.IsNullOrWhiteSpace(command.Name))
+                return "El nombre es obligatorio";
+
+            if (string.IsNullOrWhiteSpace(command.Email))
+                return "El email es obligatorio";
+
+            var existingUser = await _userRepository.GetByIdAsync(command.Id);
+
+            if (existingUser == null)
                 return "Usuario no encontrado";
 
-            var user = new Domain.Entities.USER
-            {
-                Id = id,
-                Name = userDto.Name,
-                Email = userDto.Email,
-                PasswordHash = userDto.PasswordHash
-            };
+            existingUser.Name = command.Name;
+            existingUser.Email = command.Email;
+            existingUser.PasswordHash = command.PasswordHash;
 
-            user.Name = dto.Name;
-            user.Email = dto.Email;
-            user.PasswordHash = dto.PasswordHash;
-
-            await _command.ExecuteUpdateUser(user);
+            await _userRepository.UpdateAsync(existingUser);
 
             return "Usuario actualizado correctamente";
         }

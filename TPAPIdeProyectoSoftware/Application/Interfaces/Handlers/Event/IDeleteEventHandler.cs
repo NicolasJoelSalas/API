@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Application.UseCases.EVENT.Commands;
+using Application.UseCases.USER.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,6 @@ namespace Application.Interfaces.Handlers.Event
 {
     public interface IDeleteEventHandler
     {
-        Task<string> DeleteEventHandle(int id);
+        Task<string> Handle(DeleteEventCommand command);
     }
 }

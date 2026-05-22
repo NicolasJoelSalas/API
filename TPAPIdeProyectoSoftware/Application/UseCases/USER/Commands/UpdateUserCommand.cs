@@ -1,22 +1,25 @@
-﻿using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Application
 {
-    public class UpdateUserCommand : IUpdateUserCommand
+    public class UpdateUserCommand
     {
-        private readonly IUserRepository _repository;
+        public int Id { get; }
+        public string Name { get; }
+        public string Email { get; }
+        public string PasswordHash { get; }
 
-        public UpdateUserCommand(IUserRepository repository)
+        public UpdateUserCommand(
+            int id,
+            string name,
+            string email,
+            string passwordHash)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteUpdateUser(USER user)
-        {
-            await _repository.UpdateAsync(user);
+            Id = id;
+            Name = name;
+            Email = email;
+            PasswordHash = passwordHash;
         }
     }
+
 }

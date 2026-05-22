@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Event;
 using Application.DTOs.User;
+using Application.UseCases.EVENT.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Application.Interfaces.Handlers.Event
 {
     public interface IUpdateEventHandler
     {
-        Task<string> UpdateEventHandle(int id, EventResquestDto dto);
+        Task<string> Handle(UpdateEventCommand command);
     }
 }

@@ -1,25 +1,28 @@
-﻿using Application.Interfaces.Commands.Event;
-using Application.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+
 
 namespace Application.UseCases.EVENT.Commands
 {
-    public class UpdateEventCommand : IUpdateEventCommand
+    public class UpdateEventCommand 
     {
-        private readonly IEventRepository _eventRepository;
+        public int Id { get; }
+        public string Name { get; }
+        public DateTime EventDate { get; }
+        public string Venue { get; }
+        public string Status { get; }
 
-        public UpdateEventCommand(IEventRepository eventRepository)
+        public UpdateEventCommand(
+            int id,
+            string name,
+            DateTime eventDate,
+            string venue,
+            string status)
         {
-            _eventRepository = eventRepository;
-        }
-
-        public async Task ExecuteUpdateEvent(Domain.Entities.EVENT eventEntity)
-        {
-            await _eventRepository.UpdateAsync(eventEntity);
+            Id = id;
+            Name = name;
+            EventDate = eventDate;
+            Venue = venue;
+            Status = status;
         }
     }
 }

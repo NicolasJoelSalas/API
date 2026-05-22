@@ -1,33 +1,44 @@
-﻿using Application.DTOs.Event;
-using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.Event;
 using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Queries.Event;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Application.Interfaces.Repositories;
+
+
 
 namespace Application.UseCases.EVENT.Queries
 {
     public class GetEventByIdHandler : IGetByIdEventHandler
     {
-        private readonly IGetByIdEventQuery _getEventByIdQuery;
+        private readonly IEventRepository _eventRepository;
 
-        public GetEventByIdHandler(IGetByIdEventQuery getEventByIdQuery)
+        public GetEventByIdHandler(IEventRepository eventRepository)
         {
-            _getEventByIdQuery = getEventByIdQuery;
+            _eventRepository = eventRepository;
         }
 
-        public async Task<(EventResponseDto events, string message)> GetByIdEventHandle(int id)
+        public async Task<(EventResponseDto Event, string message)> Handle(GetByIdEventQuery query)
         {
-            var evento = await _getEventByIdQuery.GetById(id);
+            if (query == null)
+                return (new EventResponseDto(), "Query inválida");
 
-            if (evento == null)
-                return (new EventResponseDto(), "No hay eventos registrados");
+            if (query.Id < 0)
+                return (new EventResponseDto(), "Id inválido");
 
-            return (evento, "OK");
+            var eventEntity = await _eventRepository.GetByIdAsync(query.Id);
+
+            if (eventEntity == null)
+                return (new EventResponseDto(), "Evento no encontrado");
+
+            return (new EventResponseDto
+            {
+                Id = eventEntity.Id,
+                Name = eventEntity.Name,
+                EventDate = eventEntity.EventDate,
+                Venue = eventEntity.Venue,
+                Status = eventEntity.Status
+            }, "OK");       
         }
+
+
     }
 }

@@ -1,10 +1,9 @@
 ﻿using Application.DTOs.Event;
-using Application.DTOs.User;
 using Application.Interfaces.Handlers.Event;
 using Application.Interfaces.Handlers.Sector;
-using Application.UseCases;
-using Application.UseCases.SECTOR.Handlers;
-using Microsoft.AspNetCore.Http;
+using Application.UseCases.EVENT.Commands;
+using Application.UseCases.EVENT.Queries;
+using Application.UseCases.SECTOR.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPAPIdeProyectoSoftware.Controllers
@@ -21,15 +20,12 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IGetSectorsByEventHandler _getSectorsByEventHandler;
         private readonly IGetSeatsBySectorHandler _getSeatsBySectorHandler;
 
-
         public EventController(
-        ICreateEventHandler createEventHandler,
-        IDeleteEventHandler deleteEventHandler,
-        IUpdateEventHandler updateEventHandler,
-        IGetAllEventHandler getAllEventHandler,
-        IGetByIdEventHandler getByIdEventHandler,
-        IGetSectorsByEventHandler getSectorsByEventHandler,
-        IGetSeatsBySectorHandler getSeatsBySectorHandler)
+            ICreateEventHandler createEventHandler,
+            IDeleteEventHandler deleteEventHandler,
+            IUpdateEventHandler updateEventHandler,
+            IGetAllEventHandler getAllEventHandler,
+            IGetByIdEventHandler getByIdEventHandler)
         {
             _createEventHandler = createEventHandler;
             _deleteEventHandler = deleteEventHandler;
@@ -37,88 +33,114 @@ namespace TPAPIdeProyectoSoftware.Controllers
             _getAllEventHandler = getAllEventHandler;
             _getByIdEventHandler = getByIdEventHandler;
 
-            _getSectorsByEventHandler = getSectorsByEventHandler;
-            _getSeatsBySectorHandler = getSeatsBySectorHandler;
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateEvent([FromBody] EventResquestDto request)
         {
-            var mensaje = await _createEventHandler.CreateEventHandle(request);
+            var command = new CreateEventCommand(
+                request.Name,
+                request.EventDate,
+                request.Venue,
+                request.Status
+            );
 
-            if (mensaje != "OK")
-                return BadRequest(new { mensaje });
+            var message = await _createEventHandler.Handle(command);
+
+            if (message != "OK")
+                return BadRequest(new { message });
 
             return StatusCode(201, new
             {
-                mensaje = "Evento creado correctamente"
+                message = "Evento creado correctamente"
             });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEventById(int id)
         {
-            var (events, mensaje) = await _getByIdEventHandler.GetByIdEventHandle(id);
+            var query = new GetByIdEventQuery(id);
 
-            if (mensaje != "OK")
-                return Ok(new { mensaje });
+            var (eventDto, message) = await _getByIdEventHandler.Handle(query);
 
-            return Ok(events);
+            if (message != "OK")
+                return NotFound(new { message });
+
+            return Ok(eventDto);
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetAllEvents()
         {
-            var (events, mensaje) = await _getAllEventHandler.GetAllEventHandle();
-            if (mensaje != "OK")
-                return Ok(new { mensaje });
+            var query = new GetAllEventQuery();
+
+            var (events, message) = await _getAllEventHandler.Handle(query);
+
+            if (message != "OK")
+                return NotFound(new { message });
+
             return Ok(events);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var mensaje = await _deleteEventHandler.DeleteEventHandle(id);
+            var command = new DeleteEventCommand(id);
 
-            if (mensaje == "El evento no existe")
-                return NotFound(new { mensaje });
+            var message = await _deleteEventHandler.Handle(command);
 
-            return Ok(new { mensaje });
+            if (message == "Evento no encontrado")
+                return NotFound(new { message });
+
+            return Ok(new { message });
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventResquestDto request)
         {
-            var mensaje = await _updateEventHandler.UpdateEventHandle(id, request);
-            if (mensaje == "Evento no encontrado")
-                return NotFound(new { mensaje });
-            return Ok(new { mensaje });
-        }
+            var command = new UpdateEventCommand(
+                id,
+                request.Name,
+                request.EventDate,
+                request.Venue,
+                request.Status
+            );
 
-        [HttpGet("{eventId}/sectors")]
-        public async Task<IActionResult> GetSectorsByEvent(int eventId)
-        {
-            var (sectors, message) =
-                await _getSectorsByEventHandler.Handle(eventId);
+            var message = await _updateEventHandler.Handle(command);
 
-            if (message != "OK")
+            if (message == "Evento no encontrado")
                 return NotFound(new { message });
 
-            return Ok(sectors);
+            if (message != "Evento actualizado correctamente")
+                return BadRequest(new { message });
+
+            return Ok(new { message });
         }
 
-        [HttpGet("sector/{sectorId}/seats")]
-        public async Task<IActionResult> GetSeatsBySector(int sectorId)
-        {
-            var (seats, message) =
-                await _getSeatsBySectorHandler.Handle(sectorId);
+        //[HttpGet("{eventId}/sectors")]
+        //public async Task<IActionResult> GetSectorsByEvent(int eventId)
+        //{
+        //    var query = new GetSectorsByEventQuery(eventId);
 
-            if (message != "OK")
-                return NotFound(new { message });
+        //    var (sectors, message) = await _getSectorsByEventHandler.Handle(query);
 
-            return Ok(seats);
-        }
+        //    if (message != "OK")
+        //        return NotFound(new { message });
 
+        //    return Ok(sectors);
+        //}
+
+        //[HttpGet("sector/{sectorId}/seats")]
+        //public async Task<IActionResult> GetSeatsBySector(int sectorId)
+        //{
+        //    var query = new GetSeatsBySectorQuery(sectorId);
+
+        //    var (seats, message) = await _getSeatsBySectorHandler.Handle(query);
+
+        //    if (message != "OK")
+        //        return NotFound(new { message });
+
+        //    return Ok(seats);
+        //}
     }
 }

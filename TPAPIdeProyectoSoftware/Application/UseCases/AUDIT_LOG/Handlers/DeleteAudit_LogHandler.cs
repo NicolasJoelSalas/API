@@ -1,33 +1,34 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
+﻿using Application.Interfaces.Handlers.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Commands;
 
-namespace Application.UseCases.USER.Handlers
+namespace Application.UseCases.Audit_Log.Handlers
 {
     public class DeleteAudit_LogHandler : IDeleteAudit_LogHandler
     {
-        private readonly IDeleteAudit_LogCommand _command;
-        private readonly IGetByIdAudit_LogQuery _query;
+        private readonly IAudit_LogRepository _auditLogRepository;
 
-        public DeleteAudit_LogHandler(
-            IDeleteAudit_LogCommand command,
-            IGetByIdAudit_LogQuery query)
+        public DeleteAudit_LogHandler(IAudit_LogRepository auditLogRepository)
         {
-            _command = command;
-            _query = query;
+            _auditLogRepository = auditLogRepository;
         }
 
-        public async Task<string> Handle(Guid id)
+        public async Task<string> Handle(DeleteAudit_LogCommand command)
         {
-            var user = await _query.GetById(id);
+            if (command == null)
+                return "Comando inválido";
 
-            if (user == null)
-                return "Registro de auditoria no encontrado";
+            if (command.Id == Guid.Empty)
+                return "Id inválido";
 
-            await _command.ExecuteDeleteAudit_Log(id);
+            var auditLog = await _auditLogRepository.GetByIdAsync(command.Id);
 
-            return "Registro de auditoria eliminado correctamente";
+            if (auditLog == null)
+                return "Registro de auditoría no encontrado";
+
+            await _auditLogRepository.DeleteAsync(auditLog);
+
+            return "Registro de auditoría eliminado correctamente";
         }
     }
 }

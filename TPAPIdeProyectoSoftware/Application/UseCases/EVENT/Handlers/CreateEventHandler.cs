@@ -1,59 +1,52 @@
-﻿using Application.DTOs.Event;
-using Application.Interfaces.Command.Event;
-using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Queries.Event;
+﻿using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Commands;
 using Domain.Entities;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-
-namespace Application.UseCases
+namespace Application.UseCases.Event.Handlers
 {
     public class CreateEventHandler : ICreateEventHandler
     {
-        private readonly ICreateEventCommand _createEventCommand;
-        private readonly INameExistsEventQuery _nameExistsEventQuery;
+        private readonly IEventRepository _eventRepository;
 
-        public CreateEventHandler(ICreateEventCommand createEventCommand, INameExistsEventQuery nameExistsEventQuery)
+        public CreateEventHandler(IEventRepository eventRepository)
         {
-            _createEventCommand = createEventCommand;
-            _nameExistsEventQuery = nameExistsEventQuery;
+            _eventRepository = eventRepository;
         }
 
-        public async Task<string> CreateEventHandle(EventResquestDto dto)
+        public async Task<string> Handle(CreateEventCommand command)
         {
-            if (dto == null)
+            if (command == null)
                 return "Datos inválidos";
-            if (string.IsNullOrWhiteSpace(dto.Name))
-                return "El nombre es obligatorio";
-            if (dto.EventDate == null)
-                return "La fecha del evento es obligatoria";
-            if (dto.EventDate < DateTime.UtcNow)
-                return "La fecha del evento es invalida. Ingrese una fecha posterior al dia de hoy";
-            if (string.IsNullOrWhiteSpace(dto.Venue))
-                return "La ubicación del evento es obligatoria";
 
-            var existingEvent = await _nameExistsEventQuery.NameExistsEventHandle(dto.Name);
-            if (existingEvent)
+            if (string.IsNullOrWhiteSpace(command.Name))
+                return "El nombre es obligatorio";
+
+            if (command.EventDate.Date < DateTime.UtcNow.Date)
+                return "La fecha del evento es inválida";
+
+            if (string.IsNullOrWhiteSpace(command.Venue))
+                return "La ubicación es obligatoria";
+
+            if (string.IsNullOrWhiteSpace(command.Status))
+                return "El estado es obligatorio";
+
+            var exists = await _eventRepository.NameExistsAsync(command.Name);
+
+            if (exists)
                 return "El nombre del evento ya existe";
 
-            var @event = new Domain.Entities.EVENT
+            var eventEntity = new Domain.Entities.EVENT
             {
-                Name = dto.Name,
-                EventDate = dto.EventDate,
-                Venue = dto.Venue,
-                Status = dto.Status
+                Name = command.Name,
+                EventDate = command.EventDate,
+                Venue = command.Venue,
+                Status = command.Status
             };
 
-            await _createEventCommand.ExecuteCreateEvent(@event);
+            await _eventRepository.AddAsync(eventEntity);
 
             return "OK";
-
-
         }
     }
 }

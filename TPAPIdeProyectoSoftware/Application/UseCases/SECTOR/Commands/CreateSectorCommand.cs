@@ -1,24 +1,24 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Application.UseCases
 {
-    public class CreateSectorCommand : ICreateSectorCommand
+    public class CreateSectorCommand 
     {
-        private readonly ISectorRepository _repository;
+        public int EventId { get; }
+        public string Name { get; }
+        public decimal Price { get; }
+        public int Capacity { get; }
 
-        public CreateSectorCommand(ISectorRepository repository)
+        public CreateSectorCommand(
+            int eventId,
+            string name,
+            decimal price,
+            int capacity)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteCreateSector(Domain.Entities.SECTOR sector)
-        {
-            await _repository.AddAsync(sector);
+            EventId = eventId;
+            Name = name;
+            Price = price;
+            Capacity = capacity;
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.User;
+using Application.UseCases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Application.Interfaces.Handlers
 {
     public interface IDeleteSectorHandler
     {
-        Task<string> Handle(int id);
+        Task<string> Handle(DeleteSectorCommand command);
     }
 }

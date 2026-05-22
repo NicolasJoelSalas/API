@@ -1,23 +1,27 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Application
 {
-    public class UpdateAudit_LogCommand : IUpdateAudit_LogCommand
+    public class UpdateAudit_LogCommand
     {
-        private readonly IAudit_LogRepository _repository;
+        public Guid Id { get; }
+        public string Action { get; }
+        public string EntityType { get; }
+        public string EntityId { get; }
+        public string Details { get; }
 
-        public UpdateAudit_LogCommand(IAudit_LogRepository repository)
+        public UpdateAudit_LogCommand(
+            Guid id,
+            string action,
+            string entityType,
+            string entityId,
+            string details)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteUpdateAudit_Log(AUDIT_LOG user)
-        {
-            await _repository.UpdateAsync(user);
+            Id = id;
+            Action = action;
+            EntityType = entityType;
+            EntityId = entityId;
+            Details = details;
         }
     }
 }

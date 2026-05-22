@@ -1,23 +1,23 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 using Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Application.UseCases.USER.Commands
 {
-    public class CreateUserCommand : ICreateUserCommand
+    public class CreateUserCommand 
     {
-        private readonly IUserRepository _repository;
+        public string Name { get; }
+        public string Email { get; }
+        public string PasswordHash { get; }
 
-        public CreateUserCommand(IUserRepository repository)
+        public CreateUserCommand(
+            string name,
+            string email,
+            string passwordHash) 
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteCreateUser(Domain.Entities.USER user)
-        {
-            await _repository.AddAsync(user);
+            Name = name;
+            Email = email;
+            PasswordHash = passwordHash;
         }
 
     }

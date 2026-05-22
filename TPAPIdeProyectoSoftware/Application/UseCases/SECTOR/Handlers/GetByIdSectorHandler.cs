@@ -1,36 +1,41 @@
 ﻿using Application.DTOs;
 using Application.DTOs.User;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers;
-using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries;
-using Application.Interfaces.Queries.User;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
+
 
 namespace Application.UseCases
 {
     public class GetByIdSectorHandler : IGetByIdSectorHandler
     {
-        private readonly IGetByIdSectorQuery _query;
+        private readonly ISectorRepository _sectorRepository;
 
-        public GetByIdSectorHandler(IGetByIdSectorQuery query)
+        public GetByIdSectorHandler(ISectorRepository sectorRepository)
         {
-            _query = query;
-        }
-        public async Task<(SectorResponseDto Sector, string message)> Handle(int id)
-        {
-            var sector = await _query.GetById(id);
-
-            if (sector == null)
-                return (new SectorResponseDto(), "No hay Sector registrados");
-
-            return (sector, "OK");
+            _sectorRepository = sectorRepository;
         }
 
+        public async Task<(SectorResponseDto? sector, string message)> Handle(GetByIdSectorQuery query)
+        {
+            if (query == null)
+                return (new SectorResponseDto(), "Query inválida");
+
+            if (query.Id <= 0)
+                return (null, "Id inválido");
+
+            var sectorEntity = await _sectorRepository.GetByIdAsync(query.Id);
+
+            if (sectorEntity == null)
+                return (null, "Sector no encontrado");
+
+            return (new SectorResponseDto
+            {
+                Id = sectorEntity.Id,
+                Name = sectorEntity.Name,
+                Price = sectorEntity.Price,
+                Capacity = sectorEntity.Capacity
+            }, "OK");
+        }
     }
 }

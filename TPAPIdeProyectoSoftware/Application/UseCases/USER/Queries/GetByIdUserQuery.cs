@@ -1,28 +1,14 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Queries.User;
-using Application.Interfaces.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Application.UseCases.USER.Queries
 {
-    public class GetByIdUserQuery : IGetByIdUserQuery
+    public class GetByIdUserQuery 
     {
-        private readonly IUserRepository _repository;
+        public int Id { get; }
 
-        public GetByIdUserQuery(IUserRepository repository)
+        public GetByIdUserQuery(int id)
         {
-            _repository = repository;
-        }
-
-        public async Task<UserResponseDto> GetById(int id)
-        {
-            return await _repository.Query().Where(x => x.Id == id).Select(x => new UserResponseDto
-                {
-                    Name = x.Name,
-                    Email = x.Email
-                }).FirstOrDefaultAsync();
+            Id = id;
         }
     }
 }

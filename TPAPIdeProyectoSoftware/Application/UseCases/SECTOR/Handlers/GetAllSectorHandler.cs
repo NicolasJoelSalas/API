@@ -5,6 +5,8 @@ using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Queries;
 using Application.Interfaces.Queries.User;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,20 +18,29 @@ namespace Application.UseCases
 {
     public class GetAllSectorHandler : IGetAllSectorHandler
     {
-        private readonly IGetAllSectorQuery _query;
+        private readonly ISectorRepository _sectorRepository;
 
-        public GetAllSectorHandler(IGetAllSectorQuery query)
+        public GetAllSectorHandler(ISectorRepository sectorRepository)
         {
-            _query = query;
+            _sectorRepository = sectorRepository;
         }
-        public async Task<(List<SectorResponseDto> Sector, string message)> Handle()
+
+        public async Task<(List<SectorResponseDto> sectors, string message)> Handle(GetAllSectorQuery query)
         {
-            var Sector = await _query.GetAll();
+            var sectors = await _sectorRepository.GetAllAsync();
 
-            if (Sector == null || Sector.Count == 0)
-                return (new List<SectorResponseDto>(), "No hay un sector sin el id indicado");
+            if (sectors == null || sectors.Count == 0)
+                return (new List<SectorResponseDto>(), "No hay sectores registrados");
 
-            return (Sector, "OK");
+            var response = sectors.Select(sector => new SectorResponseDto
+            {
+                Id = sector.Id,
+                Name = sector.Name,
+                Price = sector.Price,
+                Capacity = sector.Capacity
+            }).ToList();
+
+            return (response, "OK");
         }
     }
 }

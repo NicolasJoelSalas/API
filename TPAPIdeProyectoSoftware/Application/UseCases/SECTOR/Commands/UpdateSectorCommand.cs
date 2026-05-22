@@ -1,23 +1,28 @@
-﻿using Application.Interfaces.Command;
-using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
+﻿using Application.Interfaces.Repositories;
 using System.Threading.Tasks;
 
 namespace Application
 {
-    public class UpdateSectorCommand : IUpdateSectorCommand
+    public class UpdateSectorCommand 
     {
-        private readonly ISectorRepository _repository;
+        public int Id { get; }
+        public int EventId { get; }
+        public string Name { get; }
+        public decimal Price { get; }
+        public int Capacity { get; }
 
-        public UpdateSectorCommand(ISectorRepository repository)
+        public UpdateSectorCommand(
+            int id,
+            int eventId,
+            string name,
+            decimal price,
+            int capacity)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteUpdateSector(SECTOR sector)
-        {
-            await _repository.UpdateAsync(sector);
+            Id = id;
+            EventId = eventId;
+            Name = name;
+            Price = price;
+            Capacity = capacity;
         }
     }
 }

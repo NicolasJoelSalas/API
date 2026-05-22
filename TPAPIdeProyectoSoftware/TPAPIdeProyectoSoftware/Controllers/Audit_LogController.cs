@@ -1,7 +1,8 @@
 ﻿using Application.DTOs;
 using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
-using Application.UseCases.USER.Handlers;
+using Application.UseCases.USER.Commands;
+using Application.UseCases.USER.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPAPIdeProyectoSoftware.Controllers
@@ -33,7 +34,15 @@ namespace TPAPIdeProyectoSoftware.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Audit_LogRequestDto dto)
         {
-            var message = await _createHandler.Handle(dto);
+            var command = new CreateAudit_LogCommand(
+                dto.UserId,
+                dto.Action,
+                dto.EntityType,
+                dto.EntityId,
+                dto.Details
+            );
+
+            var message = await _createHandler.Handle(command);
 
             if (message != "OK")
                 return BadRequest(new { message });
@@ -47,29 +56,35 @@ namespace TPAPIdeProyectoSoftware.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var (users, message) = await _getByIdAudit_LogHandler.Handle(id);
+            var query = new GetByIdAudit_LogQuery(id);
+
+            var (auditLog, message) = await _getByIdAudit_LogHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return NotFound(new { message });
 
-            return Ok(users);
+            return Ok(auditLog);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var (users, message) = await _getAllAudit_LogHandler.Handle();
+            var query = new GetAllAudit_LogQuery();
+
+            var (auditLogs, message) = await _getAllAudit_LogHandler.Handle(query);
 
             if (message != "OK")
                 return Ok(new { message });
 
-            return Ok(users);
+            return Ok(auditLogs);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var message = await _deleteHandler.Handle(id);
+            var command = new DeleteAudit_LogCommand(id);
+
+            var message = await _deleteHandler.Handle(command);
 
             if (message == "Audit_Log no encontrado")
                 return NotFound(new { message });

@@ -1,34 +1,34 @@
-﻿using Application.Interfaces.Commands.Event;
-using Application.Interfaces.Handlers.Event;
-using Application.Interfaces.Queries.Event;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Commands;
 
-namespace Application.UseCases.EVENT.Commands
+namespace Application.UseCases.EVENT.Handlers
 {
     public class DeleteEventHandler : IDeleteEventHandler
     {
-        private readonly IDeleteEventCommand _command;
-        private readonly IGetByIdEventQuery _getByIdEventQuery;
+        private readonly IEventRepository _eventRepository;
 
-        public DeleteEventHandler(IDeleteEventCommand command, IGetByIdEventQuery getByIdEventQuery)
+        public DeleteEventHandler(IEventRepository eventRepository)
         {
-            _command = command;
-            _getByIdEventQuery = getByIdEventQuery;
+            _eventRepository = eventRepository;
         }
 
-        public async Task<string> DeleteEventHandle(int id)
+        public async Task<string> Handle(DeleteEventCommand command)
         {
-            var existingEvent = await _getByIdEventQuery.GetById(id);
+            if (command == null)
+                return "Comando inválido";
 
-            if (existingEvent == null)
-                return "El evento no existe";
+            if (command.Id <= 0)
+                return "Id inválido";
 
-            await _command.ExecuteDeleteEvent(id);
-            return "El evento se ha eliminado correctamente";
+            var eventEntity = await _eventRepository.GetByIdAsync(command.Id);
+
+            if (eventEntity == null)
+                return "Evento no encontrado";
+
+            await _eventRepository.DeleteAsync(eventEntity);
+
+            return "Evento eliminado correctamente";
         }
     }
 }

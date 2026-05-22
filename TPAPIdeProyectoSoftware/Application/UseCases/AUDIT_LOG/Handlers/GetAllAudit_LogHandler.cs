@@ -1,32 +1,37 @@
 ﻿using Application.DTOs;
-using Application.DTOs.User;
-using Application.Interfaces.Command.User;
 using Application.Interfaces.Handlers.User;
-using Application.Interfaces.Queries.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Interfaces.Repositories;
+using Application.UseCases.USER.Queries;
 
-namespace Application.UseCases.USER.Handlers
+namespace Application.UseCases.Audit_Log.Handlers
 {
     public class GetAllAudit_LogHandler : IGetAllAudit_LogHandler
     {
-        private readonly IGetAllAudit_LogQuery _query;
+        private readonly IAudit_LogRepository _auditLogRepository;
 
-        public GetAllAudit_LogHandler(IGetAllAudit_LogQuery query)
+        public GetAllAudit_LogHandler(IAudit_LogRepository auditLogRepository)
         {
-            _query = query;
+            _auditLogRepository = auditLogRepository;
         }
-        public async Task<(List<Audit_LogResponseDto> Audit_Logs, string message)> Handle()
+
+        public async Task<(List<Audit_LogResponseDto> AuditLogs, string message)> Handle(GetAllAudit_LogQuery query)
         {
-            var Audit_Logs = await _query.GetAll();
+            var auditLogs = await _auditLogRepository.GetAllAsync();
 
-            if (Audit_Logs == null || Audit_Logs.Count == 0)
-                return (new List<Audit_LogResponseDto>(), "No hay registros de auditorias");
+            if (auditLogs == null || !auditLogs.Any())
+                return (new List<Audit_LogResponseDto>(), "No hay registros de auditoría");
 
-            return (Audit_Logs, "OK");
+            var auditLogDtos = auditLogs.Select(auditLog => new Audit_LogResponseDto
+            {
+                UserId = auditLog.UserId,
+                Action = auditLog.Action,
+                EntityType = auditLog.EntityType,
+                EntityId = auditLog.EntityId,
+                Details = auditLog.Details,
+                CreatedAt = auditLog.CreatedAt
+            }).ToList();
+
+            return (auditLogDtos, "OK");
         }
     }
 }

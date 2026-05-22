@@ -1,12 +1,8 @@
-﻿using Application.Interfaces.Repositories;
+﻿using Application.DTOs;
+using Application.Interfaces.Repositories;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -18,32 +14,38 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-        public IQueryable<AUDIT_LOG> Query()
+
+        public async Task<List<AUDIT_LOG>> GetAllAsync()
         {
-            return _context.AUDIT_LOG.AsNoTracking().AsQueryable();
-        }
-        public async Task AddAsync(AUDIT_LOG audit_log)
-        {
-            await _context.AUDIT_LOG.AddAsync(audit_log);
-            await _context.SaveChangesAsync();
-        }
-        public async Task<AUDIT_LOG> GetByIdAsync(Guid id)
-        {
-            return await _context.AUDIT_LOG.FindAsync(id);
+            return await _context.AUDIT_LOG
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public async Task UpdateAsync(AUDIT_LOG audit_log)
+        public async Task<AUDIT_LOG?> GetByIdAsync(Guid id)
         {
-            _context.AUDIT_LOG.Update(audit_log);
+            return await _context.AUDIT_LOG
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task AddAsync(AUDIT_LOG auditLog)
+        {
+            await _context.AUDIT_LOG.AddAsync(auditLog);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task UpdateAsync(AUDIT_LOG auditLog)
         {
-            var audit_log = await _context.AUDIT_LOG.FindAsync(id);
-
-            _context.AUDIT_LOG.Remove(audit_log);
+            _context.AUDIT_LOG.Update(auditLog);
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteAsync(AUDIT_LOG auditLog)
+        {
+            _context.AUDIT_LOG.Remove(auditLog);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

@@ -9,14 +9,14 @@ namespace Application.Interfaces.Repositories
 {
     public interface IEventRepository
     {
-        IQueryable<EVENT> Query();
+        Task<List<EVENT>> GetAllAsync();
         Task AddAsync(EVENT eventEntity);
 
         Task<EVENT> GetByIdAsync(int id);
 
         Task UpdateAsync(EVENT eventEntity);
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(EVENT eventEntity);
 
         Task<bool> NameExistsAsync(string name);
     }

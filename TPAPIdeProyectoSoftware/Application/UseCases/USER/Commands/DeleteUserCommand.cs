@@ -1,20 +1,14 @@
-﻿using Application.Interfaces.Command.User;
-using Application.Interfaces.Repositories;
+﻿using System;
 
 namespace Application.UseCases.USER.Commands
 {
-    public class DeleteUserCommand : IDeleteUserCommand
+    public class DeleteUserCommand 
     {
-        private readonly IUserRepository _repository;
+        public int Id { get; }
 
-        public DeleteUserCommand(IUserRepository repository)
+        public DeleteUserCommand(int id)
         {
-            _repository = repository;
-        }
-
-        public async Task ExecuteDeleteUser(int id)
-        {
-            await _repository.DeleteAsync(id);
+            Id = id;
         }
     }
 }
