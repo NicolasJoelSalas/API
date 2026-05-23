@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+@using Front.Client.Services
+@inject UserSession Session
+
+<div class="top-navbar">
+    <NavLink href="/home" Match="NavLinkMatch.All" class="brand">
+        🎟️ TicketApp
+    </NavLink>
+
+    <div class="nav-links">
+        <NavLink href="/home" Match="NavLinkMatch.All" class="nav-btn">
+            Home
+        </NavLink>
+
+        <NavLink href="/reservas" class="nav-btn">
+            Mis reservas
+        </NavLink>
+
+        <NavLink href="/events" class="nav-btn">
+            Eventos
+        </NavLink>
+
+        @* <NavLink href="/login" class="nav-btn">
+            Login
+        </NavLink> *@
+
+    </div>
+</div>
+
+<div class="content-container">
+    @Body
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

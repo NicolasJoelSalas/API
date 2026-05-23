@@ -1,0 +1,142 @@
+﻿/* =========================
+   SECTORS PAGE
+   Sectors.razor.css
+========================= */
+
+/* CONTENEDOR GENERAL */
+.cinema-room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+    animation: fadeUp .45s ease;
+}
+
+
+/* ESCENARIO */
+.stage {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 35px auto;
+    padding: 14px;
+    margin-bottom: 35px;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(90deg, #ff3b3b, #ff0066);
+    box-shadow: 0 14px 35px rgba(255,0,102,.28);
+}
+
+/* MAPA DE SECTORES */
+.theater-map {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 220px));
+    justify-content: center;
+    gap: 22px;
+}
+
+/* CARD SECTOR */
+.sector-box {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 18px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgba(255,255,255,.08);
+    background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+    box-shadow: 0 10px 24px rgba(0,0,0,.28);
+    transform: rotateX(8deg);
+    transition: .25s ease;
+}
+
+    /* EFECTO BRILLO */
+    .sector-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( 120deg, transparent, rgba(255,0,102,.22), transparent );
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    .sector-box:hover::before {
+        opacity: 1;
+    }
+
+    /* HOVER */
+    .sector-box:hover {
+        transform: rotateX(0deg) translateY(-6px) scale(1.03);
+        border-color: rgba(255,0,102,.45);
+        box-shadow: 0 18px 36px rgba(255,0,102,.18), 0 10px 20px rgba(0,0,0,.35);
+    }
+
+    /* TITULO SECTOR */
+    .sector-box div {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 6px;
+    }
+
+    /* TEXTO SECUNDARIO */
+    .sector-box small {
+        display: block;
+        font-size: 13px;
+        color: #bcbcbc;
+        margin-top: 4px;
+    }
+
+/* TITULO PAGINA */
+h3 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 24px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff3b3b, #ff0066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .theater-map {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 14px;
+    }
+
+    .sector-box {
+        padding: 18px 14px;
+    }
+
+        .sector-box div {
+            font-size: 16px;
+        }
+
+    .stage {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+}
+
+/* ANIMACION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
