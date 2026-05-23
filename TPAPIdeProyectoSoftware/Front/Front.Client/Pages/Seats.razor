@@ -1,0 +1,258 @@
+﻿@page "/sectors/{SectorId:int}/seats"
+
+@inject HttpClient Http
+@using Front.Client.Services
+@inject UserSession Session
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+
+<h3 class="text-center">Butacas</h3>
+
+@if (seats == null)
+{
+    <p class="text-center">Cargando butacas...</p>
+}
+else if (!seats.Any())
+{
+    <p class="text-center">No hay butacas para este sector</p>
+}
+else
+{
+    <div class="cinema-room @pos">
+
+        <div class="screen">ESCENARIO</div>
+
+        @foreach (var row in seats.GroupBy(s => s.RowIdentifier))
+        {
+            <div class="seat-row">
+
+                <div class="row-label">@row.Key</div>
+
+                <div class="seat-group">
+
+                    @foreach (var seat in row)
+                    {
+                        <button class="seat @GetSeatClass(seat)"
+                                @onclick="() => SelectSeat(seat)"
+                                title="@GetSeatStatus(seat)">
+
+                            @seat.SeatNumber
+                        </button>
+                    }
+
+                </div>
+
+                <div class="row-label">@row.Key</div>
+
+            </div>
+        }
+
+    </div>
+
+
+    <p><strong>Seleccionadas:</strong> @selectedSeatIds.Count</p>
+
+    <!-- BOTONES -->
+    <button class="nav-btn" @onclick="GoBack">
+        ← Volver
+    </button>
+
+
+    <button class="btn btn-success"
+            @onclick="CreateReservation"
+            disabled="@isLoading">
+        @(isLoading ? "Reservando..." : "Confirmar Reserva")
+    </button>
+
+
+    <!-- MENSAJE -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p style="color:@(reservaConfirmada ? "lightgreen" : "salmon")">
+            @message
+        </p>
+
+    }
+
+    <!-- PAGO -->
+    @if (reservaConfirmada)
+    {
+        <button class="btnaa"
+                @onclick="GoToPagos">
+            Realizar Pago
+        </button>
+    }
+}
+
+<div class="legend">
+
+    <div class="legend-item">
+        <span class="legend-box free">✓</span>
+        <span>Disponible</span>
+    </div>
+
+    <div class="legend-item">
+        <span class="legend-box selected">●</span>
+        <span>Seleccionado</span>
+    </div>
+
+    <div class="legend-item">
+        <span class="legend-box reserved">⏳</span>
+        <span>Reservado (pendiente de pago)</span>
+    </div>
+
+    <div class="legend-item">
+        <span class="legend-box sold">✖</span>
+        <span>Vendido</span>
+    </div>
+
+</div>
+
+@code {
+    private List<Guid> reservationIds = new(); 
+
+    private bool reservaConfirmada = false;
+    private bool isLoading = false;
+
+    [Parameter]
+    public int SectorId { get; set; }
+
+    private List<SeatDto>? seats;
+    private List<Guid> selectedSeatIds = new();
+
+    private string pos = "center";
+    private string message = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        GetPositionFromUrl();
+        await LoadSeats();
+    }
+
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+
+    private void GetPositionFromUrl()
+    {
+        var uri = Nav.ToAbsoluteUri(Nav.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+        pos = query["pos"] ?? "center";
+    }
+
+    private async Task LoadSeats()
+    {
+
+        seats = await Http.GetFromJsonAsync<List<SeatDto>>(
+            $"api/events/sectors/{SectorId}/seats"
+        ) ?? new();
+    }
+
+    private void SelectSeat(SeatDto seat)
+    {
+        if (isLoading) return;
+
+        reservaConfirmada = false;
+
+        if (seat.Status == "Reserved" || seat.Status == "Sold")
+            return;
+
+        if (selectedSeatIds.Contains(seat.Id))
+            selectedSeatIds.Remove(seat.Id);
+        else
+            selectedSeatIds.Add(seat.Id);
+    }
+
+    private string GetSeatClass(SeatDto seat)
+    {
+        if (seat.Status == "Sold")
+            return "sold"; 
+
+        if (seat.Status == "Reserved")
+            return "reserved"; 
+
+        if (selectedSeatIds.Contains(seat.Id))
+            return "free selected"; 
+
+        return "free"; 
+    }
+
+    private async Task CreateReservation()
+    {
+        if (!selectedSeatIds.Any())
+        {
+            message = "Seleccioná al menos un asiento";
+            return;
+        }
+
+        isLoading = true;
+        message = "";
+        reservaConfirmada = false;
+
+        try
+        {
+
+            var dto = new
+            {
+                UserId = Session.UserId,
+                SeatIds = selectedSeatIds
+            };
+
+            var response = await Http.PostAsJsonAsync("/api/Reservation/multiple", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                reservationIds = await response.Content.ReadFromJsonAsync<List<Guid>>() ?? new();
+
+                selectedSeatIds.Clear();
+
+                message = "Reservas realizadas correctamente";
+                reservaConfirmada = true;
+
+                await LoadSeats();
+            }
+            else
+            {
+                message = await response.Content.ReadAsStringAsync();
+                await LoadSeats();
+            }
+        }
+        catch (Exception ex)
+        {
+            message = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void GoToPagos()
+    {
+        var param = string.Join(",", reservationIds);
+
+        Nav.NavigateTo($"/pago?reservations={param}&sectorId={SectorId}");
+    }
+    private string GetSeatStatus(SeatDto seat)
+    {
+        if (seat.Status == "Sold")
+            return "Vendido ✖";
+
+        if (seat.Status == "Reserved")
+            return "Reservado ⏳";
+
+        if (selectedSeatIds.Contains(seat.Id))
+            return "Seleccionado ●";
+
+        return "Disponible ✓";
+    }
+    public class SeatDto
+    {
+        public Guid Id { get; set; }
+        public string RowIdentifier { get; set; }
+        public int SeatNumber { get; set; }
+        public string Status { get; set; }
+    }
+}

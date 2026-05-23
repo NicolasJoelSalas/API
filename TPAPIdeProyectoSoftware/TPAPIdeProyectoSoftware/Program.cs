@@ -91,6 +91,16 @@ builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
 builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
 //builder.Services.AddHostedService<WorkerReservationExpired>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Front", policy =>
+    {
+        policy
+            .WithOrigins("https://localhost:7137")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -102,6 +112,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("Front");
 
 app.UseAuthorization();
 

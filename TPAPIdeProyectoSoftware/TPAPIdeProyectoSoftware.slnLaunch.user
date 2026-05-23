@@ -7,7 +7,7 @@
         "Action": "Start"
       },
       {
-        "Path": "ApiFront\\ApiFront.csproj",
+        "Path": "Front\\Front\\Front.csproj",
         "Action": "Start"
       }
     ]

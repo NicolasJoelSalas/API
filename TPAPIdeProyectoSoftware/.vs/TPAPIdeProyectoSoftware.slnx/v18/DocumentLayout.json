@@ -1,53 +1,124 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\",
+  "WorkspaceRootPath": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{72C852ED-BD00-4837-8048-3D0112F30F55}|Front\\Front\\Front.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72C852ED-BD00-4837-8048-3D0112F30F55}|Front\\Front\\Front.csproj|solutionrelative:front\\front\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\apifront.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\apifront.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\reservas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\reservas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\pago.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\front\\front.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC3918E3-6400-47FB-93F1-D50C2BEB33B0}|Front\\Front.Client\\Front.Client.csproj|solutionrelative:front\\front.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\proyectos\\proyectosoftware\\tpapideproyectosoftware\\application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,7 +129,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,11 +149,258 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front\\Program.cs",
+              "RelativeDocumentMoniker": "Front\\Front\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front\\Program.cs",
+              "RelativeToolTip": "Front\\Front\\Program.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwCUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T18:44:36.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T18:24:18.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
+              "RelativeDocumentMoniker": "ApiFront\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Program.cs",
+              "RelativeToolTip": "ApiFront\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T17:55:17.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Register.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Register.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Register.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:49:52.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Pago.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Pago.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Pago.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Pago.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Pago.razor",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAYwNIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:49:44.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Login.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Login.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Login.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:44:31.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Home.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Home.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:43:50.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Events.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Events.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Events.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Events.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Events.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:43:47.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwCUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:21:45.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Program.cs",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Program.cs",
+              "RelativeToolTip": "Front\\Front.Client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T17:48:52.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:09:49.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Services\\UserSession.cs",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Services\\UserSession.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Services\\UserSession.cs",
+              "RelativeToolTip": "Front\\Front.Client\\Services\\UserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T17:43:07.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ViewState": "AgIAAHQCAAAAAAAAAAAmwH8CAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-05-23T18:11:10.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-23T18:20:42.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Reservas.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Reservas.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Reservas.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Reservas.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Reservas.razor",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAYwE8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:42:52.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Seats.razor",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Seats.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Seats.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Seats.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Seats.razor",
+              "ViewState": "AgIAALkAAAAAAAAAAAAYwMoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:42:48.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApiFront",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\ApiFront.csproj",
+              "RelativeDocumentMoniker": "ApiFront\\ApiFront.csproj",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\ApiFront.csproj",
+              "RelativeToolTip": "ApiFront\\ApiFront.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-23T18:18:40.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Application",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-23T18:18:43.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Sectors.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Sectors.razor",
+              "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Sectors.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Sectors.razor",
+              "RelativeToolTip": "Front\\Front.Client\\Pages\\Sectors.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-23T17:50:09.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Seats.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor",
               "ViewState": "AgIAAIIAAAAAAAAAAAAQwJAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -91,146 +409,123 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 26,
               "Title": "SectorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SectorRepository.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\SectorRepository.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAcwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:11:22.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:11:22.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFoAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:09:49.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 20,
               "Title": "EventController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
               "ViewState": "AgIAAHQAAAAAAAAAAAAmwIwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:05:59.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:05:59.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 25,
               "Title": "SeatRepository.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SeatRepository.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\SeatRepository.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAcwDUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:02:53.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:02:53.285Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 23,
               "Title": "SeatController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T01:54:32.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T01:54:32.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 22,
               "Title": "SectorController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T01:54:33.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T01:54:33.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 21,
               "Title": "Sectors.razor",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Sectors.razor",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Sectors.razor",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-23T02:08:59.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:08:59.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 24,
               "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:12:09.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:12:09.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 29,
               "Title": "ISeatRepository.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
               "RelativeToolTip": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:03:32.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:03:32.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 27,
               "Title": "GetSeatsBySectorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
               "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T02:01:03.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T02:01:03.175Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 28,
               "Title": "GetSectorsByEventHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "DocumentMoniker": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
               "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T01:39:50.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T01:39:50.745Z"
             }
           ]
         }

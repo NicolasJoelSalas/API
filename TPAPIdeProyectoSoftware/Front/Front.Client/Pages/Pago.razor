@@ -1,0 +1,356 @@
+﻿@page "/pago"
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager Nav
+@inject HttpClient Http
+@inject IJSRuntime JS
+@using System.Timers
+@implements IDisposable
+
+<h3 class="title">Finalizar compra</h3>
+
+<div class="payment-container">
+
+    <!-- FORMULARIO -->
+    <div class="payment-form">
+
+        <h4>Datos de pago</h4>
+
+        <EditForm Model="paymentModel" OnValidSubmit="SimulatePayment">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="input-group">
+                <label>Nombre en la tarjeta</label>
+                <input type="text" @bind="paymentModel.CardName" />
+                <ValidationMessage For="@(() => paymentModel.CardName)" />
+            </div>
+
+            <div class="input-group">
+                <label>Número de tarjeta</label>
+                <input type="text" @bind="paymentModel.CardNumber" />
+                <ValidationMessage For="@(() => paymentModel.CardNumber)" />
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Vencimiento (MM/YY)</label>
+                    <input type="text" placeholder="08/28" @bind="paymentModel.Expiry" />
+                    <ValidationMessage For="@(() => paymentModel.Expiry)" />
+                </div>
+
+                <div class="input-group">
+                    <label>CVV</label>
+                    <input type="password" @bind="paymentModel.CVV" />
+                    <ValidationMessage For="@(() => paymentModel.CVV)" />
+                </div>
+            </div>
+
+            <button class="pay-btn" type="submit" disabled="@isProcessing">
+                @(isProcessing ? "Procesando..." : "Pagar ahora")
+            </button>
+        </EditForm>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <p class="message">@message</p>
+        }
+
+        <button class="nav-btn" @onclick="GoBack">
+            ← Volver
+        </button>
+
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="payment-summary">
+
+        <h4>Resumen</h4>
+        @if (!isExpired)
+        {
+            <div class="countdown">
+                ⏳ Tiempo restante: <strong>@timeLeft</strong>
+            </div>
+        }
+        else
+        {
+            <div class="expired">
+                ❌ La reserva expiró
+            </div>
+        }
+        @if (isLoadingSector)
+        {
+            <p>Cargando precios...</p>
+        }
+        else
+        {
+            <div class="summary-item">
+                <span>Entradas (@seatCount)</span>
+                <span>$@(seatCount * sectorPrice)</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <span>$@(seatCount * sectorPrice)</span>
+            </div>
+        }
+
+    </div>
+    @if (showExpiredModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Reserva expirada</h3>
+
+                <p>
+                    El tiempo para completar el pago finalizó.
+                </p>
+
+                <button class="modal-btn" @onclick="GoToSectors">
+                    Aceptar
+                </button>
+
+            </div>
+        </div>
+    }
+    @if (showPaymentModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Reserva pagada</h3>
+
+                <p>
+                    El pago se realizó correctamente.
+                </p>
+
+                <button class="modal-btn" @onclick="GoToSectors">
+                    Aceptar
+                </button>
+
+            </div>
+        </div>
+    }
+
+</div>
+
+@code {
+    private List<Guid> reservationIds = new();
+    private int seatCount = 0;
+    private int sectorId;
+    private decimal sectorPrice;
+
+    private string message = "";
+    private bool isLoadingSector = true;
+    private bool isProcessing = false;
+
+    private PaymentModel paymentModel = new();
+    private DateTime expiresAt;
+    private string timeLeft = "00:00";
+    private Timer? timer;
+    private bool isExpired = false;
+    private bool showExpiredModal = false;
+    private bool showPaymentModal = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var uri = Nav.ToAbsoluteUri(Nav.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+        var reservationsParam = query["reservations"];
+        var sectorParam = query["sectorId"];
+
+        if (!string.IsNullOrWhiteSpace(reservationsParam))
+        {
+            reservationIds = reservationsParam
+                .Split(',')
+                .Select(Guid.Parse)
+                .ToList();
+
+            seatCount = reservationIds.Count;
+        }
+
+        if (!string.IsNullOrWhiteSpace(sectorParam) && int.TryParse(sectorParam, out var id))
+        {
+            sectorId = id;
+            await LoadSectorPrice();
+        }
+        await LoadReservationExpiration();
+        StartCountdown();
+    }
+    
+    private async Task LoadSectorPrice()
+    {
+        try
+        {
+            
+            var sector = await Http.GetFromJsonAsync<SectorDto>($"api/sector/{sectorId}");
+
+            if (sector != null)
+                sectorPrice = sector.Price;
+        }
+        catch
+        {
+            sectorPrice = 0;
+        }
+        finally
+        {
+            isLoadingSector = false;
+        }
+    }
+    
+    private async Task LoadReservationExpiration()
+    {
+        try
+        {
+            if (!reservationIds.Any())
+                return;
+
+            
+
+            var reservation = await Http.GetFromJsonAsync<ReservationResponseDto>(
+                $"api/reservation/{reservationIds.First()}"
+            );
+
+            if (reservation != null)
+            {
+                expiresAt = reservation.ExpiresAt;
+            }
+        }
+        catch
+        {
+            message = "❌ Error al obtener la reserva";
+        }
+    }
+
+    private void StartCountdown()
+    {
+        timer = new Timer(1000);
+
+        timer.Elapsed += async (_, _) =>
+        {
+            var remaining = expiresAt - DateTime.UtcNow;
+
+            if (remaining <= TimeSpan.Zero)
+            {
+                isExpired = true;
+                showExpiredModal = true;
+                timeLeft = "00:00";
+
+                timer?.Stop();
+
+                await InvokeAsync(StateHasChanged);
+
+                return;
+            }
+
+            timeLeft = remaining.ToString(@"mm\:ss");
+
+            await InvokeAsync(StateHasChanged);
+        };
+
+        timer.Start();
+    }
+
+    private async Task SimulatePayment()
+    {
+        if (isExpired)
+        {
+            message = "❌ La reserva expiró";
+            return;
+        }
+        if (!reservationIds.Any())
+        {
+            message = "❌ No hay reservas para pagar";
+            return;
+        }
+
+        isProcessing = true;
+        message = "";
+
+        try
+        {
+            
+
+            var dto = new ConfirmPaymentDto
+            {
+                ReservationIds = reservationIds
+            };
+
+            var response = await Http.PostAsJsonAsync("api/Reservation/confirm-payment", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                timer?.Stop(); // detener contador
+
+                reservationIds.Clear();
+                seatCount = 0;
+
+                showPaymentModal = true;
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                message = $"❌ {error}";
+            }
+        }
+        catch
+        {
+            message = "❌ Error de conexión con el servidor";
+        }
+        finally
+        {
+            isProcessing = false;
+        }
+    }
+
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+    private void GoToSectors()
+    {
+        Nav.NavigateTo("/home");
+    }
+    public class PaymentModel
+    {
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [MinLength(3, ErrorMessage = "Nombre demasiado corto")]
+        public string CardName { get; set; } = "";
+
+        [Required(ErrorMessage = "El número de tarjeta es obligatorio")]
+        [RegularExpression(@"^\d{16}$", ErrorMessage = "Debe tener 16 dígitos")]
+        public string CardNumber { get; set; } = "";
+
+        [Required(ErrorMessage = "La fecha es obligatoria")]
+        [RegularExpression(@"^(0[1-9]|1[0-2])\/\d{2}$", ErrorMessage = "Formato inválido (MM/YY)")]
+        public string Expiry { get; set; } = "";
+
+        [Required(ErrorMessage = "El CVV es obligatorio")]
+        [RegularExpression(@"^\d{3,4}$", ErrorMessage = "CVV inválido")]
+        public string CVV { get; set; } = "";
+    }
+
+    public class SectorDto
+    {
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+    }
+
+    public class ConfirmPaymentDto
+    {
+        public List<Guid> ReservationIds { get; set; } = new();
+    }
+
+    public class ReservationResponseDto
+    {
+        public Guid Id { get; set; }
+        public DateTime ReservedAt { get; set; }
+        public DateTime ExpiresAt { get; set; }
+    }
+    public void Dispose()
+    {
+        timer?.Stop();
+        timer?.Dispose();
+    }
+}
