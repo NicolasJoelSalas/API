@@ -203,11 +203,18 @@ else
                 SeatIds = selectedSeatIds
             };
 
-            var response = await http.PostAsJsonAsync("/api/Reservation/multiple", dto);
+            var response = await http.PostAsJsonAsync("/api/reservations", dto);
 
             if (response.IsSuccessStatusCode)
             {
-                reservationIds = await response.Content.ReadFromJsonAsync<List<Guid>>() ?? new();
+                var result = await response.Content
+                    .ReadFromJsonAsync<CreateReservationResponseDto>();
+
+                if (result != null)
+                {
+                    reservationIds.Clear();
+                    reservationIds.Add(result.ReservationId);
+                }
 
                 selectedSeatIds.Clear();
 
@@ -257,5 +264,10 @@ else
         public string RowIdentifier { get; set; }
         public int SeatNumber { get; set; }
         public string Status { get; set; }
+    }
+    public class CreateReservationResponseDto
+    {
+        public string Message { get; set; }
+        public Guid ReservationId { get; set; }
     }
 }

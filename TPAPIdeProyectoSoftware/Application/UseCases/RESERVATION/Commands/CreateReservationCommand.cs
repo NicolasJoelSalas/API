@@ -1,21 +1,16 @@
-﻿using Application.DTOs.User;
-using Application.Interfaces.Repositories;
-using Domain.Entities;
+﻿using MediatR;
 
-namespace Application.UseCases.USER.Commands
+namespace Application.UseCases.RESERVATION.Commands
 {
-    public class CreateReservationCommand 
+    public class CreateReservationCommand : IRequest<Guid>
     {
         public int UserId { get; }
-        public Guid SeatId { get; }
+        public List<Guid> SeatIds { get; }
 
-        public CreateReservationCommand(
-            int userId,
-            Guid seatId )
+        public CreateReservationCommand(int userId, List<Guid> seatIds)
         {
             UserId = userId;
-            SeatId = seatId;
+            SeatIds = seatIds;
         }
-
     }
 }

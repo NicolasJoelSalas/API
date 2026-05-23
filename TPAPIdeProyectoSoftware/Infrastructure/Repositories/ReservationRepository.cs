@@ -30,8 +30,10 @@ namespace Infrastructure.Repositories
 
         public async Task AddAsync(RESERVATION reservation)
         {
+            if (reservation == null)
+                throw new ArgumentNullException(nameof(reservation));
+
             await _context.RESERVATION.AddAsync(reservation);
-            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(RESERVATION reservation)
@@ -43,6 +45,10 @@ namespace Infrastructure.Repositories
         public async Task DeleteAsync(RESERVATION reservation)
         {
             _context.RESERVATION.Remove(reservation);
+            await _context.SaveChangesAsync();
+        }
+        public async Task SaveChangesAsync()
+        {
             await _context.SaveChangesAsync();
         }
     }

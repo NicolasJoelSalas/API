@@ -1,11 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -52,12 +47,15 @@ namespace Infrastructure.Persistence
             modelBuilder.Entity<SEAT>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(t => t.Id).ValueGeneratedOnAdd();
+
                 entity.Property(s => s.Version).IsConcurrencyToken();
 
 
                 entity.HasOne<SECTOR>(s => s.SECTOR)
                 .WithMany(d => d.SEATS)
                 .HasForeignKey(m => m.SectorId);
+
 
             });
             modelBuilder.Entity<RESERVATION>(entity =>
@@ -69,9 +67,9 @@ namespace Infrastructure.Persistence
                 .WithMany(d => d.RESERVATIONS)
                 .HasForeignKey(l => l.UserId);
 
-                entity.HasOne<SEAT>(s => s.SEAT)
-                .WithOne(d => d.RESERVATION)
-                .HasForeignKey<RESERVATION>(x => x.SeatId);
+                entity.HasOne<SEAT>(r => r.SEAT)
+                .WithMany(re => re.RESERVATIONS)
+                .HasForeignKey(r => r.SeatId);
 
             });
             modelBuilder.Entity<AUDIT_LOG>(entity =>

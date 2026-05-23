@@ -17,6 +17,6 @@ namespace Domain.Entities
         public int Version { get; set; }
 
         public SECTOR SECTOR { get; set; }
-        public RESERVATION? RESERVATION { get; set; }
+        public List<RESERVATION>? RESERVATIONS { get; set; }
     }
 }

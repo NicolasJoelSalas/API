@@ -1,7 +1,7 @@
-﻿using Application.DTOs.User;
+﻿using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
-using Application.UseCases.USER.Commands;
+using Application.UseCases.RESERVATION.Commands;
 using Domain.Entities;
 using Domain.Enums;
 
@@ -26,72 +26,120 @@ namespace Application.UseCases.Reservation.Handlers
             _auditLogRepository = auditLogRepository;
         }
 
-        public async Task<string> Handle(CreateReservationCommand commmand)
+        public async Task<Guid> Handle(CreateReservationCommand command)
         {
-            if (commmand == null)
-                return "Datos inválidos";
+            if (command == null)
+                throw new ArgumentNullException(nameof(command));
 
-            if (commmand.UserId <= 0)
-                return "El Id del usuario es obligatorio";
+            if (command.UserId <= 0)
+                throw new Exception("El Id del usuario es obligatorio");
 
-            if (commmand.SeatId == Guid.Empty)
-                return "El Id del asiento es obligatorio";
+            if (command.SeatIds == null || !command.SeatIds.Any())
+                throw new Exception("No se enviaron butacas");
 
-            var user = await _userRepository.GetByIdAsync(commmand.UserId);
+            // Validar usuario
+            var user = await _userRepository.GetByIdAsync(command.UserId);
 
             if (user == null)
-                return "El Usuario no existe";
+                throw new Exception("El usuario no existe");
 
-            var seat = await _seatRepository.GetByIdAsync(commmand.SeatId);
-
-            if (seat == null)
-                return "El asiento no existe";
-
-            if (seat.Status == SeatStatus.Reserved.ToString())
-                return "El asiento ya está reservado";
-
-            if (seat.Status == SeatStatus.Sold.ToString())
-                return "El asiento ya está vendido";
-
-            var auditIntent = new Domain.Entities.AUDIT_LOG
+            // Audit inicial
+            await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
             {
-                UserId = commmand.UserId,
+                UserId = command.UserId,
                 Action = "Intento de reserva",
-                EntityType = "Seat",
-                EntityId = commmand.SeatId.ToString(),
-                Details = $"UsuarioId: {commmand.UserId}, AsientoId: {commmand.SeatId}",
-                CreatedAt = DateTime.UtcNow
-            };
-
-            await _auditLogRepository.AddAsync(auditIntent);
-
-            seat.Status = SeatStatus.Reserved.ToString();
-            await _seatRepository.UpdateAsync(seat);
-
-            var reservation = new Domain.Entities.RESERVATION
-            {
-                UserId = commmand.UserId,
-                SeatId = commmand.SeatId,
-                Status = ReservationStatus.Pending.ToString(),
-                ReservedAt = DateTime.UtcNow,
-                ExpiresAt = DateTime.UtcNow.AddMinutes(5)
-            };
-
-            await _reservationRepository.AddAsync(reservation);
-
-            var auditSuccess = new Domain.Entities.AUDIT_LOG
-            {
-                UserId = commmand.UserId,
-                Action = "Reserva exitosa",
                 EntityType = "Reservation",
-                EntityId = reservation.Id.ToString(),
-                Details = $"UsuarioId: {commmand.UserId}, AsientoId: {commmand.SeatId}, ReservaId: {reservation.Id}",
+                EntityId = string.Join(",", command.SeatIds),
+                Details = $"UsuarioId: {command.UserId}, Seats: {string.Join(",", command.SeatIds)}",
                 CreatedAt = DateTime.UtcNow
-            };
+            });
 
-            await _auditLogRepository.AddAsync(auditSuccess);
+            // Traer todas las butacas
+            var seats = new List<Domain.Entities.SEAT>();
 
-            return "OK";
+            foreach (var seatId in command.SeatIds)
+            {
+                var seat = await _seatRepository.GetByIdAsync(seatId);
+
+                if (seat == null)
+                    throw new Exception($"La butaca {seatId} no existe");
+
+                seats.Add(seat);
+            }
+
+            // Validar disponibilidad
+            var occupiedSeats = seats
+                .Where(s => s.Status == SeatStatus.Reserved.ToString() ||
+                            s.Status == SeatStatus.Sold.ToString())
+                .ToList();
+
+            if (occupiedSeats.Any())
+            {
+                var occupiedIds = string.Join(",", occupiedSeats.Select(s => s.Id));
+
+                await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+                {
+                    UserId = command.UserId,
+                    Action = "Reserva rechazada",
+                    EntityType = "Reservation",
+                    EntityId = occupiedIds,
+                    Details = "Hay butacas ocupadas",
+                    CreatedAt = DateTime.UtcNow
+                });
+
+                throw new Exception($"Las siguientes butacas ya están ocupadas: {occupiedIds}");
+            }
+
+            try
+            {
+                foreach (var seat in seats)
+                {
+                    seat.Status = SeatStatus.Reserved.ToString();
+                    await _seatRepository.UpdateAsync(seat);
+                
+
+                var reservation = new Domain.Entities.RESERVATION
+                {
+                    UserId = command.UserId,
+                    Status = ReservationStatus.Pending.ToString(),
+                    ReservedAt = DateTime.UtcNow,
+                    ExpiresAt = DateTime.UtcNow.AddMinutes(5),
+                    SEATS = seats
+                };
+
+
+                await _reservationRepository.AddAsync(reservation);
+
+                await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+                {
+                    UserId = command.UserId,
+                    Action = "Reserva exitosa",
+                    EntityType = "Reservation",
+                    EntityId = reservation.Id.ToString(),
+                    Details = $"UsuarioId: {command.UserId}, Seats: {string.Join(",", command.SeatIds)}",
+                    CreatedAt = DateTime.UtcNow
+                });
+
+
+                await _reservationRepository.SaveChangesAsync();
+
+                return reservation.Id;
+            }
+            catch (Exception ex)
+            {
+
+                await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+                {
+                    UserId = command.UserId,
+                    Action = "Error en reserva",
+                    EntityType = "Reservation",
+                    EntityId = string.Join(",", command.SeatIds),
+                    Details = ex.Message,
+                    CreatedAt = DateTime.UtcNow
+                });
+
+                throw;
+            }
         }
     }
 }

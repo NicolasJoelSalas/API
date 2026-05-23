@@ -16,6 +16,8 @@ namespace Application.Interfaces.Repositories
 
         Task DeleteAsync(RESERVATION reservation);
 
+        Task SaveChangesAsync();
+
         //Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds);
 
         //Task AddRangeAsync(List<RESERVATION> reservations);

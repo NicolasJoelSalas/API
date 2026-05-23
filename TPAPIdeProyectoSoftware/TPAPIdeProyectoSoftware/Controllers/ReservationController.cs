@@ -37,21 +37,18 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ReservationRequestDto request)
+        public async Task<IActionResult> Create([FromBody] CreateReservationRequestDto request)
         {
             var command = new CreateReservationCommand(
-                request.UserId,
-                request.SeatId
+                request.UserId,request.SeatIds
             );
 
-            var message = await _createHandler.Handle(command);
-
-            if (message != "OK")
-                return StatusCode(409, new { message });
+            Guid reservationId = await _createHandler.Handle(command);
 
             return StatusCode(201, new
             {
-                message = "Reservation creada correctamente"
+                message = "Reservation creada correctamente",
+                reservationId = reservationId
             });
         }
 

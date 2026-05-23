@@ -310,17 +310,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/CreateReservationRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/CreateReservationRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationRequestDto"
+                "$ref": "#/components/schemas/CreateReservationRequestDto"
               }
             }
           }
@@ -822,6 +822,24 @@
         },
         "additionalProperties": false
       },
+      "CreateReservationRequestDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "EventResquestDto": {
         "type": "object",
         "properties": {
@@ -876,20 +894,6 @@
           "passwordHash": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ReservationRequestDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "seatId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
