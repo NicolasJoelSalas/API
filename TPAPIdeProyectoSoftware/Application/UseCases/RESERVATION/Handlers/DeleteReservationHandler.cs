@@ -27,7 +27,7 @@ namespace Application.UseCases
             if (reservationEntity == null)
                 return "Reserva no encontrada";
 
-            await _reservationRepository.DeleteAsync(reservationEntity);
+            await _reservationRepository.DeleteAsync(reservationEntity.Id);
 
             return "Reserva eliminada correctamente";
         }

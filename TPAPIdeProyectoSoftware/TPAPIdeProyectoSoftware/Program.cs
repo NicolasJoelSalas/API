@@ -2,6 +2,7 @@
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
@@ -10,7 +11,7 @@ using Application.UseCases.Audit_Log.Handlers;
 using Application.UseCases.Event.Handlers;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
-using Application.UseCases.Reservation.Handlers;
+using Application.UseCases.RESERVATION.Handlers;
 using Application.UseCases.SECTOR.Handlers;
 using Application.UseCases.USER.Handlers;
 using Infrastructure.Persistence;
@@ -71,8 +72,7 @@ builder.Services.AddScoped<IUpdateReservationHandler, UpdateReservationHandler>(
 builder.Services.AddScoped<IDeleteReservationHandler, DeleteReservationHandler>();
 builder.Services.AddScoped<IGetByIdReservationHandler, GetByIdReservationHandler>();
 builder.Services.AddScoped<IGetAllReservationHandler, GetAllReservationHandler>();
-//builder.Services.AddScoped<ICreateMultipleReservationHandler, CreateMultipleReservationHandler>();
-//builder.Services.AddScoped<IConfirmPaymentHandler, ConfirmPaymentHandler>();
+builder.Services.AddScoped<IConfirmPaymentHandler, ConfirmPaymentHandler>();
 
 //Seat
 builder.Services.AddScoped<ICreateSeatHandler, CreateSeatHandler>();
@@ -90,7 +90,7 @@ builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
 builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
 builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
-//builder.Services.AddHostedService<WorkerReservationExpired>();
+builder.Services.AddHostedService<WorkerReservationExpired>();
 
 var app = builder.Build();
 

@@ -248,6 +248,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
+    "Method": "ConfirmPayment",
+    "RelativePath": "api/reservations/confirm-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.DTOs.Reservation.ConfirmPaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Create",
     "RelativePath": "api/seats",

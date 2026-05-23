@@ -386,6 +386,37 @@
         }
       }
     },
+    "/api/reservations/confirm-payment": {
+      "post": {
+        "tags": [
+          "Reservation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPaymentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPaymentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/seats": {
       "post": {
         "tags": [
@@ -822,6 +853,20 @@
         },
         "additionalProperties": false
       },
+      "ConfirmPaymentDto": {
+        "type": "object",
+        "properties": {
+          "reservationIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateReservationRequestDto": {
         "type": "object",
         "properties": {
@@ -829,9 +874,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "seatId": {
-            "type": "string",
-            "format": "uuid"
+          "seatIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
