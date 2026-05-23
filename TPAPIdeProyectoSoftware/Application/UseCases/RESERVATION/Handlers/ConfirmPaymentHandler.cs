@@ -1,64 +1,75 @@
 ﻿using Application.Interfaces.Handlers.Reservation;
+using Application.Interfaces.Repositories;
 using Domain.Entities;
 using Domain.Enums;
 
-namespace Application.UseCases.User.Handlers
+namespace Application.UseCases
 {
-    public class ConfirmPaymentHandler /*: IConfirmPaymentHandler*/
+    public class ConfirmPaymentHandler : IConfirmPaymentHandler
     {
-        //private readonly IUpdateReservationsStatusCommand _reservationCommand;
-        //private readonly IMarkSeatsAsSoldCommand _seatCommand;
-        //private readonly ICreateAudit_LogCommand _auditLogCommand;
-        //private readonly IGetByIdReservationQuery _query;
+        private readonly IReservationRepository _reservationRepository;
+        private readonly ISeatRepository _seatRepository;
+        private readonly IAudit_LogRepository _auditLogRepository;
 
-        //public ConfirmPaymentHandler(
-        //    IUpdateReservationsStatusCommand reservationCommand,
-        //    IMarkSeatsAsSoldCommand seatCommand,
-        //    ICreateAudit_LogCommand auditLogCommand,
-        //    IGetByIdReservationQuery query)
-        //{
-        //    _reservationCommand = reservationCommand;
-        //    _seatCommand = seatCommand;
-        //    _auditLogCommand = auditLogCommand;
-        //    _query = query;
-        //}
+        public ConfirmPaymentHandler(
+            IReservationRepository reservationRepository,
+            ISeatRepository seatRepository,
+            IAudit_LogRepository auditLogRepository)
+        {
+            _reservationRepository = reservationRepository;
+            _seatRepository = seatRepository;
+            _auditLogRepository = auditLogRepository;
+        }
 
-        //public async Task<string> Handle(List<Guid> reservationIds)
-        //{
-        //    if (reservationIds == null || !reservationIds.Any())
-        //        return "No hay reservas para procesar";
+        public async Task<string> Handle(List<Guid> reservationIds)
+        {
+            if (reservationIds == null || !reservationIds.Any())
+                return "No hay reservas para procesar";
 
-        //    // 🔹 Obtener una reserva para UserId
-        //    var reservation = await _query.GetById(reservationIds.First());
+            // 1. Obtener reservas
+            var reservations = await _reservationRepository.GetAllByIdAsync(reservationIds);
 
-        //    if (reservation == null)
-        //        return "Reserva no encontrada";
+            if (reservations == null || !reservations.Any())
+                return "Reservas no encontradas";
 
-        //    var userId = reservation.UserId;
+            var userId = reservations.First().UserId;
 
-        //    // 🔥 1. Reservas → Paid
-        //    await _reservationCommand.Execute(
-        //        reservationIds,
-        //        ReservationStatus.Paid.ToString()
-        //    );
+            // 2. Actualizar reservas a Paid
+            foreach (var reservation in reservations)
+            {
+                reservation.Status = ReservationStatus.Paid.ToString();
+                await _reservationRepository.UpdateAsync(reservation);
+            }
 
-        //    // 🔥 2. Seats → Sold
-        //    await _seatCommand.Execute(reservationIds);
+            // 3. Marcar seats como Sold
+            foreach (var reservation in reservations)
+            {
+                var seat = await _seatRepository.GetByIdAsync(reservation.SeatId);
 
-        //    // 🔥 3. Audit log
-        //    var auditLog = new Domain.Entities.AUDIT_LOG
-        //    {
-        //        Action = "Pago Confirmado",
-        //        UserId = userId,
-        //        EntityType = "Reservation",
-        //        EntityId = string.Join(",", reservationIds),
-        //        Details = $"Pago confirmado para {reservationIds.Count} reservas",
-        //        CreatedAt = DateTime.UtcNow,
-        //    };
+                if (seat != null)
+                {
+                    seat.Status = SeatStatus.Sold.ToString();
+                    await _seatRepository.UpdateAsync(seat);
+                }
+            }
 
-        //    await _auditLogCommand.ExecuteCreateAudit_Log(auditLog);
+            // 4. Crear Audit Log
+            var auditLog = new Domain.Entities.AUDIT_LOG
+            {
+                Action = "Pago Confirmado",
+                UserId = userId,
+                EntityType = "Reservation",
+                EntityId = string.Join(",", reservationIds),
+                Details = $"Pago confirmado para {reservationIds.Count} reservas",
+                CreatedAt = DateTime.UtcNow
+            };
 
-        //    return "Pago confirmado y reservas actualizadas";
-        //}
+            await _auditLogRepository.AddAsync(auditLog);
+
+            // 5. Guardar cambios
+            await _reservationRepository.SaveChangesAsync();
+
+            return "Pago confirmado y reservas actualizadas";
+        }
     }
 }

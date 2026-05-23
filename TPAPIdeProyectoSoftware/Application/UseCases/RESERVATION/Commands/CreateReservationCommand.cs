@@ -5,12 +5,12 @@ namespace Application.UseCases.RESERVATION.Commands
     public class CreateReservationCommand
     {
         public int UserId { get; }
-        public Guid SeatId { get; }
+        public List<Guid> SeatIds { get; }
 
-        public CreateReservationCommand(int userId, Guid seatId)
+        public CreateReservationCommand(int userId, List<Guid> seatIds)
         {
             UserId = userId;
-            SeatId = seatId;
+            SeatIds = seatIds;
         }
     }
 }

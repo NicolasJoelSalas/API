@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\handlers\\reservation\\icreatereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\handlers\\reservation\\icreatereservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\dtos\\reservation\\createreservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\reservation\\createreservationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\commands\\createreservationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\confirmpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\workerreservationexpired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,6 +48,123 @@
           "DockedWidth": 190,
           "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateReservationRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:58:18.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICreateReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\ICreateReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Handlers\\Reservation\\ICreateReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Handlers\\Reservation\\ICreateReservationHandler.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Handlers\\Reservation\\ICreateReservationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:57:00.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateReservationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAgwAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:39:52.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ReservationRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ReservationRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:14:21.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:20:13.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateReservationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:48:12.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConfirmPaymentHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\ConfirmPaymentHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwDkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:06:11.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Repositories\\IReservationRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:15:08.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WorkerReservationExpired.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\WorkerReservationExpired.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T20:09:09.656Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -51,84 +180,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Seats.razor",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAABIBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-23T19:56:43.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:53:54.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReservationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ReservationRepository.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\ReservationRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\ReservationRepository.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwCQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:52:44.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateReservationHandler.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowFoAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:49:25.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateReservationCommand.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Commands\\CreateReservationCommand.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:51:08.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateReservationRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Reservation\\CreateReservationRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:45:47.588Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -6,6 +6,6 @@ namespace Application.Interfaces.Handlers.User
 {
     public interface ICreateReservationHandler
     {
-        Task<Guid> Handle(CreateReservationCommand command);
+        Task<List<Guid>> Handle(CreateReservationCommand command);
     }
 }

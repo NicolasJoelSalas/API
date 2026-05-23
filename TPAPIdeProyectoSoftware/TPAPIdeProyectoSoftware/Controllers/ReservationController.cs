@@ -1,14 +1,10 @@
 ﻿using Application.DTOs.Reservation;
-using Application.DTOs.User;
 using Application.Interfaces.Handlers.Reservation;
 using Application.Interfaces.Handlers.User;
-using Application.UseCases;
 using Application.UseCases.RESERVATION.Commands;
-using Application.UseCases.RESERVATION.Queries;
 using Application.UseCases.USER.Commands;
 using Application.UseCases.USER.Queries;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace TPAPIdeProyectoSoftware.Controllers
 {
@@ -20,19 +16,21 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IDeleteReservationHandler _deleteHandler;
         private readonly IGetAllReservationHandler _getAllHandler;
         private readonly IGetByIdReservationHandler _getByIdHandler;
-
+        private IConfirmPaymentHandler _confirmPaymentHandler;
 
 
         public ReservationController(
             ICreateReservationHandler createHandler,
             IDeleteReservationHandler deleteHandler,
             IGetAllReservationHandler getAllHandler,
-            IGetByIdReservationHandler getByIdHandler)
+            IGetByIdReservationHandler getByIdHandler,
+            IConfirmPaymentHandler confirmPaymentHandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
             _getAllHandler = getAllHandler;
             _getByIdHandler = getByIdHandler;
+            _confirmPaymentHandler = confirmPaymentHandler;
 
         }
 
@@ -44,18 +42,18 @@ namespace TPAPIdeProyectoSoftware.Controllers
 
             var command = new CreateReservationCommand(
                 request.UserId,
-                request.SeatId
+                request.SeatIds
             );
 
-            Guid reservationId = await _createHandler.Handle(command);
+            var reservationIds = await _createHandler.Handle(command);
 
             return CreatedAtAction(
                 nameof(Create),
-                new { id = reservationId },
+                new { id = reservationIds },
                 new
                 {
                     message = "Reservation creada correctamente",
-                    reservationId = reservationId
+                    reservationId = reservationIds
                 });
         }
 
@@ -98,45 +96,24 @@ namespace TPAPIdeProyectoSoftware.Controllers
             return Ok(new { message });
         }
 
-        //[HttpPost("multiple")]
-        //public async Task<IActionResult> CreateMultiple([FromBody] CreateMultipleReservationDto dto)
-        //{
-        //    try
-        //    {
-        //        var command = new CreateMultipleReservationCommand(dto);
 
-        //        var result = await _createMultipleHandler.Handle(command);
+        [HttpPost("confirm-payment")]
+        public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
+        {
+            if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())
+            {
+                return BadRequest(new
+                {
+                    message = "No se enviaron reservas"
+                });
+            }
 
-        //        return StatusCode(201, result);
-        //    }
-        //    catch (DbUpdateConcurrencyException ex)
-        //    {
-        //        return Conflict(new
-        //        {
-        //            error = "La butaca ya fue reservada por otro usuario.",
-        //            detail = ex.Message
-        //        });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(new
-        //        {
-        //            error = ex.Message
-        //        });
-        //    }
-        //}
+            var result = await _confirmPaymentHandler.Handle(dto.ReservationIds);
 
-        //[HttpPost("confirm-payment")]
-        //public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
-        //{
-        //    if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())
-        //        return BadRequest(new { message = "No se enviaron reservas" });
-
-        //    var command = new ConfirmPaymentCommand(dto.ReservationIds);
-
-        //    var result = await _confirmPaymentHandler.Handle(command);
-
-        //    return NoContent();
-        //}
+            return Ok(new
+            {
+                message = result
+            });
+        }
     }
 }

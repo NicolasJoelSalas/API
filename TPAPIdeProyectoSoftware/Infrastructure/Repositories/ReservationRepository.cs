@@ -42,14 +42,52 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(RESERVATION reservation)
-        {
-            _context.RESERVATION.Remove(reservation);
-            await _context.SaveChangesAsync();
-        }
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<RESERVATION>> GetPendingReservationsAsync()
+        {
+            return await _context.RESERVATION
+                .Where(r => r.Status == "Pending")
+                .ToListAsync();
+        }
+
+        public async Task<List<RESERVATION>> GetAllByIdAsync(List<Guid> ids)
+        {
+            if (ids == null || !ids.Any())
+                return new List<RESERVATION>();
+
+            return await _context.RESERVATION
+                .Where(r => ids.Contains(r.Id))
+                .ToListAsync();
+        }
+
+        public async Task DeleteAsync(Guid reservationId)
+        {
+            var reservation = await _context.RESERVATION.FindAsync(reservationId);
+
+            if (reservation != null)
+            {
+                _context.RESERVATION.Remove(reservation);
+            }
+        }
+        public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
+        {
+            return await _context.RESERVATION
+                .Where(r => seatIds.Contains(r.SeatId) && (r.Status == "Pending" || r.Status == "Reserved"))
+                .Select(r => r.SeatId)
+                .ToListAsync();
+        }
+        public async Task AddRangeAsync(List<RESERVATION> reservations)
+        {
+            using var transaction = await _context.Database.BeginTransactionAsync();
+
+            await _context.RESERVATION.AddRangeAsync(reservations);
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+        }
+
     }
 }

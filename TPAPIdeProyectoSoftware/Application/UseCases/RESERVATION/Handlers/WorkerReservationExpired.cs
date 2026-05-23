@@ -1,107 +1,79 @@
-﻿using System;
-
+﻿using Application.Interfaces.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Application.UseCases.RESERVATION.Handlers
+{
+    public class WorkerReservationExpired : BackgroundService
     {
-    public class WorkerReservationExpired /*: BackgroundService*/
-    {
-        //private readonly IServiceScopeFactory _scopeFactory;
+        private readonly IServiceScopeFactory _scopeFactory;
 
-        //public WorkerReservationExpired(IServiceScopeFactory scopeFactory)
-        //{
-        //    _scopeFactory = scopeFactory;
-        //}
+        public WorkerReservationExpired(IServiceScopeFactory scopeFactory)
+        {
+            _scopeFactory = scopeFactory;
+        }
 
-        //protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        //{
-        //    try
-        //    {
-        //        while (!stoppingToken.IsCancellationRequested)
-        //        {
-        //            using (var scope = _scopeFactory.CreateScope())
-        //            {
-        //                var reservationQuery =
-        //                    scope.ServiceProvider.GetRequiredService<IGetAllByIdDeleteQuery>();
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            try
+            {
+                while (!stoppingToken.IsCancellationRequested)
+                {
+                    using var scope = _scopeFactory.CreateScope();
 
-        //                var reservationCommand =
-        //                    scope.ServiceProvider.GetRequiredService<IUpdateReservationStatusExpiredCommand>();
+                    var reservationRepository =
+                        scope.ServiceProvider.GetRequiredService<IReservationRepository>();
 
-        //                var seatCommand =
-        //                    scope.ServiceProvider.GetRequiredService<IMarkSeatsAsAvailableCommand>();
+                    var seatRepository =
+                        scope.ServiceProvider.GetRequiredService<ISeatRepository>();
 
-        //                var auditLogCommand =
-        //                    scope.ServiceProvider.GetRequiredService<ICreateAudit_LogCommand>();
+                    var auditLogRepository =
+                        scope.ServiceProvider.GetRequiredService<IAudit_LogRepository>();
 
-        //                var eliminarReservaCommand =
-        //                    scope.ServiceProvider.GetRequiredService<IDeleteReservationCommand>();
+                    // Trae reservas pendientes
+                    var reservations = await reservationRepository.GetPendingReservationsAsync();
 
-        //                var getByIdReservationQuery =
-        //                    scope.ServiceProvider.GetRequiredService<IGetByIdReservationQuery>();
+                    foreach (var reservation in reservations)
+                    {
+                        if (reservation.ExpiresAt <= DateTime.UtcNow)
+                        {
+                            // Liberar asiento
+                            var seat = await seatRepository.GetByIdAsync(reservation.SeatId);
 
-        //                var reservations = await reservationQuery.GetAll();
+                            if (seat != null)
+                            {
+                                seat.Status = "Available";
+                            }
 
-        //                foreach (var elemento in reservations)
-        //                {
-        //                    if (elemento.ExpiresAt < DateTime.UtcNow &&
-        //                        elemento.Status == ReservationStatus.Pending)
-        //                    {
-        //                        Domain.Entities.RESERVATION ReservaDePrueba1 = new Domain.Entities.RESERVATION
-        //                        {
-        //                            Id = elemento.Id,
-        //                            UserId = elemento.UserId,
-        //                            SeatId = elemento.SeatId,
-        //                            Status = elemento.Status,
-        //                            ExpiresAt = elemento.ExpiresAt
-        //                        };
-        //                        await reservationCommand.ExecuteUpdateReservation(
-        //                            ReservaDePrueba1,
-        //                            ReservationStatus.Expired.ToString()
-        //                            );
-        //                        // Nose para que voy a cambiar el estado si despues lo voy a eliminar a la reserva porque la 
-        //                        //DbAppContext solo permite crear una reserva por asiento, independientemente del estado de la reserva
-        //                        await seatCommand.Execute(elemento.SeatId);
-        //                        var auditLog = new Domain.Entities.AUDIT_LOG
-        //                        {
-        //                            Action = "Reserva Expirada",
-        //                            UserId = elemento.UserId,
-        //                            EntityType = "Reservation",
-        //                            EntityId = elemento.Id.ToString(),
-        //                            Details = $"Reserva expirada para {elemento.Id}",
-        //                            CreatedAt = DateTime.UtcNow,
-        //                        };
+                            // Crear log
+                            var auditLog = new Domain.Entities.AUDIT_LOG
+                            {
+                                Action = "Reserva expirada eliminada",
+                                UserId = reservation.UserId,
+                                EntityType = "Reservation",
+                                EntityId = reservation.Id.ToString(),
+                                Details = $"Reserva expirada eliminada para {reservation.Id}",
+                                CreatedAt = DateTime.UtcNow
+                            };
 
-        //                        await auditLogCommand.ExecuteCreateAudit_Log(auditLog);
+                            await auditLogRepository.AddAsync(auditLog);
 
+                            // Eliminar reserva
+                            await reservationRepository.DeleteAsync(reservation.Id);
+                        }
+                    }
 
+                    // Guardar todo junto
+                    await reservationRepository.SaveChangesAsync();
 
-
-        //                        var auditLog2 = new Domain.Entities.AUDIT_LOG
-        //                        {
-        //                            Action = "Reserva expirada eliminada",
-        //                            UserId = elemento.UserId,
-        //                            EntityType = "Reservation",
-        //                            EntityId = elemento.Id.ToString(),
-        //                            Details = $"Reserva expirada eliminada para {elemento.Id}",
-        //                            CreatedAt = DateTime.UtcNow,
-        //                        };
-
-        //                        await auditLogCommand.ExecuteCreateAudit_Log(auditLog2);
-                                
-        //                        await eliminarReservaCommand.ExecuteDeleteReservation(elemento.Id);
-
-
-        //                    }
-        //                }
-        //            }
-
-        //            // Espera 1 minuto antes de volver a revisar
-        //            await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
-        //        }
-        //    }
-        //    catch(OperationCanceledException)
-        //    {
-        //        Console.WriteLine("detener el proceso de expiración de reservas");
-        //    }   
-        //}
+                    // Esperar 1 minuto
+                    await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Proceso de expiración detenido");
+            }
+        }
     }
 }
