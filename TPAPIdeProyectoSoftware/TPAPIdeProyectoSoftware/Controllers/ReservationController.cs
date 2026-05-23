@@ -39,17 +39,24 @@ namespace TPAPIdeProyectoSoftware.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateReservationRequestDto request)
         {
+            if (request == null)
+                return BadRequest("Datos inválidos");
+
             var command = new CreateReservationCommand(
-                request.UserId,request.SeatIds
+                request.UserId,
+                request.SeatId
             );
 
             Guid reservationId = await _createHandler.Handle(command);
 
-            return StatusCode(201, new
-            {
-                message = "Reservation creada correctamente",
-                reservationId = reservationId
-            });
+            return CreatedAtAction(
+                nameof(Create),
+                new { id = reservationId },
+                new
+                {
+                    message = "Reservation creada correctamente",
+                    reservationId = reservationId
+                });
         }
 
         [HttpGet("{id}")]

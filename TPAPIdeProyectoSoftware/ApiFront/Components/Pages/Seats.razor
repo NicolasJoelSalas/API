@@ -197,37 +197,40 @@ else
         {
             var http = HttpClientFactory.CreateClient("Api");
 
-            var dto = new
-            {
-                UserId = Session.UserId,
-                SeatIds = selectedSeatIds
-            };
+            reservationIds.Clear();
 
-            var response = await http.PostAsJsonAsync("/api/reservations", dto);
-
-            if (response.IsSuccessStatusCode)
+            foreach (var seatId in selectedSeatIds)
             {
+                var dto = new
+                {
+                    UserId = Session.UserId,
+                    SeatId = seatId   // uno solo
+                };
+
+                var response = await http.PostAsJsonAsync("/api/reservations", dto);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    message = await response.Content.ReadAsStringAsync();
+                    await LoadSeats();
+                    return;
+                }
+
                 var result = await response.Content
                     .ReadFromJsonAsync<CreateReservationResponseDto>();
 
                 if (result != null)
                 {
-                    reservationIds.Clear();
                     reservationIds.Add(result.ReservationId);
                 }
-
-                selectedSeatIds.Clear();
-
-                message = "Reservas realizadas correctamente";
-                reservaConfirmada = true;
-
-                await LoadSeats();
             }
-            else
-            {
-                message = await response.Content.ReadAsStringAsync();
-                await LoadSeats();
-            }
+
+            selectedSeatIds.Clear();
+
+            message = "Reservas realizadas correctamente";
+            reservaConfirmada = true;
+
+            await LoadSeats();
         }
         catch (Exception ex)
         {
@@ -238,7 +241,6 @@ else
             isLoading = false;
         }
     }
-
     private void GoToPagos()
     {
         var param = string.Join(",", reservationIds);

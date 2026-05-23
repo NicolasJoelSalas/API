@@ -829,13 +829,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "seatIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
+          "seatId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
