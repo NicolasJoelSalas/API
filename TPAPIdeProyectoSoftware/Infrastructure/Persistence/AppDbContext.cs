@@ -67,8 +67,8 @@ namespace Infrastructure.Persistence
                 .WithMany(d => d.RESERVATIONS)
                 .HasForeignKey(l => l.UserId);
 
-                entity.HasOne<SEAT>(r => r.SEAT)
-                .WithMany(re => re.RESERVATIONS)
+                entity.HasOne(r => r.SEAT)
+                .WithMany(s => s.RESERVATIONS)
                 .HasForeignKey(r => r.SeatId);
 
             });

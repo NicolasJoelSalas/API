@@ -96,35 +96,37 @@ namespace Application.UseCases.Reservation.Handlers
                 {
                     seat.Status = SeatStatus.Reserved.ToString();
                     await _seatRepository.UpdateAsync(seat);
-                
-
-                var reservation = new Domain.Entities.RESERVATION
-                {
-                    UserId = command.UserId,
-                    Status = ReservationStatus.Pending.ToString(),
-                    ReservedAt = DateTime.UtcNow,
-                    ExpiresAt = DateTime.UtcNow.AddMinutes(5),
-                    SEATS = seats
-                };
 
 
-                await _reservationRepository.AddAsync(reservation);
-
-                await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
-                {
-                    UserId = command.UserId,
-                    Action = "Reserva exitosa",
-                    EntityType = "Reservation",
-                    EntityId = reservation.Id.ToString(),
-                    Details = $"UsuarioId: {command.UserId}, Seats: {string.Join(",", command.SeatIds)}",
-                    CreatedAt = DateTime.UtcNow
-                });
+                    var reservation = new Domain.Entities.RESERVATION
+                    {
+                        UserId = command.UserId,
+                        Status = ReservationStatus.Pending.ToString(),
+                        ReservedAt = DateTime.UtcNow,
+                        ExpiresAt = DateTime.UtcNow.AddMinutes(5),
+                        SEAT = seat
+                    };
 
 
-                await _reservationRepository.SaveChangesAsync();
+                    await _reservationRepository.AddAsync(reservation);
 
-                return reservation.Id;
+                    await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+                    {
+                        UserId = command.UserId,
+                        Action = "Reserva exitosa",
+                        EntityType = "Reservation",
+                        EntityId = reservation.Id.ToString(),
+                        Details = $"UsuarioId: {command.UserId}, Seats: {string.Join(",", command.SeatIds)}",
+                        CreatedAt = DateTime.UtcNow
+                    });
+
+
+                    await _reservationRepository.SaveChangesAsync();
+
+                    return reservation.Id;
+                }
             }
+
             catch (Exception ex)
             {
 
@@ -140,6 +142,7 @@ namespace Application.UseCases.Reservation.Handlers
 
                 throw;
             }
+            return Guid.Empty;
         }
     }
 }

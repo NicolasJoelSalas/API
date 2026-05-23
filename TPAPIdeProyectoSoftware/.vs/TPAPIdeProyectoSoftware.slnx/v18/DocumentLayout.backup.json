@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Migrations\\20260523191836_Migrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20260523191836_Migrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\domain\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\domain\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\domain\\entities\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\reservation\\handlers\\createreservationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "20260523191836_Migrations.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Migrations\\20260523191836_Migrations.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260523191836_Migrations.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Migrations\\20260523191836_Migrations.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20260523191836_Migrations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T19:18:36.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SECTOR.cs",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Domain\\Entities\\SECTOR.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\SECTOR.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ApiFront\\appsettings.Development.json",
@@ -84,46 +101,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SEAT.cs",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Domain\\Entities\\SEAT.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\SEAT.cs",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Domain\\Entities\\SEAT.cs",
               "RelativeToolTip": "Domain\\Entities\\SEAT.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-23T18:46:00.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Persistence\\AppDbContext.cs",
               "RelativeToolTip": "Infrastructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAQwDkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-23T18:44:06.37Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RESERVATION.cs",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Domain\\Entities\\RESERVATION.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\RESERVATION.cs",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Domain\\Entities\\RESERVATION.cs",
               "RelativeToolTip": "Domain\\Entities\\RESERVATION.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-23T18:43:54.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\appsettings.Development.json",
@@ -136,15 +153,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CreateReservationHandler.cs",
               "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
               "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAwH4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAQwJAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T18:43:14.874Z"
+              "WhenOpened": "2026-05-23T18:43:14.874Z",
+              "EditorCaption": ""
             }
           ]
         }
