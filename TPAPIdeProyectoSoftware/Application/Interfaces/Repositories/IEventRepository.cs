@@ -15,5 +15,6 @@ namespace Application.Interfaces.Repositories
         Task DeleteAsync(EVENT eventEntity);
 
         Task<bool> NameExistsAsync(string name);
+
     }
 }

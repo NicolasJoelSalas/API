@@ -1,22 +1,32 @@
 ﻿using Application.DTOs;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Repositories;
+using Application.UseCases.EVENT.Queries;
 
-public class GetSectorsByEventHandler /*: IGetSectorsByEventHandler*/
+public class GetSectorsByEventHandler : IGetSectorsByEventHandler
 {
-    //private readonly IGetSectorsByEventQuery _query;
+    private readonly ISectorRepository _sectorRepository;
 
-    //public GetSectorsByEventHandler(IGetSectorsByEventQuery query)
-    //{
-    //    _query = query;
-    //}
+    public GetSectorsByEventHandler( ISectorRepository sectorRepository)
+    {
 
-    //public async Task<(List<SectorResponseDto>, string)> Handle(int eventId)
-    //{
-    //    var sectors = await _query.GetByEventId(eventId);
+        _sectorRepository = sectorRepository;
+    }
 
-    //    if (!sectors.Any())
-    //        return (new List<SectorResponseDto>(), "No hay sectores");
+    public async Task<(List<SectorResponseDto>, string)> Handle(int eventId)
+    {
+        var sectors = await _sectorRepository.GetSectorsByEventId(eventId);
 
-    //    return (sectors, "OK");
-    //}
+        if (!sectors.Any())
+            return (new List<SectorResponseDto>(), "No hay sectores para este evento");
+
+        var sectorDtos = sectors.Select(sector => new SectorResponseDto
+        {
+            Id = sector.Id,
+            Name = sector.Name,
+            Price = sector.Price
+        }).ToList();
+
+        return (sectorDtos, "OK");
+    }
 }

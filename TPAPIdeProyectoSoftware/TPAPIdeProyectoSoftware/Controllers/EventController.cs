@@ -1,7 +1,9 @@
 ﻿using Application.DTOs.Event;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Handlers.Sector;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.EVENT.Queries;
+using Application.UseCases.SECTOR.Handlers;
 using Application.UseCases.USER.Commands;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,22 +18,25 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IUpdateEventHandler _updateEventHandler;
         private readonly IGetAllEventHandler _getAllEventHandler;
         private readonly IGetByIdEventHandler _getByIdEventHandler;
-        //private readonly IGetSectorsByEventHandler _getSectorsByEventHandler;
-        //private readonly IGetSeatsBySectorHandler _getSeatsBySectorHandler;
+        private readonly IGetSectorsByEventHandler _getSectorsByEventHandler;
+        private readonly IGetSeatsBySectorHandler _getSeatsBySectorHandler;
 
         public EventController(
             ICreateEventHandler createEventHandler,
             IDeleteEventHandler deleteEventHandler,
             IUpdateEventHandler updateEventHandler,
             IGetAllEventHandler getAllEventHandler,
-            IGetByIdEventHandler getByIdEventHandler)
+            IGetByIdEventHandler getByIdEventHandler,
+            IGetSectorsByEventHandler getSectorsByEventHandler,
+            IGetSeatsBySectorHandler getSeatsBySectorHandler)
         {
             _createEventHandler = createEventHandler;
             _deleteEventHandler = deleteEventHandler;
             _updateEventHandler = updateEventHandler;
             _getAllEventHandler = getAllEventHandler;
             _getByIdEventHandler = getByIdEventHandler;
-
+            _getSectorsByEventHandler = getSectorsByEventHandler;
+            _getSeatsBySectorHandler = getSeatsBySectorHandler;
         }
 
         [HttpPost]
@@ -115,30 +120,27 @@ namespace TPAPIdeProyectoSoftware.Controllers
             return Ok(new { message });
         }
 
-        //[HttpGet("{eventId}/sectors")]
-        //public async Task<IActionResult> GetSectorsByEvent(int eventId)
-        //{
-        //    var query = new GetSectorsByEventQuery(eventId);
+        [HttpGet("{eventId}/sectors")]
+        public async Task<IActionResult> GetSectorsByEvent(int eventId)
+        {
 
-        //    var (sectors, message) = await _getSectorsByEventHandler.Handle(query);
+            var (sectors, message) = await _getSectorsByEventHandler.Handle(eventId);
 
-        //    if (message != "OK")
-        //        return NotFound(new { message });
+            if (message != "OK")
+                return NotFound(new { message });
 
-        //    return Ok(sectors);
-        //}
+            return Ok(sectors);
+        }
 
-        //[HttpGet("sector/{sectorId}/seats")]
-        //public async Task<IActionResult> GetSeatsBySector(int sectorId)
-        //{
-        //    var query = new GetSeatsBySectorQuery(sectorId);
+        [HttpGet("sectors/{sectorId}/seats")]
+        public async Task<IActionResult> GetSeatsBySector(int sectorId)
+        {
+            var (seats, message) = await _getSeatsBySectorHandler.Handle(sectorId);
 
-        //    var (seats, message) = await _getSeatsBySectorHandler.Handle(query);
+            if (message != "OK")
+                return NotFound(new { message });
 
-        //    if (message != "OK")
-        //        return NotFound(new { message });
-
-        //    return Ok(seats);
-        //}
+            return Ok(seats);
+        }
     }
 }

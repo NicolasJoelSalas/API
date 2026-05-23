@@ -13,5 +13,7 @@ namespace Application.Interfaces.Repositories
         Task UpdateAsync(SECTOR seat);
 
         Task DeleteAsync(SECTOR sector);
+
+        Task<List<SECTOR>> GetSectorsByEventId(int eventId);
     }
 }

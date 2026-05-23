@@ -1,27 +1,37 @@
-﻿using Application.DTOs.User;
+﻿using Application.DTOs;
+using Application.DTOs.User;
 using Application.Interfaces.Handlers.Sector;
+using Application.Interfaces.Repositories;
 
 
 namespace Application.UseCases.SECTOR.Handlers
 {
-    public class GetSeatsBySectorHandler /*: IGetSeatsBySectorHandler*/
+    public class GetSeatsBySectorHandler : IGetSeatsBySectorHandler 
     {
-        //private readonly IGetSeatsBySectorQuery _query;
+        private readonly ISeatRepository _seatRepository;
 
-        //public GetSeatsBySectorHandler(IGetSeatsBySectorQuery query)
-        //{
-        //    _query = query;
-        //}
+        public GetSeatsBySectorHandler(ISeatRepository seatRepository)
+        {
+            _seatRepository = seatRepository;
+        }
 
-        //public async Task<(List<SeatResponseDto>, string)> Handle(int sectorId)
-        //{
-        //    var seats = await _query.GetBySectorId(sectorId);
+        public async Task<(List<SeatResponseDto>, string)> Handle(int sectorId)
+        {
+            var seats = await _seatRepository.GetSeatBySectorId(sectorId);
 
-        //    if (seats == null || !seats.Any())
-        //        return (new List<SeatResponseDto>(), "No hay asientos");
+            if (seats == null || !seats.Any())
+                return (new List<SeatResponseDto>(), "No hay asientos");
+            
+            var seatDtos = seats.Select(seat => new SeatResponseDto
+            {
+                Id = seat.Id,
+                SectorId = seat.SectorId,
+                SeatNumber = seat.SeatNumber,
+                Status = seat.Status,
+                Version = seat.Version}).ToList();
 
-        //    return (seats, "OK");
-        //}
+            return (seatDtos, "OK");
+        }
     }
 }
 

@@ -14,6 +14,8 @@ namespace Application.Interfaces.Repositories
 
         Task DeleteAsync(SEAT seat);
 
+        Task<List<SEAT>> GetSeatBySectorId(int sectorId);
+
         //Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
         //Task MarkAsAvailableAsync(Guid seatId);
     }

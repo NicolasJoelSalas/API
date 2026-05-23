@@ -7,24 +7,16 @@
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\seats.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\sectors.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D6DB6736-CEEC-4B8A-8E32-4CC0214591E0}|ApiFront\\ApiFront.csproj|solutionrelative:apifront\\components\\pages\\events.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\sectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\audit_logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\audit_logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,8 +27,28 @@
       "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\sectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\sector\\handlers\\getseatsbysectorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06098BED-8FED-0AD8-CD48-B7CA5A662043}|TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj|solutionrelative:tpapideproyectosoftware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usecases\\event\\handlers\\getsectorsbyeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\nicos\\documents\\github\\api\\tpapideproyectosoftware\\application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\repositories\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -72,9 +84,74 @@
               "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Seats.razor",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Seats.razor",
               "RelativeToolTip": "ApiFront\\Components\\Pages\\Seats.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAQwJAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-22T20:21:17.991Z",
+              "WhenOpened": "2026-05-23T02:08:47.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SectorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SectorRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SectorRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\SectorRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:11:22.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Program.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFoAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:09:49.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAmwIwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:05:59.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SeatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\SeatRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Infrastructure\\Repositories\\SeatRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\SeatRepository.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAcwDUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:02:53.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SeatController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T01:54:32.59Z",
               "EditorCaption": ""
             },
             {
@@ -85,100 +162,74 @@
               "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
               "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SectorController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:11:37.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Sectors.razor",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Sectors.razor",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Sectors.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-22T20:10:26.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SeatController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\SeatController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:11:35.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:11:32.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Audit_LogController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\Audit_LogController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:11:25.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EventController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\EventController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:08:28.356Z",
+              "WhenOpened": "2026-05-23T01:54:33.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Events.razor",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
-              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Events.razor",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Events.razor",
-              "RelativeToolTip": "ApiFront\\Components\\Pages\\Events.razor",
-              "ViewState": "AgIAADsAAAAAAAAAAAAmwE8AAAAnAAAAAAAAAA==",
+              "Title": "Sectors.razor",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
+              "RelativeDocumentMoniker": "ApiFront\\Components\\Pages\\Sectors.razor",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\ApiFront\\Components\\Pages\\Sectors.razor",
+              "RelativeToolTip": "ApiFront\\Components\\Pages\\Sectors.razor",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-22T20:08:19.081Z",
+              "WhenOpened": "2026-05-23T02:08:59.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\UserController.cs",
-              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:11:39.096Z",
+              "WhenOpened": "2026-05-23T02:12:09.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ISeatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Repositories\\ISeatRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:03:32.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetSeatsBySectorHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\SECTOR\\Handlers\\GetSeatsBySectorHandler.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T02:01:03.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetSectorsByEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "ToolTip": "C:\\Users\\nicos\\Documents\\GitHub\\API\\TPAPIdeProyectoSoftware\\Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "RelativeToolTip": "Application\\UseCases\\EVENT\\Handlers\\GetSectorsByEventHandler.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T01:39:50.745Z",
               "EditorCaption": ""
             }
           ]

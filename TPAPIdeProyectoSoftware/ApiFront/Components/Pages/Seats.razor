@@ -148,7 +148,7 @@ else
         var http = HttpClientFactory.CreateClient("Api");
 
         seats = await http.GetFromJsonAsync<List<SeatDto>>(
-            $"/events/sectors/{SectorId}/seats"
+            $"api/events/sectors/{SectorId}/seats"
         ) ?? new();
     }
 

@@ -20,23 +20,20 @@ namespace TPAPIdeProyectoSoftware.Controllers
         private readonly IDeleteReservationHandler _deleteHandler;
         private readonly IGetAllReservationHandler _getAllHandler;
         private readonly IGetByIdReservationHandler _getByIdHandler;
-        private readonly ICreateMultipleReservationHandler _createMultipleHandler;
-        private readonly IConfirmPaymentHandler _confirmPaymentHandler;
+
+
 
         public ReservationController(
             ICreateReservationHandler createHandler,
             IDeleteReservationHandler deleteHandler,
             IGetAllReservationHandler getAllHandler,
-            IGetByIdReservationHandler getByIdHandler,
-            ICreateMultipleReservationHandler createMultipleHandler,
-            IConfirmPaymentHandler confirmPaymentHandler)
+            IGetByIdReservationHandler getByIdHandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
             _getAllHandler = getAllHandler;
             _getByIdHandler = getByIdHandler;
-            _createMultipleHandler = createMultipleHandler;
-            _confirmPaymentHandler = confirmPaymentHandler;
+
         }
 
         [HttpPost]

@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Repositories
 {
@@ -44,6 +45,13 @@ namespace Infrastructure.Repositories
         {
             _context.SEAT.Remove(seat);
             await _context.SaveChangesAsync();
+        }
+        public async Task<List<SEAT>> GetSeatBySectorId(int sectorId)
+        {
+            return await _context.SEAT
+                .AsNoTracking()
+                .Where(s => s.SectorId == sectorId)
+                .ToListAsync();
         }
     }
 }

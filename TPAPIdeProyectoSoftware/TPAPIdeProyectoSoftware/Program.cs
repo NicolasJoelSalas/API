@@ -2,6 +2,7 @@
 using Application.Interfaces.Handler;
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Handlers.Event;
+using Application.Interfaces.Handlers.Sector;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases;
@@ -10,6 +11,7 @@ using Application.UseCases.Event.Handlers;
 using Application.UseCases.EVENT.Handlers;
 using Application.UseCases.EVENT.Queries;
 using Application.UseCases.Reservation.Handlers;
+using Application.UseCases.SECTOR.Handlers;
 using Application.UseCases.USER.Handlers;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
@@ -46,7 +48,7 @@ builder.Services.AddScoped<IUpdateEventHandler, UpdateEventHandler>();
 builder.Services.AddScoped<IDeleteEventHandler, DeleteEventHandler>();
 builder.Services.AddScoped<IGetByIdEventHandler, GetEventByIdHandler>();
 builder.Services.AddScoped<IGetAllEventHandler, GetAllEventHandler>();
-//builder.Services.AddScoped<IGetSectorsByEventHandler, GetSectorsByEventHandler>();
+builder.Services.AddScoped<IGetSectorsByEventHandler, GetSectorsByEventHandler>();
 
 //User
 builder.Services.AddScoped<ICreateUserHandler, CreateUserHandler>();
@@ -86,7 +88,7 @@ builder.Services.AddScoped<IUpdateSectorHandler, UpdateSectorHandler>();
 builder.Services.AddScoped<IDeleteSectorHandler, DeleteSectorHandler>();
 builder.Services.AddScoped<IGetByIdSectorHandler, GetByIdSectorHandler>();
 builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
-//builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
+builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
 //builder.Services.AddHostedService<WorkerReservationExpired>();
 

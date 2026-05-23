@@ -45,5 +45,14 @@ namespace Infrastructure.Repositories
             _context.SECTOR.Remove(sector);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<SECTOR>> GetSectorsByEventId(int eventId)
+        {
+            return await _context.SECTOR
+                .AsNoTracking()
+                .Where(s => s.EventId == eventId)
+                .ToListAsync();
+
+        }
     }
 }
