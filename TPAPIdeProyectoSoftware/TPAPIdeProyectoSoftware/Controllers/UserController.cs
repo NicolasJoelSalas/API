@@ -91,7 +91,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message == "Usuario no encontrado")
                 return NotFound(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpPut("{id}")]
@@ -112,7 +112,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message != "Usuario actualizado correctamente")
                 return BadRequest(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpPost("login")]

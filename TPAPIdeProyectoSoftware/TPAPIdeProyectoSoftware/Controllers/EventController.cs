@@ -87,9 +87,9 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var message = await _deleteEventHandler.Handle(command);
 
             if (message == "Evento no encontrado")
-                return NotFound(new { message });
+                return StatusCode(404, new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpPut("{id}")]
@@ -106,12 +106,12 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var message = await _updateEventHandler.Handle(command);
 
             if (message == "Evento no encontrado")
-                return NotFound(new { message });
+                return StatusCode(404, new { message });
 
             if (message != "Evento actualizado correctamente")
                 return BadRequest(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpGet("{eventId}/sectors")]

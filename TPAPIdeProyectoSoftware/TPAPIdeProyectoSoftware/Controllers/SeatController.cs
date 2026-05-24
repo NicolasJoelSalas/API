@@ -94,7 +94,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message == "Seat no encontrado")
                 return NotFound(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpPut("{id}")]
@@ -117,7 +117,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message != "Seat actualizado correctamente")
                 return BadRequest(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
     }
 }

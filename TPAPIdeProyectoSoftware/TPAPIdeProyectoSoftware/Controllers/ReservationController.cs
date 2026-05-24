@@ -93,7 +93,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message == "Reservation no encontrado")
                 return NotFound(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
 

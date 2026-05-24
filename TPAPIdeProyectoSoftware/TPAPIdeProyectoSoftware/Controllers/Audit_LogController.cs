@@ -61,7 +61,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var (auditLog, message) = await _getByIdAudit_LogHandler.Handle(query);
 
             if (message != "OK")
-                return NotFound(new { message });
+                return StatusCode(404, new { message });
 
             return Ok(auditLog);
         }
@@ -74,7 +74,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var (auditLogs, message) = await _getAllAudit_LogHandler.Handle(query);
 
             if (message != "OK")
-                return Ok(new { message });
+                return StatusCode(400, new { message });
 
             return Ok(auditLogs);
         }
@@ -87,7 +87,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var message = await _deleteHandler.Handle(command);
 
             if (message == "Audit_Log no encontrado")
-                return NotFound(new { message });
+                return StatusCode(400, new { message });
 
             return Ok(new { message });
         }
@@ -98,7 +98,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             var message = await _updateHandler.Handle(id, dto);
 
             if (message == "Audit_Log no encontrado")
-                return NotFound(new { message });
+                return StatusCode(204, new { message });
 
             return Ok(new { message });
         }

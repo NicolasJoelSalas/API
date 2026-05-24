@@ -88,7 +88,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message == "Sector no encontrado")
                 return NotFound(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
 
         [HttpPut("{id}")]
@@ -110,7 +110,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
             if (message != "Sector actualizado correctamente")
                 return BadRequest(new { message });
 
-            return Ok(new { message });
+            return StatusCode(204, new { message });
         }
     }
 }
