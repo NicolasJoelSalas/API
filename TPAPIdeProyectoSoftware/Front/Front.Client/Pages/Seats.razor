@@ -54,24 +54,59 @@ else
         ← Volver
     </button>
 
-    <button class="btn btn-success"
+    <button class="btnaa"
             @onclick="CreateReservation"
             disabled="@isLoading">
         @(isLoading ? "Reservando..." : "Confirmar Reserva")
     </button>
 
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <p style="color:@(reservaConfirmada ? "lightgreen" : "salmon")">
-            @message
-        </p>
-    }
-
+    
     @if (reservaConfirmada)
     {
         <button class="btnaa" @onclick="GoToPagos">
             Realizar Pago
         </button>
+    }
+    @if (showNoSeatModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Seleccioná una butaca</h3>
+
+                <p>
+                    Debés seleccionar al menos un asiento antes de continuar.
+                </p>
+
+                <button class="modal-btn"
+                        @onclick="CloseNoSeatModal">
+                    Aceptar
+                </button>
+
+            </div>
+        </div>
+    }
+    @if (showReservationModal)
+    {
+        <div class="modal-overlay">
+            <div class="modal-box">
+
+                <h3>Reserva realizada</h3>
+
+                <p>
+                    @message
+                </p>
+
+                <button class="btnaa"
+                        @onclick="CloseReservationModal">
+                    Aceptar
+                </button>
+                <button class="btnaa" @onclick="GoToPagos">
+                    Realizar Pago
+                </button>
+
+            </div>
+        </div>
     }
 }
 
@@ -100,6 +135,9 @@ else
 </div>
 
 @code {
+    private bool showNoSeatModal = false;
+    private bool showReservationModal = false;
+
     private List<Guid> reservationIds = new();
 
     private bool reservaConfirmada = false;
@@ -113,6 +151,15 @@ else
 
     private string pos = "center";
     private string message = "";
+
+    private void CloseNoSeatModal()
+    {
+        showNoSeatModal = false;
+    }
+    private void CloseReservationModal()
+    {
+        showReservationModal = false;
+    }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -144,7 +191,9 @@ else
     {
         if (isLoading) return;
 
-        reservaConfirmada = false;
+    showNoSeatModal = false;
+    showReservationModal = false;
+    reservaConfirmada = false;
 
         if (seat.Status == "Reserved" || seat.Status == "Sold")
             return;
@@ -173,7 +222,7 @@ else
     {
         if (!selectedSeatIds.Any())
         {
-            message = "Seleccioná al menos un asiento";
+            showNoSeatModal = true;
             return;
         }
 
@@ -209,6 +258,8 @@ else
 
             selectedSeatIds.Clear();
             reservaConfirmada = true;
+
+            showReservationModal = true;
 
             await LoadSeats();
         }
