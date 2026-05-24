@@ -41,9 +41,7 @@ else
                         Reserva #@item.Id.ToString()[..8]
                     </div>
 
-                    <p>
-                        Usuario: @item.UserId
-                    </p>
+                    
 
                     <p>
                         Estado:
@@ -52,7 +50,7 @@ else
 
                     <p>
                         Asiento:
-                        @item.SeatId
+                        @seats?.FirstOrDefault(s => s.Id == item.SeatId)?.SeatNumber
                     </p>
 
                     <p>
@@ -87,7 +85,7 @@ else
 @code {
 
     private List<ReservationDto>? listReservations;
-
+    private List<SeatDto>? seats;
     protected override async Task OnInitializedAsync()
     {
         try
@@ -96,11 +94,17 @@ else
                 .GetFromJsonAsync<List<ReservationDto>>
                 ("api/reservations")
                 ?? new();
-
-            // Mostrar solo reservas del usuario actual
+            var asientos = await Http.GetFromJsonAsync<List<SeatDto>>(
+                $"api/seats"
+                ) ?? new();
+            
             listReservations = reservas
                 .Where(r => r.UserId == Session.UserId)
                 .ToList();
+
+            seats = asientos.Where(s => listReservations.Any(r => r.SeatId == s.Id)).ToList();
+
+
         }
         catch (Exception ex)
         {
@@ -114,10 +118,7 @@ else
         await JS.InvokeVoidAsync("history.back");
     }
 
-    private void GoToDetails(Guid id)
-    {
-        Nav.NavigateTo($"/reservation/{id}");
-    }
+    
     private async Task GoToPayment(ReservationDto item)
     {
         try
@@ -157,6 +158,7 @@ else
         public Guid Id { get; set; }
 
         public int SectorId { get; set; }
+        public int SeatNumber { get; set; }
     }
     private string GetStatusTitle(string? status)
     {

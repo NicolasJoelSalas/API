@@ -91,5 +91,15 @@ namespace Infrastructure.Repositories
                 .Select(s => s.Id)
                 .ToListAsync();
         }
+        public async Task<bool> ReserveSeatAsync(Guid seatId, int expectedVersion)
+        {
+            var rows = await _context.SEAT
+                .Where(s => s.Id == seatId && s.Version == expectedVersion)
+                .ExecuteUpdateAsync(s =>
+                    s.SetProperty(x => x.Status, "Reserved")
+                     .SetProperty(x => x.Version, x => x.Version + 1));
+
+            return rows > 0;
+        }
     }
 }

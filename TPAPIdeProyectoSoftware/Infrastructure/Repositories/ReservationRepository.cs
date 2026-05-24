@@ -107,5 +107,6 @@ namespace Infrastructure.Repositories
                 .ExecuteUpdateAsync(s =>
                     s.SetProperty(se => se.Status, status));
         }
+        
     }
 }

@@ -21,7 +21,7 @@ namespace Application.Interfaces.Repositories
         Task IncrementVersionAsync(Guid seatId);
 
         Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds);
-        //Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
-        //Task MarkAsAvailableAsync(Guid seatId);
+
+        Task<bool> ReserveSeatAsync(Guid seatId, int expectedVersion);
     }
 }

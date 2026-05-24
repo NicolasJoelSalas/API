@@ -27,7 +27,7 @@ namespace Application.UseCases.RESERVATION.Handlers
         }
 
         public async Task<List<Guid>> Handle(
-            CreateReservationCommand request)
+    CreateReservationCommand request)
         {
             if (request.UserId <= 0)
                 throw new Exception("El Id del usuario es obligatorio");
@@ -64,51 +64,36 @@ namespace Application.UseCases.RESERVATION.Handlers
 
             foreach (var seatId in availableSeatIds)
             {
-                try
+                var seat = await _seatRepository.GetByIdAsync(seatId);
+
+                if (seat == null)
+                    continue;
+
+                var success = await _seatRepository.ReserveSeatAsync(seatId, seat.Version);
+
+                if (!success)
+                    continue;
+
+                var reservation = new Domain.Entities.RESERVATION
                 {
-                    var seat =
-                        await _seatRepository.GetByIdAsync(seatId);
+                    UserId = request.UserId,
+                    SeatId = seatId,
+                    Status = "Pending",
+                    ReservedAt = DateTime.UtcNow,
+                    ExpiresAt = DateTime.UtcNow.AddMinutes(5)
+                };
 
-                    if (seat == null)
-                        continue;
+                reservations.Add(reservation);
 
-                    if (seat.Status is "Reserved"
-                        or "Sold")
-                        continue;
-
-
-                    await _seatRepository.UpdateStatusAsync(seatId, "Reserved");
-                    await _seatRepository.IncrementVersionAsync(seatId);
-
-                    Domain.Entities.RESERVATION reservation = new Domain.Entities.RESERVATION
-                    {
-
-                        UserId = request.UserId,
-                        SeatId = seatId,
-                        Status = "Pending",
-                        ReservedAt = DateTime.UtcNow,
-                        ExpiresAt = DateTime.UtcNow.AddMinutes(5)
-                    };
-                    reservations.Add(reservation);
-
-                    await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
-                    {
-                        UserId = request.UserId,
-                        Action = "Reserva exitosa",
-                        EntityType = "Reservation",
-                        EntityId = seatId.ToString(),
-                        Details = "Reserva creada",
-                        CreatedAt = DateTime.UtcNow
-                    });
-                }
-                finally
+                await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
                 {
-                   Console.WriteLine("Reservation processed.");
-                }
-                //catch (DbUpdateConcurrencyException)
-                //{
-                //    continue;
-                //}
+                    UserId = request.UserId,
+                    Action = "Reserva exitosa",
+                    EntityType = "Reservation",
+                    EntityId = seatId.ToString(),
+                    Details = "Reserva creada",
+                    CreatedAt = DateTime.UtcNow
+                });
             }
 
             if (!reservations.Any())
@@ -117,7 +102,7 @@ namespace Application.UseCases.RESERVATION.Handlers
 
             return await _reservationRepository.AddAllAsync(reservations);
 
-            
+
         }
     }
 }
