@@ -73,16 +73,10 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllEvents()
+        public async Task<IActionResult> GetAllEvents([FromQuery] GetAllEventQuery query)
         {
-            var query = new GetAllEventQuery();
-
-            var (events, message) = await _getAllEventHandler.Handle(query);
-
-            if (message != "OK")
-                return NotFound(new { message });
-
-            return Ok(events);
+            var result = await _getAllEventHandler.Handle(query);
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]

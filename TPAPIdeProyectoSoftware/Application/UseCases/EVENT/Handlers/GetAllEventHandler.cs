@@ -15,23 +15,26 @@ namespace Application.UseCases.EVENT.Handlers
             _eventRepository = eventRepository;
         }
 
-        public async Task<(List<EventResponseDto> Events, string message)> Handle(GetAllEventQuery query)
+        public async Task<PagedResponse<EventResponseDto>> Handle(GetAllEventQuery query)
         {
-            var events = await _eventRepository.GetAllAsync();
+            var (events, total) = await _eventRepository.GetPagedAsync(query.Page, query.PageSize);
 
-            if (events == null || !events.Any())
-                return (new List<EventResponseDto>(), "No hay eventos");
-
-            var eventDtos = events.Select(eventEntity => new EventResponseDto
+            var eventDtos = events.Select(e => new EventResponseDto
             {
-                Id = eventEntity.Id,
-                Name = eventEntity.Name,
-                EventDate = eventEntity.EventDate,
-                Venue = eventEntity.Venue,
-                Status = eventEntity.Status
+                Id = e.Id,
+                Name = e.Name,
+                EventDate = e.EventDate,
+                Venue = e.Venue,
+                Status = e.Status
             }).ToList();
 
-            return (eventDtos, "OK");
+            return new PagedResponse<EventResponseDto>
+            {
+                Data = eventDtos,
+                Total = total,
+                Page = query.Page,
+                PageSize = query.PageSize
+            };
         }
 
 

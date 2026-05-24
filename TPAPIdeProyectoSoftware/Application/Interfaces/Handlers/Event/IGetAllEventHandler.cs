@@ -5,6 +5,6 @@ namespace Application.Interfaces.Handlers.Event
 {
     public interface IGetAllEventHandler
     {
-        Task<(List<EventResponseDto> Events, string message)> Handle(GetAllEventQuery query);
+        Task<PagedResponse<EventResponseDto>> Handle(GetAllEventQuery query);
     }
 }

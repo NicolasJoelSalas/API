@@ -2,8 +2,6 @@
 @inject IJSRuntime JS
 @inject HttpClient Http
 @inject NavigationManager Nav
-@using Front.Client.Services
-@inject UserSession Session
 
 <h3 class="mb-4 text-center">🎟️ Eventos Disponibles</h3>
 
@@ -24,7 +22,7 @@ else
 {
     <div class="event-list">
 
-        @foreach (var item in PagedEvents)
+        @foreach (var item in lisevents)
         {
             <div class="event-card">
 
@@ -41,14 +39,13 @@ else
         }
 
     </div>
+
     <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
 
         <button class="btn btn-secondary"
                 disabled="@(currentPage == 1)"
                 @onclick="PreviousPage">
-
             ← Anterior
-
         </button>
 
         <span>
@@ -58,7 +55,6 @@ else
         <button class="btn btn-secondary"
                 disabled="@(currentPage == TotalPages)"
                 @onclick="NextPage">
-
             Siguiente →
         </button>
 
@@ -70,54 +66,57 @@ else
 }
 
 @code {
-    public static class ApiRoutes
-    {
-        public const string Events = "api/v1/events";
 
-        public static string EventSectors(int id)
-            => $"/events/{id}/sectors";
-    }
+    private List<EventDto> lisevents = new();
 
     private int currentPage = 1;
     private int pageSize = 4;
-    private IEnumerable<EventDto> PagedEvents =>
-    lisevents?
-    .Skip((currentPage - 1) * pageSize)
-    .Take(pageSize)
-    ?? Enumerable.Empty<EventDto>();
+    private int totalItems;
+
     private int TotalPages =>
-    (int)Math.Ceiling(
-        (double)lisevents.Count / pageSize
-    );
+        totalItems == 0 ? 1 : (int)Math.Ceiling((double)totalItems / pageSize);
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPage();
+    }
+
+    private async Task LoadPage()
+    {
+        var response = await Http.GetFromJsonAsync<PagedResponse<EventDto>>(
+            $"/api/v1/events?page={currentPage}&pageSize={pageSize}"
+        );
+
+        lisevents = response?.Data ?? new List<EventDto>();
+        totalItems = response?.Total ?? 0;
+    }
+
+    private async Task NextPage()
+    {
+        if (currentPage < TotalPages)
+        {
+            currentPage++;
+            await LoadPage();
+        }
+    }
+
+    private async Task PreviousPage()
+    {
+        if (currentPage > 1)
+        {
+            currentPage--;
+            await LoadPage();
+        }
+    }
 
     private async Task GoBack()
     {
         await JS.InvokeVoidAsync("history.back");
     }
-    private List<EventDto>? lisevents;
-
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            await Task.Delay(400);
-
-            lisevents = await Http.GetFromJsonAsync<List<EventDto>>
-            (
-            ApiRoutes.Events
-            );
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error cargando eventos: {ex.Message}");
-            lisevents = new List<EventDto>();
-        }
-    }
 
     private void GoToSectors(int id)
     {
-        Console.WriteLine($"CLICK EVENTO ID: {id}");
-        Nav.NavigateTo(ApiRoutes.EventSectors(id));
+        Nav.NavigateTo($"/events/{id}/sectors");
     }
 
     public class EventDto
@@ -125,16 +124,10 @@ else
         public int Id { get; set; }
         public string Name { get; set; }
     }
-    private void NextPage()
-    {
-    if(currentPage < TotalPages)
-        currentPage++;
-}
 
-private void PreviousPage()
-{
-    if(currentPage > 1)
-        currentPage--;
-}
-    
+    public class PagedResponse<T>
+    {
+        public List<T> Data { get; set; } = new();
+        public int Total { get; set; }
+    }
 }

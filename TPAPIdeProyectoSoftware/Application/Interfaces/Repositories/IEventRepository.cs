@@ -16,5 +16,7 @@ namespace Application.Interfaces.Repositories
 
         Task<bool> NameExistsAsync(string name);
 
+        Task<(List<EVENT> Events, int Total)> GetPagedAsync(int page, int pageSize);
+
     }
 }

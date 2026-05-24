@@ -3,31 +3,39 @@
 ========================= */
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
+    padding: 0;
 }
+
 body {
-    margin: 0;
+    min-height: 100vh;
     padding-top: 100px;
     font-family: 'Segoe UI', sans-serif;
     color: #f5f5f5;
-    background: radial-gradient(circle at top, #141414 0%, #0a0a0a 60%, #000 100%);
+    background: radial-gradient( circle at top, #141414 0%, #0a0a0a 60%, #000 100% );
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 
 /* =========================
-   LAYOUT (🔥 CLAVE)
+   LAYOUT
 ========================= */
+
 .page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: transparent;
 }
+
 
 
 /* =========================
    NAVBAR
 ========================= */
+
 .top-navbar {
     position: fixed;
     top: 0;
@@ -85,10 +93,11 @@ body {
 /* =========================
    CARDS GENERALES
 ========================= */
+
 .event-card {
     padding: 18px;
     border-radius: 14px;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    background: linear-gradient( 145deg, #1a1a1a, #0f0f0f );
     border: 1px solid rgba(255,255,255,0.06);
     transition: 0.2s;
     cursor: pointer;
@@ -100,5 +109,25 @@ body {
     }
 
 
+/* =========================
+   ERROR UI
+========================= */
 
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
 
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }

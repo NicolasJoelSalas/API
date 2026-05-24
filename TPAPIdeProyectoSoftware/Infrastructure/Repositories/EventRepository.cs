@@ -48,6 +48,20 @@ namespace Infrastructure.Repositories
             _context.EVENT.Remove(eventEntity);
             await _context.SaveChangesAsync();
         }
+        public async Task<(List<EVENT> Events, int Total)> GetPagedAsync(int page, int pageSize)
+        {
+            var query = _context.EVENT.AsNoTracking();
+
+            var total = await query.CountAsync();
+
+            var data = await query
+                .OrderBy(x => x.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (data, total);
+        }
 
     }
 }
