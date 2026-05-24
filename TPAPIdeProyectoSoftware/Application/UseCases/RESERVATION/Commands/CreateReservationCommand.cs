@@ -2,7 +2,7 @@
 
 namespace Application.UseCases.RESERVATION.Commands
 {
-    public class CreateReservationCommand
+    public class CreateReservationCommand : IRequest<List<Guid>>
     {
         public int UserId { get; }
         public List<Guid> SeatIds { get; }

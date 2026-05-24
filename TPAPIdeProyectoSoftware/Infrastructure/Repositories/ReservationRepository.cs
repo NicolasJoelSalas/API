@@ -89,5 +89,16 @@ namespace Infrastructure.Repositories
             await transaction.CommitAsync();
         }
 
+        public async Task<List<Guid>> AddAllAsync(List<RESERVATION> reservations)
+        {
+            await _context.RESERVATION.AddRangeAsync(reservations);
+
+            await _context.SaveChangesAsync();
+
+            return reservations
+                .Select(r => r.Id)
+                .ToList();
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
+using System.Net.NetworkInformation;
 
 namespace Infrastructure.Repositories
 {
@@ -67,6 +68,27 @@ namespace Infrastructure.Repositories
             return await _context.SEAT
                 .AsNoTracking()
                 .Where(s => s.SectorId == sectorId)
+                .ToListAsync();
+        }
+        public async Task UpdateStatusAsync(Guid seatId, string status)
+        {
+            await _context.SEAT
+                .Where(s => s.Id == seatId)
+                .ExecuteUpdateAsync(s =>
+                    s.SetProperty(se => se.Status, status));
+        }
+        public async Task IncrementVersionAsync(SEAT seat)
+        {
+            await _context.SEAT
+                .Where(s => s.Id == seat.Id)
+                .ExecuteUpdateAsync(s =>
+                    s.SetProperty(se => se.Version, seat.Version + 1));
+        }
+        public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
+        {
+            return await _context.SEAT
+                .Where(s => seatIds.Contains(s.Id) && (s.Status == "Reserved" || s.Status == "Sold"))
+                .Select(s => s.Id)
                 .ToListAsync();
         }
     }

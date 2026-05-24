@@ -26,5 +26,7 @@ namespace Application.Interfaces.Repositories
 
         Task SaveChangesAsync();
 
+        Task<List<Guid>> AddAllAsync(List<RESERVATION> reservations);
+
     }
 }
