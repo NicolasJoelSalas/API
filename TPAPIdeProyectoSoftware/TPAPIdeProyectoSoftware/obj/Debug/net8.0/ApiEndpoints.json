@@ -250,7 +250,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "ConfirmPayment",
-    "RelativePath": "api/reservations/confirm-payment",
+    "RelativePath": "api/reservations/payment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

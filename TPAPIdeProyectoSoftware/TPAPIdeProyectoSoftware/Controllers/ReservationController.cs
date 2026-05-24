@@ -97,7 +97,7 @@ namespace TPAPIdeProyectoSoftware.Controllers
         }
 
 
-        [HttpPost("confirm-payment")]
+        [HttpPost("payment")]
         public async Task<IActionResult> ConfirmPayment([FromBody] ConfirmPaymentDto dto)
         {
             if (dto == null || dto.ReservationIds == null || !dto.ReservationIds.Any())

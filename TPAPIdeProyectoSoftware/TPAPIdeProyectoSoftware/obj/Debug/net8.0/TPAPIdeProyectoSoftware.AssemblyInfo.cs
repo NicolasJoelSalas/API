@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TPAPIdeProyectoSoftware")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9676fc4b7021d9db0c93b5423a3e8d6495bcc506")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0352c7a32c102127208ad9a2cf6861d72b0fe6d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("TPAPIdeProyectoSoftware")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TPAPIdeProyectoSoftware")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

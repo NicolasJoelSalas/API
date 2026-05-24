@@ -386,7 +386,7 @@
         }
       }
     },
-    "/api/reservations/confirm-payment": {
+    "/api/reservations/payment": {
       "post": {
         "tags": [
           "Reservation"
