@@ -19,47 +19,62 @@ else
 {
     <div class="event-list">
 
-        @foreach (var item in listReservations)
+        @foreach (var grupo in listReservations
+    .GroupBy(r => r.Status?.ToLower())
+    .OrderBy(g => g.Key switch
+    {
+        "pending" => 1,
+        "paid" => 2,
+        "expired" => 3,
+        _ => 4
+    }))
         {
-            <div class="event-card">
+            <h4 class="reservation-header">
+                @GetStatusTitle(grupo.Key)
+            </h4>
 
-                <div class="event-title">
-                    Reserva #@item.Id.ToString()[..8]
+            @foreach (var item in grupo)
+            {
+                <div class="event-card">
+
+                    <div class="event-title">
+                        Reserva #@item.Id.ToString()[..8]
+                    </div>
+
+                    <p>
+                        Usuario: @item.UserId
+                    </p>
+
+                    <p>
+                        Estado:
+                        <b>@item.Status</b>
+                    </p>
+
+                    <p>
+                        Asiento:
+                        @item.SeatId
+                    </p>
+
+                    <p>
+                        Reservado:
+                        @item.ReservedAt.ToString("dd/MM/yyyy HH:mm")
+                    </p>
+
+                    <p>
+                        Expira:
+                        @item.ExpiresAt.ToString("dd/MM/yyyy HH:mm")
+                    </p>
+
+                    @if (item.Status?.ToLower() == "pending")
+                    {
+                        <button class="btnaa"
+                                @onclick="() => GoToPayment(item)">
+                            Pagar
+                        </button>
+                    }
+
                 </div>
-
-                <p>
-                    Usuario: @item.UserId
-                </p>
-
-                <p>
-                    Estado:
-                    <b>@item.Status</b>
-                </p>
-
-                <p>
-                    Asiento:
-                    @item.SeatId.ToString()
-                </p>
-
-                <p>
-                    Reservado:
-                    @item.ReservedAt.ToString("dd/MM/yyyy HH:mm")
-                </p>
-
-                <p>
-                    Expira:
-                    @item.ExpiresAt.ToString("dd/MM/yyyy HH:mm")
-                </p>
-
-                
-                @if (item.Status?.ToLower() == "pending")
-                {
-                    <button class="btn btn-success btn-sm mt-2"
-                            @onclick="() => GoToPayment(item)">
-                        Pagar
-                    </button>
-                }
-            </div>
+            }
         }
 
     </div>
@@ -143,5 +158,14 @@ else
 
         public int SectorId { get; set; }
     }
-
+    private string GetStatusTitle(string? status)
+    {
+        return status switch
+        {
+            "pending" => "⏳ Reservas pendientes",
+            "paid" => "✅ Reservas pagadas",
+            "expired" => "❌ Reservas expiradas",
+            _ => "📋 Otras reservas"
+        };
+    }
 }
