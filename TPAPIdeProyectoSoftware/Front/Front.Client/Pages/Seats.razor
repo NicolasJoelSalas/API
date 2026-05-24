@@ -48,14 +48,11 @@ else
 
     </div>
 
-
     <p><strong>Seleccionadas:</strong> @selectedSeatIds.Count</p>
 
-    <!-- BOTONES -->
     <button class="nav-btn" @onclick="GoBack">
         ← Volver
     </button>
-
 
     <button class="btn btn-success"
             @onclick="CreateReservation"
@@ -63,21 +60,16 @@ else
         @(isLoading ? "Reservando..." : "Confirmar Reserva")
     </button>
 
-
-    <!-- MENSAJE -->
     @if (!string.IsNullOrEmpty(message))
     {
         <p style="color:@(reservaConfirmada ? "lightgreen" : "salmon")">
             @message
         </p>
-
     }
 
-    <!-- PAGO -->
     @if (reservaConfirmada)
     {
-        <button class="btnaa"
-                @onclick="GoToPagos">
+        <button class="btnaa" @onclick="GoToPagos">
             Realizar Pago
         </button>
     }
@@ -97,7 +89,7 @@ else
 
     <div class="legend-item">
         <span class="legend-box reserved">⏳</span>
-        <span>Reservado (pendiente de pago)</span>
+        <span>Reservado</span>
     </div>
 
     <div class="legend-item">
@@ -108,7 +100,7 @@ else
 </div>
 
 @code {
-    private List<Guid> reservationIds = new(); 
+    private List<Guid> reservationIds = new();
 
     private bool reservaConfirmada = false;
     private bool isLoading = false;
@@ -166,15 +158,15 @@ else
     private string GetSeatClass(SeatDto seat)
     {
         if (seat.Status == "Sold")
-            return "sold"; 
+            return "sold";
 
         if (seat.Status == "Reserved")
-            return "reserved"; 
+            return "reserved";
 
         if (selectedSeatIds.Contains(seat.Id))
-            return "free selected"; 
+            return "free selected";
 
-        return "free"; 
+        return "free";
     }
 
     private async Task CreateReservation()
@@ -191,38 +183,31 @@ else
 
         try
         {
-
-            reservationIds.Clear();
-
-            foreach (var seatId in selectedSeatIds)
+            var dto = new
             {
-                var dto = new
-                {
-                    UserId = Session.UserId,
-                    SeatId = seatId   // uno solo
-                };
+                UserId = Session.UserId,
+                SeatIds = selectedSeatIds
+            };
 
-                var response = await Http.PostAsJsonAsync("/api/reservations", dto);
+            var response = await Http.PostAsJsonAsync("/api/reservations", dto);
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    message = await response.Content.ReadAsStringAsync();
-                    await LoadSeats();
-                    return;
-                }
+            if (!response.IsSuccessStatusCode)
+            {
+                message = await response.Content.ReadAsStringAsync();
+                await LoadSeats();
+                return;
+            }
 
-                var result = await response.Content
-                    .ReadFromJsonAsync<CreateReservationResponseDto>();
+            var result = await response.Content
+                .ReadFromJsonAsync<CreateReservationResponseDto>();
 
-                if (result != null)
-                {
-                    reservationIds.Add(result.ReservationId);
-                }
+            if (result != null)
+            {
+                reservationIds = result.SeatIds;
+                message = result.Message;
             }
 
             selectedSeatIds.Clear();
-
-            message = "Reservas realizadas correctamente";
             reservaConfirmada = true;
 
             await LoadSeats();
@@ -236,12 +221,14 @@ else
             isLoading = false;
         }
     }
+
     private void GoToPagos()
     {
         var param = string.Join(",", reservationIds);
 
         Nav.NavigateTo($"/pago?reservations={param}&sectorId={SectorId}");
     }
+
     private string GetSeatStatus(SeatDto seat)
     {
         if (seat.Status == "Sold")
@@ -255,16 +242,18 @@ else
 
         return "Disponible ✓";
     }
+
     public class SeatDto
     {
         public Guid Id { get; set; }
-        public string RowIdentifier { get; set; }
+        public string RowIdentifier { get; set; } = "";
         public int SeatNumber { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; } = "";
     }
+
     public class CreateReservationResponseDto
     {
-        public string Message { get; set; }
-        public Guid ReservationId { get; set; }
+        public string Message { get; set; } = "";
+        public List<Guid> SeatIds { get; set; } = new();
     }
 }

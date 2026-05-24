@@ -206,7 +206,8 @@
                 return;
 
             var reservation = await Http.GetFromJsonAsync<ReservationResponseDto>(
-                $"api/reservation/{reservationIds.First()}"
+                $"api/reservations/{reservationIds.First()}"
+
             );
 
             if (reservation != null)
@@ -274,7 +275,7 @@
                 ReservationIds = reservationIds
             };
 
-            var response = await Http.PostAsJsonAsync("api/Reservation/confirm-payment", dto);
+            var response = await Http.PostAsJsonAsync("api/reservations/confirm-payment", dto);
 
             if (response.IsSuccessStatusCode)
             {

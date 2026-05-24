@@ -79,7 +79,7 @@ else
         {
             var reservas = await Http
                 .GetFromJsonAsync<List<ReservationDto>>
-                ("api/Reservation")
+                ("api/reservations")
                 ?? new();
 
             // Mostrar solo reservas del usuario actual
@@ -108,7 +108,7 @@ else
         try
         {
             var seat = await Http.GetFromJsonAsync<SeatDto>(
-                $"api/seat/{item.SeatId}"
+                $"api/seats/{item.SeatId}"
             );
 
             if (seat == null)

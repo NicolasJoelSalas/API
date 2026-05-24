@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Data;
 
 namespace Infrastructure.Repositories
 {
@@ -37,8 +38,23 @@ namespace Infrastructure.Repositories
 
         public async Task UpdateAsync(SEAT seat)
         {
-            _context.SEAT.Update(seat);
-            await _context.SaveChangesAsync();
+            try
+            {
+
+                _context.SEAT.Update(seat);
+
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+                foreach (var entry in _context.ChangeTracker.Entries())
+                {
+                    entry.State = EntityState.Detached;
+                }
+
+                throw;
+            }
         }
 
         public async Task DeleteAsync(SEAT seat)
