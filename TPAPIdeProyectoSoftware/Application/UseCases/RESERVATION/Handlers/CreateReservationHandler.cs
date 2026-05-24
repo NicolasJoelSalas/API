@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.RESERVATION.Commands;
+using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
@@ -49,6 +50,16 @@ namespace Application.UseCases.RESERVATION.Handlers
                 .Except(reservedSeatIds)
                 .ToList();
 
+            await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+            {
+                UserId = request.UserId,
+                Action = "Intento de reserva",
+                EntityType = "Reservation",
+                EntityId = string.Join(",", request.SeatIds),
+                Details = "Inicio de proceso",
+                CreatedAt = DateTime.UtcNow
+            });
+
             var reservations = new List<Domain.Entities.RESERVATION>();
 
             foreach (var seatId in availableSeatIds)
@@ -67,15 +78,27 @@ namespace Application.UseCases.RESERVATION.Handlers
 
 
                     await _seatRepository.UpdateStatusAsync(seatId, "Reserved");
+                    await _seatRepository.IncrementVersionAsync(seatId);
 
-
-                    reservations.Add(new Domain.Entities.RESERVATION
+                    Domain.Entities.RESERVATION reservation = new Domain.Entities.RESERVATION
                     {
+
                         UserId = request.UserId,
                         SeatId = seatId,
                         Status = "Pending",
                         ReservedAt = DateTime.UtcNow,
                         ExpiresAt = DateTime.UtcNow.AddMinutes(5)
+                    };
+                    reservations.Add(reservation);
+
+                    await _auditLogRepository.AddAsync(new Domain.Entities.AUDIT_LOG
+                    {
+                        UserId = request.UserId,
+                        Action = "Reserva exitosa",
+                        EntityType = "Reservation",
+                        EntityId = seatId.ToString(),
+                        Details = "Reserva creada",
+                        CreatedAt = DateTime.UtcNow
                     });
                 }
                 finally

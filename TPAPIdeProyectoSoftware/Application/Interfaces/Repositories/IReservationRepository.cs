@@ -27,6 +27,7 @@ namespace Application.Interfaces.Repositories
         Task SaveChangesAsync();
 
         Task<List<Guid>> AddAllAsync(List<RESERVATION> reservations);
+        Task UpdateStatusAsync(Guid reservationId, string status);
 
     }
 }

@@ -77,12 +77,12 @@ namespace Infrastructure.Repositories
                 .ExecuteUpdateAsync(s =>
                     s.SetProperty(se => se.Status, status));
         }
-        public async Task IncrementVersionAsync(SEAT seat)
+        public async Task IncrementVersionAsync(Guid seatId)
         {
             await _context.SEAT
-                .Where(s => s.Id == seat.Id)
+                .Where(s => s.Id == seatId)
                 .ExecuteUpdateAsync(s =>
-                    s.SetProperty(se => se.Version, seat.Version + 1));
+                    s.SetProperty(se => se.Version, se => se.Version + 1));
         }
         public async Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds)
         {

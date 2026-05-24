@@ -100,5 +100,12 @@ namespace Infrastructure.Repositories
                 .ToList();
         }
 
+        public async Task UpdateStatusAsync(Guid reservationId, string status)
+        {
+            await _context.RESERVATION
+                .Where(s => s.Id == reservationId)
+                .ExecuteUpdateAsync(s =>
+                    s.SetProperty(se => se.Status, status));
+        }
     }
 }

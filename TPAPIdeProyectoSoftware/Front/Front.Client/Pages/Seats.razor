@@ -227,6 +227,10 @@ else
         var param = string.Join(",", reservationIds);
 
         Nav.NavigateTo($"/pago?reservations={param}&sectorId={SectorId}");
+
+        // Nav.NavigateTo(
+        //         $"/pago?reservations={item.Id}&sectorId={seat.SectorId}" SOLUCIONAR MANANA
+        //     );
     }
 
     private string GetSeatStatus(SeatDto seat)

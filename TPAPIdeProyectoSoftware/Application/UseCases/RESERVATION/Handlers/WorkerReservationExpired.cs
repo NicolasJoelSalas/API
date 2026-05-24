@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.Repositories;
+using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -44,22 +45,23 @@ namespace Application.UseCases.RESERVATION.Handlers
                             {
                                 seat.Status = "Available";
                             }
-
+                            await seatRepository.UpdateStatusAsync(seat.Id, "Available");
+                            await reservationRepository.UpdateStatusAsync(reservation.Id, "Expired");
                             // Crear log
                             var auditLog = new Domain.Entities.AUDIT_LOG
                             {
-                                Action = "Reserva expirada eliminada",
+                                Action = "Reserva expirada",
                                 UserId = reservation.UserId,
                                 EntityType = "Reservation",
                                 EntityId = reservation.Id.ToString(),
-                                Details = $"Reserva expirada eliminada para {reservation.Id}",
+                                Details = $"Reserva expirada para {reservation.Id}",
                                 CreatedAt = DateTime.UtcNow
                             };
 
                             await auditLogRepository.AddAsync(auditLog);
 
                             // Eliminar reserva
-                            await reservationRepository.DeleteAsync(reservation.Id);
+                            //await reservationRepository.DeleteAsync(reservation.Id);
                         }
                     }
 
@@ -67,7 +69,7 @@ namespace Application.UseCases.RESERVATION.Handlers
                     await reservationRepository.SaveChangesAsync();
 
                     // Esperar 1 minuto
-                    await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                    await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
                 }
             }
             catch (OperationCanceledException)

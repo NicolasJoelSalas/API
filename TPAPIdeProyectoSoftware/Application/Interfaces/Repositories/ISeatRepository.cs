@@ -18,7 +18,7 @@ namespace Application.Interfaces.Repositories
 
         Task UpdateStatusAsync(Guid seatId, string status);
 
-        Task IncrementVersionAsync(SEAT seat);
+        Task IncrementVersionAsync(Guid seatId);
 
         Task<List<Guid>> GetReservedSeatIdsAsync(List<Guid> seatIds);
         //Task MarkAsSoldByReservationIds(List<Guid> reservationIds);
