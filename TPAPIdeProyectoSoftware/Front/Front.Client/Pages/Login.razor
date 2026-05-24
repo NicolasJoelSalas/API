@@ -60,7 +60,7 @@
     {
         try
         {
-            var response = await Http.PostAsJsonAsync("api/users/login", loginRequest);
+            var response = await Http.PostAsJsonAsync("api/v1/users/login", loginRequest);
 
             if (response.IsSuccessStatusCode)
             {

@@ -178,7 +178,7 @@ else
     private async Task LoadSeats()
     {
         seats = await Http.GetFromJsonAsync<List<SeatDto>>(
-            $"api/events/sectors/{SectorId}/seats"
+            $"api/v1/events/sectors/{SectorId}/seats"
         ) ?? new();
     }
 
@@ -233,7 +233,7 @@ else
                 SeatIds = selectedSeatIds
             };
 
-            var response = await Http.PostAsJsonAsync("/api/reservations", dto);
+            var response = await Http.PostAsJsonAsync("/api/v1/reservations", dto);
 
             if (!response.IsSuccessStatusCode)
             {

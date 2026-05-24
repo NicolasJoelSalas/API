@@ -13,7 +13,7 @@ namespace Application.UseCases.RESERVATION.Handlers
         private readonly IUserRepository _userRepository;
         private readonly IReservationRepository _reservationRepository;
         private readonly IAudit_LogRepository _auditLogRepository;
-
+        private const int ReservationTtlMinutes = 5;
         public CreateReservationHandler(
             ISeatRepository seatRepository,
             IUserRepository userRepository,
@@ -29,6 +29,7 @@ namespace Application.UseCases.RESERVATION.Handlers
         public async Task<List<Guid>> Handle(
     CreateReservationCommand request)
         {
+
             if (request.UserId <= 0)
                 throw new Exception("El Id del usuario es obligatorio");
 
@@ -80,7 +81,7 @@ namespace Application.UseCases.RESERVATION.Handlers
                     SeatId = seatId,
                     Status = "Pending",
                     ReservedAt = DateTime.UtcNow,
-                    ExpiresAt = DateTime.UtcNow.AddMinutes(5)
+                    ExpiresAt = DateTime.UtcNow.AddMinutes(ReservationTtlMinutes)
                 };
 
                 reservations.Add(reservation);

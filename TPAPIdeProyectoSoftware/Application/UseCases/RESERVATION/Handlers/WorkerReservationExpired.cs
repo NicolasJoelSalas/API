@@ -68,7 +68,7 @@ namespace Application.UseCases.RESERVATION.Handlers
                     // Guardar todo junto
                     await reservationRepository.SaveChangesAsync();
 
-                    // Esperar 1 minuto
+                    // Esperar 1 segundo antes de la siguiente revisión
                     await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
                 }
             }

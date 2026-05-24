@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/reservations")]
+    [Route("api/v1/reservations")]
     public class ReservationController : ControllerBase
     {
         private readonly ICreateReservationHandler _createHandler;

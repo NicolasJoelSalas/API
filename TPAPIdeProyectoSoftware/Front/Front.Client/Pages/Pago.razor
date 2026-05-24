@@ -183,7 +183,7 @@
     {
         try
         {
-            var sector = await Http.GetFromJsonAsync<SectorDto>($"api/sectors/{sectorId}");
+            var sector = await Http.GetFromJsonAsync<SectorDto>($"api/v1/sectors/{sectorId}");
 
             if (sector != null)
                 sectorPrice = sector.Price;
@@ -206,7 +206,7 @@
                 return;
 
             var reservation = await Http.GetFromJsonAsync<ReservationResponseDto>(
-                $"api/reservations/{reservationIds.First()}"
+                $"api/v1/reservations/{reservationIds.First()}"
 
             );
 
@@ -275,7 +275,7 @@
                 ReservationIds = reservationIds
             };
 
-            var response = await Http.PostAsJsonAsync("api/reservations/payment", dto);
+            var response = await Http.PostAsJsonAsync("api/v1/reservations/payment", dto);
 
             if (response.IsSuccessStatusCode)
             {

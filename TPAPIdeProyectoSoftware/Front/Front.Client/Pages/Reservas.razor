@@ -55,12 +55,12 @@ else
 
                     <p>
                         Reservado:
-                        @item.ReservedAt.ToString("dd/MM/yyyy HH:mm")
+                        @item.ReservedAt.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
                     </p>
 
                     <p>
                         Expira:
-                        @item.ExpiresAt.ToString("dd/MM/yyyy HH:mm")
+                        @item.ExpiresAt.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
                     </p>
 
                     @if (item.Status?.ToLower() == "pending")
@@ -92,10 +92,10 @@ else
         {
             var reservas = await Http
                 .GetFromJsonAsync<List<ReservationDto>>
-                ("api/reservations")
+                ("api/v1/reservations")
                 ?? new();
             var asientos = await Http.GetFromJsonAsync<List<SeatDto>>(
-                $"api/seats"
+                $"api/v1/seats"
                 ) ?? new();
             
             listReservations = reservas
@@ -124,7 +124,7 @@ else
         try
         {
             var seat = await Http.GetFromJsonAsync<SeatDto>(
-                $"api/seats/{item.SeatId}"
+                $"api/v1/seats/{item.SeatId}"
             );
 
             if (seat == null)

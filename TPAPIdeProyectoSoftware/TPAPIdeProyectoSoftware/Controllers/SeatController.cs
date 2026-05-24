@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/seats")]
+    [Route("api/v1/seats")]
     public class SeatController : ControllerBase
     {
         private readonly ICreateSeatHandler _createHandler;

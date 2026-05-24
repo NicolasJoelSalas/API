@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/sectors")]
+    [Route("api/v1/sectors")]
     public class SectorController : ControllerBase
     {
         private readonly ICreateSectorHandler _createSectorHandler;

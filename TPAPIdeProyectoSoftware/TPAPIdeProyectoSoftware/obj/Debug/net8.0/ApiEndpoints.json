@@ -2,7 +2,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.Audit_LogController",
     "Method": "Create",
-    "RelativePath": "api/audit_logs",
+    "RelativePath": "api/v1/audit_logs",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.Audit_LogController",
     "Method": "GetAll",
-    "RelativePath": "api/audit_logs",
+    "RelativePath": "api/v1/audit_logs",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.Audit_LogController",
     "Method": "GetById",
-    "RelativePath": "api/audit_logs/{id}",
+    "RelativePath": "api/v1/audit_logs/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.Audit_LogController",
     "Method": "Delete",
-    "RelativePath": "api/audit_logs/{id}",
+    "RelativePath": "api/v1/audit_logs/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -60,7 +60,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.Audit_LogController",
     "Method": "Update",
-    "RelativePath": "api/audit_logs/{id}",
+    "RelativePath": "api/v1/audit_logs/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -81,7 +81,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "CreateEvent",
-    "RelativePath": "api/events",
+    "RelativePath": "api/v1/events",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -97,7 +97,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetAllEvents",
-    "RelativePath": "api/events",
+    "RelativePath": "api/v1/events",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -107,7 +107,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetSectorsByEvent",
-    "RelativePath": "api/events/{eventId}/sectors",
+    "RelativePath": "api/v1/events/{eventId}/sectors",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -123,7 +123,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetEventById",
-    "RelativePath": "api/events/{id}",
+    "RelativePath": "api/v1/events/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -139,7 +139,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "Delete",
-    "RelativePath": "api/events/{id}",
+    "RelativePath": "api/v1/events/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -155,7 +155,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "UpdateEvent",
-    "RelativePath": "api/events/{id}",
+    "RelativePath": "api/v1/events/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -176,7 +176,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.EventController",
     "Method": "GetSeatsBySector",
-    "RelativePath": "api/events/sectors/{sectorId}/seats",
+    "RelativePath": "api/v1/events/sectors/{sectorId}/seats",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -192,7 +192,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "Create",
-    "RelativePath": "api/reservations",
+    "RelativePath": "api/v1/reservations",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -208,7 +208,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "GetAll",
-    "RelativePath": "api/reservations",
+    "RelativePath": "api/v1/reservations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,7 +218,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "GetById",
-    "RelativePath": "api/reservations/{id}",
+    "RelativePath": "api/v1/reservations/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -234,7 +234,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "Delete",
-    "RelativePath": "api/reservations/{id}",
+    "RelativePath": "api/v1/reservations/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -250,7 +250,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.ReservationController",
     "Method": "ConfirmPayment",
-    "RelativePath": "api/reservations/payment",
+    "RelativePath": "api/v1/reservations/payment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -266,7 +266,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Create",
-    "RelativePath": "api/seats",
+    "RelativePath": "api/v1/seats",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -282,7 +282,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "GetAll",
-    "RelativePath": "api/seats",
+    "RelativePath": "api/v1/seats",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -292,7 +292,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "GetById",
-    "RelativePath": "api/seats/{id}",
+    "RelativePath": "api/v1/seats/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -308,7 +308,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Delete",
-    "RelativePath": "api/seats/{id}",
+    "RelativePath": "api/v1/seats/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -324,7 +324,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SeatController",
     "Method": "Update",
-    "RelativePath": "api/seats/{id}",
+    "RelativePath": "api/v1/seats/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -345,7 +345,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
     "Method": "CreateSector",
-    "RelativePath": "api/sectors",
+    "RelativePath": "api/v1/sectors",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -361,7 +361,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
     "Method": "GetAllSectors",
-    "RelativePath": "api/sectors",
+    "RelativePath": "api/v1/sectors",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -371,7 +371,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
     "Method": "GetSectorById",
-    "RelativePath": "api/sectors/{id}",
+    "RelativePath": "api/v1/sectors/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -387,7 +387,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
     "Method": "DeleteSector",
-    "RelativePath": "api/sectors/{id}",
+    "RelativePath": "api/v1/sectors/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -403,7 +403,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.SectorController",
     "Method": "UpdateSector",
-    "RelativePath": "api/sectors/{id}",
+    "RelativePath": "api/v1/sectors/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -424,7 +424,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "CreateUser",
-    "RelativePath": "api/users",
+    "RelativePath": "api/v1/users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -440,7 +440,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "GetAllUsers",
-    "RelativePath": "api/users",
+    "RelativePath": "api/v1/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -450,7 +450,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "GetUserById",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/v1/users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -466,7 +466,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "DeleteUser",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/v1/users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -482,7 +482,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "UpdateUser",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/v1/users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -503,7 +503,7 @@
   {
     "ContainingType": "TPAPIdeProyectoSoftware.Controllers.UserController",
     "Method": "Login",
-    "RelativePath": "api/users/login",
+    "RelativePath": "api/v1/users/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

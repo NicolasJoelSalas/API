@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TPAPIdeProyectoSoftware.Controllers
 {
     [ApiController]
-    [Route("api/events")]
+    [Route("api/v1/events")]
     public class EventController : ControllerBase
     {
         private readonly ICreateEventHandler _createEventHandler;

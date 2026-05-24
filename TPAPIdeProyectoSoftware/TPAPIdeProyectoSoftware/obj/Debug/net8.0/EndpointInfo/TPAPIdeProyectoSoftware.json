@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/audit_logs": {
+    "/api/v1/audit_logs": {
       "post": {
         "tags": [
           "Audit_Log"
@@ -46,7 +46,7 @@
         }
       }
     },
-    "/api/audit_logs/{id}": {
+    "/api/v1/audit_logs/{id}": {
       "get": {
         "tags": [
           "Audit_Log"
@@ -130,7 +130,7 @@
         }
       }
     },
-    "/api/events": {
+    "/api/v1/events": {
       "post": {
         "tags": [
           "Event"
@@ -171,7 +171,7 @@
         }
       }
     },
-    "/api/events/{id}": {
+    "/api/v1/events/{id}": {
       "get": {
         "tags": [
           "Event"
@@ -255,7 +255,7 @@
         }
       }
     },
-    "/api/events/{eventId}/sectors": {
+    "/api/v1/events/{eventId}/sectors": {
       "get": {
         "tags": [
           "Event"
@@ -278,7 +278,7 @@
         }
       }
     },
-    "/api/events/sectors/{sectorId}/seats": {
+    "/api/v1/events/sectors/{sectorId}/seats": {
       "get": {
         "tags": [
           "Event"
@@ -301,7 +301,7 @@
         }
       }
     },
-    "/api/reservations": {
+    "/api/v1/reservations": {
       "post": {
         "tags": [
           "Reservation"
@@ -342,7 +342,7 @@
         }
       }
     },
-    "/api/reservations/{id}": {
+    "/api/v1/reservations/{id}": {
       "get": {
         "tags": [
           "Reservation"
@@ -386,7 +386,7 @@
         }
       }
     },
-    "/api/reservations/payment": {
+    "/api/v1/reservations/payment": {
       "post": {
         "tags": [
           "Reservation"
@@ -417,7 +417,7 @@
         }
       }
     },
-    "/api/seats": {
+    "/api/v1/seats": {
       "post": {
         "tags": [
           "Seat"
@@ -458,7 +458,7 @@
         }
       }
     },
-    "/api/seats/{id}": {
+    "/api/v1/seats/{id}": {
       "get": {
         "tags": [
           "Seat"
@@ -542,7 +542,7 @@
         }
       }
     },
-    "/api/sectors": {
+    "/api/v1/sectors": {
       "post": {
         "tags": [
           "Sector"
@@ -583,7 +583,7 @@
         }
       }
     },
-    "/api/sectors/{id}": {
+    "/api/v1/sectors/{id}": {
       "get": {
         "tags": [
           "Sector"
@@ -667,7 +667,7 @@
         }
       }
     },
-    "/api/users": {
+    "/api/v1/users": {
       "post": {
         "tags": [
           "User"
@@ -708,7 +708,7 @@
         }
       }
     },
-    "/api/users/{id}": {
+    "/api/v1/users/{id}": {
       "get": {
         "tags": [
           "User"
@@ -792,7 +792,7 @@
         }
       }
     },
-    "/api/users/login": {
+    "/api/v1/users/login": {
       "post": {
         "tags": [
           "User"

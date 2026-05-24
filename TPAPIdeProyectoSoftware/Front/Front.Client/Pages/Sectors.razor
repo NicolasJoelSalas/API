@@ -55,7 +55,7 @@ else
         try
         {
             sectors = await Http.GetFromJsonAsync<List<SectorDto>>(
-                $"api/events/{EventId}/sectors"
+                $"api/v1/events/{EventId}/sectors"
             ) ?? new();
         }
         catch (Exception ex)
