@@ -91,6 +91,7 @@ builder.Services.AddScoped<IGetAllSectorHandler, GetAllSectorHandler>();
 builder.Services.AddScoped<IGetSeatsBySectorHandler, GetSeatsBySectorHandler>();
 
 builder.Services.AddHostedService<WorkerReservationExpired>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddCors(options =>
 {
