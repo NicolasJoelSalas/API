@@ -3,7 +3,9 @@ using Application.Interfaces.Repositories;
 using Application.UseCases.RESERVATION.Commands;
 using Domain.Entities;
 using Domain.Enums;
+using Domain.Exceptions;
 using MediatR;
+
 
 namespace Application.UseCases.RESERVATION.Handlers
 {
@@ -98,8 +100,7 @@ namespace Application.UseCases.RESERVATION.Handlers
             }
 
             if (!reservations.Any())
-                throw new Exception(
-                    "No se pudo reservar ninguna butaca");
+                throw new ReservationConflictException("No se pudo reservar ninguna butaca");
 
             return await _reservationRepository.AddAllAsync(reservations);
 

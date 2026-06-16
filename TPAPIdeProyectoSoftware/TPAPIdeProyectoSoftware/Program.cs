@@ -17,6 +17,7 @@ using Application.UseCases.USER.Handlers;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using TPAPIdeProyectoSoftware.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -118,6 +119,8 @@ app.UseHttpsRedirection();
 app.UseCors("Front");   
 
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
