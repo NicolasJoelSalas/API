@@ -1,0 +1,93 @@
+﻿@page "/register"
+
+@inject HttpClient Http
+@inject NavigationManager Nav
+
+<div class="register-page">
+
+    <!-- FORMULARIO -->
+    <div class="wrapper">
+
+        <EditForm Model="userModel" OnValidSubmit="RegisterUser">
+
+            <h1>Registrarse</h1>
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="input-box">
+                <InputText @bind-Value="userModel.Name"
+                           class="form-control"
+                           placeholder="Username" />
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <InputText @bind-Value="userModel.Email"
+                           class="form-control"
+                           placeholder="Email" />
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box">
+                <InputText @bind-Value="userModel.PasswordHash"
+                           type="password"
+                           class="form-control"
+                           placeholder="Password" />
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" class="btn">
+                Registrarse
+            </button>
+
+            @if (!string.IsNullOrEmpty(message))
+            {
+                <p class="message">@message</p>
+            }
+
+            <div class="register-link">
+                <p>¿Ya tenés cuenta?</p>
+                <a href="/">Iniciar sesión</a>
+            </div>
+
+        </EditForm>
+
+    </div>
+</div>
+
+@code {
+
+    private UserRequestDto userModel = new();
+    private string message = "";
+
+    private async Task RegisterUser()
+    {
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/v1/users", userModel);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Usuario registrado correctamente";
+                await Task.Delay(1000);
+                Nav.NavigateTo("/");
+            }
+            else
+            {
+                message = "Error al registrar usuario";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+
+    public class UserRequestDto
+    {
+        public string Name { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string PasswordHash { get; set; } = "";
+    }
+}

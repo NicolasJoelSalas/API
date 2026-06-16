@@ -1,0 +1,83 @@
+﻿@page "/events/{EventId:int}/sectors"
+@inject HttpClient Http
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+
+<h3 class="text-center">Sectores</h3>
+
+<div class="stage">ESCENARIO</div>
+
+@if (sectors == null)
+{
+    <p>Cargando sectores...</p>
+
+}
+else if (!sectors.Any())
+{
+    <p>No hay sectores para este evento</p>
+}
+else
+{
+    <div class="theater-map">
+
+        @foreach (var item in sectors)
+        {
+            <button class="sector-box"
+                    @onclick="() => GoSeats(item.Id, item.Name)">
+                <div>@item.Name</div>
+                <small>$@item.Price</small>
+            </button>
+        }
+
+    </div>
+    <button class="nav-btn" @onclick="GoBack">
+        ← Volver
+    </button>
+}
+
+@code {
+
+    [Parameter]
+    public int EventId { get; set; }
+
+    private List<SectorDto>? sectors;
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+    protected override async Task OnParametersSetAsync()
+    {
+        await LoadSectors();
+    }
+
+    private async Task LoadSectors()
+    {
+        try
+        {
+            sectors = await Http.GetFromJsonAsync<List<SectorDto>>(
+                $"api/v1/events/{EventId}/sectors"
+            ) ?? new();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    private void GoSeats(int sectorId, string name)
+    {
+        var pos = name.ToLower().Contains("vip") ? "center"
+                 : name.ToLower().Contains("izq") ? "left"
+                 : name.ToLower().Contains("der") ? "right"
+                 : "center";
+
+        Nav.NavigateTo($"/sectors/{sectorId}/seats?pos={pos}");
+    }
+    public class SectorDto
+    {
+        public int Id { get; set; }
+        public int EventId { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Capacity { get; set; }
+    }
+}

@@ -68,7 +68,7 @@
               "RelativeDocumentMoniker": "Front\\Front.Client\\Pages\\Seats.razor",
               "ToolTip": "C:\\Proyectos\\ProyectoSoftware\\TPAPIdeProyectoSoftware\\Front\\Front.Client\\Pages\\Seats.razor",
               "RelativeToolTip": "Front\\Front.Client\\Pages\\Seats.razor",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAFsAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-16T01:05:00.219Z",
               "EditorCaption": ""
@@ -83,8 +83,7 @@
               "RelativeToolTip": "Application\\UseCases\\RESERVATION\\Handlers\\CreateReservationHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T01:03:12.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T01:03:12.409Z"
             },
             {
               "$type": "Document",
@@ -96,8 +95,7 @@
               "RelativeToolTip": "Domain\\Exceptions\\ReservationConflictException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T01:01:47.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T01:01:47.135Z"
             },
             {
               "$type": "Document",
@@ -109,8 +107,7 @@
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Program.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAAAHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T00:57:11.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T00:57:11.625Z"
             },
             {
               "$type": "Document",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Middleware\\ExceptionMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T00:55:42.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T00:55:42.764Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "Application\\Interfaces\\Handlers\\Reservation\\ICreateReservationHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T00:28:59.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T00:28:59.897Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "TPAPIdeProyectoSoftware\\Controllers\\ReservationController.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAA8wHcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T00:27:58.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-16T00:27:58.157Z"
             }
           ]
         }

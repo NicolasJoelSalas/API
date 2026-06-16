@@ -1,0 +1,173 @@
+﻿@page "/reservas"
+@inject IJSRuntime JS
+@inject HttpClient Http
+@inject NavigationManager Nav
+@using FrontTPAPIdeProyectoSoftware.Components.Servicies
+@inject UserSession Session
+
+<h3 class="mb-4 text-center">📋 Reservas</h3>
+
+@if (listReservations == null)
+{
+    <p class="text-center">Cargando reservas...</p>
+}
+else if (!listReservations.Any())
+{
+    <p class="text-center">No hay reservas</p>
+}
+else
+{
+    <div class="event-list">
+
+        @foreach (var grupo in listReservations
+    .GroupBy(r => r.Status?.ToLower())
+    .OrderBy(g => g.Key switch
+    {
+        "pending" => 1,
+        "paid" => 2,
+        "expired" => 3,
+        _ => 4
+    }))
+        {
+            <h4 class="reservation-header">
+                @GetStatusTitle(grupo.Key)
+            </h4>
+
+            @foreach (var item in grupo)
+            {
+                <div class="event-card">
+
+                    <div class="event-title">
+                        Reserva #@item.Id.ToString()[..8]
+                    </div>
+
+                    
+
+                    <p>
+                        Estado:
+                        <b>@item.Status</b>
+                    </p>
+
+                    <p>
+                        Asiento:
+                        @seats?.FirstOrDefault(s => s.Id == item.SeatId)?.SeatNumber
+                    </p>
+
+                    <p>
+                        Reservado:
+                        @item.ReservedAt.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
+                    </p>
+
+                    <p>
+                        Expira:
+                        @item.ExpiresAt.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
+                    </p>
+
+                    @if (item.Status?.ToLower() == "pending")
+                    {
+                        <button class="btnaa"
+                                @onclick="() => GoToPayment(item)">
+                            Pagar
+                        </button>
+                    }
+
+                </div>
+            }
+        }
+
+    </div>
+
+    <button class="nav-btn" @onclick="GoBack">
+        ← Volver
+    </button>
+}
+
+@code {
+
+    private List<ReservationDto>? listReservations;
+    private List<SeatDto>? seats;
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var reservas = await Http
+                .GetFromJsonAsync<List<ReservationDto>>
+                ("api/v1/reservations")
+                ?? new();
+            var asientos = await Http.GetFromJsonAsync<List<SeatDto>>(
+                $"api/v1/seats"
+                ) ?? new();
+            
+            listReservations = reservas
+                .Where(r => r.UserId == Session.UserId)
+                .ToList();
+
+            seats = asientos.Where(s => listReservations.Any(r => r.SeatId == s.Id)).ToList();
+
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            listReservations = new();
+        }
+    }
+
+    private async Task GoBack()
+    {
+        await JS.InvokeVoidAsync("history.back");
+    }
+
+    
+    private async Task GoToPayment(ReservationDto item)
+    {
+        try
+        {
+            var seat = await Http.GetFromJsonAsync<SeatDto>(
+                $"api/v1/seats/{item.SeatId}"
+            );
+
+            if (seat == null)
+                return;
+
+            Nav.NavigateTo(
+                $"/pago?reservations={item.Id}&sectorId={seat.SectorId}"
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    public class ReservationDto
+    {
+        public Guid Id { get; set; }
+
+        public int UserId { get; set; }
+
+        public Guid SeatId { get; set; }
+
+        public string Status { get; set; }
+
+        public DateTime ReservedAt { get; set; }
+
+        public DateTime ExpiresAt { get; set; }
+    }
+    public class SeatDto
+    {
+        public Guid Id { get; set; }
+
+        public int SectorId { get; set; }
+        public int SeatNumber { get; set; }
+    }
+    private string GetStatusTitle(string? status)
+    {
+        return status switch
+        {
+            "pending" => "⏳ Reservas pendientes",
+            "paid" => "✅ Reservas pagadas",
+            "expired" => "❌ Reservas expiradas",
+            _ => "📋 Otras reservas"
+        };
+    }
+}

@@ -1,0 +1,239 @@
+﻿/* =========================================
+   HOME + LOGIN MODAL PROFESIONAL LIMPIO
+========================================= */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--navbar-height); /* 👈 CLAVE */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+
+/* =========================================
+   HERO HOME
+========================================= */
+
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.35);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient( to bottom, rgba(0,0,0,.15), rgba(0,0,0,.75) );
+}
+
+    .hero-overlay h1 {
+        font-size: 58px;
+        font-weight: 900;
+        margin-bottom: 12px;
+        background: linear-gradient(90deg,#ff3b3b,#ff0066);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-overlay p {
+        font-size: 18px;
+        color: #ddd;
+        margin-bottom: 25px;
+    }
+
+.hero-btn {
+    padding: 14px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(135deg,#ff3b3b,#ff0066);
+    box-shadow: 0 12px 28px rgba(255,0,102,.25);
+}
+
+/* =========================================
+   LOGIN MODAL
+========================================= */
+
+.login-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.72);
+    backdrop-filter: blur(9px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CAJA */
+.wrapper {
+    width: 100%;
+    max-width: 430px;
+    padding: 38px 34px;
+    border-radius: 24px;
+    background: rgba(20,20,20,.82);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 25px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03) inset;
+    animation: fadeUp .45s ease;
+}
+
+    /* TITULO */
+    .wrapper h1 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 900;
+        margin-bottom: 28px;
+        background: linear-gradient(90deg,#ff3b3b,#ff0066);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+/* INPUT BOX */
+.input-box {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+    .input-box input {
+        width: 100%;
+        height: 54px;
+        padding: 0 48px 0 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.03);
+        color: white;
+        font-size: 15px;
+        outline: none;
+        transition: .25s;
+    }
+
+        .input-box input::placeholder {
+            color: #9d9d9d;
+        }
+
+        .input-box input:focus {
+            border-color: rgba(255,0,102,.65);
+            box-shadow: 0 0 0 4px rgba(255,0,102,.12), 0 12px 24px rgba(255,0,102,.10);
+        }
+
+    .input-box i {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        color: #cfcfcf;
+    }
+
+/* REMEMBER */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0 18px;
+    font-size: 14px;
+}
+
+    .remember-forgot a {
+        color: #ff5a8f;
+        text-decoration: none;
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+/* BOTON */
+.btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 999px;
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .25s;
+    background: linear-gradient(135deg,#ff3b3b,#ff0066);
+    box-shadow: 0 14px 28px rgba(255,0,102,.24), 0 8px 16px rgba(255,59,59,.16);
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+/* REGISTER */
+.register-link {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: #d4d4d4;
+}
+
+    .register-link a {
+        color: #ff5a8f;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+/* RESPONSIVE */
+@media (max-width: 520px) {
+
+    .wrapper {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+        .wrapper h1 {
+            font-size: 30px;
+        }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-overlay h1 {
+        font-size: 40px;
+    }
+}
+
+/* ANIMACION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

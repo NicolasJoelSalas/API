@@ -5,10 +5,6 @@
       {
         "Path": "TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
         "Action": "Start"
-      },
-      {
-        "Path": "Front\\Front\\Front.csproj",
-        "Action": "Start"
       }
     ]
   }
