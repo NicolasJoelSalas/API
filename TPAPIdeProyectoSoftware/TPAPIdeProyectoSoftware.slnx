@@ -1,8 +1,6 @@
 <Solution>
   <Project Path="Application/Application.csproj" />
   <Project Path="Domain/Domain.csproj" />
-  <Project Path="Front/Front.Client/Front.Client.csproj" Id="fb5dcfc7-d095-4840-9070-f9bad8eb609f" />
-  <Project Path="Front/Front/Front.csproj" Id="03822c7c-d136-4613-9de7-55aeefb390b8" />
   <Project Path="Infrastructure/Infrastructure.csproj" />
   <Project Path="TPAPIdeProyectoSoftware/TPAPIdeProyectoSoftware.csproj" />
 </Solution>
