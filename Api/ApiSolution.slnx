@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/FrontTPAPIdeProyectoSoftware/">
+    <Project Path="FrontTPAPIdeProyectoSoftware/FrontTPAPIdeProyectoSoftware/FrontTPAPIdeProyectoSoftware.csproj" />
+  </Folder>
+  <Folder Name="/TPAPIdeProyectoSoftware/">
+    <Project Path="TPAPIdeProyectoSoftware/Application/Application.csproj" />
+    <Project Path="TPAPIdeProyectoSoftware/Domain/Domain.csproj" />
+    <Project Path="TPAPIdeProyectoSoftware/Infrastructure/Infrastructure.csproj" />
+    <Project Path="TPAPIdeProyectoSoftware/TPAPIdeProyectoSoftware/TPAPIdeProyectoSoftware.csproj" />
+  </Folder>
+</Solution>

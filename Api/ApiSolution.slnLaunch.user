@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "FrontTPAPIdeProyectoSoftware\\FrontTPAPIdeProyectoSoftware\\FrontTPAPIdeProyectoSoftware.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware\\TPAPIdeProyectoSoftware.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
