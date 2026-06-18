@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Data;
+using System.Net;
 using System.Text.Json;
 using Domain.Exceptions;
 
@@ -24,6 +25,14 @@ namespace TPAPIdeProyectoSoftware.Middleware
                 await WriteErrorResponse(
                     context,
                     HttpStatusCode.Conflict,
+                    ex.Message
+                );
+            }
+            catch (MissingDataException ex)
+            {
+                await WriteErrorResponse(
+                    context,
+                    HttpStatusCode.BadRequest,
                     ex.Message
                 );
             }
