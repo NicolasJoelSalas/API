@@ -3,12 +3,6 @@ using Application.DTOs.User;
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Queries;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.UseCases
 {

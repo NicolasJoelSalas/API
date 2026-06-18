@@ -60,8 +60,7 @@ namespace Application.UseCases.RESERVATION.Handlers
 
                             await auditLogRepository.AddAsync(auditLog);
 
-                            // Eliminar reserva
-                            //await reservationRepository.DeleteAsync(reservation.Id);
+
                         }
                     }
 
