@@ -1,6 +1,7 @@
 ﻿
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -18,33 +19,33 @@ namespace Application.UseCases
         public async Task<string> Handle(UpdateSeatCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
 
             if (command.SectorId <= 0)
-                return "El Id del sector es obligatorio";
+                throw new MissingDataException("El Id del sector es obligatorio");
 
             var existingSector = await _sectorRepository.GetByIdAsync(command.SectorId);
 
             if (existingSector == null)
-                return "Sector no encontrado";
+                throw new DataNotFoundException("Sector no encontrado");
 
             if (string.IsNullOrWhiteSpace(command.RowIdentifier))
-                return "El identificador de fila es obligatorio";
+                throw new MissingDataException("El identificador de fila es obligatorio");
 
             if (command.SeatNumber <= 0)
-                return "El número de asiento es obligatorio";
+                throw new MissingDataException("El número de asiento es obligatorio");
 
             if (command.Status == null)
-                return "El estado es obligatorio";
+                throw new MissingDataException("El estado es obligatorio");
 
             if (command.Version <= 0)
-                return "El número de versión es obligatorio";
+                throw new MissingDataException("El número de versión es obligatorio");
 
             var existingseat = await _seatRepository.GetByIdAsync(command.Id);
 
             if (existingseat == null)
-                return "Asiento no encontrado";
+                throw new DataNotFoundException("Asiento no encontrado");
 
             existingseat.SectorId = command.SectorId;   
             existingseat.RowIdentifier = command.RowIdentifier;

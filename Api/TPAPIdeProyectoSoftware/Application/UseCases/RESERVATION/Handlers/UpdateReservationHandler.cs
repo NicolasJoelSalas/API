@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.Handlers;
 using Application.Interfaces.Repositories;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -15,22 +16,22 @@ namespace Application.UseCases
         public async Task<string> Handle(UpdateReservationCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id == null)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             if (command.UserId <= 0)
-                return "Id de usuario inválido";
+                throw new MissingDataException("Id de usuario inválido");
 
             if (string.IsNullOrWhiteSpace(command.Status))
-                return "El estado es obligatorio";
+                throw new MissingDataException("El estado es obligatorio");
 
 
             var existingReservation = await _reservationRepository.GetByIdAsync(command.Id);
 
             if (existingReservation == null)
-                return "Reserva no encontrada";
+                throw new DataNotFoundException("Reserva no encontrada");
 
             existingReservation.UserId = command.UserId;
             existingReservation.SeatId = command.SeatId;

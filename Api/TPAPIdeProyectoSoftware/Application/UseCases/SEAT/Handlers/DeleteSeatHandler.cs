@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -16,12 +17,12 @@ namespace Application.UseCases
         public async Task<string> Handle(DeleteSeatCommand command)
         {
             if (command == null || command.Id == Guid.Empty)
-                return "Id inválido";
+                throw new DataNotFoundException("Id inválido");
 
             var seat = await _seatRepository.GetByIdAsync(command.Id);
 
             if (seat == null)
-                return "Seat no encontrado";
+                throw new DataNotFoundException("Seat no encontrado");
 
             await _seatRepository.DeleteAsync(seat);
 

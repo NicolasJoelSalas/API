@@ -2,6 +2,7 @@
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases.USER.Handlers
 {
@@ -17,15 +18,15 @@ namespace Application.UseCases.USER.Handlers
         public async Task<string> Handle(DeleteUserCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id <= 0)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var user = await _userRepository.GetByIdAsync(command.Id);
 
             if (user == null)
-                return "Usuario no encontrado";
+                throw new DataNotFoundException("Usuario no encontrado");
 
             await _userRepository.DeleteAsync(user);
 

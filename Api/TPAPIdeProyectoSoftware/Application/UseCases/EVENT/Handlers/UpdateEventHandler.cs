@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.Event;
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases.EVENT.Handlers
 {
@@ -16,24 +17,24 @@ namespace Application.UseCases.EVENT.Handlers
         public async Task<string> Handle(UpdateEventCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id <= 0)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             if (string.IsNullOrWhiteSpace(command.Name))
-                return "El nombre es obligatorio";
+                throw new MissingDataException("El nombre es obligatorio");
 
             if (command.EventDate < DateTime.UtcNow)
-                return "La fecha del evento es inválida";
+                throw new MissingDataException("La fecha del evento es inválida");
 
             if (string.IsNullOrWhiteSpace(command.Venue))
-                return "El lugar es obligatorio";
+                throw new MissingDataException("El lugar es obligatorio");
 
             var existingEvent = await _eventRepository.GetByIdAsync(command.Id);
 
             if (existingEvent == null)
-                return "Evento no encontrado";
+                throw new DataNotFoundException("Evento no encontrado");
 
             existingEvent.Name = command.Name;
             existingEvent.EventDate = command.EventDate;

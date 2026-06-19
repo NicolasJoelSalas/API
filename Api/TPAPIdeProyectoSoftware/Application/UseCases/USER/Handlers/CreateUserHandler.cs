@@ -2,6 +2,7 @@
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
 using Domain.Entities;
+using Domain.Exceptions;
 
 namespace Application.UseCases.USER.Handlers
 {
@@ -17,21 +18,21 @@ namespace Application.UseCases.USER.Handlers
         public async Task<string> Handle(CreateUserCommand command)
         {
             if (command == null)
-                return "Datos inválidos";
+                throw new DataNotFoundException("Datos inválidos");
 
             if (string.IsNullOrWhiteSpace(command.Name))
-                return "El nombre es obligatorio";
+                throw new MissingDataException("El nombre es obligatorio");
 
             if (string.IsNullOrWhiteSpace(command.Email))
-                return "El email es obligatorio";
+                throw new MissingDataException("El email es obligatorio");
 
             if (string.IsNullOrWhiteSpace(command.PasswordHash))
-                return "La contraseña es obligatoria";
+                throw new MissingDataException("La contraseña es obligatoria");
 
             var exists = await _userRepository.EmailExistsAsync(command.Email);
 
             if (exists)
-                return "El email ya está registrado, use otro";
+                throw new DataNotFoundException("El email ya está registrado, use otro");
 
             var user = new Domain.Entities.USER
             {

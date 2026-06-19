@@ -3,6 +3,7 @@ using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
 using Domain.Entities;
+using Domain.Exceptions;
 
 namespace Application.UseCases.USER.Handlers
 {
@@ -18,22 +19,22 @@ namespace Application.UseCases.USER.Handlers
         public async Task<string> Handle(UpdateUserCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (string.IsNullOrWhiteSpace(command.Name))
-                return "El nombre es obligatorio";
+                throw new MissingDataException("El nombre es obligatorio");
 
             if (string.IsNullOrWhiteSpace(command.Email))
-                return "El email es obligatorio";
+                throw new MissingDataException("El email es obligatorio");
 
             var existingUser = await _userRepository.GetByIdAsync(command.Id);
             var exists = await _userRepository.EmailExistsAsync(command.Email);
 
             if (existingUser == null)
-                return "Usuario no encontrado";
+                throw new DataNotFoundException("Usuario no encontrado");
 
             if (exists && existingUser.Email != command.Email)
-                return "El email ya existe";
+                throw new DataNotFoundException("El email ya existe");
 
             existingUser.Name = command.Name;
             existingUser.Email = command.Email;

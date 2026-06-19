@@ -4,6 +4,7 @@ using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
 using Domain.Entities;
 using Domain.Enums;
+using Domain.Exceptions;
 
 public class CreateSeatHandler : ICreateSeatHandler
 {
@@ -21,24 +22,24 @@ public class CreateSeatHandler : ICreateSeatHandler
     public async Task<string> Handle(CreateSeatCommand command)
     {
         if (command == null)
-            return "Datos inválidos";
+            throw new DataNotFoundException("Datos inválidos");
 
         if (command.SectorId <= 0)
-            return "El Id del sector es obligatorio";
+            throw new MissingDataException("El Id del sector es obligatorio");
 
         var sector = await _sectorRepository.GetByIdAsync(command.SectorId);
 
         if (sector == null)
-            return "El Sector indicado no existe";
+            throw new DataNotFoundException("El Sector indicado no existe");
 
         if (string.IsNullOrWhiteSpace(command.RowIdentifier))
-            return "El identificador de fila es obligatorio";
+            throw new MissingDataException("El identificador de fila es obligatorio");
 
         if (command.SeatNumber <= 0)
-            return "El número de asiento es obligatorio";
+            throw new MissingDataException("El número de asiento es obligatorio");
 
         if (command.Version <= 0)
-            return "La version es obligatoria";
+            throw new MissingDataException("La version es obligatoria");
 
         var seat = new SEAT
         {

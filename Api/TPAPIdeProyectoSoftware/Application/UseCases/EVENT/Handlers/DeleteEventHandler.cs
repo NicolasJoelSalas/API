@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.Event;
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases.EVENT.Handlers
 {
@@ -17,12 +18,12 @@ namespace Application.UseCases.EVENT.Handlers
         {
 
             if (command.Id <= 0)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var eventEntity = await _eventRepository.GetByIdAsync(command.Id);
 
             if (eventEntity == null)
-                return "Evento no encontrado";
+                throw new DataNotFoundException("Evento no encontrado");
 
             await _eventRepository.DeleteAsync(eventEntity);
 

@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases.Audit_Log.Handlers
 {
@@ -16,15 +17,15 @@ namespace Application.UseCases.Audit_Log.Handlers
         public async Task<string> Handle(DeleteAudit_LogCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id == Guid.Empty)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var auditLog = await _auditLogRepository.GetByIdAsync(command.Id);
 
             if (auditLog == null)
-                return "Registro de auditoría no encontrado";
+                throw new DataNotFoundException("Registro de auditoría no encontrado");
 
             await _auditLogRepository.DeleteAsync(auditLog);
 

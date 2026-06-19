@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases.Audit_Log.Handlers
 {
@@ -20,30 +21,30 @@ namespace Application.UseCases.Audit_Log.Handlers
         public async Task<string> Handle(CreateAudit_LogCommand command)
         {
             if (command == null)
-                return "Datos inválidos";
+                throw new DataNotFoundException("Datos inválidos");
 
             if (command.UserId.HasValue)
             {
                 if (command.UserId <= 0)
-                    return "El Id del usuario es inválido";
+                    throw new MissingDataException("El Id del usuario es inválido");
 
                 var user = await _userRepository.GetByIdAsync(command.UserId.Value);
 
                 if (user == null)
-                    return "El usuario no existe";
+                    throw new DataNotFoundException("El usuario no existe");
             }
 
             if (string.IsNullOrWhiteSpace(command.Action))
-                return "La acción es obligatoria";
+                throw new MissingDataException("La acción es obligatoria");
 
             if (string.IsNullOrWhiteSpace(command.EntityType))
-                return "El tipo de entidad es obligatorio";
+                throw new MissingDataException("El tipo de entidad es obligatorio");
 
             if (string.IsNullOrWhiteSpace(command.EntityId))
-                return "El id de la entidad es obligatorio";
+                throw new MissingDataException("El id de la entidad es obligatorio");
 
             if (string.IsNullOrWhiteSpace(command.Details))
-                return "Los detalles son obligatorios";
+                throw new MissingDataException("Los detalles son obligatorios");
 
             var auditLog = new Domain.Entities.AUDIT_LOG
             {

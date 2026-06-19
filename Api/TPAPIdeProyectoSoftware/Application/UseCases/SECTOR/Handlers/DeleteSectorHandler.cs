@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Handlers;
 using Application.Interfaces.Repositories;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -16,15 +17,15 @@ namespace Application.UseCases
         public async Task<string> Handle(DeleteSectorCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id <= 0)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var sector = await _sectorRepository.GetByIdAsync(command.Id);
 
             if (sector == null)
-                return "Sector no encontrado";
+                throw new DataNotFoundException("Sector no encontrado");
 
             await _sectorRepository.DeleteAsync(sector);
 

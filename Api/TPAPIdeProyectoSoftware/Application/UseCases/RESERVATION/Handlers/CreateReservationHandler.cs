@@ -36,13 +36,13 @@ namespace Application.UseCases.RESERVATION.Handlers
                 throw new MissingDataException("El Id del usuario es obligatorio");
 
             if (request.SeatIds == null || !request.SeatIds.Any())
-                throw new MissingDataException("No se enviaron butacas");
+                throw new DataNotFoundException("No se enviaron butacas");
 
             var user = await _userRepository
                 .GetByIdAsync(request.UserId);
 
             if (user == null)
-                throw new MissingDataException("Usuario inexistente");
+                throw new DataNotFoundException("Usuario inexistente");
 
 
             var reservedSeatIds =

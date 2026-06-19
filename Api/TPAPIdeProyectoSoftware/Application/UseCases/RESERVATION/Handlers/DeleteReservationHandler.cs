@@ -2,6 +2,7 @@
 using Application.Interfaces.Repositories;
 using Application.UseCases.EVENT.Commands;
 using Application.UseCases.USER.Commands;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -17,15 +18,15 @@ namespace Application.UseCases
         public async Task<string> Handle(DeleteReservationCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
             if (command.Id == null)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var reservationEntity = await _reservationRepository.GetByIdAsync(command.Id);
 
             if (reservationEntity == null)
-                return "Reserva no encontrada";
+                throw new DataNotFoundException("Reserva no encontrada");
 
             await _reservationRepository.DeleteAsync(reservationEntity.Id);
 

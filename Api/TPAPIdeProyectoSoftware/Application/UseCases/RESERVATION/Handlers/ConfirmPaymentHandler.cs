@@ -2,6 +2,7 @@
 using Application.Interfaces.Repositories;
 using Domain.Entities;
 using Domain.Enums;
+using Domain.Exceptions;
 
 namespace Application.UseCases
 {
@@ -59,7 +60,7 @@ namespace Application.UseCases
                     var seat = await _seatRepository.GetByIdAsync(reservation.SeatId);
 
                     if (seat == null)
-                        throw new Exception("Asiento no encontrado");
+                        throw new DataNotFoundException("Asiento no encontrado");
 
                     seat.Status = SeatStatus.Sold.ToString();
 

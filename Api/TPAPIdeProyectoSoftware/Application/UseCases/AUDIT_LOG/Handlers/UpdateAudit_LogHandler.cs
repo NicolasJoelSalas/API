@@ -2,6 +2,7 @@
 using Application.Interfaces.Handlers.User;
 using Application.Interfaces.Repositories;
 using Domain.Entities;
+using Domain.Exceptions;
 
 namespace Application.UseCases.Audit_Log.Handlers
 {
@@ -21,39 +22,39 @@ namespace Application.UseCases.Audit_Log.Handlers
         public async Task<string> Handle(Guid id, Audit_LogRequestDto dto)
         {
             if (dto == null)
-                return "Datos inválidos";
+                throw new DataNotFoundException("Datos inválidos");
 
             if (id == Guid.Empty)
-                return "Id inválido";
+                throw new MissingDataException("Id inválido");
 
             var existing = await _auditLogRepository.GetByIdAsync(id);
 
             if (existing == null)
-                return "Registro de auditoría no encontrado";
+                throw new DataNotFoundException("Registro de auditoría no encontrado");
 
             // Validar usuario solo si viene informado
             if (dto.UserId.HasValue)
             {
                 if (dto.UserId <= 0)
-                    return "El Id del usuario es inválido";
+                    throw new MissingDataException("El Id del usuario es inválido");
 
                 var user = await _userRepository.GetByIdAsync(dto.UserId.Value);
 
                 if (user == null)
-                    return "El usuario no existe";
+                    throw new DataNotFoundException("El usuario no existe");
             }
 
             if (string.IsNullOrWhiteSpace(dto.Action))
-                return "La acción es obligatoria";
+                throw new MissingDataException("La acción es obligatoria");
 
             if (string.IsNullOrWhiteSpace(dto.EntityType))
-                return "El tipo de entidad es obligatorio";
+                throw new MissingDataException("El tipo de entidad es obligatorio");
 
             if (string.IsNullOrWhiteSpace(dto.EntityId))
-                return "El id de entidad es obligatorio";
+                throw new MissingDataException("El id de entidad es obligatorio");
 
             if (string.IsNullOrWhiteSpace(dto.Details))
-                return "Los detalles son obligatorios";
+                throw new MissingDataException("Los detalles son obligatorios");
 
             // Modificar entidad existente
             existing.UserId = dto.UserId;

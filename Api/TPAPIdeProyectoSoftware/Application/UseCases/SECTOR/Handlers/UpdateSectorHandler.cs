@@ -1,6 +1,7 @@
 ﻿
 using Application.Interfaces.Handlers;
 using Application.Interfaces.Repositories;
+using Domain.Exceptions;
 
 
 namespace Application.UseCases
@@ -19,31 +20,31 @@ namespace Application.UseCases
         public async Task<string> Handle(UpdateSectorCommand command)
         {
             if (command == null)
-                return "Comando inválido";
+                throw new DataNotFoundException("Comando inválido");
 
 
             if (command.EventId <= 0)
-                return "El Id del evento es obligatorio";
+                throw new MissingDataException("El Id del evento es obligatorio");
 
             var existingEvent = await _eventRepository.GetByIdAsync(command.EventId);
 
             if (existingEvent == null)
-                return "Evento no encontrado";
+                throw new DataNotFoundException("Evento no encontrado");
 
             if (string.IsNullOrWhiteSpace(command.Name))
-                return "El nombre es obligatorio";
+                throw new MissingDataException("El nombre es obligatorio");
 
             if (command.Price <= 0)
-                return "El precio es obligatorio";
+                throw new MissingDataException("El precio es obligatorio");
 
             if (command.Capacity <= 0)
-                return "La capacidad es obligatoria";
+                throw new MissingDataException("La capacidad es obligatoria");
 
 
             var existingsector = await _sectorRepository.GetByIdAsync(command.Id);
 
             if (existingsector == null)
-                return "Sector no encontrado";
+                throw new DataNotFoundException("Sector no encontrado");
 
             existingsector.EventId = command.EventId;
             existingsector.Name = command.Name;

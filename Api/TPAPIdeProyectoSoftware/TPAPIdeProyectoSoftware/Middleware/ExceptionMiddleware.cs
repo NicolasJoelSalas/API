@@ -36,6 +36,14 @@ namespace TPAPIdeProyectoSoftware.Middleware
                     ex.Message
                 );
             }
+            catch (DataNotFoundException ex)
+            {
+                await WriteErrorResponse(
+                    context,
+                    HttpStatusCode.NotFound,
+                    ex.Message
+                );
+            }
             catch (Exception ex)
             {
                 await WriteErrorResponse(
